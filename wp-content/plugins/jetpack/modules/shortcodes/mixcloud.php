@@ -53,8 +53,7 @@ function mixcloud_shortcode( $atts, $content = null ) {
 			'mini'           => false,
 			'hide_followers' => false,
 			'hide_artwork'   => false,
-		),
-		$atts
+		), $atts
 	);
 
 	// remove falsey values

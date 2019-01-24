@@ -225,60 +225,6 @@ function create_initial_post_types() {
 		'supports'         => array(),
 	) );
 
-	register_post_type(
-		'wp_block',
-		array(
-			'labels'                => array(
-				'name'                     => _x( 'Blocks', 'post type general name' ),
-				'singular_name'            => _x( 'Block', 'post type singular name' ),
-				'menu_name'                => _x( 'Blocks', 'admin menu' ),
-				'name_admin_bar'           => _x( 'Block', 'add new on admin bar' ),
-				'add_new'                  => _x( 'Add New', 'Block' ),
-				'add_new_item'             => __( 'Add New Block' ),
-				'new_item'                 => __( 'New Block' ),
-				'edit_item'                => __( 'Edit Block' ),
-				'view_item'                => __( 'View Block' ),
-				'all_items'                => __( 'All Blocks' ),
-				'search_items'             => __( 'Search Blocks' ),
-				'not_found'                => __( 'No blocks found.' ),
-				'not_found_in_trash'       => __( 'No blocks found in Trash.' ),
-				'filter_items_list'        => __( 'Filter blocks list' ),
-				'items_list_navigation'    => __( 'Blocks list navigation' ),
-				'items_list'               => __( 'Blocks list' ),
-				'item_published'           => __( 'Block published.' ),
-				'item_published_privately' => __( 'Block published privately.' ),
-				'item_reverted_to_draft'   => __( 'Block reverted to draft.' ),
-				'item_scheduled'           => __( 'Block scheduled.' ),
-				'item_updated'             => __( 'Block updated.' ),
-			),
-			'public'                => false,
-			'_builtin'              => true, /* internal use only. don't use this when registering your own post type. */
-			'show_ui'               => true,
-			'show_in_menu'          => false,
-			'rewrite'               => false,
-			'show_in_rest'          => true,
-			'rest_base'             => 'blocks',
-			'rest_controller_class' => 'WP_REST_Blocks_Controller',
-			'capability_type'       => 'block',
-			'capabilities'          => array(
-				// You need to be able to edit posts, in order to read blocks in their raw form.
-				'read'                   => 'edit_posts',
-				// You need to be able to publish posts, in order to create blocks.
-				'create_posts'           => 'publish_posts',
-				'edit_published_posts'   => 'edit_published_posts',
-				'delete_published_posts' => 'delete_published_posts',
-				'edit_others_posts'      => 'edit_others_posts',
-				'delete_others_posts'    => 'delete_others_posts',
-			),
-			'map_meta_cap'          => true,
-			'supports'              => array(
-				'title',
-				'editor',
-			),
-		)
-	);
-
-
 	register_post_status( 'publish', array(
 		'label'       => _x( 'Published', 'post status' ),
 		'public'      => true,
@@ -829,7 +775,7 @@ function get_page_statuses() {
 /**
  * Return statuses for privacy requests.
  *
- * @since 4.9.6
+ * @since 5.0.0
  *
  * @return array
  */
@@ -1017,11 +963,7 @@ function is_post_type_hierarchical( $post_type ) {
 }
 
 /**
- * Determines whether a post type is registered.
- * 
- * For more information on this and similar theme functions, check out
- * the {@link https://developer.wordpress.org/themes/basics/conditional-tags/ 
- * Conditional Tags} article in the Theme Developer Handbook.
+ * Check if a post type is registered.
  *
  * @since 3.0.0
  *
@@ -1478,14 +1420,6 @@ function _post_type_meta_capabilities( $capabilities = null ) {
  * - `items_list_navigation` - Label for the table pagination hidden heading. Default is 'Posts list navigation' /
  *                           'Pages list navigation'.
  * - `items_list` - Label for the table hidden heading. Default is 'Posts list' / 'Pages list'.
- * - `item_published` - Label used when an item is published. Default is 'Post published.' / 'Page published.'
- * - `item_published_privately` - Label used when an item is published with private visibility.
- *                              Default is 'Post published privately.' / 'Page published privately.'
- * - `item_reverted_to_draft` - Label used when an item is switched to a draft.
- *                            Default is 'Post reverted to draft.' / 'Page reverted to draft.'
- * - `item_scheduled` - Label used when an item is scheduled for publishing. Default is 'Post scheduled.' /
- *                    'Page scheduled.'
- * - `item_updated` - Label used when an item is updated. Default is 'Post updated.' / 'Page updated.'
  *
  * Above, the first default value is for non-hierarchical post types (like posts)
  * and the second one is for hierarchical post types (like pages).
@@ -1499,8 +1433,6 @@ function _post_type_meta_capabilities( $capabilities = null ) {
  *              `items_list_navigation`, and `items_list` labels.
  * @since 4.6.0 Converted the `$post_type` parameter to accept a WP_Post_Type object.
  * @since 4.7.0 Added the `view_items` and `attributes` labels.
- * @since 5.0.0 Added the `item_published`, `item_published_privately`, `item_reverted_to_draft`,
- *              `item_scheduled`, and `item_updated` labels.
  *
  * @access private
  *
@@ -1533,11 +1465,6 @@ function get_post_type_labels( $post_type_object ) {
 		'filter_items_list' => array( __( 'Filter posts list' ), __( 'Filter pages list' ) ),
 		'items_list_navigation' => array( __( 'Posts list navigation' ), __( 'Pages list navigation' ) ),
 		'items_list' => array( __( 'Posts list' ), __( 'Pages list' ) ),
-		'item_published' => array( __( 'Post published.' ), __( 'Page published.' ) ),
-		'item_published_privately' => array( __( 'Post published privately.' ), __( 'Page published privately.' ) ),
-		'item_reverted_to_draft' => array( __( 'Post reverted to draft.' ), __( 'Page reverted to draft.' ) ),
-		'item_scheduled' => array( __( 'Post scheduled.' ), __( 'Page scheduled.' ) ),
-		'item_updated' => array( __( 'Post updated.' ), __( 'Page updated.' ) ),
 	);
 	$nohier_vs_hier_defaults['menu_name'] = $nohier_vs_hier_defaults['name'];
 
@@ -1857,12 +1784,14 @@ function get_posts( $args = null ) {
  */
 function add_post_meta( $post_id, $meta_key, $meta_value, $unique = false ) {
 	// Make sure meta is added to the post, not a revision.
-	$the_post = wp_is_post_revision( $post_id );
-	if ( $the_post ) {
+	if ( $the_post = wp_is_post_revision($post_id) )
 		$post_id = $the_post;
-	}
 
-	return add_metadata( 'post', $post_id, $meta_key, $meta_value, $unique );
+	$added = add_metadata( 'post', $post_id, $meta_key, $meta_value, $unique );
+	if ( $added ) {
+		wp_cache_set( 'last_changed', microtime(), 'posts' );
+	}
+	return $added;
 }
 
 /**
@@ -1882,12 +1811,14 @@ function add_post_meta( $post_id, $meta_key, $meta_value, $unique = false ) {
  */
 function delete_post_meta( $post_id, $meta_key, $meta_value = '' ) {
 	// Make sure meta is added to the post, not a revision.
-	$the_post = wp_is_post_revision( $post_id );
-	if ( $the_post ) {
+	if ( $the_post = wp_is_post_revision($post_id) )
 		$post_id = $the_post;
-	}
 
-	return delete_metadata( 'post', $post_id, $meta_key, $meta_value );
+	$deleted = delete_metadata( 'post', $post_id, $meta_key, $meta_value );
+	if ( $deleted ) {
+		wp_cache_set( 'last_changed', microtime(), 'posts' );
+	}
+	return $deleted;
 }
 
 /**
@@ -1926,12 +1857,14 @@ function get_post_meta( $post_id, $key = '', $single = false ) {
  */
 function update_post_meta( $post_id, $meta_key, $meta_value, $prev_value = '' ) {
 	// Make sure meta is added to the post, not a revision.
-	$the_post = wp_is_post_revision( $post_id );
-	if ( $the_post ) {
+	if ( $the_post = wp_is_post_revision($post_id) )
 		$post_id = $the_post;
-	}
 
-	return update_metadata( 'post', $post_id, $meta_key, $meta_value, $prev_value );
+	$updated = update_metadata( 'post', $post_id, $meta_key, $meta_value, $prev_value );
+	if ( $updated ) {
+		wp_cache_set( 'last_changed', microtime(), 'posts' );
+	}
+	return $updated;
 }
 
 /**
@@ -1943,40 +1876,11 @@ function update_post_meta( $post_id, $meta_key, $meta_value, $prev_value = '' ) 
  * @return bool Whether the post meta key was deleted from the database.
  */
 function delete_post_meta_by_key( $post_meta_key ) {
-	return delete_metadata( 'post', null, $post_meta_key, '', true );
-}
-
-/**
- * Registers a meta key for posts.
- *
- * @since 4.9.8
- *
- * @param string $post_type Post type to register a meta key for. Pass an empty string
- *                          to register the meta key across all existing post types.
- * @param string $meta_key  The meta key to register.
- * @param array  $args      Data used to describe the meta key when registered. See
- *                          {@see register_meta()} for a list of supported arguments.
- * @return bool True if the meta key was successfully registered, false if not.
- */
-function register_post_meta( $post_type, $meta_key, array $args ) {
-	$args['object_subtype'] = $post_type;
-
-	return register_meta( 'post', $meta_key, $args );
-}
-
-/**
- * Unregisters a meta key for posts.
- *
- * @since 4.9.8
- *
- * @param string $post_type Post type the meta key is currently registered for. Pass
- *                          an empty string if the meta key is registered across all
- *                          existing post types.
- * @param string $meta_key  The meta key to unregister.
- * @return bool True on success, false if the meta key was not previously registered.
- */
-function unregister_post_meta( $post_type, $meta_key ) {
-	return unregister_meta_key( 'post', $meta_key, $post_type );
+	$deleted = delete_metadata( 'post', null, $post_meta_key, '', true );
+	if ( $deleted ) {
+		wp_cache_set( 'last_changed', microtime(), 'posts' );
+	}
+	return $deleted;
 }
 
 /**
@@ -2040,15 +1944,11 @@ function get_post_custom_values( $key = '', $post_id = 0 ) {
 }
 
 /**
- * Determines whether a post is sticky.
+ * Check if post is sticky.
  *
  * Sticky posts should remain at the top of The Loop. If the post ID is not
  * given, then The Loop ID for the current post will be used.
- * 
- * For more information on this and similar theme functions, check out
- * the {@link https://developer.wordpress.org/themes/basics/conditional-tags/ 
- * Conditional Tags} article in the Theme Developer Handbook.
- * 
+ *
  * @since 2.7.0
  *
  * @param int $post_id Optional. Post ID. Default is ID of the global $post.
@@ -3441,13 +3341,6 @@ function wp_insert_post( $postarr, $wp_error = false ) {
 		$post_parent = 0;
 	}
 
-	$new_postarr = array_merge(
-		array(
-			'ID' => $post_ID,
-		),
-		compact( array_diff( array_keys( $defaults ), array( 'context', 'filter' ) ) )
-	);
-
 	/**
 	 * Filters the post parent -- used to check for and prevent hierarchy loops.
 	 *
@@ -3458,7 +3351,7 @@ function wp_insert_post( $postarr, $wp_error = false ) {
 	 * @param array $new_postarr Array of parsed post data.
 	 * @param array $postarr     Array of sanitized, but otherwise unmodified post data.
 	 */
-	$post_parent = apply_filters( 'wp_insert_post_parent', $post_parent, $post_ID, $new_postarr, $postarr );
+	$post_parent = apply_filters( 'wp_insert_post_parent', $post_parent, $post_ID, compact( array_keys( $postarr ) ), $postarr );
 
 	/*
 	 * If the post is being untrashed and it has a desired slug stored in post meta,
@@ -5016,12 +4909,8 @@ function get_pages( $args = array() ) {
 //
 
 /**
- * Determines whether an attachment URI is local and really an attachment.
- * 
- * For more information on this and similar theme functions, check out
- * the {@link https://developer.wordpress.org/themes/basics/conditional-tags/ 
- * Conditional Tags} article in the Theme Developer Handbook.
- * 
+ * Check if the attachment URI is local one and is really an attachment.
+ *
  * @since 2.0.0
  *
  * @param string $url URL to check
@@ -5167,79 +5056,42 @@ function wp_delete_attachment( $post_id, $force_delete = false ) {
 	/** This action is documented in wp-includes/post.php */
 	do_action( 'deleted_post', $post_id );
 
-	wp_delete_attachment_files( $post_id, $meta, $backup_sizes, $file );
-
-	clean_post_cache( $post );
-
-	return $post;
-}
-
-/**
- * Deletes all files that belong to the given attachment.
- *
- * @since 4.9.7
- *
- * @param int    $post_id      Attachment ID.
- * @param array  $meta         The attachment's meta data.
- * @param array  $backup_sizes The meta data for the attachment's backup images.
- * @param string $file         Absolute path to the attachment's file.
- * @return bool True on success, false on failure.
- */
-function wp_delete_attachment_files( $post_id, $meta, $backup_sizes, $file ) {
-	global $wpdb;
-
 	$uploadpath = wp_get_upload_dir();
-	$deleted    = true;
 
-	if ( ! empty( $meta['thumb'] ) ) {
+	if ( ! empty($meta['thumb']) ) {
 		// Don't delete the thumb if another attachment uses it.
-		if ( ! $wpdb->get_row( $wpdb->prepare( "SELECT meta_id FROM $wpdb->postmeta WHERE meta_key = '_wp_attachment_metadata' AND meta_value LIKE %s AND post_id <> %d", '%' . $wpdb->esc_like( $meta['thumb'] ) . '%', $post_id ) ) ) {
-			$thumbfile = str_replace( basename( $file ), $meta['thumb'], $file );
-			if ( ! empty( $thumbfile ) ) {
-				$thumbfile = path_join( $uploadpath['basedir'], $thumbfile );
-				$thumbdir  = path_join( $uploadpath['basedir'], dirname( $file ) );
-
-				if ( ! wp_delete_file_from_directory( $thumbfile, $thumbdir ) ) {
-					$deleted = false;
-				}
-			}
+		if (! $wpdb->get_row( $wpdb->prepare( "SELECT meta_id FROM $wpdb->postmeta WHERE meta_key = '_wp_attachment_metadata' AND meta_value LIKE %s AND post_id <> %d", '%' . $wpdb->esc_like( $meta['thumb'] ) . '%', $post_id)) ) {
+			$thumbfile = str_replace(basename($file), $meta['thumb'], $file);
+			/** This filter is documented in wp-includes/functions.php */
+			$thumbfile = apply_filters( 'wp_delete_file', $thumbfile );
+			@ unlink( path_join($uploadpath['basedir'], $thumbfile) );
 		}
 	}
 
 	// Remove intermediate and backup images if there are any.
 	if ( isset( $meta['sizes'] ) && is_array( $meta['sizes'] ) ) {
-		$intermediate_dir = path_join( $uploadpath['basedir'], dirname( $file ) );
 		foreach ( $meta['sizes'] as $size => $sizeinfo ) {
 			$intermediate_file = str_replace( basename( $file ), $sizeinfo['file'], $file );
-			if ( ! empty( $intermediate_file ) ) {
-				$intermediate_file = path_join( $uploadpath['basedir'], $intermediate_file );
-
-				if ( ! wp_delete_file_from_directory( $intermediate_file, $intermediate_dir ) ) {
-					$deleted = false;
-				}
-			}
+			/** This filter is documented in wp-includes/functions.php */
+			$intermediate_file = apply_filters( 'wp_delete_file', $intermediate_file );
+			@ unlink( path_join( $uploadpath['basedir'], $intermediate_file ) );
 		}
 	}
 
-	if ( is_array( $backup_sizes ) ) {
-		$del_dir = path_join( $uploadpath['basedir'], dirname( $meta['file'] ) );
+	if ( is_array($backup_sizes) ) {
 		foreach ( $backup_sizes as $size ) {
-			$del_file = path_join( dirname( $meta['file'] ), $size['file'] );
-			if ( ! empty( $del_file ) ) {
-				$del_file = path_join( $uploadpath['basedir'], $del_file );
-
-				if ( ! wp_delete_file_from_directory( $del_file, $del_dir ) ) {
-					$deleted = false;
-				}
-			}
+			$del_file = path_join( dirname($meta['file']), $size['file'] );
+			/** This filter is documented in wp-includes/functions.php */
+			$del_file = apply_filters( 'wp_delete_file', $del_file );
+			@ unlink( path_join($uploadpath['basedir'], $del_file) );
 		}
 	}
 
-	if ( ! wp_delete_file_from_directory( $file, $uploadpath['basedir'] ) ) {
-		$deleted = false;
-	}
+	wp_delete_file( $file );
 
-	return $deleted;
+	clean_post_cache( $post );
+
+	return $post;
 }
 
 /**
@@ -5517,11 +5369,7 @@ function wp_attachment_is( $type, $post = null ) {
 }
 
 /**
- * Determines whether an attachment is an image.
- * 
- * For more information on this and similar theme functions, check out
- * the {@link https://developer.wordpress.org/themes/basics/conditional-tags/ 
- * Conditional Tags} article in the Theme Developer Handbook.
+ * Checks if the attachment is an image.
  *
  * @since 2.1.0
  * @since 4.2.0 Modified into wrapper for wp_attachment_is() and
@@ -6556,13 +6404,4 @@ function _filter_query_attachment_filenames( $clauses ) {
 		$clauses['where'] );
 
 	return $clauses;
-}
-
-/**
- * Sets the last changed time for the 'posts' cache group.
- *
- * @since 5.0.0
- */
-function wp_cache_set_posts_last_changed() {
-	wp_cache_set( 'last_changed', microtime(), 'posts' );
 }

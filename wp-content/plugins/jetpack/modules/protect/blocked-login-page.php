@@ -44,7 +44,7 @@ class Jetpack_Protect_Blocked_Login_Page {
 		 *
 		 * @module protect
 		 *
-		 * @since 5.6.0
+		 * @since 5.6
 		 *
 		 * @param bool $can_send_recovery_emails Defaults to true.
 		 */

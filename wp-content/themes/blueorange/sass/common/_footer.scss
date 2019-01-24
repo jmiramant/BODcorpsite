@@ -1,0 +1,32 @@
+footer#colophon{
+  background: url(images/cta-bg.jpg) repeat-y;
+  padding: 50px 0 20px;
+  color: $white;
+  .social-links{
+    li{
+      display: inline-block;
+      font-size: 40px;
+      margin: 0 10px;
+    }
+  }
+  a{
+    color: $white;
+    &:hover{
+      color: $secondary;
+    }
+  }
+  .custom-logo{
+    max-width: 200px;
+    height: auto;
+  }
+  .contact-info{
+    padding-left: 100px;
+    padding-bottom: 40px;
+    a{
+      font-size: 18px;
+    }
+    .secondary{
+      color: $secondary;
+    }
+  }
+}

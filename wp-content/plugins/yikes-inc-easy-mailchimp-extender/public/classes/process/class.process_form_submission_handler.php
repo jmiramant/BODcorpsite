@@ -22,6 +22,15 @@ class Yikes_Inc_Easy_MailChimp_Extender_Process_Submission_Handler {
 	*/
 	protected $skipped_form_fields;
 
+	/**
+	* The default time in milliseconds to wait before redirecting a user
+	* 
+	* @since 6.3.0
+	* @access protected
+	* @var int | $default_redirect_time_ms
+	*/
+	protected $default_redirect_time_ms;
+
 	/**** Form Variables ****/
 
 	/**
@@ -241,28 +250,29 @@ class Yikes_Inc_Easy_MailChimp_Extender_Process_Submission_Handler {
 			'yikes_easy_mc_new_subscriber' => 1,
 			'_wp_http_referer'             => 1,
 		);
+		$this->default_redirect_time_ms = 1500;
 
 		// Define our error messages
-		$this->handle_empty_form_id_message                   = __( 'Error: We were unable to find the form ID.', 'yikes-inc-easy-mailchimp-extender' );
-		$this->handle_empty_form_message                      = __( 'Error: We were unable to find the form data.', 'yikes-inc-easy-mailchimp-extender' );
-		$this->handle_empty_fields_generic_message            = __( 'Error: We were unable to find the form fields.', 'yikes-inc-easy-mailchimp-extender' );
-		$this->handle_empty_list_handler_message              = __( 'Error: We were unable to find the list handler.', 'yikes-inc-easy-mailchimp-extender' );
-		$this->handle_empty_email_message                     = __( 'Error: The email is invalid.', 'yikes-inc-easy-mailchimp-extender' );
-		$this->handle_non_empty_honeypot_message              = __( 'Error: It looks like the honeypot was filled out and the form was not properly submitted.', 'yikes-inc-easy-mailchimp-extender' );
+		$this->handle_empty_form_id_message = __( 'Error: We were unable to find the form ID.', 'yikes-inc-easy-mailchimp-extender' );
+		$this->handle_empty_form_message = __( 'Error: We were unable to find the form data.', 'yikes-inc-easy-mailchimp-extender' );
+		$this->handle_empty_fields_generic_message = __( 'Error: We were unable to find the form fields.', 'yikes-inc-easy-mailchimp-extender' );
+		$this->handle_empty_list_handler_message = __( 'Error: We were unable to find the list handler.', 'yikes-inc-easy-mailchimp-extender' );
+		$this->handle_empty_email_message = __( 'Error: The email is invalid.', 'yikes-inc-easy-mailchimp-extender' );
+		$this->handle_non_empty_honeypot_message = __( 'Error: It looks like the honeypot was filled out and the form was not properly submitted.', 'yikes-inc-easy-mailchimp-extender' );
 		$this->handle_disallowed_existing_user_update_message = __( 'The email you entered is already a subscriber to this list.', 'yikes-inc-easy-mailchimp-extender' );
-		$this->default_error_response_message                 = __( 'Whoops! It looks like something went wrong. Please try again.', 'yikes-inc-easy-mailchimp-extender' );
-		$this->handle_updating_existing_user_message          = __( 'You\'re already subscribed. ', 'yikes-inc-easy-mailchimp-extender' );
-		$this->handle_updating_existing_user_link_message     = __( 'To update your MailChimp profile, please click to send yourself an update link', 'yikes-inc-easy-mailchimp-extender' );
-		$this->handle_empty_required_field_message            = __( 'A required field is missing.', 'yikes-inc-easy-mailchimp-extender' );
-		$this->handle_empty_required_interest_group_message   = __( 'A required interest group is missing.', 'yikes-inc-easy-mailchimp-extender' );
-		$this->handle_nonce_message                           = __( 'Error: Sorry, the nonce security check didn\'t pass. Please reload the page and try again. You may want to try clearing your browser cache as a last attempt.' , 'yikes-inc-easy-mailchimp-extender' );
-		$this->handle_non_filled_recaptcha_message_message    = __( 'Please check the reCAPTCHA field.', 'yikes-inc-easy-mailchimp-extender' );
-		$this->generic_recaptcha_error_message                = __( 'Please refresh the page and try again.', 'yikes-inc-easy-mailchimp-extender' );
+		$this->default_error_response_message =  __( 'Whoops! It looks like something went wrong. Please try again.', 'yikes-inc-easy-mailchimp-extender' );
+		$this->handle_updating_existing_user_message = __( 'You\'re already subscribed. ', 'yikes-inc-easy-mailchimp-extender' );
+		$this->handle_updating_existing_user_link_message = __( 'To update your MailChimp profile, please click to send yourself an update link', 'yikes-inc-easy-mailchimp-extender' );
+		$this->handle_empty_required_field_message = __( 'A required field is missing.', 'yikes-inc-easy-mailchimp-extender' );
+		$this->handle_empty_required_interest_group_message = __( 'A required interest group is missing.', 'yikes-inc-easy-mailchimp-extender' );
+		$this->handle_nonce_message = __( 'Error: Sorry, the nonce security check didn\'t pass. Please reload the page and try again. You may want to try clearing your browser cache as a last attempt.' , 'yikes-inc-easy-mailchimp-extender' );
+		$this->handle_non_filled_recaptcha_message_message = __( 'Please check the reCAPTCHA field.', 'yikes-inc-easy-mailchimp-extender' );
+		$this->generic_recaptcha_error_message =  __( 'Please refresh the page and try again.', 'yikes-inc-easy-mailchimp-extender' );
 
 		// Define our success messages
-		$this->default_response_single_optin_success_message  = __( 'Thank you for subscribing!' , 'yikes-inc-easy-mailchimp-extender' );
-		$this->default_response_double_optin_success_message  = __( 'Thank you for subscribing. Check your email for the confirmation message.' , 'yikes-inc-easy-mailchimp-extender' );
-		$this->existing_subscriber_profile_update_message     = __( 'Thank you for already being a subscriber! Your profile info has been updated.', 'yikes-inc-easy-mailchimp-extender' );
+		$this->default_response_single_optin_success_message = __( 'Thank you for subscribing!' , 'yikes-inc-easy-mailchimp-extender' );
+		$this->default_response_double_optin_success_message = __( 'Thank you for subscribing. Check your email for the confirmation message.' , 'yikes-inc-easy-mailchimp-extender' );
+		$this->existing_subscriber_profile_update_message = __( 'Thank you for already being a subscriber! Your profile info has been updated.', 'yikes-inc-easy-mailchimp-extender' );
 	}
 
 	/**** Setters for our Form Variables ****/
@@ -320,10 +330,10 @@ class Yikes_Inc_Easy_MailChimp_Extender_Process_Submission_Handler {
 	* @since 6.3.0
 	*
 	* @param string | $email | The user's email
-	* @return string| $email | The user's email, lowercased and sanitized
+	* @return string| $email | The user's email, sanitized
 	*/
 	public function get_sanitized_email( $email ) {
-		return sanitize_email( strtolower( $email ) );
+		return sanitize_email( $email );
 	}
 
 	/**
@@ -380,11 +390,6 @@ class Yikes_Inc_Easy_MailChimp_Extender_Process_Submission_Handler {
 			$merge_variables[ $merge_tag ] = $sanitized;
 		}
 
-		// Make sure we send the lower-cased, sanitized email so it matches the one we're sending in the body of the request.
-		if ( isset( $merge_variables['EMAIL'] ) ) {
-			$merge_variables['EMAIL'] = $this->email;
-		}
-
 		/**
 		*	yikes-mailchimp-filter-before-submission || yikes-mailchimp-filter-before-submission-{$form_id}
 		*
@@ -394,7 +399,7 @@ class Yikes_Inc_Easy_MailChimp_Extender_Process_Submission_Handler {
 		*	@param array | $merge_variables | The user submitted form data
 		*/
 		$merge_variables = apply_filters( 'yikes-mailchimp-filter-before-submission', $merge_variables );
-		$merge_variables = apply_filters( "yikes-mailchimp-filter-before-submission-{$this->form_id}", $merge_variables );
+		$merge_variables = apply_filters( 'yikes-mailchimp-filter-before-submission-{$this->form_id}', $merge_variables );
 
 		return $merge_variables;
 	}
@@ -516,13 +521,10 @@ class Yikes_Inc_Easy_MailChimp_Extender_Process_Submission_Handler {
 
 			// Loop through the interest groups and create a single array like {group_id} => false
 			foreach ( $interest_groupings as $group_data ) {
-
 				foreach ( $group_data['items'] as $item ) {
 					$groups[$item['id']] = false;
 				}
-
 			}
-
 			return $groups;
 		} else {
 
@@ -601,7 +603,7 @@ class Yikes_Inc_Easy_MailChimp_Extender_Process_Submission_Handler {
 	public function handle_submission_response_success( $submission_settings, $page_data, $merge_variables, $notifications, $optin_settings, $new_subscriber ) {
 
 		// Check if we should redirect, and collect the redirect info in an array
-		$redirect_array = Yikes_Inc_Easy_MailChimp_Extender_Process_Submission_Handler::handle_submission_response_success_redirect( $this->form_id, $submission_settings, $page_data );
+		$redirect_array = $this->handle_submission_response_success_redirect( $submission_settings, $page_data );
 
 		// Fire off our actions
 
@@ -613,8 +615,8 @@ class Yikes_Inc_Easy_MailChimp_Extender_Process_Submission_Handler {
 		*
 		*	@param array | $merge_variables | The array of user submitted form data
 		*/
-		do_action( 'yikes-mailchimp-after-submission', $merge_variables, $this->form_id );
-		do_action( "yikes-mailchimp-after-submission-{$this->form_id}", $merge_variables, $this->form_id );
+		do_action( 'yikes-mailchimp-after-submission', $merge_variables );
+		do_action( "yikes-mailchimp-after-submission-{$this->form_id}", $merge_variables );
 
 		/**
 		*	yikes-mailchimp-form-submission || yikes-mailchimp-form-submission-{$form_id}
@@ -715,6 +717,72 @@ class Yikes_Inc_Easy_MailChimp_Extender_Process_Submission_Handler {
 		$additional_response_fields = array( 'security_response' => 'test', 'data' => $subscribe_response->get_error_data() );
 
 		return $this->yikes_fail( $hide = 0, $subscribe_response->get_error_code(), $error_message, $additional_response_fields, $return_response_non_ajax = true );
+	}
+
+	/**
+	* Handle the redirect logic for successful submissions
+	*
+	* @since 6.3.0
+	*
+	* @param array | $submission_settings	| Array of the form's submission settings
+	* @param array | $page_data				| Array of the page data
+	* @return array| $redirect_array		| Array with two values: Redirection flag, Redirect URL
+	*/
+	protected function handle_submission_response_success_redirect( $submission_settings, $page_data ) {
+
+		// Set up our return array with default values
+		$redirect_array = array(
+			'redirection' 	 => 0,
+			'redirect'		 => '',
+			'new_window'	 => false,
+			'redirect_timer' => 1500,
+		);
+
+		// Let's confirm we have a value before trying to use it
+		$redirect_setting = isset( $submission_settings['redirect_on_submission'] ) ? $submission_settings['redirect_on_submission'] : false;
+
+		// Check the redirect flag
+		if ( '1' === $redirect_setting ) {
+
+			// Supply return array with default value of 1
+			$redirect_array['redirection']	= 1;
+
+			// Let's confirm we have redirect_page/custom_redirect_url/new_window values
+			$redirect_page_setting	 = isset( $submission_settings['redirect_page'] ) ? $submission_settings['redirect_page'] : false;
+			$custom_redirect_setting = isset( $submission_settings['custom_redirect_url'] ) ? $submission_settings['custom_redirect_url'] : false;
+			$redirect_new_window	 = isset( $submission_settings['redirect_new_window'] ) ? $submission_settings['redirect_new_window'] : false;
+
+			$redirect_array['new_window'] = $redirect_new_window;
+
+			// Check if we're redirecting to a custom_url or just the redirect_page
+			$redirect_url = ( 'custom_url' !== $redirect_page_setting ) ? get_permalink( $redirect_page_setting ) : $custom_redirect_setting;
+
+			/**
+			*	yikes-mailchimp-redirect-url
+			*
+			*	Catch the redirect URL before it's shown to the user
+			*
+			*	@param string | $redirect_url	| The URL that we will redirect to
+			*	@param string | $form_id		| The ID of the current form being subscribed to
+			*	@param array  | $page_data		| An array of data related to the page the form is on
+			*/
+			$redirect_url = apply_filters( 'yikes-mailchimp-redirect-url', $redirect_url, $this->form_id, $page_data );
+
+			/**
+			*	yikes-mailchimp-redirect-timer
+			*
+			*	Catch the redirect timer before it's sent to the JavaScript file
+			*
+			*	@param int | $default_redirect_time_ms | The default time (1500 milliseconds) to wait before redirecting
+			*/
+			$redirect_timer = apply_filters( 'yikes-mailchimp-redirect-timer', $this->default_redirect_time_ms, $this->form_id );
+
+			$redirect_array['redirect_timer'] = $redirect_timer;
+
+			$redirect_array['redirect'] = $redirect_url;
+		}
+
+		return $redirect_array;
 	}
 
 
@@ -1344,76 +1412,6 @@ class Yikes_Inc_Easy_MailChimp_Extender_Process_Submission_Handler {
 		}
 
 		wp_send_json_error( $response_array );
-	}
-
-	/** Static functions used in other places **/
-
-	/**
-	* Handle the redirect logic for successful submissions
-	*
-	* @since 6.3.0
-	*
-	* @param array | $submission_settings	| Array of the form's submission settings
-	* @param array | $page_data				| Page ID
-	* @return array| $redirect_array		| Array with two values: Redirection flag, Redirect URL
-	*/
-	public static function handle_submission_response_success_redirect( $form_id, $submission_settings, $page_data ) {
-
-		$default_redirect_time_ms = 1500;
-
-		// Set up our return array with default values
-		$redirect_array = array(
-			'redirection' 	 => 0,
-			'redirect'		 => '',
-			'new_window'	 => false,
-			'redirect_timer' => $default_redirect_time_ms,
-		);
-
-		// Let's confirm we have a value before trying to use it
-		$redirect_setting = isset( $submission_settings['redirect_on_submission'] ) ? $submission_settings['redirect_on_submission'] : false;
-
-		// Check the redirect flag
-		if ( '1' === $redirect_setting ) {
-
-			// Supply return array with default value of 1
-			$redirect_array['redirection']	= apply_filters( 'yikes-mailchimp-redirection', 1, $form_id, $page_data );
-
-			// Let's confirm we have redirect_page/custom_redirect_url/new_window values
-			$redirect_page_setting	 = isset( $submission_settings['redirect_page'] ) ? $submission_settings['redirect_page'] : false;
-			$custom_redirect_setting = isset( $submission_settings['custom_redirect_url'] ) ? $submission_settings['custom_redirect_url'] : false;
-			$redirect_new_window	 = isset( $submission_settings['redirect_new_window'] ) ? $submission_settings['redirect_new_window'] : false;
-
-			$redirect_array['new_window'] = apply_filters( 'yikes-mailchimp-redirect-new-window', $redirect_new_window, $form_id, $page_data );
-
-			// Check if we're redirecting to a custom_url or just the redirect_page
-			$redirect_url = 'custom_url' !== $redirect_page_setting ? get_permalink( $redirect_page_setting ) : $custom_redirect_setting;
-
-			/**
-			*	yikes-mailchimp-redirect-url
-			*
-			*	Catch the redirect URL before it's shown to the user
-			*
-			*	@param string | $redirect_url	| The URL that we will redirect to
-			*	@param string | $form_id		| The ID of the current form being subscribed to
-			*	@param array  | $page_data		| An array of data related to the page the form is on
-			*/
-			$redirect_url = apply_filters( 'yikes-mailchimp-redirect-url', $redirect_url, $form_id, $page_data );
-
-			/**
-			*	yikes-mailchimp-redirect-timer
-			*
-			*	Catch the redirect timer before it's sent to the JavaScript file
-			*
-			*	@param int | $default_redirect_time_ms | The default time (1500 milliseconds) to wait before redirecting
-			*/
-			$redirect_timer = apply_filters( 'yikes-mailchimp-redirect-timer', $default_redirect_time_ms, $form_id, $page_data );
-
-			$redirect_array['redirect_timer'] = $redirect_timer;
-
-			$redirect_array['redirect'] = $redirect_url;
-		}
-
-		return $redirect_array;
 	}
 
 }

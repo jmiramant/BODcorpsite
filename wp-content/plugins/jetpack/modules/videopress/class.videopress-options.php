@@ -6,6 +6,9 @@ class VideoPress_Options {
 	public static $option_name = 'videopress';
 
 	/** @var array */
+	public static $jetpack_plans_with_videopress = array( 'jetpack_premium', 'jetpack_business' );
+
+	/** @var array */
 	protected static $options = array();
 
 	/**
@@ -18,7 +21,7 @@ class VideoPress_Options {
 		}
 
 		$defaults = array(
-			'meta' => array(
+			'meta'           => array(
 				'max_upload_size' => 0,
 			),
 		);

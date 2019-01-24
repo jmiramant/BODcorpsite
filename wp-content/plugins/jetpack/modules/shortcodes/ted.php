@@ -45,9 +45,9 @@ function shortcode_ted( $atts ) {
 	$args = array();
 	if ( is_numeric( $atts['width'] ) ) {
 		$args['width'] = $atts['width'];
-	} elseif ( $embed_size_w = get_option( 'embed_size_w' ) ) {
+	} else if ( $embed_size_w = get_option( 'embed_size_w' ) ) {
 		$args['width'] = $embed_size_w;
-	} elseif ( ! empty( $GLOBALS['content_width'] ) ) {
+	} else if ( ! empty( $GLOBALS['content_width'] ) ) {
 		$args['width'] = (int) $GLOBALS['content_width'];
 	} else {
 		$args['width'] = 500;

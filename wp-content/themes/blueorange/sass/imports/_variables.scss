@@ -1,0 +1,48 @@
+// MEDIA QUERIES
+$smallmobile: "screen and (max-width: 320px)";
+$mobile: "screen and (max-width: 480px)";
+$minimobile: "screen and (max-width: 575px)";
+$fablet: "screen and (max-width: 600px)";
+$tablet: "screen and (max-width: 768px)";
+/*$responsive: "screen and (max-width: 991px)";*/
+$tabletlandscape: "screen and (max-width: 990px)";
+$mobiledevice: "screen and (max-width: 1024px)";
+$desktop: "screen and (min-width: 1025px)";
+$minidesktop:"screen and (max-width: 1250px)";
+$smalldesktop: "screen and (min-width: 1025px) and (max-width: 1680px)";
+$largedesktopmax: "screen and (max-width: 1680px)";
+$largedesktop: "screen and (min-width: 1681px)";
+$verylargedesktop: "screen and (min-width: 2101px)";
+$highdensity: "only screen and (-webkit-min-device-pixel-ratio: 1.5)", "only screen and (min--moz-device-pixel-ratio: 1.5)", "only screen and (-o-min-device-pixel-ratio: 3/2)", "only screen and (min-device-pixel-ratio: 1.5)";
+
+
+// Global Colors
+$black: #000000;
+$white: #ffffff;
+//$grey:#565959;
+$bg:#f2f6f9;
+$grey:#969999;
+$text:#565959;
+$head: #252525;
+$placeholder: #999999;
+$blue:#10c7da;
+$purple: #920fe2;
+$primary:#113559;
+$secondary:#fda22b;
+
+
+
+
+//Typography
+$base-font:'Titillium Web', sans-serif;
+$headings-font:'Titillium Web', sans-serif;
+$font-size-base: 14px;
+$thinwt: 100;
+$lightwt: 300;
+$regularwt: 400;
+$mediumwt: 500;
+$boldwt: 700;
+$blackwt: 900;
+$headings: h1 h2 h3 h4 h5 h6;
+$font-size-upper: $font-size-base * 3;
+$font-size-dec: 6px;

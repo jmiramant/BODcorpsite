@@ -11,3 +11,141 @@ Version: 		1.6.1.1
 /* Theme customization starts here
 -------------------------------------------------------------- */
 #Footer .footer_copy{border:none !important}
+/* .aos-animate[data-aos^="zoom"][data-aos^="zoom"] {
+    opacity: 1 !important;
+    transform: translateZ(0) scale(1) !important;
+}
+[data-aos][data-aos][data-aos-easing="ease"], body[data-aos-easing="ease"] [data-aos] {
+    transition-timing-function: ease !important;
+}
+[data-aos][data-aos][data-aos-duration="1200"], body[data-aos-duration="1200"] [data-aos] {
+    transition-duration: 1.2s !important;
+}
+[data-aos^="zoom"][data-aos^="zoom"] {
+    opacity: 0;
+    transition-property: opacity,transform !important;
+}
+[data-aos="zoom-out-up"] {
+    transform: translate3d(0,100px,0) scale(1.2) !important;
+} */
+.header-transparent #Top_bar .menu > li > a::after {
+    background: #fda22b !important;
+}
+#topcase {
+    padding-top: 80px !important;
+}
+
+@media screen and (max-width:1199px){
+    .prcessinftxt h2 { font-size: 38px;  line-height: 44px; }
+    .fancyheading {  font-size: 36px; line-height: 40px;}
+    .themetxtbox { font-size: 22px !important; line-height: 36px !important; }
+    .desc { font-size: 19px !important; line-height: 30px !important;}
+    h2#pageheading {font-size: 50px; line-height: 55px; }
+    .innerheading { font-size: 28px !important;line-height: 24px !important; }
+}
+@media screen and (max-width:991px){
+
+    .innerheading { font-size: 20px !important; line-height: 16px !important;}
+    .prcessinftxt h2 { font-size: 28px; line-height: 35px;}
+    .desc { font-size: 15px !important; line-height: 22px !important;}
+    .themetxtbox { font-size: 18px !important; line-height: 30px !important;}
+    .caseleftimg img { min-height: 620px !important;}
+    body .caserightimg img { height: 380px !important;}
+    h2#pageheading { font-size: 45px; line-height: 48px; }
+}
+@media screen and (max-width:767px){
+    body.page-id-252 #logo .logo-sticky{ display: none !important;}
+    body.page-id-252 #Top_bar .logo #logo{ text-align: left;   margin: 10px 30px !important;}
+    h2#pageheading { font-size: 25px !important; line-height: 30px !important; }
+    #Topheading.vc_custom_1533634965275 { padding-bottom: 20px !important;  padding-top: 20px !important;}
+    .innerheading { float: left !important;  position: relative;}
+    #casebox .wpb_wrapper > div{ min-height: 0px !important;}
+    .fancyheading {  font-size: 24px;  line-height: 30px;}
+    .caseleftimg img { min-height: 0px !important; }
+    body .caserightimg img {  height: auto !important; }
+    .prcessinftxt h2{ text-align: left ; font-size: 24px;  line-height: 30px;}
+
+}
+@media screen and (max-width:414px){
+    .prcessinftxt h2 { font-size: 22px; line-height: 30px; }
+
+}
+
+a.buttonround:visited{ color: #fff !important}
+div#myborder {
+    display: inline-block !important;
+    width: 0px !important;
+    height: 4px !important;
+    background: #FDA22B !important;
+    transition: all ease-in-out 0.5s !important;
+    vertical-align: middle !important;
+}
+div#myborder.mainborder {  
+    width: 220px !important;
+}
+#stackheading,#leverageheading{ position: relative;}
+#stackheading::before {
+    background: #fda22b none repeat scroll 0 0;
+    content: "";
+    height: 4px;
+    left: 0px;
+    position: absolute;
+    top: 30px;
+    width: 0px;
+    transition: all ease-in-out 0.5s
+}
+#stackheading.bigborder::before{
+    width: 150px;
+    left: -135px;
+}
+#leverageheading:before{
+    background: #fda22b none repeat scroll 0 0;
+    content: "";
+    height: 4px;
+    right: 0px;
+    position: absolute;
+    top: 30px;
+    width: 0px;
+    transition: all ease-in-out 0.5s
+}
+#leverageheading.bigborder::before{
+    width: 220px;
+    right: -215px;
+
+}
+.buttonround, .buttonround:hover{
+    color: #fff !important;
+}
+#slide-5-layer-1::after {
+    background: #fda22b none repeat scroll 0 0;
+    bottom: 0;
+    content: "";
+    height: 3px;
+    position: absolute;
+    right: 0;
+    width: 0px;
+    transition: all ease-in-out 0.5s
+}
+#slide-5-layer-1.bigborder::after {
+
+    width: 220px;
+
+}
+#slide-3-layer-1::after {
+    background: #fda22b none repeat scroll 0 0;
+    bottom: 32px;
+    content: "";
+    height: 3px;
+    position: absolute;
+    right: auto;
+    transform: translateX(10px);
+    transition: all 0.5s ease-in-out 0s;
+    width: 0px;
+}
+#slide-3-layer-1.bigborder::after {
+    width: 320px;
+}
+#whysection{ background-position: center -70px !important;}
+.section_wrapper.mcb-section-inner .wrap.mcb-wrap.one.valign-top div#rev_slider_4_2_wrapper .tp-bgimg.defaultimg {
+    background-color: #133d5c !important;
+}

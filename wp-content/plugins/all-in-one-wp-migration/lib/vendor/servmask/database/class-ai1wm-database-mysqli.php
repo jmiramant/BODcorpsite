@@ -48,7 +48,7 @@ class Ai1wm_Database_Mysqli extends Ai1wm_Database {
 	/**
 	 * Return the error code for the most recent function call
 	 *
-	 * @return integer
+	 * @return int
 	 */
 	public function errno() {
 		return mysqli_errno( $this->wpdb->dbh );
@@ -96,7 +96,7 @@ class Ai1wm_Database_Mysqli extends Ai1wm_Database {
 	 * Return the number for rows from MySQL results
 	 *
 	 * @param  resource $result MySQL resource
-	 * @return integer
+	 * @return int
 	 */
 	public function num_rows( $result ) {
 		return mysqli_num_rows( $result );
@@ -106,7 +106,7 @@ class Ai1wm_Database_Mysqli extends Ai1wm_Database {
 	 * Free MySQL result memory
 	 *
 	 * @param  resource $result MySQL resource
-	 * @return boolean
+	 * @return bool
 	 */
 	public function free_result( $result ) {
 		return mysqli_free_result( $result );

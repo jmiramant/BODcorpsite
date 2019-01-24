@@ -454,12 +454,7 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Opengraph' ) ) {
 					'name'    => __( 'Facebook Debug', 'all-in-one-seo-pack' ),
 					'type'    => 'html',
 					'save'    => false,
-					'default' => '<a 
-						name="aioseop_opengraph_settings_facebook_debug"
-						id="aioseop_opengraph_settings_facebook_debug"
-						class="button-primary"
-						href=""
-						target="_blank">' . __( 'Debug This Post', 'all-in-one-seo-pack' ) . '</a>',
+					'default' => $this->get_facebook_debug(),
 				),
 				'section'                => array(
 					'name'     => __( 'Article Section', 'all-in-one-seo-pack' ),
@@ -779,12 +774,8 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Opengraph' ) ) {
 							);
 					}
 
-					// #1308 - we want to make sure we are ignoring php version only in the admin area while editing the post, so that it does not impact #932.
-					$screen = get_current_screen();
-					$ignore_php_version = is_admin() && isset( $screen->id ) && 'post' == $screen->id;
-
 					// Add filters
-					$description = apply_filters( 'aioseop_description', $description, false, $ignore_php_version );
+					$description = apply_filters( 'aioseop_description', $description );
 					// Add placholders
 					$settings[ "{$prefix}title" ]['placeholder'] = apply_filters( 'aioseop_opengraph_placeholder', $title );
 					$settings[ "{$prefix}desc" ]['placeholder']  = apply_filters( 'aioseop_opengraph_placeholder', $description );
@@ -946,6 +937,8 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Opengraph' ) ) {
 
 			$attributes = apply_filters(
 				$this->prefix . 'attributes', array(
+					'itemscope',
+					'itemtype="http://schema.org/' . ucfirst( $type ) . '"',
 					'prefix="og: http://ogp.me/ns#"',
 				)
 			);
@@ -976,7 +969,6 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Opengraph' ) ) {
 		function add_meta() {
 			global $post, $aiosp, $aioseop_options, $wp_query;
 			$metabox           = $this->get_current_options( array(), 'settings' );
-			$key               = $this->options['aiosp_opengraph_key'];
 			$key               = $this->options['aiosp_opengraph_key'];
 			$dimg              = $this->options['aiosp_opengraph_dimg'];
 			$current_post_type = get_post_type();
@@ -1252,12 +1244,7 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Opengraph' ) ) {
 				if ( empty( $this->options['aiosp_opengraph_defimg'] ) ) {
 					$thumbnail = $this->options['aiosp_opengraph_dimg'];
 				} else {
-					$img_type = $this->options['aiosp_opengraph_defimg'];
-					if ( ! empty( $post ) ) {
-						// Customize the type of image per post/post_type.
-						$img_type = apply_filters( $this->prefix . 'default_image_type', $img_type, $post, $type );
-					}
-					switch ( $img_type ) {
+					switch ( $this->options['aiosp_opengraph_defimg'] ) {
 						case 'featured':
 							$thumbnail = $this->get_the_image_by_post_thumbnail();
 							break;
@@ -1291,12 +1278,8 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Opengraph' ) ) {
 				}
 			}
 
-			if ( empty( $thumbnail ) && ! empty( $this->options['aiosp_opengraph_fallback'] ) ) {
+			if ( ( empty( $thumbnail ) && ! empty( $this->options['aiosp_opengraph_fallback'] ) ) ) {
 				$thumbnail = $this->options['aiosp_opengraph_dimg'];
-				if ( ! empty( $post ) ) {
-					// Customize the default image per post/post_type.
-					$thumbnail = apply_filters( $this->prefix . 'default_image', $thumbnail, $post, $type );
-				}
 			}
 
 			if ( ! empty( $thumbnail ) ) {
@@ -1439,8 +1422,7 @@ if ( ! class_exists( 'All_in_One_SEO_Pack_Opengraph' ) ) {
 						} else {
 							// For everything else.
 							foreach ( $filtered_value as $f ) {
-								// #1363: use esc_attr( $f ) instead of htmlspecialchars_decode( $f, ENT_QUOTES )
-								echo '<meta ' . $tags[ $t ]['name'] . '="' . $v . '" ' . $tags[ $t ]['value'] . '="' . esc_attr( $f ) . '" />' . "\n";
+								echo '<meta ' . $tags[ $t ]['name'] . '="' . $v . '" ' . $tags[ $t ]['value'] . '="' . $f . '" />' . "\n";
 							}
 						}
 					}
@@ -1647,34 +1629,6 @@ END;
 		}
 
 		/**
-		 * Admin Enqueue Scripts
-		 *
-		 * Add hook in \All_in_One_SEO_Pack_Module::enqueue_metabox_scripts - Bails adding hook if not on target valid screen.
-		 * Add hook in \All_in_One_SEO_Pack_Module::add_page_hooks - Function itself is hooked based on the screen_id/page.
-		 *
-		 * @since 2.9.2
-		 *
-		 * @see 'admin_enqueue_scripts' hook
-		 * @link https://developer.wordpress.org/reference/hooks/admin_enqueue_scripts/
-		 *
-		 * @param string $hook_suffix
-		 */
-		public function admin_enqueue_scripts( $hook_suffix ) {
-			wp_enqueue_script(
-				'aioseop-opengraph-script',
-				AIOSEOP_PLUGIN_URL . 'js/modules/aioseop_opengraph.js',
-				array(),
-				AIOSEOP_VERSION
-			);
-
-			// Dev note: If certain JS files need to be restricted to select screens, then follow concept
-			// used in `All_in_One_SEO_Pack::admin_enqueue_scripts()` (v2.9.1); which uses the `$hook_suffix`
-			// and a switch-case. This also helps prevent unnessecarily processing localized data when it isn't needed.
-
-			parent::admin_enqueue_scripts( $hook_suffix );
-		}
-
-		/**
 		 * Enqueue our file upload scripts and styles.
 		 * @param $hook
 		 */
@@ -1750,6 +1704,37 @@ END;
 				$options[ $prefix . 'customimg_checker' ] = 0;
 			}
 			return $options;
+		}
+
+		/**
+		 * Returns facebook debug script and link.
+		 * @since 2.4.14
+		 *
+		 * @return string
+		 */
+		private function get_facebook_debug() {
+			ob_start();
+			?>
+            <script>
+                jQuery(document).ready(function () {
+                    var snippet = jQuery("#aioseop_snippet_link");
+                    if (snippet.length === 0) {
+                        jQuery("#aioseop_opengraph_settings_facebook_debug_wrapper").hide();
+                    } else {
+                        snippet = snippet.html();
+                        jQuery("#aioseop_opengraph_settings_facebook_debug")
+                            .attr("href", "https://developers.facebook.com/tools/debug/sharing/?q=" + snippet);
+                    }
+                });
+            </script>
+            <a name="aioseop_opengraph_settings_facebook_debug"
+               id="aioseop_opengraph_settings_facebook_debug"
+               class="button-primary"
+               href=""
+               target="_blank"
+            ><?php echo __( 'Debug This Post', 'all-in-one-seo-pack' ); ?></a>
+			<?php
+			return ob_get_clean();
 		}
 	}
 }

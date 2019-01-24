@@ -1,0 +1,49 @@
+header#masthead{
+  @include position($p:fixed, $l:0, $t:0);
+  @include transition;
+  z-index: 3;
+  padding: 50px 0;
+  width: 100%;
+  .site-branding{
+    img{
+      max-width: 115px;
+      height: auto;
+      @include transition;
+    }
+    .site-title{
+      display: none;
+    }
+  }
+  nav#site-navigation{
+    @include transition;
+    font-size: 24px;
+    li{
+      @include transition;
+      display: inline-block;
+      margin-right: 20px;
+      a{
+        color: $white;
+        padding: 10px 15px;
+        &:hover{
+          color: $secondary;
+        }
+      }
+    }
+  }
+  &.darkHeader{
+    background: $primary;
+    padding: 20px 0 12px;
+    .site-branding{
+      img{
+        max-width:85px;
+      }
+    }
+    nav#site-navigation {
+      font-size: 20px;
+      li{
+        margin-right: 10px;
+        a{}
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+/*
+Theme Name: blueorange
+Author: Studio Matrix
+Description: Custom WordPress Theme for Blue Orange developed by Studio Matrix
+Version: 1.0.0
+Text Domain: Blueorange
+Tags: responsive, white, custom post types*/
+
+
+/*--------------------------------------------------------------
+# Import
+--------------------------------------------------------------*/
+@import "imports/_reset";
+@import "imports/_variables";
+@import "imports/_mixins";
+@import "imports/_base";
+@import "imports/_placeholder";
+
+
+/*--------------------------------------------------------------
+# Global Page
+--------------------------------------------------------------*/
+@import "common/_global.scss";
+
+/*--------------------------------------------------------------
+# Header & Footer
+--------------------------------------------------------------*/
+@import "common/_header";
+@import "common/_footer";
+
+
+/*--------------------------------------------------------------
+# Pages
+--------------------------------------------------------------*/
+@import "pages/_home";
+
+/*--------------------------------------------------------------
+# Responsive
+--------------------------------------------------------------*/
+@import "common/_responsive.scss";
+

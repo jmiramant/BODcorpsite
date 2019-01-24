@@ -42,9 +42,7 @@ if ( sharing_js_options && sharing_js_options.counts ) {
 						jQuery.getScript( service_request );
 					}
 
-					if ( sharing_js_options.is_stats_active ) {
-						WPCOMSharing.bump_sharing_count_stat( service );
-					}
+					WPCOMSharing.bump_sharing_count_stat( service );
 				}
 
 				WPCOMSharing.done_urls[ id ] = true;

@@ -5,12 +5,11 @@
  * This file will be included in module-extras.php.
  */
 
-function jetpack_verification_validate( $verification_services_codes ) {
+function jetpack_verification_validate( &$verification_services_codes ) {
 	foreach ( $verification_services_codes as $key => $code ) {
-		// Parse html meta tag if it does not look like a valid code
-		if ( ! preg_match( '/^[a-z0-9_-]+$/i', $code ) ) {
+		// Parse html meta tags if present
+		if ( stripos( $code, 'meta' ) )
 			$code = jetpack_verification_get_code( $code );
-		}
 
 		$code = esc_attr( trim( $code ) );
 
@@ -34,10 +33,10 @@ function jetpack_verification_validate( $verification_services_codes ) {
 	return $verification_services_codes;
 }
 
-function jetpack_verification_get_code( $code ) {
+function jetpack_verification_get_code( $code ){
 	$pattern = '/content=["\']?([^"\' ]*)["\' ]/is';
 	preg_match( $pattern, $code, $match );
-	if ( $match ) {
+	if ( $match ){
 		return urldecode( $match[1] );
 	} else {
 		return false;

@@ -26,27 +26,20 @@
 class Ai1wm_Directory {
 
 	/**
-	 * Create directory (recursively)
+	 * Delete directory and its contents
+	 * The method will recursively delete a directory and its contents.
 	 *
-	 * @param  string  $path Path to the directory
+	 * @param string $path Path to the directory
 	 * @return boolean
-	 */
-	public static function create( $path ) {
-		return @mkdir( $path, 0777, true );
-	}
-
-	/**
-	 * Delete directory (recursively)
 	 *
-	 * @param  string  $path Path to the directory
-	 * @return boolean
+	 * @throws UnexpectedValueException
 	 */
 	public static function delete( $path ) {
 		// Iterate over directory
 		$iterator = new Ai1wm_Recursive_Directory_Iterator( $path );
 
 		// Recursively iterate over directory
-		$iterator = new Ai1wm_Recursive_Iterator_Iterator( $iterator, RecursiveIteratorIterator::CHILD_FIRST, RecursiveIteratorIterator::CATCH_GET_CHILD );
+		$iterator = new RecursiveIteratorIterator( $iterator, RecursiveIteratorIterator::CHILD_FIRST, RecursiveIteratorIterator::CATCH_GET_CHILD );
 
 		// Remove files and directories
 		foreach ( $iterator as $item ) {
@@ -57,6 +50,7 @@ class Ai1wm_Directory {
 			}
 		}
 
+		// Remove path
 		return @rmdir( $path );
 	}
 }

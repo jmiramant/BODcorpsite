@@ -28,24 +28,26 @@ class Ai1wm_File_Webconfig {
 	/**
 	 * Create web.config file
 	 *
-	 * @param  string  $path Path to file
+	 * The method will create web.config file with contents '<mimeMap fileExtension=".wpress" mimeType="application/octet-stream" />'
+	 *
+	 * @param  string  $path Path to the web.config file
 	 * @return boolean
 	 */
 	public static function create( $path ) {
-		return Ai1wm_File::create( $path, implode( PHP_EOL, array(
-			'<configuration>',
-			'<system.webServer>',
-			'<staticContent>',
-			'<mimeMap fileExtension=".wpress" mimeType="application/octet-stream" />',
-			'</staticContent>',
-			'<defaultDocument>',
-			'<files>',
-			'<add value="index.php" />',
-			'</files>',
-			'</defaultDocument>',
-			'<directoryBrowse enabled="false" />',
-			'</system.webServer>',
-			'</configuration>',
-		) ) );
+		$contents = "<configuration>\n" .
+						"<system.webServer>\n" .
+							"<staticContent>\n" .
+								"<mimeMap fileExtension=\".wpress\" mimeType=\"application/octet-stream\" />\n" .
+							"</staticContent>\n" .
+							"<defaultDocument>\n" .
+								"<files>\n" .
+									"<add value=\"index.php\" />\n" .
+								"</files>\n" .
+							"</defaultDocument>\n" .
+							"<directoryBrowse enabled=\"false\" />\n" .
+						"</system.webServer>\n" .
+					"</configuration>\n";
+
+		return Ai1wm_File::create( $path, $contents );
 	}
 }

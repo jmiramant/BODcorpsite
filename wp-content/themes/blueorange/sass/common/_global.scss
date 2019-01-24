@@ -1,0 +1,224 @@
+//GLOBAL WEBSITE CSS
+
+/*--------------------------------------------------------------
+# html
+--------------------------------------------------------------*/
+html {
+  width: 100%;
+  height: 100%;
+}
+
+/*--------------------------------------------------------------
+# Body
+--------------------------------------------------------------*/
+body {
+  @include font($f: $base-font, $s: $font-size-base, $w: $regularwt);
+  //line-height: 22px;
+  position: relative;
+  z-index: 1;
+  color: $primary;
+  width: 100%;
+}
+
+
+.wrapper{
+  max-width: 1140px;
+  margin: 0 auto;
+}
+.container{
+  max-width: 1200px;
+}
+#content{
+  position: relative;
+}
+
+.btn{
+  border-radius: 4px;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: $grey;
+  font-size: 16px;
+  font-family: $headings-font;
+  padding: 9px 15px 8px 25px;
+  background: $white;
+  box-shadow: 2px 2px 2px rgba(0,0,0,0.15);
+  font-weight: $boldwt;
+  border:none;
+  overflow: hidden;
+  @include transition;
+  &:before{
+    @include position($p:absolute, $l:0, $t:0);
+    @include transition;
+    display: block;
+    content: "";
+    width:10px;
+    background: $primary;
+    height: 100%;
+    position: 1;
+  }
+  &:after{
+    @include transition;
+    font-family: "FontAwesome";
+    font-weight: 900;
+    content: "\f178";
+    display: inline-block;
+    margin-left: 10px;
+    position: relative;
+    z-index: 2;
+  }
+  span{
+    position: relative;
+    z-index: 2;
+  }
+  &:hover{
+    color: $white;
+    &:before{
+      width: 100%;
+    }
+    &:after{
+      color: $white;
+    }
+  }
+}
+
+.owl-theme .owl-dots{
+  @include position($p:absolute, $l:50%, $b:20px);
+  @include translator($x:-50%, $y:0);
+  width: auto;
+  button.owl-dot{
+    border: none;
+    padding: 0;
+    margin: 0;
+    background: none;
+    span{
+      margin: 0 3px;
+      width:13px;
+      height: 8px;
+      @include transition;
+    }
+    &.active{
+      span{
+        width: 35px;
+        background: $primary;
+      }
+    }
+  }
+}
+
+
+.sectionTitle{
+  font-size:52px;
+  font-weight: $boldwt;
+  margin: 90px 0 60px;
+}
+.sectionSubtitle{
+  font-size: 42px;
+  color: $primary;
+  &.light{
+    color: $white;
+  }
+}
+.linked{
+  a{
+    color: $secondary;
+    font-size: 32px;
+    margin-top: 15px;
+    position: relative;
+    padding-right: 55px;
+    display: inline-block;
+    &:before{
+      height: 2px;
+      background: $secondary;
+      width:40px;
+      display: block;
+      content: "";
+      @include transition;
+      @include position($p:absolute, $r:0, $t:27px);
+      @include translator($x:0, $y:-50%)
+    }
+    &:after{
+      height: 14px;
+      border-top:2px solid $secondary;
+      border-right:2px solid $secondary;
+      @include rotate(45deg);
+      @include transition;
+      @include position($p:absolute, $r:0, $t:20px);
+      width: 14px;
+      display: block;
+      content: "";
+    }
+    &:hover{
+      &:before{
+        right: -10px;
+      }
+      &:after{
+        right: -10px;
+      }
+    }
+  }
+}
+.padding{
+  padding: 100px 0;
+}
+.animated{
+  position: relative;
+  display: inline-block;
+  &:after{
+    height: 2px;
+    display: block;
+    content: "";
+    width: 73%;
+    background: $secondary;
+    @include transition;
+    @include position($p:absolute, $l:37%, $b:0);
+  }
+  &.left{
+    &:after{
+      left:0;
+    }
+  }
+}
+
+.drop-down-animation{
+  position: relative;
+  @include position($p:absolute, $b:50px, $l:50%);
+  @include translator($x:-50%, $y:0);
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  z-index: 3;
+  animation: bounce 3s infinite;
+  &:before{
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-left:2px solid $secondary;
+    border-bottom:2px solid $secondary;
+    @include rotate(-45deg)
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -moz-transform: translateY(-30px);
+    -ms-transform: translateY(-30px);
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  60% {
+    -moz-transform: translateY(-15px);
+    -ms-transform: translateY(-15px);
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
