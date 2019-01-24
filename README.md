@@ -26,6 +26,6 @@ Theme: Betheme Child
  
 #Appropriate Comments should be added to code edits explaining the purpose of Code snippet/coditions.
 
-#All the Database changes should be placed inside "/database" folder to keep track of DB changes. Read readme file inside "/database" folder.
+#All the Database changes should be placed inside "/_database" folder to keep track of DB changes. Read readme file inside "/_database" folder.
 
-#All the webpages should be placed inside "/webpages" folder as .html files to keep track of the changes and maintain proper history. Read readme file inside "/webpages" folder.
+#All the webpages should be placed inside "/_webpages" folder as .html files to keep track of the changes and maintain proper history. Read readme file inside "/_webpages" folder.
