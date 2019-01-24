@@ -137,7 +137,6 @@ class Jetpack_Sync_Defaults {
 		'wordads_display_post',
 		'wordads_display_page',
 		'wordads_display_archive',
-		'wordads_custom_adstxt',
 	);
 
 	public static function get_options_whitelist() {
@@ -148,7 +147,7 @@ class Jetpack_Sync_Defaults {
 		 *
 		 * @module sync
 		 *
-		 * @since 4.8.0
+		 * @since 4.8
 		 *
 		 * @param array The default list of options.
 		 */
@@ -167,7 +166,7 @@ class Jetpack_Sync_Defaults {
 		 *
 		 * @module sync
 		 *
-		 * @since 6.1.0
+		 * @since 6.1
 		 *
 		 * @param array The list of options synced without content.
 		 */
@@ -202,7 +201,7 @@ class Jetpack_Sync_Defaults {
 		 *
 		 * @module sync
 		 *
-		 * @since 4.8.0
+		 * @since 4.8
 		 *
 		 * @param array The default list of constants options.
 		 */
@@ -240,7 +239,6 @@ class Jetpack_Sync_Defaults {
 		'site_icon_url'                    => array( 'Jetpack_Sync_Functions', 'site_icon_url' ),
 		'roles'                            => array( 'Jetpack_Sync_Functions', 'roles' ),
 		'timezone'                         => array( 'Jetpack_Sync_Functions', 'get_timezone' ),
-		'available_jetpack_blocks'         => array( 'Jetpack_Gutenberg', 'get_block_availability' ),
 	);
 
 
@@ -282,7 +280,7 @@ class Jetpack_Sync_Defaults {
 		 *
 		 * @module sync
 		 *
-		 * @since 4.8.0
+		 * @since 4.8
 		 *
 		 * @param array The default list of callables.
 		 */
@@ -356,7 +354,7 @@ class Jetpack_Sync_Defaults {
 		 *
 		 * @module sync
 		 *
-		 * @since 4.8.0
+		 * @since 4.8
 		 *
 		 * @param array The default list of multisite callables.
 		 */
@@ -409,7 +407,7 @@ class Jetpack_Sync_Defaults {
 		 *
 		 * @module sync
 		 *
-		 * @since 4.8.0
+		 * @since 4.8
 		 *
 		 * @param array The default list of meta data keys.
 		 */

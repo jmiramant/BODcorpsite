@@ -154,7 +154,7 @@ class Ai1wm_Import_Content {
 			) );
 
 			// Extract a file from archive to WP_CONTENT_DIR
-			if ( ( $completed = $archive->extract_one_file_to( WP_CONTENT_DIR, $exclude_files, $old_paths, $new_paths, $file_bytes_written, $file_bytes_offset ) ) ) {
+			if ( ( $completed = $archive->extract_one_file_to( WP_CONTENT_DIR, $exclude_files, $old_paths, $new_paths, $file_bytes_written, $file_bytes_offset, 10 ) ) ) {
 				$file_bytes_offset = 0;
 			}
 
@@ -171,11 +171,9 @@ class Ai1wm_Import_Content {
 			Ai1wm_Status::info( sprintf( __( 'Restoring %d files...<br />%d%% complete', AI1WM_PLUGIN_NAME ), $total_files_count, $progress ) );
 
 			// More than 10 seconds have passed, break and do another request
-			if ( ( $timeout = apply_filters( 'ai1wm_completed_timeout', 10 ) ) ) {
-				if ( ( microtime( true ) - $start ) > $timeout ) {
-					$completed = false;
-					break;
-				}
+			if ( ( microtime( true ) - $start ) > 10 ) {
+				$completed = false;
+				break;
 			}
 		}
 

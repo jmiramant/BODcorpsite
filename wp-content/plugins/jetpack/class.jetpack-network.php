@@ -201,7 +201,7 @@ class Jetpack_Network {
 		$wp_admin_bar->add_node( array(
 			'parent' => 'network-admin',
 			'id'     => 'network-admin-jetpack',
-			'title'  => 'Jetpack',
+			'title'  => __( 'Jetpack', 'jetpack' ),
 			'href'   => $this->get_url( 'network_admin_page' ),
 		) );
 	}
@@ -267,11 +267,10 @@ class Jetpack_Network {
 	 * @since 2.9
 	 */
 	public function add_network_admin_menu() {
-		add_menu_page( 'Jetpack', 'Jetpack', 'jetpack_network_admin_page', 'jetpack', array( $this, 'wrap_network_admin_page' ), 'div', 3 );
-		$jetpack_sites_page_hook = add_submenu_page( 'jetpack', __( 'Jetpack Sites', 'jetpack' ), __( 'Sites', 'jetpack' ), 'jetpack_network_sites_page', 'jetpack', array( $this, 'wrap_network_admin_page' ) );
-		$jetpack_settings_page_hook = add_submenu_page( 'jetpack', __( 'Settings', 'jetpack' ), __( 'Settings', 'jetpack' ), 'jetpack_network_settings_page', 'jetpack-settings', array( $this, 'wrap_render_network_admin_settings_page' ) );
-		add_action( "admin_print_styles-$jetpack_sites_page_hook",  array( 'Jetpack_Admin_Page', 'load_wrapper_styles' ) );
-		add_action( "admin_print_styles-$jetpack_settings_page_hook",  array( 'Jetpack_Admin_Page', 'load_wrapper_styles' ) );
+		add_menu_page( __( 'Jetpack', 'jetpack' ), __( 'Jetpack', 'jetpack' ), 'jetpack_network_admin_page', 'jetpack', array( $this, 'network_admin_page' ), 'div', 3 );
+		add_submenu_page( 'jetpack', __( 'Jetpack Sites', 'jetpack' ), __( 'Sites', 'jetpack' ), 'jetpack_network_sites_page', 'jetpack', array( $this, 'network_admin_page' ) );
+		add_submenu_page( 'jetpack', __( 'Settings', 'jetpack' ), __( 'Settings', 'jetpack' ), 'jetpack_network_settings_page', 'jetpack-settings', array( $this, 'render_network_admin_settings_page' ) );
+
 		/**
 		 * As jetpack_register_genericons is by default fired off a hook,
 		 * the hook may have already fired by this point.
@@ -358,16 +357,11 @@ class Jetpack_Network {
 	public function show_jetpack_notice() {
 		if ( isset( $_GET['action'] ) && 'connected' == $_GET['action'] ) {
 			$notice = __( 'Site successfully connected.', 'jetpack' );
-			$classname = 'updated';
 		} else if ( isset( $_GET['action'] ) && 'connection_failed' == $_GET['action'] ) {
-			$notice = __( 'Site connection failed!', 'jetpack' );
-			$classname = 'error';
+			$notice = __( 'Site connection <strong>failed</strong>', 'jetpack' );
 		}
-		?>
-		<div id="message" class="<?php echo esc_attr( $classname );?> jetpack-message jp-connect" style="display:block !important;">
-			<p><?php echo esc_html( $notice ); ?></p>
-		</div>
-		<?php
+
+		Jetpack::init()->load_view( 'admin/network-admin-alert.php', array( 'notice' => $notice ) );
 	}
 
 	/**
@@ -485,7 +479,7 @@ class Jetpack_Network {
 		);
 
 		Jetpack::apply_activation_source_to_args( $args['body'] );
-
+		
 		// Attempt to retrieve shadow blog details
 		$response = Jetpack_Client::_wp_remote_request(
 			Jetpack::fix_url_for_bad_hosts( Jetpack::api_url( 'subsiteregister' ) ), $args, true
@@ -548,10 +542,6 @@ class Jetpack_Network {
 		restore_current_blog();
 	}
 
-	function wrap_network_admin_page() {
-		Jetpack_Admin_Page::wrap_ui( array( $this, 'network_admin_page' ) );
-	}
-
 	/**
 	 * Handles the displaying of all sites on the network that are
 	 * dis/connected to Jetpack
@@ -599,6 +589,7 @@ class Jetpack_Network {
 		$myListTable->display();
 		echo '</form></div>';
 
+		$this->network_admin_page_footer();
 	}
 
 	/**
@@ -617,6 +608,14 @@ class Jetpack_Network {
 		Jetpack::init()->load_view( 'admin/network-admin-header.php', $data );
 	}
 
+	/**
+	 * Stylized JP footer formatting
+	 *
+	 * @since 2.9
+	 */
+	function network_admin_page_footer() {
+		Jetpack::init()->load_view( 'admin/network-admin-footer.php' );
+	}
 
 	/**
 	 * Fires when the Jetpack > Settings page is saved.
@@ -695,10 +694,6 @@ class Jetpack_Network {
 		exit();
 	}
 
-	public function wrap_render_network_admin_settings_page() {
-		Jetpack_Admin_Page::wrap_ui( array( $this, 'render_network_admin_settings_page' ) );
-	}
-
 	public function render_network_admin_settings_page() {
 		$this->network_admin_page_header();
 		$options = wp_parse_args( get_site_option( $this->settings_name ), $this->setting_defaults );
@@ -724,6 +719,7 @@ class Jetpack_Network {
 		);
 
 		Jetpack::init()->load_view( 'admin/network-settings.php', $data );
+		$this->network_admin_page_footer();
 	}
 
 	/**

@@ -30,11 +30,7 @@ class Jetpack_Media_Summary {
 		}
 
 		if ( ! class_exists( 'Jetpack_Media_Meta_Extractor' ) ) {
-			if ( defined( 'IS_WPCOM' ) && IS_WPCOM ) {
-				jetpack_require_lib( 'class.wpcom-media-meta-extractor' );
-			} else {
-				jetpack_require_lib( 'class.media-extractor' );
-			}
+			jetpack_require_lib( 'class.media-extractor' );
 		}
 
 		$post      = get_post( $post_id );
@@ -78,7 +74,7 @@ class Jetpack_Media_Summary {
 						if ( 0 == $return['count']['video'] ) {
 							// If there is no id on the video, then let's just skip this
 							if ( ! isset ( $data['id'][0] ) ) {
-								break;
+								continue;
 							}
 
 							$guid = $data['id'][0];
@@ -88,7 +84,7 @@ class Jetpack_Media_Summary {
 							if ( $video_info instanceof stdClass ) {
 								// Continue early if we can't find a Video slug.
 								if ( empty( $video_info->files->std->mp4 ) ) {
-									break;
+									continue;
 								}
 
 								$url = sprintf(

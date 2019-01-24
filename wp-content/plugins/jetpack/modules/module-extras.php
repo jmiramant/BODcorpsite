@@ -25,8 +25,7 @@ $tools = array(
 	'simple-payments/simple-payments.php',
 	'verification-tools/verification-tools-utils.php',
 	'woocommerce-analytics/wp-woocommerce-analytics.php',
-	'geo-location.php',
-	'calypsoify/class.jetpack-calypsoify.php',
+	'geo-location.php'
 );
 
 // Not every tool needs to be included if Jetpack is inactive and not in development mode
@@ -36,11 +35,6 @@ if ( ! Jetpack::is_active() && ! Jetpack::is_development_mode() ) {
 		'seo-tools/jetpack-seo-titles.php',
 		'seo-tools/jetpack-seo-posts.php',
 	);
-}
-
-/* If Gutenberg blocks are enabled, register blocks that aren't associated with modules */
-if ( Jetpack_Gutenberg::should_load_blocks() ) {
-	$tools[] = 'blocks.php';
 }
 
 /**

@@ -15,14 +15,10 @@ class VideoPress_AJAX {
 	private function __construct() {
 		add_action( 'wp_ajax_videopress-get-upload-token', array( $this, 'wp_ajax_videopress_get_upload_token' ) );
 
-		add_action(
-			'wp_ajax_videopress-update-transcoding-status',
-			array(
-				$this,
-				'wp_ajax_update_transcoding_status',
-			),
-			-1
-		);
+		add_action( 'wp_ajax_videopress-update-transcoding-status', array(
+			$this,
+			'wp_ajax_update_transcoding_status'
+		), -1 );
 	}
 
 	/**
@@ -32,7 +28,7 @@ class VideoPress_AJAX {
 	 */
 	public static function init() {
 		if ( is_null( self::$instance ) ) {
-			self::$instance = new VideoPress_AJAX();
+			self::$instance = new VideoPress_AJAX;
 		}
 
 		return self::$instance;
@@ -90,12 +86,10 @@ class VideoPress_AJAX {
 			return;
 		}
 
-		wp_send_json_success(
-			array(
-				'message' => __( 'Status updated', 'jetpack' ),
-				'status'  => videopress_get_transcoding_status( $post_id ),
-			)
-		);
+		wp_send_json_success( array(
+			'message' => __( 'Status updated', 'jetpack' ),
+			'status'  => videopress_get_transcoding_status( $post_id )
+		) );
 	}
 }
 

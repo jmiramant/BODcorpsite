@@ -376,10 +376,7 @@ class WP_REST_Terms_Controller extends WP_REST_Controller {
 		}
 
 		$taxonomy_obj = get_taxonomy( $this->taxonomy );
-		if ( ( is_taxonomy_hierarchical( $this->taxonomy )
-				&& ! current_user_can( $taxonomy_obj->cap->edit_terms ) )
-			|| ( ! is_taxonomy_hierarchical( $this->taxonomy )
-				&& ! current_user_can( $taxonomy_obj->cap->assign_terms ) ) ) {
+		if ( ! current_user_can( $taxonomy_obj->cap->edit_terms ) ) {
 			return new WP_Error( 'rest_cannot_create', __( 'Sorry, you are not allowed to create new terms.' ), array( 'status' => rest_authorization_required_code() ) );
 		}
 
@@ -418,7 +415,7 @@ class WP_REST_Terms_Controller extends WP_REST_Controller {
 			if ( $term_id = $term->get_error_data( 'term_exists' ) ) {
 				$existing_term = get_term( $term_id, $this->taxonomy );
 				$term->add_data( $existing_term->term_id, 'term_exists' );
-				$term->add_data( array( 'status' => 400, 'term_id' => $term_id ) );
+				$term->add_data( array( 'status' => 409, 'term_id' => $term_id ) );
 			}
 
 			return $term;
@@ -441,7 +438,7 @@ class WP_REST_Terms_Controller extends WP_REST_Controller {
 
 		$schema = $this->get_item_schema();
 		if ( ! empty( $schema['properties']['meta'] ) && isset( $request['meta'] ) ) {
-			$meta_update = $this->meta->update_value( $request['meta'], $term->term_id );
+			$meta_update = $this->meta->update_value( $request['meta'], (int) $request['id'] );
 
 			if ( is_wp_error( $meta_update ) ) {
 				return $meta_update;
@@ -455,19 +452,6 @@ class WP_REST_Terms_Controller extends WP_REST_Controller {
 		}
 
 		$request->set_param( 'context', 'view' );
-
-		/**
-		 * Fires after a single term is completely created or updated via the REST API.
-		 *
-		 * The dynamic portion of the hook name, `$this->taxonomy`, refers to the taxonomy slug.
-		 *
-		 * @since 5.0.0
-		 *
-		 * @param WP_Term         $term     Inserted or updated term object.
-		 * @param WP_REST_Request $request  Request object.
-		 * @param bool            $creating True when creating a term, false when updating.
-		 */
-		do_action( "rest_after_insert_{$this->taxonomy}", $term, $request, true );
 
 		$response = $this->prepare_item_for_response( $term, $request );
 		$response = rest_ensure_response( $response );
@@ -557,9 +541,6 @@ class WP_REST_Terms_Controller extends WP_REST_Controller {
 		}
 
 		$request->set_param( 'context', 'view' );
-
-		/** This action is documented in wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php */
-		do_action( "rest_after_insert_{$this->taxonomy}", $term, $request, false );
 
 		$response = $this->prepare_item_for_response( $term, $request );
 
@@ -701,42 +682,42 @@ class WP_REST_Terms_Controller extends WP_REST_Controller {
 	 */
 	public function prepare_item_for_response( $item, $request ) {
 
-		$fields = $this->get_fields_for_response( $request );
+		$schema = $this->get_item_schema();
 		$data   = array();
 
-		if ( in_array( 'id', $fields, true ) ) {
+		if ( ! empty( $schema['properties']['id'] ) ) {
 			$data['id'] = (int) $item->term_id;
 		}
 
-		if ( in_array( 'count', $fields, true ) ) {
+		if ( ! empty( $schema['properties']['count'] ) ) {
 			$data['count'] = (int) $item->count;
 		}
 
-		if ( in_array( 'description', $fields, true ) ) {
+		if ( ! empty( $schema['properties']['description'] ) ) {
 			$data['description'] = $item->description;
 		}
 
-		if ( in_array( 'link', $fields, true ) ) {
+		if ( ! empty( $schema['properties']['link'] ) ) {
 			$data['link'] = get_term_link( $item );
 		}
 
-		if ( in_array( 'name', $fields, true ) ) {
+		if ( ! empty( $schema['properties']['name'] ) ) {
 			$data['name'] = $item->name;
 		}
 
-		if ( in_array( 'slug', $fields, true ) ) {
+		if ( ! empty( $schema['properties']['slug'] ) ) {
 			$data['slug'] = $item->slug;
 		}
 
-		if ( in_array( 'taxonomy', $fields, true ) ) {
+		if ( ! empty( $schema['properties']['taxonomy'] ) ) {
 			$data['taxonomy'] = $item->taxonomy;
 		}
 
-		if ( in_array( 'parent', $fields, true ) ) {
+		if ( ! empty( $schema['properties']['parent'] ) ) {
 			$data['parent'] = (int) $item->parent;
 		}
 
-		if ( in_array( 'meta', $fields, true ) ) {
+		if ( ! empty( $schema['properties']['meta'] ) ) {
 			$data['meta'] = $this->meta->get_value( $item->term_id, $request );
 		}
 

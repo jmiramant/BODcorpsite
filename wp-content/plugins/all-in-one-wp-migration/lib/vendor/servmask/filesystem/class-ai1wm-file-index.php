@@ -26,12 +26,17 @@
 class Ai1wm_File_Index {
 
 	/**
-	 * Create index.php file
+	 * Create a index.php file
 	 *
-	 * @param  string  $path Path to file
+	 * The method will create index.php file with contents '<?php // silence is golden' without the single quotes
+	 * at the path specified by the argument.
+	 *
+	 * @param  string  $path Path to the index.php file
 	 * @return boolean
 	 */
 	public static function create( $path ) {
-		return Ai1wm_File::create( $path, '<?php // silence is golden' );
+		$contents = '<?php // silence is golden';
+
+		return Ai1wm_File::create( $path, $contents );
 	}
 }

@@ -26,28 +26,17 @@
 class Ai1wm_File {
 
 	/**
-	 * Create a file with content
+	 * Create a file with contents
 	 *
-	 * @param  string $path    Path to the file
-	 * @param  string $content Content of the file
+	 * @param string $path     Path to the file
+	 * @param string $contents Contents of the file
+	 *
 	 * @return boolean
 	 */
-	public static function create( $path, $content ) {
-		if ( ! @file_exists( $path ) ) {
-			if ( ! @is_writable( dirname( $path ) ) ) {
-				return false;
-			}
-
-			if ( ! @touch( $path ) ) {
-				return false;
-			}
-		} elseif ( ! @is_writable( $path ) ) {
-			return false;
-		}
-
+	public static function create( $path, $contents ) {
 		$is_written = false;
 		if ( ( $handle = @fopen( $path, 'w' ) ) !== false ) {
-			if ( @fwrite( $handle, $content ) !== false ) {
+			if ( @fwrite( $handle, $contents ) !== false ) {
 				$is_written = true;
 			}
 
@@ -55,17 +44,5 @@ class Ai1wm_File {
 		}
 
 		return $is_written;
-	}
-
-	/**
-	 * Create a file with marker and content
-	 *
-	 * @param  string $path    Path to the file
-	 * @param  string $marker  Name of the marker
-	 * @param  string $content Content of the file
-	 * @return boolean
-	 */
-	public static function create_with_markers( $path, $marker, $content ) {
-		return @insert_with_markers( $path, $marker, $content );
 	}
 }

@@ -45,12 +45,11 @@
 
 					<?php include AI1WM_TEMPLATES_PATH . '/export/export-buttons.php'; ?>
 
+					<?php do_action( 'ai1wm_export_left_end' ); ?>
+
 					<input type="hidden" name="ai1wm_manual_export" value="1" />
 
 				</form>
-
-				<?php do_action( 'ai1wm_export_left_end' ); ?>
-
 			</div>
 		</div>
 		<div class="ai1wm-right">

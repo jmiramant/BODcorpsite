@@ -30,7 +30,7 @@ function process_mailchimp_shortcode( $atts ) {
 	$form_submitted = isset( $form_submitted ) ? $form_submitted : 0;
 
 	/* If the user hasn't authenticated yet, lets kill off */
-	if ( get_option( 'yikes-mc-api-validation' , 'invalid_api_key' ) != 'valid_api_key' ) {
+	if( get_option( 'yikes-mc-api-validation' , 'invalid_api_key' ) != 'valid_api_key' ) {
 		return '<div class="invalid-api-key-error"><p>' . __( "Whoops, you're not connected to MailChimp. You need to enter a valid MailChimp API key." , 'yikes-inc-easy-mailchimp-extender' ) . '</p></div>';
 	}
 
@@ -40,7 +40,7 @@ function process_mailchimp_shortcode( $atts ) {
 	}
 
 	// store our variables
-	$form_id   = (int) $atts['form']; // form id (the id of the form in the database)
+	$form_id = (int) $atts['form']; // form id (the id of the form in the database)
 	$interface = yikes_easy_mailchimp_extender_get_form_interface();
 	$form_data = $interface->get_form( $form_id );
 
@@ -53,49 +53,46 @@ function process_mailchimp_shortcode( $atts ) {
 	*	Check if the user wants to use reCAPTCHA Spam Prevention
 	*/
 	if ( get_option( 'yikes-mc-recaptcha-status' , '' ) == '1' ) {
-
-		// Allow users to manually set recaptcha (instead of globally - recaptcha="1"/recaptcha="0" - but still needs to be globally enabled on the settings page).
+		// allow users to manually set recaptcha (instead of globally - recaptcha="1"/recaptcha="0" - but still needs to be globally enabled on the settings page)
 		if ( $atts['recaptcha'] != '0' ) {
-
-			// If either of the Private the Secret key is left blank, we should display an error back to the user.
-			if ( get_option( 'yikes-mc-recaptcha-site-key' , '' ) == '' ) {
+			// if either of the Private the Secret key is left blank, we should display an error back to the user
+			if( get_option( 'yikes-mc-recaptcha-site-key' , '' ) == '' ) {
 				return __( "Whoops! It looks like you enabled reCAPTCHA but forgot to enter the reCAPTCHA site key!" , 'yikes-inc-easy-mailchimp-extender' ) . '<span class="edit-link yikes-easy-mc-edit-link"><a class="post-edit-link" href="' . esc_url( admin_url( 'admin.php?page=yikes-inc-easy-mailchimp-settings&section=recaptcha-settings' ) ) . '" title="' . __( 'ReCaptcha Settings' , 'yikes-inc-easy-mailchimp-extender' ) . '">' . __( 'Edit ReCaptcha Settings' , 'yikes-inc-easy-mailchimp-extender' ) . '</a></span>';
 			}
-			if ( get_option( 'yikes-mc-recaptcha-secret-key' , '' ) == '' ) {
+			if( get_option( 'yikes-mc-recaptcha-secret-key' , '' ) == '' ) {
 				return __( "Whoops! It looks like you enabled reCAPTCHA but forgot to enter the reCAPTCHA secret key!" , 'yikes-inc-easy-mailchimp-extender' ) . '<span class="edit-link yikes-easy-mc-edit-link"><a class="post-edit-link" href="' . esc_url( admin_url( 'admin.php?page=yikes-inc-easy-mailchimp-settings&section=recaptcha-settings' ) ) . '" title="' . __( 'ReCaptcha Settings' , 'yikes-inc-easy-mailchimp-extender' ) . '">' . __( 'Edit ReCaptcha Settings' , 'yikes-inc-easy-mailchimp-extender' ) . '</a></span>';
 			}
 
-			$has_recaptcha = true;
+			if( ! empty( $atts['recaptcha_type'] ) ) {
+				echo $atts['recaptcha_type'];
+			}
 
-			// Store the site language (to load recaptcha in a specific language).
-			$locale       = get_locale();
+			// Store the site language (to load recaptcha in a specific language)
+			$locale = get_locale();
 			$locale_split = explode( '_', $locale );
-
-			// Setup reCAPTCHA parameters.
-			$lang       = ! empty( $locale_split ) ? $locale_split[0] : $locale;
-			$lang       = ! empty( $atts['recaptcha_lang'] ) ? $atts['recaptcha_lang'] : $lang;
-			$type       = ! empty( $atts['recaptcha_type'] ) ? strtolower( $atts['recaptcha_type'] ) : 'image'; // setup recaptcha type
-			$theme      = ! empty( $atts['recaptcha_theme'] ) ? strtolower( $atts['recaptcha_theme'] ) : 'light'; // setup recaptcha theme
-			$size       = ! empty( $atts['recaptcha_size'] ) ? strtolower( $atts['recaptcha_size'] ) : 'normal'; // setup recaptcha size
-			$data_cb    = ! empty( $atts['recaptcha_data_callback'] ) ? $atts['recaptcha_data_callback'] : false; // setup recaptcha size
-			$expired_cb = ! empty( $atts['recaptcha_expired_callback'] ) ? $atts['recaptcha_expired_callback'] : false; // setup recaptcha size
-
-			// Pass the shortcode parameters through a filter.
+			// Setup reCAPTCHA parameters
+			$lang = ( ! empty( $locale_split ) ? $locale_split[0] : $locale );
+			$lang = ( ! empty( $atts['recaptcha_lang'] ) ) ? $atts['recaptcha_lang'] : $lang;
+			$type = ( ! empty( $atts['recaptcha_type'] ) ) ? strtolower( $atts['recaptcha_type'] ) : 'image'; // setup recaptcha type
+			$theme= ( ! empty( $atts['recaptcha_theme'] ) ) ? strtolower( $atts['recaptcha_theme'] ) : 'light'; // setup recaptcha theme
+			$size = ( ! empty( $atts['recaptcha_size'] ) ) ? strtolower( $atts['recaptcha_size'] ) : 'normal'; // setup recaptcha size
+			$data_callback = ( ! empty( $atts['recaptcha_data_callback'] ) ) ? $atts['recaptcha_data_callback'] : false; // setup recaptcha size
+			$expired_callback = ( ! empty( $atts['recaptcha_expired_callback'] ) ) ? $atts['recaptcha_expired_callback'] : false; // setup recaptcha size
+			// Pass the shortcode parameters through a filter
 			$recaptcha_shortcode_params = apply_filters( 'yikes-mailchimp-recaptcha-parameters', array(
-				'language'         => $lang,
-				'theme'            => $theme,
-				'type'             => $type,
-				'size'             => $size,
-				'success_callback' => $data_cb,
-				'expired_callback' => $expired_cb,
+				'language' => $lang,
+				'theme' => $theme,
+				'type' => $type,
+				'size' => $size,
+				'success_callback' => $data_callback,
+				'expired_callback' => $expired_callback,
 			), $atts['form'] );
 
-			// Enqueue Google recaptcha JS.
+			// enqueue Google recaptcha JS
 			wp_register_script( 'google-recaptcha-js' , 'https://www.google.com/recaptcha/api.js?hl=' . $recaptcha_shortcode_params['language'] . '&onload=renderReCaptchaCallback&render=explicit', array( 'jquery', 'form-submission-helpers' ) , 'all' );
 			wp_enqueue_script( 'google-recaptcha-js' );
-
 			$recaptcha_site_key = get_option( 'yikes-mc-recaptcha-site-key' , '' );
-			$recaptcha_box      = '<div class="g-recaptcha" data-sitekey="' . esc_attr( $recaptcha_site_key ) . '" data-theme="' . esc_attr( $recaptcha_shortcode_params['theme'] ) . '" data-type="' . esc_attr( $recaptcha_shortcode_params['type'] ) . '" data-size="' . esc_attr( $recaptcha_shortcode_params['size'] ) . '" data-callback="' . esc_attr( $recaptcha_shortcode_params['success_callback'] ) . '" data-expired-callback="' . esc_attr( $recaptcha_shortcode_params['expired_callback'] ) . '"></div>';
+			$recaptcha_box = '<div class="g-recaptcha" data-sitekey="' . esc_attr( $recaptcha_site_key ) . '" data-theme="' . esc_attr( $recaptcha_shortcode_params['theme'] ) . '" data-type="' . esc_attr( $recaptcha_shortcode_params['type'] ) . '" data-size="' . esc_attr( $recaptcha_shortcode_params['size'] ) . '" data-callback="' . esc_attr( $recaptcha_shortcode_params['success_callback'] ) . '" data-expired-callback="' . esc_attr( $recaptcha_shortcode_params['expired_callback'] ) . '"></div>';
 		}
 	}
 
@@ -231,54 +228,25 @@ function process_mailchimp_shortcode( $atts ) {
 		}
 	}
 
-	// If the recaptcha or GDPR compliance plugins are active, traditional inline styles will not work.
-	$inline_form_override = isset( $has_recaptcha ) || ( function_exists( 'is_plugin_active' ) && is_plugin_active( 'eu-opt-in-compliance-for-mailchimp/yikes-inc-easy-mailchimp-eu-law-compliance-extension.php' ) );
-
-	if ( $form_inline ) {
+	if( $form_inline ) {
 		$field_width          = (float) ( 100 / $field_count );
-		$submit_button_width  = ! $inline_form_override ? (float) ( 20 / $field_count ) : 0;
+		$submit_button_width  = (float) ( 20 / $field_count );
 		$inline_offset        = apply_filters( 'yikes-mailchimp-inline-offset', 1.0, $form_id );
 		$total_inline_offset  = (float) $submit_button_width + $inline_offset;
 		$inline_padding_right = apply_filters( 'yikes-mailchimp-inline-padding-right', '10px', $form_id );
 		$inline_field_width   = apply_filters( 'yikes-mailchimp-inline-field-width', $field_width - $total_inline_offset, $form_id );
 		$custom_inline_styles = apply_filters( 'yikes-mailchimp-custom-inline-styles', '', $form_id );
-		$float_style          = apply_filters( 'yikes-mailchimp-inline-float', ! $inline_form_override ? 'left' : 'none', $form_id );
-		$mobile_width         = $field_width - $inline_offset;
-		$stack_forms_width    = apply_filters( 'yikes_mailchimp_inline_stack_fields_width', '650px', $form_id );
-
 		/*
 		*	Add inline styles after calculating the percentage etc.
 		*	@since 6.0.3.8
 		*/
 		 $inline_label_css = "
 			.yikes-easy-mc-form label.label-inline {
-				float: {$float_style};
+				float: left;
 				width: {$inline_field_width}%;
 				padding-right: {$inline_padding_right};
 				{$custom_inline_styles}
 			 }
-
-			 /* Drop the submit button (100% width) below the fields */
-			 @media ( max-width: 768px ) {
-			 	.yikes-easy-mc-form label.label-inline {
-					width: {$mobile_width}%;
-					padding-right: {$inline_padding_right};
-				}
-				.yikes-easy-mc-form .submit-button-inline-label {
-					width: 100%;
-					float: none;
-				}
-				.yikes-easy-mc-form .submit-button-inline-label .empty-label {
-					display: none;
-				}
-			}
-
-			/* Stack all fields @ 100% */
-			@media ( max-width: {$stack_forms_width} ) {
-				.yikes-easy-mc-form label.label-inline {
-					width: 100%;
-				}
-			}
 		";
 		wp_add_inline_style( 'yikes-inc-easy-mailchimp-public-styles', $inline_label_css );
 	}
@@ -361,22 +329,20 @@ function process_mailchimp_shortcode( $atts ) {
 			echo sprintf( '<section class="yikes-mailchimp-form-description yikes-mailchimp-form-description-%1$s">%2$s</section>', $form_id, $description );
 		}
 
-		// Used in `yikes-mailchimp-redirect-url` filter
-		// Note: as of 6.4, this is now just the post ID - not the entire post object.
-		global $post;
-		$page_data = isset( $post->ID ) ? $post->ID : 0;
-		$page_data = apply_filters( 'yikes-mailchimp-page-data', $page_data, $form_id );
-
-		$min = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
-
 		// Check for AJAX
 		if( ( ! empty( $atts['ajax'] ) && $atts['ajax'] == 1 ) || $form_data['submission_settings']['ajax'] == 1 ) {
 
-			// Enqueue our ajax script
+			// Used in `yikes-mailchimp-redirect-url` filter
+			// Note: as of 6.4, this is now just the post ID - not the entire post object.
+			global $post;
+			$page_data = isset( $post->ID ) ? $post->ID : 0;
+
+			// enqueue our ajax script
+			$min = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 			wp_enqueue_script( 'yikes-easy-mc-ajax' , YIKES_MC_URL . "public/js/yikes-mc-ajax-forms{$min}.js" , array( 'jquery' ), YIKES_MC_VERSION, false );
 			wp_localize_script( 'yikes-easy-mc-ajax', 'yikes_mailchimp_ajax', array(
 				'ajax_url'                      => esc_url( admin_url( 'admin-ajax.php' ) ),
-				'page_data'                     => $page_data,
+				'page_data'                     => apply_filters( 'yikes-mailchimp-page-data', $page_data, $form_id ),
 				'interest_group_checkbox_error' => apply_filters( 'yikes-mailchimp-interest-group-checkbox-error', __( 'This field is required.', 'yikes-inc-easy-mailchimp-extender' ), $form_id ),
 				'preloader_url'                 => apply_filters( 'yikes-mailchimp-preloader', YIKES_MC_URL . 'includes/images/ripple.svg' ),
 				'loading_dots'                  => apply_filters( 'yikes-mailchimp-loading-dots', YIKES_MC_URL . 'includes/images/bars.svg' ),
@@ -384,13 +350,12 @@ function process_mailchimp_shortcode( $atts ) {
 			) );
 		}
 
-		// Generic JavaScript functions for interacting with the form.
-		wp_enqueue_script( 'form-submission-helpers', YIKES_MC_URL . "public/js/form-submission-helpers{$min}.js", array( 'jquery' ), YIKES_MC_VERSION, false );
+		// Generic JavaScript functions for interacting with the form
+		wp_enqueue_script( 'form-submission-helpers', YIKES_MC_URL . 'public/js/form-submission-helpers.min.js' , array( 'jquery' ), YIKES_MC_VERSION, false );
 		wp_localize_script( 'form-submission-helpers', 'form_submission_helpers', array(
-			'ajax_url'           => esc_url( admin_url( 'admin-ajax.php' ) ),
-			'preloader_url'      => apply_filters( 'yikes-mailchimp-preloader', esc_url_raw( admin_url( 'images/wpspin_light.gif' ) ) ),
-			'countries_with_zip' => $countries_with_zip_code_field,
-			'page_data'          => $page_data,
+			'ajax_url' => esc_url( admin_url( 'admin-ajax.php' ) ),
+			'preloader_url' => apply_filters( 'yikes-mailchimp-preloader', esc_url_raw( admin_url( 'images/wpspin_light.gif' ) ) ),
+			'countries_with_zip' => $countries_with_zip_code_field
 		) );
 
 		do_action( 'yikes-mailchimp-google-analytics', $form_id );
@@ -876,7 +841,7 @@ function process_mailchimp_shortcode( $atts ) {
 								$datepicker_options = apply_filters( 'yikes-mailchimp-datepicker-options', $datepicker_options, $form_id );
 
 								// Enqueue our custom datepicker support scripts and styles, and jQuery UI Style Sheet (these styles are not included in Core)
-								wp_register_script( 'yikes-datepicker-scripts', YIKES_MC_URL . "public/js/yikes-datepicker-scripts{$min}.js", array( 'jquery-ui-datepicker' ), YIKES_MC_VERSION, false );
+								wp_register_script( 'yikes-datepicker-scripts', YIKES_MC_URL . 'public/js/yikes-datepicker-scripts.min.js', array( 'jquery-ui-datepicker' ), YIKES_MC_VERSION, false );
 								wp_localize_script( 'yikes-datepicker-scripts', 'datepicker_settings', $datepicker_options );
 								wp_enqueue_script( 'yikes-datepicker-scripts' );
 								wp_enqueue_style( 'jquery-datepicker-styles' , YIKES_MC_URL . 'public/css/jquery-ui.min.css' );
@@ -1057,13 +1022,12 @@ function process_mailchimp_shortcode( $atts ) {
 							$description = apply_filters( 'yikes-mailchimp-' . $field['group_id'] . '-description-html', $description, esc_attr( stripslashes( $field['description'] ) ), $form_id );
 						}
 
-						// Get our groups
-						$groups = isset( $field['groups'] ) && ! empty( $field['groups'] ) ? json_decode( $field['groups'], true ) : array();
-
 						// Get the default choice(s) from the field settings and turn them into an array if not already
-						$default_choice = isset( $field['default_choice'] ) ? $field['default_choice'] : '';
-						$default_choice = is_array( $default_choice ) ? $default_choice : array( $default_choice );
-						$default_choice = apply_filters( 'yikes-mailchimp-' . $field['group_id'] . '-default', $default_choice, $groups, $field, $form_id );
+						$default_choice = ( isset( $field['default_choice'] ) ) ? $field['default_choice'] : '';
+						$default_choice = ( is_array( $default_choice ) ) ? $default_choice : array( $default_choice );
+
+						// get our groups
+						$groups = ( isset( $field['groups'] ) && ! empty( $field['groups'] ) ) ? json_decode( $field['groups'], true ) : array();
 
 						$count = count( $groups );
 
@@ -1095,7 +1059,7 @@ function process_mailchimp_shortcode( $atts ) {
 										if ( $show_description === true && $description_above === true ) { echo $description; }
 
 										// Display Submission Errors
-										if ( ! empty( $missing_required_checkbox_interest_groups ) ) {
+										if( ! empty( $missing_required_checkbox_interest_groups ) ) {
 											if( in_array( $field['group_id'], $missing_required_checkbox_interest_groups ) ) {
 												?>
 													<p class="yikes-mailchimp-required-interest-group-error">
@@ -1108,7 +1072,7 @@ function process_mailchimp_shortcode( $atts ) {
 										foreach ( $groups as $group_id => $name ) {
 
 											// If the form was submitted and failed, set the submitted/chosen values as the default
-											if ( isset( $_POST[ 'group-' . $field['group_id'] ] ) && $form_submitted === 0 ) {
+											if( isset( $_POST[ 'group-' . $field['group_id'] ] ) && $form_submitted === 0 ) {
 
 												// Format default choice as array
 												$default_choice = ( is_array( $_POST[ 'group-' . $field['group_id'] ] ) ) ? $_POST[ 'group-' . $field['group_id'] ] : array( $_POST[ 'group-' . $field['group_id'] ] );
@@ -1241,29 +1205,30 @@ function process_mailchimp_shortcode( $atts ) {
 
 				do_action( 'yikes-mailchimp-additional-form-fields', $form_data );
 
-				// Show the recaptcha.
-				if ( isset( $recaptcha_box ) ) {
+				/* if we've enabled reCAPTCHA protection */
+				if( isset( $recaptcha_box ) ) {
 					echo $recaptcha_box;
 				}
-
-				$admin_class = is_user_logged_in() && current_user_can( apply_filters( 'yikes-mailchimp-user-role-access' , 'manage_options' ) ) ? ' admin-logged-in' : '';
+				if( is_user_logged_in() ) {
+					$admin_class = ( current_user_can( apply_filters( 'yikes-mailchimp-user-role-access' , 'manage_options' ) ) ) ? ' admin-logged-in' : '';
+				} else {
+					$admin_class = '';
+				}
 				?>
 
 				<!-- Honeypot Trap -->
-				<input type="hidden" name="yikes-mailchimp-honeypot" id="yikes-mailchimp-honeypot-<?php echo esc_attr( $form_id ); ?>" value="">
+				<input type="hidden" name="yikes-mailchimp-honeypot" id="yikes-mailchimp-honeypot" value="">
 
 				<!-- List ID -->
-				<input type="hidden" name="yikes-mailchimp-associated-list-id" id="yikes-mailchimp-associated-list-id-<?php echo esc_attr( $form_id ); ?>" value="<?php echo esc_attr( $form_data['list_id'] ); ?>">
+				<input type="hidden" name="yikes-mailchimp-associated-list-id" id="yikes-mailchimp-associated-list-id" value="<?php echo esc_attr( $form_data['list_id'] ); ?>">
 
 				<!-- The form that is being submitted! Used to display error/success messages above the correct form -->
-				<input type="hidden" name="yikes-mailchimp-submitted-form" id="yikes-mailchimp-submitted-form-<?php echo esc_attr( $form_id ); ?>" value="<?php echo esc_attr( $form_id ); ?>">
+				<input type="hidden" name="yikes-mailchimp-submitted-form" id="yikes-mailchimp-submitted-form" value="<?php echo esc_attr( $form_id ); ?>">
 
 				<!-- Submit Button -->
 				<?php
-					if ( $form_inline && ! $inline_form_override ) {
-
+					if( $form_inline ) {
 						$submit_button_label_classes = array( 'empty-label' );
-
 						// If the number of fields, is equal to the hidden label count, add our class
 						// eg: All field labels are set to hidden.
 						if ( absint( $field_count ) === absint( $hidden_label_count ) ) {
@@ -1271,20 +1236,19 @@ function process_mailchimp_shortcode( $atts ) {
 						}
 						echo '<label class="empty-form-inline-label submit-button-inline-label"><span class="' . implode( ' ', $submit_button_label_classes ) . '">&nbsp;</span>';
 					}
-					// Display the image or text based button.
-					if ( $submit_button_type === 'text' ) {
+					// display the image or text based button
+					if( $submit_button_type == 'text' ) {
 						echo apply_filters( 'yikes-mailchimp-form-submit-button', '<button type="submit" class="' . apply_filters( 'yikes-mailchimp-form-submit-button-classes', 'yikes-easy-mc-submit-button yikes-easy-mc-submit-button-' . esc_attr( $form_data['id'] ) . ' btn btn-primary' . $submit_button_classes . $admin_class, $form_data['id'] ) . '"> <span class="yikes-mailchimp-submit-button-span-text">' .  apply_filters( 'yikes-mailchimp-form-submit-button-text', esc_attr( stripslashes( $submit ) ), $form_data['id'] ) . '</span></button>', $form_data['id'] );
 					} else {
 						echo apply_filters( 'yikes-mailchimp-form-submit-button', '<input type="image" alt="' . apply_filters( 'yikes-mailchimp-form-submit-button-text', esc_attr( stripslashes( $submit ) ), $form_data['id'] ) . '" src="' . $submit_button_image . '" class="' . apply_filters( 'yikes-mailchimp-form-submit-button-classes', 'yikes-easy-mc-submit-button yikes-easy-mc-submit-button-image yikes-easy-mc-submit-button-' . esc_attr( $form_data['id'] ) . ' btn btn-primary' . $submit_button_classes . $admin_class, $form_data['id'] ) . '">', $form_data['id'] );
 					}
-					if ( $form_inline && ! $inline_form_override ) {
+					if( $form_inline ) {
 						echo '</label>';
 					}
 				?>
 				<!-- Nonce Security Check -->
-				<input type="hidden" id="yikes_easy_mc_new_subscriber_<?php echo esc_attr( $form_id ); ?>" name="yikes_easy_mc_new_subscriber" value="<?php echo wp_create_nonce( 'yikes_easy_mc_form_submit' ); ?>">
-				<?php wp_referer_field(); ?>
-				
+				<?php wp_nonce_field( 'yikes_easy_mc_form_submit', 'yikes_easy_mc_new_subscriber' ); ?>
+
 			</form>
 			<!-- MailChimp Form generated by Easy Forms for MailChimp v<?php echo YIKES_MC_VERSION; ?> (https://wordpress.org/plugins/yikes-inc-easy-mailchimp-extender/) -->
 
