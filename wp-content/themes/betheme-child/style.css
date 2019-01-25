@@ -272,7 +272,7 @@ html,body{
     top: 8px;
 }
 .link-button, .link-button:hover{
-    color: #fcab00;
+    color: #fcab00 !important;
 }
 
 #testimonial-section .mcb-wrap-inner span.text-to-be-underlined{
