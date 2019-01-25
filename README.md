@@ -6,7 +6,7 @@ Apache: 2.4.18 (Ubuntu)
 
 MySQL: 5.7.21
 
-Wordpress: 4.9.6
+Wordpress: 5.0.3
 
 Theme: Betheme Child
 
