@@ -285,8 +285,24 @@ $(function () {
         var scrolled = (winScroll / height) * 200;
         var scrolled_var = (winScroll / height) * 30;
         var scrolled_var_nw = (winScroll / height) * 20;
-        document.getElementById("myBar").style.width = scrolled + "%";
-        document.getElementById("myBar1").style.width = scrolled_var + "%";
-        document.getElementById("myBar2").style.width = scrolled_var_nw + "%";
-    }
+        try{ document.getElementById("myBar").style.width = scrolled + "%"; }catch(err){}
+        try{ document.getElementById("myBar1").style.width = scrolled_var + "%"; }catch(err){}
+        try{ document.getElementById("myBar2").style.width = scrolled_var_nw + "%"; }catch(err){}
+    }    
 });
+
+document.addEventListener('DOMContentLoaded',function(){
+    setTimeout(function(){
+        equalHeights('#approach-item-section .icon_box');
+    },2000);
+});
+function equalHeights(container){
+    var highestBox = 0;
+    $(container).each(function(){
+        if($(this).height() > highestBox) {
+            console.log($(this).height());
+            highestBox = $(this).height(); 
+        }
+    });
+    $(container).height(highestBox);
+}
