@@ -34,43 +34,46 @@ Version: 		1.6.1.1
 #topcase {
     padding-top: 80px !important;
 }
-
-@media screen and (max-width:1199px){
-    .prcessinftxt h2 { font-size: 38px;  line-height: 44px; }
-    .fancyheading {  font-size: 36px; line-height: 40px;}
-    .themetxtbox { font-size: 22px !important; line-height: 36px !important; }
-    .desc { font-size: 19px !important; line-height: 30px !important;}
-    h2#pageheading {font-size: 50px; line-height: 55px; }
-    .innerheading { font-size: 28px !important;line-height: 24px !important; }
+.custm-top-text{
+	width:90%;font-size:50px;margin:0 auto;color:#fff;line-height:1.1;position:absolute;left:0;right:0;top:36%;
 }
-@media screen and (max-width:991px){
-
-    .innerheading { font-size: 20px !important; line-height: 16px !important;}
-    .prcessinftxt h2 { font-size: 28px; line-height: 35px;}
-    .desc { font-size: 15px !important; line-height: 22px !important;}
-    .themetxtbox { font-size: 18px !important; line-height: 30px !important;}
-    .caseleftimg img { min-height: 620px !important;}
-    body .caserightimg img { height: 380px !important;}
-    h2#pageheading { font-size: 45px; line-height: 48px; }
+.custm-h2-center{
+	font-size:38px;color:#123d5c;line-height:46px;
 }
-@media screen and (max-width:767px){
-    body.page-id-252 #logo .logo-sticky{ display: none !important;}
-    body.page-id-252 #Top_bar .logo #logo{ text-align: left;   margin: 10px 30px !important;}
-    h2#pageheading { font-size: 25px !important; line-height: 30px !important; }
-    #Topheading.vc_custom_1533634965275 { padding-bottom: 20px !important;  padding-top: 20px !important;}
-    .innerheading { float: left !important;  position: relative;}
-    #casebox .wpb_wrapper > div{ min-height: 0px !important;}
-    .fancyheading {  font-size: 24px;  line-height: 30px;}
-    .caseleftimg img { min-height: 0px !important; }
-    body .caserightimg img {  height: auto !important; }
-    .prcessinftxt h2{ text-align: left ; font-size: 24px;  line-height: 30px;}
-
+.custm-h2-right {
+    font-size: 45px;
+    color: #fff;
+    line-height: 1.3;
+    font-weight: 300;
+    width: 50% !important;
+    float: right;
 }
-@media screen and (max-width:414px){
-    .prcessinftxt h2 { font-size: 22px; line-height: 30px; }
-
+.testi-center-text{
+	font-size: 22px; font-style: normal;margin: 50px 6%;
+}
+.testi-bottom-text{
+	font-size: 22px; font-style: normal;
+}
+.heading-text-size{font-size:50px;color:#123d5c;margin:0 auto 20px auto;text-align:center;}
+#approach-item-section .icon_box {
+    transition: transform 0.4s ease-in-out, box-shadow 0.1s ease-in-out;
+    position: relative;
+    padding: 18px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 2px -1px #000;
+    background-color: #fff;
+	min-height: 470px !important;
+	height:auto !important;
 }
 
+#service-section img.scale-with-grid{
+    max-width: 120%;
+    height: auto;
+    position: relative;
+    top: 80px;
+    right: 60px;
+    float: right;
+}
 a.buttonround:visited{ color: #fff !important}
 div#myborder {
     display: inline-block !important;
@@ -149,27 +152,17 @@ div#myborder.mainborder {
 .section_wrapper.mcb-section-inner .wrap.mcb-wrap.one.valign-top div#rev_slider_4_2_wrapper .tp-bgimg.defaultimg {
     background-color: #133d5c !important;
 }
-
-
 html,body{
     font-size: 20px !important;
-}
-@media only screen and (min-width: 1240px){
-    .layout-boxed{
-        padding:0;
-    }
-}
-@media only screen and (min-width: 768px) {
-    #Wrapper, .with_aside .content_wrapper{
-        max-width: 100% !important;
-    }
 }
 #intro-banner-section .mcb-section-inner {
     padding-top: 0px!important;
     padding-bottom: 100px!important;
 }
 .banner-header {
-    height: 70vh;
+    height: 100vh;
+    position: absolute;
+    top: 0;
 }
 #approach-item-section .icon_box {
     transition: transform 0.4s ease-in-out, box-shadow 0.1s ease-in-out;
@@ -178,14 +171,6 @@ html,body{
     border-radius: 10px;
     box-shadow: 0px 0px 2px -1px #000;
     background-color: #fff;
-}
-#service-section img.scale-with-grid{
-    max-width: 120%;
-    height: auto;
-    position: relative;
-    top: 80px;
-    right: 60px;
-    float: right;
 }
 #feature-section{
     margin-top: -60px;
@@ -229,15 +214,23 @@ html,body{
 #intro-banner-section .arrow-down {
     position: relative;
 }
-
-#approach-section .mcb-section-inner .column_attr .text-underline{
+.arrow-down-click {
+    position: absolute !important;
+    bottom: 30px;
+    display: block !important;
+    text-align: center !important;
+    width: 60px !important;
+    left: 49%;
+    background-color: transparent !important;
+    color: #fda22b !important;
+}
+#approach-section .mcb-section-inner .column_attr .text-underline {
     width: 145px;
-    left: auto;
+    left: 50px;
     right: -50px;
     margin: auto;
     bottom: 5px;
 }
-
 #testimonial-section .mcb-section-inner .column_attr .text-underline{
     width: 145px;
     left: auto;
@@ -245,23 +238,19 @@ html,body{
     margin: auto;
     bottom: 5px;
 }
-
 #service-section .mcb-wrap-inner h1 .text-underline{
     right: auto;
     margin: auto;
     bottom: 20px;
     left: 0px;
 }
-
 #service-section h1{
     padding-bottom: 30px;
     position: relative;
 }
-
 #approach-section .mcb-wrap-inner span.text-to-be-underlined{
     position: relative;
 }
-
 .link-button span.arrow-icon{
     content: "";
     background-image: url(/wp-content/uploads/2019/01/arrow.png);
@@ -278,16 +267,25 @@ html,body{
 #testimonial-section .mcb-wrap-inner span.text-to-be-underlined{
     position: relative;
 }
-
 #service-section .mcb-wrap-inner h1{
     position: relative;
 }
-
-.icon_box .image_wrapper{
+.icon_box .image_wrapper {
     width: 90px;
     margin: auto;
+    height: 80px;
 }
-
+#approach-item-section .icon_box img.scale-with-grid{
+    max-width: 80px;
+    max-height: 80px;
+}
+.bg-gredient-gray{
+background-image: linear-gradient(#fff 50%, #f0f0f0 50%);
+}
+p.testimonial-text-custom {
+    font-size: 22px;
+    font-style: normal;
+}
 #approach-item-section .approach-column .desc_wrapper h3{
     color: #0a3d5c;
     margin-top: 20px;
@@ -320,18 +318,15 @@ html,body{
 #feature-section .desc_wrapper .desc{
     color: #fff;
 }
-
 #Footer .contactarea{
     text-align: left;
 }
-
 #Footer{
     background-image: url(https://blueorange.digital/wp-content/uploads/2019/01/Bottom_Background.jpg) !important;
     background-repeat: no-repeat;
     background-position: left top;
     padding-bottom: 20px;
 }
-
 #testimonial-section .blockquote{
     text-align: center;
     font-size: 20px;
@@ -355,4 +350,97 @@ html,body{
 }
 #service-section h3, .testimonials_list .blockquote blockquote, .testimonials_list h4, .testimonials_list .subtitle{
     color: #0a3d5c;
+}
+@media screen and (max-width:1199px){
+    .prcessinftxt h2 { font-size: 38px;  line-height: 44px; }
+    .fancyheading {  font-size: 36px; line-height: 40px;}
+    .themetxtbox { font-size: 22px !important; line-height: 36px !important; }
+    .desc { font-size: 19px !important; line-height: 30px !important;}
+    h2#pageheading {font-size: 50px; line-height: 55px; }
+    .innerheading { font-size: 28px !important;line-height: 24px !important; }
+}
+@media screen and (max-width:991px){
+
+    .innerheading { font-size: 20px !important; line-height: 16px !important;}
+    .prcessinftxt h2 { font-size: 28px; line-height: 35px;}
+    .desc { font-size: 15px !important; line-height: 22px !important;}
+    .themetxtbox { font-size: 18px !important; line-height: 30px !important;}
+    .caseleftimg img { min-height: 620px !important;}
+    body .caserightimg img { height: 380px !important;}
+    h2#pageheading { font-size: 45px; line-height: 48px; }
+}
+@media screen and (max-width:767px){
+	.custm-top-text{
+	font-size:32px;top:22%;
+}	
+.custm-h2-center{
+	font-size:22px;line-height: 30px;
+}
+.custm-h2-right{
+	font-size:28px;
+	width: 100% !important;
+}
+.testi-center-text{
+	font-size: 18px; margin: 50px 2%;
+}
+.testi-bottom-text{
+	font-size: 20px;
+	}
+#service-section img.scale-with-grid {
+    max-width: 100%;
+    top: 0;
+    right: 0;
+}
+#approach-item-section .icon_box {
+	min-height: auto !important;
+	height:auto !important;
+}
+	.tss-grid-item.carousel-item.default-margin{
+		padding:0px !important;
+	}
+	.heading-text-size{font-size:34px;}
+
+    body.page-id-252 #logo .logo-sticky{ display: none !important;}
+    body.page-id-252 #Top_bar .logo #logo{ text-align: left;   margin: 10px 30px !important;}
+    h2#pageheading { font-size: 25px !important; line-height: 30px !important; }
+    #Topheading.vc_custom_1533634965275 { padding-bottom: 20px !important;  padding-top: 20px !important;}
+    .innerheading { float: left !important;  position: relative;}
+    #casebox .wpb_wrapper > div{ min-height: 0px !important;}
+    .fancyheading {  font-size: 24px;  line-height: 30px;}
+    .caseleftimg img { min-height: 0px !important; }
+    body .caserightimg img {  height: auto !important; }
+    .prcessinftxt h2{ text-align: left ; font-size: 24px;  line-height: 30px;}
+#feature-section .mcb-wrap {
+    padding: 30px 0px 0px 0px !important;
+}
+#feature-section .feature_box .feature_box_wrapper .desc_wrapper {
+    width: 100%;
+    padding: 0px;
+	border-left: none;
+}
+.column_attr.align_right, #Footer .contactarea, .column_attr.align_left, .feature_box_wrapper{
+    text-align: center;
+}
+#feature-section .feature_box .feature_box_wrapper .photo_wrapper {
+    width: 100%;
+}
+	.banner-header {
+    height:80vh;
+}
+	.arrow-down-click {
+    left: 44% !important;
+	}
+}
+@media screen and (max-width:414px){
+    .prcessinftxt h2 { font-size: 22px; line-height: 30px; }
+}
+@media only screen and (min-width: 768px) {
+    #Wrapper, .with_aside .content_wrapper{
+        max-width: 100% !important;
+   }
+}
+@media only screen and (min-width: 1240px){
+    .layout-boxed{
+        padding:0;
+    }
 }
