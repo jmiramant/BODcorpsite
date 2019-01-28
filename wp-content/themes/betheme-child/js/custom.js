@@ -295,6 +295,16 @@ document.addEventListener('DOMContentLoaded',function(){
     setTimeout(function(){
         equalHeights('#approach-item-section .icon_box');
     },2000);
+    
+    $(".arrow-down-click").click(function() {
+        try{
+            var id = $(this).attr('href');
+            $('html, body').animate({
+                scrollTop: $(id).offset().top
+            }, 2000);
+        }catch(err){}
+        return false;
+    });
 });
 function equalHeights(container){
     var highestBox = 0;
