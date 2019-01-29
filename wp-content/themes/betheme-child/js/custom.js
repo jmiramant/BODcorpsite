@@ -316,3 +316,16 @@ function equalHeights(container){
     });
     $(container).height(highestBox);
 }
+
+
+$(window).scroll(function() {
+    if( $("#particles-js").length > 0 ){
+        var scroll = $(window).scrollTop();
+        if (scroll >= 300) {
+            //clearHeader, not clearheader - caps H
+            $("#particles-js").addClass("hiddenall");
+        }else {
+            $("#particles-js").removeClass("hiddenall");
+        }
+    }
+}); //missing );
