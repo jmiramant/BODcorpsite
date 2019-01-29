@@ -1,11 +1,11 @@
 /*
-Theme Name: 	Betheme Child
-Theme URI: 		http://themes.muffingroup.com/betheme
-Author: 		Muffin group
-Author URI: 	http://muffingroup.com
-Description:	Child Theme for Betheme - Premium WordPress Theme
-Template:		betheme
-Version: 		1.6.1.1
+Theme Name:     Betheme Child
+Theme URI:      http://themes.muffingroup.com/betheme
+Author:         Muffin group
+Author URI:     http://muffingroup.com
+Description:    Child Theme for Betheme - Premium WordPress Theme
+Template:       betheme
+Version:        1.6.1.1
 */
 
 /* Theme customization starts here
@@ -35,10 +35,10 @@ Version: 		1.6.1.1
     padding-top: 80px !important;
 }
 .custm-top-text{
-	width:90%;font-size:50px;margin:0 auto;color:#fff;line-height:1.1;position:absolute;left:0;right:0;top:36%;
+    width:90%;font-size:50px;margin:0 auto;color:#fff;line-height:1.1;position:absolute;left:0;right:0;top:36%;
 }
 .custm-h2-center{
-	font-size:38px;color:#123d5c;line-height:46px;
+    font-size:38px;color:#123d5c;line-height:46px;
 }
 .custm-h2-right {
     font-size: 45px;
@@ -48,11 +48,15 @@ Version: 		1.6.1.1
     width: 50% !important;
     float: right;
 }
+.link-button .dashicons, .link-button .dashicons-before:before {
+    width: 40px !important;
+    font-size: 32px !important;
+}
 .testi-center-text{
-	font-size: 22px; font-style: normal;margin: 50px 6%;
+    font-size: 22px; font-style: normal;margin: 50px 6%;
 }
 .testi-bottom-text{
-	font-size: 22px; font-style: normal;
+    font-size: 22px; font-style: normal;
 }
 .heading-text-size{font-size:50px;color:#123d5c;margin:0 auto 20px auto;text-align:center;}
 #approach-item-section .icon_box {
@@ -62,8 +66,8 @@ Version: 		1.6.1.1
     border-radius: 10px;
     box-shadow: 0px 0px 2px -1px #000;
     background-color: #fff;
-	min-height: 470px !important;
-	height:auto !important;
+    min-height: 470px !important;
+    height:auto !important;
 }
 
 #service-section img.scale-with-grid{
@@ -260,10 +264,15 @@ html,body{
     position: relative;
     top: 8px;
 }
-.link-button, .link-button:hover{
+a.link-button{
     color: #fcab00 !important;
+    transition:color 0.5s ease;
 }
-
+a.link-button:hover, a.link-button:active{
+    color: #fff !important;
+    text-decoration: none;
+    border-bottom: 2px solid #fff;
+}
 #testimonial-section .mcb-wrap-inner span.text-to-be-underlined{
     position: relative;
 }
@@ -370,35 +379,35 @@ p.testimonial-text-custom {
     h2#pageheading { font-size: 45px; line-height: 48px; }
 }
 @media screen and (max-width:767px){
-	.custm-top-text{
-	font-size:32px;top:22%;
-}	
+    .custm-top-text{
+    font-size:32px;top:22%;
+}   
 .custm-h2-center{
-	font-size:22px;line-height: 30px;
+    font-size:22px;line-height: 30px;
 }
 .custm-h2-right{
-	font-size:28px;
-	width: 100% !important;
+    font-size:28px;
+    width: 100% !important;
 }
 .testi-center-text{
-	font-size: 18px; margin: 50px 2%;
+    font-size: 18px; margin: 50px 2%;
 }
 .testi-bottom-text{
-	font-size: 20px;
-	}
+    font-size: 20px;
+    }
 #service-section img.scale-with-grid {
     max-width: 100%;
     top: 0;
     right: 0;
 }
 #approach-item-section .icon_box {
-	min-height: auto !important;
-	height:auto !important;
+    min-height: auto !important;
+    height:auto !important;
 }
-	.tss-grid-item.carousel-item.default-margin{
-		padding:0px !important;
-	}
-	.heading-text-size{font-size:34px;}
+    .tss-grid-item.carousel-item.default-margin{
+        padding:0px !important;
+    }
+    .heading-text-size{font-size:34px;}
 
     body.page-id-252 #logo .logo-sticky{ display: none !important;}
     body.page-id-252 #Top_bar .logo #logo{ text-align: left;   margin: 10px 30px !important;}
@@ -416,7 +425,7 @@ p.testimonial-text-custom {
 #feature-section .feature_box .feature_box_wrapper .desc_wrapper {
     width: 100%;
     padding: 0px;
-	border-left: none;
+    border-left: none;
 }
 .column_attr.align_right, #Footer .contactarea, .column_attr.align_left, .feature_box_wrapper{
     text-align: center;
@@ -424,12 +433,12 @@ p.testimonial-text-custom {
 #feature-section .feature_box .feature_box_wrapper .photo_wrapper {
     width: 100%;
 }
-	.banner-header {
+    .banner-header {
     height:80vh;
 }
-	.arrow-down-click {
+    .arrow-down-click {
     left: 44% !important;
-	}
+    }
 }
 @media screen and (max-width:414px){
     .prcessinftxt h2 { font-size: 22px; line-height: 30px; }
