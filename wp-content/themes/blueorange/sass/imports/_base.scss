@@ -1,0 +1,97 @@
+/*--------------------------------------------------------------
+# Site
+--------------------------------------------------------------*/
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  @include font($f: $base-font, $s: $font-size-base);
+  background-color: $white;
+}
+
+/*--------------------------------------------------------------
+# Clearings
+--------------------------------------------------------------*/
+.clear {clear: both;display: block;}
+.clearfix {
+  &:after {content: ".";display: block;height: 0;clear: both;visibility: hidden;}
+}
+* html,* html {
+  .clearfix {height: 1%;}
+}
+.clearfix {display: block;}
+
+/*--------------------------------------------------------------
+# Box Sizing
+--------------------------------------------------------------*/
+*,*:after,*:before {text-rendering: optimizeLegibility;box-sizing: border-box;-webkit-font-smoothing:antialiased}
+
+/*--------------------------------------------------------------
+# Links
+  --------------------------------------------------------------*/
+a {
+  @include transition();
+  text-decoration: none;
+  outline: 0;
+  color: $text;
+  //letter-spacing: 0.063rem;
+  &:hover{
+    color: $primary;
+    text-decoration: none;
+  }
+}
+/*--------------------------------------------------------------
+# Images
+--------------------------------------------------------------*/
+img {max-width: 100%;vertical-align: middle;border: 0;
+  &.alignleft {margin-right: 20px;margin-bottom: 20px;}
+  &.alignright {margin-left: 20px;margin-bottom: 20px;}
+  &.aligncenter{display: inherit;margin: auto;}
+}
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+.pull-left,.alignleft,.floatleft{float:left;}
+.pull-right,.alignright,.floatright{float:right;}
+@media #{$tablet}{
+  .alignleft,
+  .alignright{
+    float: none;
+  }
+}
+
+/*--------------------------------------------------------------
+# Accessibilty
+--------------------------------------------------------------*/
+.says,.screen-reader-text {clip: rect(1px, 1px, 1px, 1px);height: 1px;overflow: hidden;width: 1px;@include position($p:absolute !important);}
+.site .skip-link {background-color: #f1f1f1;box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);color: #21759b;display: block;left: -9999em;outline: none;padding: 15px 23px 14px;text-decoration: none;text-transform: none;top: -9999em;font-size: 14px;}
+.logged-in .site .skip-link {box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);font: bold 14px/normal "Open Sans", sans-serif;}
+.site .skip-link:focus {clip: auto;height: auto;left: 6px;top: 7px;width: auto;z-index: 100000;}
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+@each $heading in $headings {
+  /*#{$heading} {
+    @extend %headingstyle;
+    font-size: ($font-size-upper / $font-size-base) + rem;
+    $font-size-upper: $font-size-upper - $font-size-dec;
+  }*/
+}
+.bold,strong { @extend %bold;}
+p {
+  font-size: 20px;
+  line-height:31px;
+  color: $primary;
+}
+sup,sub{
+  @include position($p: relative);
+  @include font($s:0.6em);
+}
+sup{@include position($t:-7px);}
+sub{@include position($b:-7px);}
+dfn,cite,em,i {font-style: italic;}
+big {font-size: 150%;}
+
+h1,h2,h3,h4,h5,h6{
+  font-family: $headings-font;
+}

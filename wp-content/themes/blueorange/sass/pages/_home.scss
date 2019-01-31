@@ -1,0 +1,152 @@
+
+.network-bg{
+  background: url(images/network.png) no-repeat center;
+  @include position($p:absolute, $l:0, $t:0);
+  //background-size: cover;
+  width: 100%;
+  display: block;
+  height:140vh;
+  z-index: 2;
+}
+#homeSlider{
+  position: relative;
+  .tp-caption{
+    z-index: 3;
+  }
+}
+#approach{
+  padding-left:15%;
+  padding-right:15%;
+  position: relative;
+  z-index: 3;
+  &:after{
+    display: block;
+    content: "";
+    width: 100%;
+    height: 30%;
+    background: $bg;
+    z-index: 1;
+    @include position($p:absolute, $l:0, $b:0);
+  }
+}
+
+.approach-listing{
+  position: relative;
+  z-index: 2;
+ .inner{
+   background: $white;
+   border:1px solid #eeeeee;
+   border-radius: 10px;
+   padding: 30px 20px;
+ }
+  figure{
+    margin-bottom: 30px;
+    img{
+      max-height: 75px;
+    }
+  }
+  h4{
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  p{
+
+  }
+}
+
+#discover{
+  background: url(images/cta-background.jpg) repeat-y;
+  background-size: cover;
+}
+
+#testimonials{
+  padding: 50px 0;
+  position: relative;
+  .sectionSubtitle{
+    @include position($p:absolute, $l:50%, $t:90px);
+    @include translator($x:-50%, $y:0);
+    z-index: 2;
+  }
+  .clientList{
+    background: $bg;
+    border-radius: 10px;
+    padding:160px 150px 50px 150px;
+    position: relative;
+    &:before{
+      content: "";
+      display: block;
+      width: 70px;
+      height: 52px;
+      background: url(images/start_quote.png) no-repeat;
+      @include transition();
+      @include position($p:absolute, $l:70px, $t:135px)
+    }
+    &:after{
+      content: "";
+      display: block;
+      width: 70px;
+      height: 52px;
+      background: url(images/end_quote.png) no-repeat;
+      @include transition();
+      @include position($p:absolute, $r:140px, $b:70px)
+    }
+  }
+  h2{
+    font-size: 20px;
+    margin-top: 30px;
+    //font-weight: $boldwt;
+  }
+}
+
+#machine{
+  position: relative;
+  padding: 30px 0 70px;
+  .container{
+    position: relative;
+  }
+  .animated:after{
+    display: inline-block;
+    margin: 15px 0;
+    position: static;
+  }
+  label{
+    font-size: 26px;
+    margin-top:15px;
+  }
+  .mac-image{
+    @include position($p:absolute, $r:0,$t:0);
+    width: 72%;
+    max-width: 100%;
+    flex: 100%;
+  }
+}
+
+#callToAction{
+  background: url(images/cta-bg.jpg) repeat-y;
+  color: $white;
+  padding: 130px 0 0;
+  .action-listing{
+    .inner{
+      position: relative;
+      padding-left: 110px;
+      &:before{
+        height: 100%;
+        width: 1px;
+        display: block;
+        content: "";
+        background: $white;
+        @include position($p:absolute, $l:91px, $t:0)
+      }
+    }
+    figure{
+      @include position($p:absolute, $l:0,$t:0);
+    }
+    h4{
+      font-weight: $boldwt;
+      font-size:27px;
+    }
+    p{
+      color: $white;
+    }
+  }
+}
