@@ -11,6 +11,10 @@ Version:        1.6.1.1
 /* Theme customization starts here
 -------------------------------------------------------------- */
 #Footer .footer_copy{border:none !important}
+
+.grecaptcha-badge {
+    display: none;
+}
 /* .aos-animate[data-aos^="zoom"][data-aos^="zoom"] {
     opacity: 1 !important;
     transform: translateZ(0) scale(1) !important;
