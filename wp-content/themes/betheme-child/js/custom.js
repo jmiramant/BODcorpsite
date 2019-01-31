@@ -317,15 +317,19 @@ function equalHeights(container){
     $(container).height(highestBox);
 }
 
+// $(window).scroll(function() {
+//     if( $("#particles-js").length > 0 ){
+//         var scroll = $(window).scrollTop();
+//         if (scroll >= 300) {
+//             //clearHeader, not clearheader - caps H
+//             $("#particles-js").addClass("hiddenall");
+//         }else {
+//             $("#particles-js").removeClass("hiddenall");
+//         }
+//     }
+// }); //missing );
 
-$(window).scroll(function() {
-    if( $("#particles-js").length > 0 ){
-        var scroll = $(window).scrollTop();
-        if (scroll >= 300) {
-            //clearHeader, not clearheader - caps H
-            $("#particles-js").addClass("hiddenall");
-        }else {
-            $("#particles-js").removeClass("hiddenall");
-        }
-    }
-}); //missing );
+// $(document).ready(function() {
+//     var divHeight = $('#intro-banner-section').height(); 
+//     $('#particles-js').css('min-height', divHeight+'px');
+// });

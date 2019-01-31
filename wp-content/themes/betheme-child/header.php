@@ -62,9 +62,6 @@
 <!-- wp_head() -->
 <?php wp_head(); ?>
 </head>
-<?php if ( is_front_page() ) : ?>
-    <div id="particles-js"></div>
-<?php endif; ?>
 <!-- body -->
 <body <?php body_class(); ?>>
 
