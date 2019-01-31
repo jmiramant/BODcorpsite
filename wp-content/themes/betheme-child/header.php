@@ -46,7 +46,7 @@
 <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/aos.js"></script>
 
 <?php if ( is_front_page() ) : ?>
-    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> <!-- stats.js lib -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> <!-- stats.js lib -->
 <?php endif; ?>
 
 <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/custom.js"></script>
