@@ -1308,7 +1308,7 @@ span.shape-three{
 }
 
 @media only screen and (min-width:1240px) {
-    .section.full-width > .section_wrapper, .section_wrapper, .container{
+    .section.full-width > .section_wrapper, #Top_bar .container{
         max-width: 1440px !important;
     }
 }
