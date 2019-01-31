@@ -516,11 +516,6 @@ canvas{ display: block; vertical-align: bottom; } /* ---- particles.js container
 .home .intro-image-section{display:none;}
 #Top_bar{ z-index: 111; }
 
-/* ---- Set max-width ---- */ 
-.layout-full-width #Wrapper, .with_aside .content_wrapper{
-    max-width: 1440px !important;
-}
-
 
 /*Services Page*/
 .border-top-bottom{
