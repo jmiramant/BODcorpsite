@@ -45,7 +45,7 @@ Version:        1.6.1.1
     color: #fff;
     line-height: 1.3;
     font-weight: 300;
-    padding-top: 20px;
+    padding-top: 30px;
     /*width: 50% !important;*/
     float: right;
 }
@@ -266,6 +266,9 @@ html,body{
     right: -50px;
     margin: auto;
     bottom: 5px;
+}
+#testimonial-section .mcb-section-inner .column_attr{
+    padding: 60px 0px 20px 0px !important;
 }
 #testimonial-section .mcb-section-inner .column_attr .text-underline {
     width: 190px;
