@@ -45,7 +45,8 @@ Version:        1.6.1.1
     color: #fff;
     line-height: 1.3;
     font-weight: 300;
-    width: 50% !important;
+    padding-top: 20px;
+    /*width: 50% !important;*/
     float: right;
 }
 .link-button .dashicons, .link-button .dashicons-before:before {
@@ -66,8 +67,38 @@ Version:        1.6.1.1
     border-radius: 10px;
     box-shadow: 0px 0px 2px -1px #000;
     background-color: #fff;
-    min-height: 470px !important;
+    min-height: 400px !important;
     height:auto !important;
+}
+
+.tss-wrapper .owl-theme .owl-nav .owl-prev{
+    left: 20px;
+    position: absolute;
+}
+
+.tss-wrapper .owl-theme .owl-nav .owl-next{
+    right: 20px;
+    position: absolute;
+}
+
+.owl-theme .owl-nav{
+    position: absolute;
+    top: 40%;
+    left: 0;
+    display: block;
+    width: 100%;
+    margin-top: -19px;
+}
+
+.dashicons, .dashicons-before:before{
+    width: 30px;
+    height: 30px;
+    font-size: 30px;
+}
+
+#approach-section{
+    background: url(/wp-content/uploads/2019/01/Network.png);
+    background-size: cover;
 }
 
 #service-section img.scale-with-grid{
@@ -171,7 +202,7 @@ html,body{
 #approach-item-section .icon_box {
     transition: transform 0.4s ease-in-out, box-shadow 0.1s ease-in-out;
     position: relative;
-    padding: 30px;
+    padding: 30px 20px;
     border-radius: 10px;
     box-shadow: 0px 0px 2px -1px #000;
     background-color: #fff;
@@ -227,6 +258,7 @@ html,body{
     left: 49%;
     background-color: transparent !important;
     color: #fda22b !important;
+    z-index: 11111;
 }
 #approach-section .mcb-section-inner .column_attr .text-underline {
     width: 145px;
@@ -299,6 +331,10 @@ p.testimonial-text-custom {
     color: #0a3d5c;
     margin-top: 20px;
     font-weight: bold;
+}
+
+#approach-item-section .approach-column .desc_wrapper .desc{
+    font-size: 18px;
 }
 
 #service-section h1{
@@ -456,9 +492,14 @@ p.testimonial-text-custom {
 
 /* ---- reset ---- */ 
 canvas{ display: block; vertical-align: bottom; } /* ---- particles.js container ---- */ 
+#particles-js{ 
+   position: absolute; 
+    width: 100%; 
+    height: 100%;
+    overflow: hidden;
+    z-index: 99;
+} 
 #particles-js canvas{
-    width: 100%;
-    height: 300% !important;
     position: absolute;
     top: 0px;
     z-index: 9;
@@ -466,13 +507,6 @@ canvas{ display: block; vertical-align: bottom; } /* ---- particles.js container
 .hiddenall{
     display:none !important
 }
-#particles-js{ 
-   position: fixed; 
-    width: 100%; 
-    height: 90%;
-    overflow: hidden;
-    z-index: 99;
-} 
 
 /* ---- stats.js ---- */ 
 .count-particles{ background: #000022; position: absolute; top: 48px; left: 0; width: 80px; color: #13E8E9; font-size: .8em; text-align: left; text-indent: 4px; line-height: 14px; padding-bottom: 2px; font-weight: bold; } 
