@@ -226,7 +226,7 @@ html,body{
     transition-delay: 1s;
 }
 .fadeInLeft .text-underline {
-    width: 70%;
+    width: 62%;
 }
 #intro-banner-section .arrow-down:before {
     position: absolute;
@@ -267,10 +267,10 @@ html,body{
     margin: auto;
     bottom: 5px;
 }
-#testimonial-section .mcb-section-inner .column_attr .text-underline{
-    width: 145px;
+#testimonial-section .mcb-section-inner .column_attr .text-underline {
+    width: 190px;
     left: auto;
-    right: -50px;
+    right: -8px;
     margin: auto;
     bottom: 5px;
 }
@@ -517,8 +517,8 @@ canvas{ display: block; vertical-align: bottom; } /* ---- particles.js container
 #Top_bar{ z-index: 111; }
 
 /* ---- Set max-width ---- */ 
-#Wrapper, .with_aside .content_wrapper{
-max-width: 1440px !important;
+.layout-full-width #Wrapper, .with_aside .content_wrapper{
+    max-width: 1440px !important;
 }
 
 
