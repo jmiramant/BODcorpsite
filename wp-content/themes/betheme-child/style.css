@@ -1306,3 +1306,9 @@ span.shape-three{
 .expertise-box a.link-button:hover{
     color: #fcab00 !important;
 }
+
+@media only screen and (min-width:1240px) {
+    .section.full-width > .section_wrapper, .section_wrapper, .container{
+        max-width: 1440px !important;
+    }
+}
