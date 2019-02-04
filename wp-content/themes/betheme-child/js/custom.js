@@ -333,3 +333,11 @@ function equalHeights(container){
 //     var divHeight = $('#intro-banner-section').height(); 
 //     $('#particles-js').css('min-height', divHeight+'px');
 // });
+
+jQuery(document).ready(function() {
+  jQuery(".boxed-exper1, .boxed-exper3").on('mouseenter',function() {
+    jQuery(".boxed-exper2").addClass("hover-hax");
+  }).on('mouseleave',function(){
+    jQuery(".boxed-exper2").removeClass("hover-hax");
+  });
+});
