@@ -293,7 +293,12 @@ $(function () {
 
 document.addEventListener('DOMContentLoaded',function(){
     setTimeout(function(){
-        equalHeights('#approach-item-section .icon_box');
+        if( $('#approach-item-section .icon_box').length > 0 ){
+            equalHeights('#approach-item-section .icon_box');
+        }
+        if( $('.top-skew .mcb-column .column_attr').length > 0 ){
+            equalHeights('.top-skew .mcb-column .column_attr');
+        }
     },2000);
     
     $(".arrow-down-click").click(function() {
@@ -305,6 +310,19 @@ document.addEventListener('DOMContentLoaded',function(){
         }catch(err){}
         return false;
     });
+    
+    /*For services page*/
+    $('#price-compare .mcb-column:nth-of-type(3) .expertise-box').addClass('hovered');
+    $('#price-compare .mcb-column .expertise-box').hover(
+        function(){
+            $('#price-compare .mcb-column .expertise-box').removeClass('hovered');
+            $(this).addClass('hovered');
+        },
+        function(){
+            $('#price-compare .mcb-column .expertise-box').removeClass('hovered');
+            $('#price-compare .mcb-column:nth-of-type(3) .expertise-box').addClass('hovered');
+        }        
+    );
 });
 function equalHeights(container){
     var highestBox = 0;

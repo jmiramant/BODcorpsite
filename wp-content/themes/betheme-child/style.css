@@ -1406,7 +1406,7 @@ span.shape-three{
 }
 .service-box .column_attr p{
     box-shadow: none !important;
-    border: 1px solid #d0d0d0;
+    //border: 1px solid #d0d0d0;
 }
 .top-2minus {
     margin-top: -200px;
@@ -1437,4 +1437,105 @@ span.shape-three{
     .link-button .dashicons, .link-button .dashicons-before:before{
         font-size: 22px !important;
     }
+}
+#Top_bar.blue_theme .menu > li.current-menu-item > a, #Top_bar.blue_theme .menu > li > a{
+    color: #0B3C5A;
+}
+
+.marquee {
+  height: 500px;
+  width: 800px;
+  overflow: hidden;
+  box-sizing: border-box;
+  position: relative;
+  margin: -65px auto;
+}
+
+.marquee--inner {
+  display: block;
+  width: 200%;
+  margin: 70px 0;
+  position: absolute;
+  animation: marquee 20s linear infinite;
+}
+
+.marquee--inner:hover {
+  animation-play-state: paused;
+}
+.marquee--inner span {
+  float: left;
+  width: 50%;
+}
+.marquee--inner span.span2{
+    margin-left: -170px;
+}
+
+@keyframes marquee {
+  0% { left: 0; }
+  100% { left: -100%; }
+}
+.sectn-product{
+    transition: all .2s ease-out;
+}
+
+
+#top-sec h2{
+   font-weight: 400;
+}
+.custm-undrline .text-underline{
+width: 235px;
+right: -20px;
+bottom: -5px;
+}
+.sectn-product{
+text-align: center;
+}
+
+.sectn-product img{
+    display: inline-block;
+    width: 12%;
+    margin: -27px 2%;
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+      filter: grayscale(100%);
+    opacity: 0.6;
+    vertical-align: middle;
+}
+.lft-mar{
+    margin-left: 16%;
+}
+.marquee {
+    width: 100%;
+margin-bottom: 60px;
+}
+.capabilities-hax .text-underline{
+width: 180px;
+right: -120px;
+bottom: 5px;
+}
+.service-box .column_attr p strong{
+font-size: 28px;
+font-weight: 600;
+line-height: 30px;
+}
+.font-smallr p span.min-9{
+margin-top: 20px;
+margin-bottom: 10px;
+}
+
+.font-smallr p a, .font-smallr p a:hover{
+font-size: 30px;
+}
+.custm-underlins .text-underline{
+width: 180px;
+right: -170px;
+bottom: 5px;
+}
+.top-skew .mcb-column .column_attr{
+    box-shadow: 1px 1px 21px #a2a2a2;
+}
+#price-compare .mcb-column .expertise-box{
+    opacity: 0.5;
+}
+#price-compare .mcb-column .expertise-box.hovered{
+    opacity: 1 !important;
 }
