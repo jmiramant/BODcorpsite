@@ -1438,7 +1438,7 @@ span.shape-three{
         font-size: 22px !important;
     }
 }
-#Top_bar.blue_theme .menu > li.current-menu-item > a, #Top_bar.blue_theme .menu > li > a{
+#Top_bar.blue_theme .menu > li.current-menu-item > a, #Top_bar.blue_theme .menu > li > a, #Top_bar.blue_theme .menu > li.current-menu-item > a:hover, #Top_bar.blue_theme .menu > li > a:hover{
     color: #0B3C5A;
 }
 
