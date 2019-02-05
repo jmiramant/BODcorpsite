@@ -514,6 +514,12 @@ p.testimonial-text-custom {
         float: none;
         margin-bottom: 40px;
     }
+    .services .capabilities-hax .page-extended-heading > .column_attr{
+        margin-top: 82px;
+    }
+    #price-compare .page-extended-heading > .column_attr{
+        margin-bottom: 30px;
+    }
 }
 @media only screen and (min-width: 1240px){
     .layout-boxed{
@@ -1378,10 +1384,10 @@ span.shape-three{
 
 @media (min-width: 1364px){
     .expertise-box.style_prevu_ki.boxed-exper2{
-        -webkit-transform: scale(1.1);
-        -ms-transform: scale(1.1);
-        -moz-transform: scale(1.1);
-        transform: scale(1.1);
+        -webkit-transform: scale(1.08);
+        -ms-transform: scale(1.08);
+        -moz-transform: scale(1.08);
+        transform: scale(1.08);
         margin: 0px -20px;
         position: relative;
         z-index: 9;
@@ -1582,4 +1588,10 @@ span.shape-three{
     bottom: 60px;
     width: 100%;
     left: 0;
+}
+.services #capabilites .capabilities-hax{
+    padding: 50px 0px 0px 0px !important;
+}
+#price-compare{
+    background-image: url('/wp-content/assets/images/Section2 Background.jpg');    
 }
