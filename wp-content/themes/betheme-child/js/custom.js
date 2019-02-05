@@ -299,6 +299,9 @@ document.addEventListener('DOMContentLoaded',function(){
         if( $('.top-skew .mcb-column .column_attr').length > 0 ){
             equalHeights('.top-skew .mcb-column .column_attr');
         }
+        if( $('#price-compare .mcb-wrap-inner .column.one-third > .column_attr .expertise-box').length > 0 ){
+            equalHeights('#price-compare .mcb-wrap-inner .column.one-third > .column_attr .expertise-box');
+        }
     },2000);
     
     $(".arrow-down-click").click(function() {
