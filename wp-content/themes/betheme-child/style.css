@@ -1437,9 +1437,6 @@ span.shape-three{
     .font-smallr p a, .font-smallr p a:hover{
         font-size: 20px;
     }
-    .link-button .dashicons, .link-button .dashicons-before:before{
-        margin-top: -4px;
-    }
 }
 @media (max-width: 1360px){
     .column_attr.align_right, #Footer .contactarea, .column_attr.align_left, .feature_box_wrapper{
