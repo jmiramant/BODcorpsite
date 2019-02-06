@@ -405,12 +405,14 @@ p.testimonial-text-custom {
     color: #0a3d5c;
 }
 @media screen and (max-width:1199px){
-    .prcessinftxt h2 { font-size: 38px;  line-height: 44px; }
-    .fancyheading {  font-size: 36px; line-height: 40px;}
-    .themetxtbox { font-size: 22px !important; line-height: 36px !important; }
-    .desc { font-size: 19px !important; line-height: 30px !important;}
-    h2#pageheading {font-size: 50px; line-height: 55px; }
-    .innerheading { font-size: 28px !important;line-height: 24px !important; }
+	.prcessinftxt h2 { font-size: 38px;  line-height: 44px; }
+	.fancyheading {  font-size: 36px; line-height: 40px;}
+	.themetxtbox { font-size: 22px !important; line-height: 36px !important; }
+	.desc { font-size: 19px !important; line-height: 30px !important;}
+	h2#pageheading {font-size: 50px; line-height: 55px; }
+	.innerheading { font-size: 28px !important;line-height: 24px !important; }
+	
+	
 }
 @media screen and (max-width:991px){
 
@@ -1306,6 +1308,10 @@ span.shape-three{
     color: #0B3C5A;
     margin-bottom: auto;
     font-weight: 600;
+    font-size: 16px;
+}
+.expertise-box ul p{
+    font-size: 13px;
 }
 .custm-undrline .text-underline{
     width: 145px;
@@ -1328,6 +1334,9 @@ span.shape-three{
 @media only screen and (min-width:1240px) {
     .section.full-width > .section_wrapper{
         max-width: 1440px !important;
+    }
+    #about-slider-section > .section_wrapper{
+        max-width: 100% !important;
     }
 }
 
@@ -1382,7 +1391,7 @@ span.shape-three{
     position: relative;
 }
 
-@media (min-width: 1364px){
+@media (min-width: 1240px){
     .expertise-box.style_prevu_ki.boxed-exper2{
         -webkit-transform: scale(1.08);
         -ms-transform: scale(1.08);
@@ -1430,7 +1439,7 @@ span.shape-three{
     }
     .service-box .column_attr p{
         box-shadow: none !important;
-        //border: 1px solid #d0d0d0;
+        /*border: 1px solid #d0d0d0;*/
     }
     .top-2minus {
         margin-top: -200px;
@@ -1443,6 +1452,16 @@ span.shape-three{
     .font-smallr p a, .font-smallr p a:hover{
         font-size: 20px;
     }
+}
+@media (max-width: 1023px){
+	/* Services */
+	#top-sec .wrap.mcb-wrap.one.valign-top.clearfix { padding-top:140px !important; }
+	#top-sec h2 { font-size: 35px; line-height: 45px; }
+}
+@media (max-width: 991px){
+	/* Services */
+	#price-compare .one-third.column { width:100%; margin-left:0; margin-right:0; }
+	#price-compare .mcb-column .expertise-box { height:auto !important; }
 }
 @media (max-width: 1360px){
     .column_attr.align_right, #Footer .contactarea, .column_attr.align_left, .feature_box_wrapper{
@@ -1594,4 +1613,33 @@ span.shape-three{
 }
 #price-compare{
     background-image: url('/wp-content/assets/images/Section2 Background.jpg');    
+}
+
+/* Media */
+@media (max-width: 1239px){
+	/**/
+	#service-section img.scale-with-grid { top: 120px; right: 0; }
+	/* Services */
+	#capabilites .font-smallr p a, #capabilites .font-smallr p a:hover { font-size: 22px; }
+	#capabilites .top-skew .mcb-column .column_attr { box-shadow:none; }
+	#leverage-tools .leverage-tools-upper { max-width: 1220px; padding:60px 20px 0 20px !important; }
+}
+@media (max-width: 1023px){
+	#leverage-tools .marquee { height: 60vh; }
+}
+@media (max-width: 767px){
+	#intro-banner-section, .banner-header { min-height: 55vh !important; height: 55vh !important; }
+	#approach-section .wrap.mcb-wrap.one.valign-top.clearfix { padding-top:0 !important; }
+	#cta-section .wrap.mcb-wrap.one.valign-top.clearfix {padding-top:0 !important;}
+	#cta-section .column_attr, #feature-section .column_attr { font-size: 30px !important; }
+	#testimonial-section .mcb-section-inner .column_attr { padding-top:0 !important; }
+	#testimonial-section .testi-center-text {font-size: 16px; margin-bottom:0;}
+	#testimonial-section .testi-bottom-text {font-size: 18px;}
+	#feature-section { margin-top: 0; }
+	#service-section img.scale-with-grid { position: static; }
+	#approach-section .column_attr { width: 100%; }
+	/* Services */
+	#top-sec .wrap.mcb-wrap.one.valign-top.clearfix { padding-top: 60px !important; }
+	#top-sec h2 {font-size: 28px; line-height: 36px;}
+	#capabilites .top-skew .mcb-column .column_attr { height: auto !important;}
 }
