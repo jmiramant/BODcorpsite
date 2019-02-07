@@ -311,7 +311,7 @@ a.link-button{
 a.link-button:hover, a.link-button:active{
     color: #fff !important;
     text-decoration: none;
-    //border-bottom: 2px solid #fff;
+    border-bottom: 2px solid #fff;
 }
 #testimonial-section .mcb-wrap-inner span.text-to-be-underlined{
     position: relative;
@@ -1320,6 +1320,11 @@ span.shape-three{
     margin: auto;
     bottom: 5px;
 }
+.custm-undrline2 .text-underline {
+    width: 205px;
+    right: 0px;
+    bottom: -5px;
+}
 .white-txt .text-to-be-underlined{
     color:white;
     position:relative;
@@ -1330,6 +1335,23 @@ span.shape-three{
 .expertise-box a.link-button:hover{
     color: #fcab00 !important;
 }
+.custm-undrline2{
+	position: relative;
+}
+.digit-underline .text-underline {
+    width: 50px;
+    left: 0px;
+    bottom: -5px;
+}
+
+.custom-ol ol{
+	list-style-type: disc;
+}
+
+.custom-ol ol li a{
+	color: #0a3d5c;
+}
+
 
 @media only screen and (min-width:1240px) {
     .section.full-width > .section_wrapper{
@@ -1422,7 +1444,6 @@ span.shape-three{
         transform: scale(1.1);
         box-shadow: 1px 1px 21px #a2a2a2;
         opacity: 1;
-        z-index: 99;
     }
     .boxed-exper2.hover-hax{
         -webkit-transform: scale(1) !important;
@@ -1455,6 +1476,67 @@ span.shape-three{
         font-size: 20px;
     }
 }
+
+@media (max-width: 30em){
+    table.responsive-table{
+      box-shadow: none;  
+    }
+    table.responsive-table thead{
+      display: none; 
+    }
+  table.display th,
+  table.display td{
+    padding: .5em;
+  }
+    
+  table.responsive-table td:nth-child(1):before{
+    content: 'Number';
+  }
+  table.responsive-table td:nth-child(2):before{
+    content: 'Name';
+  }
+  table.responsive-table td:nth-child(1),
+  table.responsive-table td:nth-child(2){
+    padding-left: 25%;
+  }
+  table.responsive-table td:nth-child(1):before,
+  table.responsive-table td:nth-child(2):before{
+    position: absolute;
+    left: .5em;
+    font-weight: bold;
+  }
+  
+    table.responsive-table tr,
+    table.responsive-table td{
+        display: block;
+    }
+    table.responsive-table tr{
+        position: relative;
+        margin-bottom: 1em;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+    }
+    table.responsive-table td{
+        border-top: none;
+    }
+    table.responsive-table td.organisationnumber{
+        background: #D5E0CC;
+        border-top: 1px solid #B3BFAA;
+    }
+    table.responsive-table td.actions{
+        position: absolute;
+        top: 0;
+        right: 0;
+        border: none;
+        background: none;
+    }
+}
+
+@media (max-width: 1240px){
+	.resposive-custm .three-fourth.column, .resposive-custm .one-fourth.column, .four.columns, .resposive-custm .one-third.column, .resposive-custm .two-third.column{
+		min-width: 100%;
+	}
+}
+
 @media (max-width: 1023px){
 	/* Services */
 	#top-sec .wrap.mcb-wrap.one.valign-top.clearfix { padding-top:140px !important; }
@@ -1630,6 +1712,13 @@ span.shape-three{
 	#leverage-tools .marquee { height: 60vh; }
 }
 @media (max-width: 767px){
+	.custm-undrline2 .text-underline{
+    	margin: 0 auto;
+    	bottom: 0;
+    	position: static;
+    	display: block;
+    	clear: both;
+	}
 	#intro-banner-section, .banner-header { min-height: 55vh !important; height: 55vh !important; }
 	#approach-section .wrap.mcb-wrap.one.valign-top.clearfix { padding-top:0 !important; }
 	#cta-section .wrap.mcb-wrap.one.valign-top.clearfix {padding-top:0 !important;}
@@ -1644,4 +1733,22 @@ span.shape-three{
 	#top-sec .wrap.mcb-wrap.one.valign-top.clearfix { padding-top: 60px !important; }
 	#top-sec h2 {font-size: 28px; line-height: 36px;}
 	#capabilites .top-skew .mcb-column .column_attr { height: auto !important;}
+}
+.record-linkage #Wrapper{
+    background-image: url(/wp-content/uploads/2019/02/header_background.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top left;
+}
+
+.record-linkage #Content{
+background-color: transparent;
+}
+#quote-areas{
+    padding-top: 150px;
+    padding-bottom: 150px;
+}
+#quote-areas .column_attr{
+    max-width: 1157px;
+    margin: 0 auto;
 }
