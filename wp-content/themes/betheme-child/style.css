@@ -510,13 +510,16 @@ p.testimonial-text-custom {
         overflow: auto;
     }
     .datasources table{ font-size: 16px; }
-    .resposive-custm table th, .resposive-custm table td{
+    #Content .resposive-custm table th, #Content .resposive-custm table td{
         padding: 15px 15px !important;
         text-align: center !important;
     }
     .table2-list > .column_attr{
         padding: 0px !important;
         overflow: auto;
+    }
+    .however-text{
+        padding: 0px !important;
     }
 }
 @media only screen and (min-width: 768px) {
