@@ -504,6 +504,8 @@ p.testimonial-text-custom {
         width: 140px !important;
         right: -126px !important;
     }
+    
+    #case-studies-section-1{ padding: 35px 0 20px !important; }
 }
 @media only screen and (min-width: 768px) {
     #Wrapper, .with_aside .content_wrapper{
@@ -1853,4 +1855,16 @@ background-color: transparent;
 #case-studies-section-3 {
     padding-top: 120px !important;
     padding-bottom: 40px !important;
+}
+*{
+    outline: none !important;
+}
+.sevicelinks a {
+    color: #ffa925;
+    cursor: pointer;
+    font-size: 22px;
+}
+.sevicelinks a:hover{
+    color: #ffa925;
+    text-decoration: none !important;
 }
