@@ -401,7 +401,7 @@ p.testimonial-text-custom {
 .feature_box .feature_box_wrapper .photo_wrapper, .feature_box .feature_box_wrapper .desc_wrapper{
     vertical-align: top;
 }
-#service-section h3, .testimonials_list .blockquote blockquote, .testimonials_list h4, .testimonials_list .subtitle{
+#service-section h3, .testimonials_list .blockquote blockquote, .testimonials_list h4, .testimonials_list .subtitle, #case-studies-section-1 h1{
     color: #0a3d5c;
 }
 @media screen and (max-width:1199px){
@@ -1825,4 +1825,21 @@ background-color: transparent;
 .resposive-custm p{
 	font-size: 22px;
 	line-height: 40px;
+}
+#case-studies-section-1{
+    padding: 210px 0 60px !important;
+}
+#case-studies-section-1 p{
+    font-size: 24px;
+}
+.case-study #topcase h2{
+    margin-bottom: 20px;
+}
+.case-study #topcase div.fullwidth{
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+#case-studies-section-3 {
+    padding-top: 120px !important;
+    padding-bottom: 40px !important;
 }
