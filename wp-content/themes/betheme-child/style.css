@@ -310,8 +310,8 @@ a.link-button{
 }
 a.link-button:hover, a.link-button:active{
     color: #fff !important;
-    text-decoration: none;
-    border-bottom: 2px solid #fff;
+    text-decoration: none !important;
+    //border-bottom: 2px solid #fff;
 }
 #testimonial-section .mcb-wrap-inner span.text-to-be-underlined{
     position: relative;
@@ -1835,9 +1835,10 @@ background-color: transparent;
 .case-study #topcase h2{
     margin-bottom: 20px;
 }
-.case-study #topcase div.fullwidth{
+#case-studies-section-3 div.fullwidth{
     margin-top: 20px;
     padding-bottom: 20px;
+    direction: ltr !important;
 }
 #case-studies-section-3 {
     padding-top: 120px !important;
