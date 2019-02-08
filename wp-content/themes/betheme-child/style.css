@@ -488,23 +488,33 @@ p.testimonial-text-custom {
 }
 @media screen and (max-width:414px){
     .prcessinftxt h2 { font-size: 22px; line-height: 30px; }
+    #Content .wrap.mcb-wrap.one.valign-top.clearfix{ padding: 0px 0px 0px 0px !important; }
+    .section_wrapper .column{ margin: 0 0 40px; }
+    .service-box .column_attr p{ margin-top: 10px !important; }
+    #Content #leverage-tools .leverage-tools-upper{ padding: 60px 20px 0 20px !important }
+    #leverage-tools > .section_wrapper > .wrap:last-of-type{ display: none !important; }
+    #price-compare .custm-undrline .text-underline{ width: 186px !important; left: 46px; right: unset !important; }
+    .expertise-box h3{ font-size: 26px !important; }
+    #price-compare .expertise-box h3 span.text-to-be-underlined span{ right: -91px !important; }
+    .capabilities-hax .text-underline {
+        width: 150px !important;
+        right: -90px !important;
+    }
+    #Content #leverage-tools .custm-underlins .text-underline {
+        width: 140px !important;
+        right: -126px !important;
+    }
 }
 @media only screen and (min-width: 768px) {
     #Wrapper, .with_aside .content_wrapper{
         max-width: 100% !important;
-    }
-    #price-compare .mcb-column .expertise-box{
-        opacity: 0.5;
-    }
-    #price-compare .mcb-column .expertise-box.hovered{
-        opacity: 1 !important;
     }
     .services #capabilites .top-skew .column_attr p > span:first-of-type {
         min-height: 100px;
         display: block;
     }
     .services #capabilites .top-skew .column_attr p > span:nth-of-type(2) {
-        min-height: 94px;
+        min-height: 194px;
         display: block;
     }
     .page-extended-heading > .column_attr{
@@ -1442,7 +1452,7 @@ span.shape-three{
         position: relative;
         z-index: 9;
         border: 1px solid #969696;
-        box-shadow: 1px 1px 21px #a2a2a2;
+        box-shadow: 1px 1px 3px #a2a2a2;
         margin-top: -10px;
         -moz-transition: all 200ms ease-in;
         -ms-transition: all 200ms ease-in;
