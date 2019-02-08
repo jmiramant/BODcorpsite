@@ -518,8 +518,11 @@ p.testimonial-text-custom {
         padding: 0px !important;
         overflow: auto;
     }
-    .however-text{
+    .however-text > .column_attr{
         padding: 0px !important;
+    }
+    .services .expertise-box a.link-button{
+        bottom: unset !important;
     }
 }
 @media only screen and (min-width: 768px) {
