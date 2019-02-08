@@ -505,7 +505,19 @@ p.testimonial-text-custom {
         right: -126px !important;
     }
     
-    #case-studies-section-1{ padding: 35px 0 20px !important; }
+    #Content #case-studies-section-1{ padding: 35px 0 20px !important; }
+    .datasources{
+        overflow: auto;
+    }
+    .datasources table{ font-size: 16px; }
+    .resposive-custm table th, .resposive-custm table td{
+        padding: 15px 15px !important;
+        text-align: center !important;
+    }
+    .table2-list > .column_attr{
+        padding: 0px !important;
+        overflow: auto;
+    }
 }
 @media only screen and (min-width: 768px) {
     #Wrapper, .with_aside .content_wrapper{
@@ -1867,4 +1879,7 @@ background-color: transparent;
 .sevicelinks a:hover{
     color: #ffa925;
     text-decoration: none !important;
+}
+.learn-more-text p{
+    font-size: 28px;
 }
