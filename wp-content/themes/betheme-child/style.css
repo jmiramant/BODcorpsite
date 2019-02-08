@@ -524,6 +524,15 @@ p.testimonial-text-custom {
     .services .expertise-box a.link-button{
         bottom: unset !important;
     }
+    #service-section .mcb-wrap-inner h1 .text-underline{
+        left: 60px !important;
+    }
+    .tss-wrapper .owl-theme .owl-nav .owl-prev{
+        left: -35px !important;
+    }
+    .tss-wrapper .owl-theme .owl-nav .owl-next{
+        right: -35px !important;
+    }
 }
 @media only screen and (min-width: 768px) {
     #Wrapper, .with_aside .content_wrapper{
@@ -1841,9 +1850,6 @@ background-color: transparent;
 #approach-item-section a.link-button:hover{
 	border-bottom: 2px solid #fcab00;
 }
-#testimonial-section .owl-nav{
-	display: none;
-}
 .resposive-custm .text-to-be-underlined{
 	font-size: 32px;
 	line-height: 32px;
@@ -1888,4 +1894,7 @@ background-color: transparent;
 }
 .learn-more-text p{
     font-size: 28px;
+}
+button.owl-dot:after{
+    background: transparent !important;
 }
