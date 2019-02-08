@@ -1745,10 +1745,47 @@ span.shape-three{
 background-color: transparent;
 }
 #quote-areas{
-    padding-top: 150px;
-    padding-bottom: 150px;
+    padding-top: 150px !important;
+    padding-bottom: 150px !important;
 }
 #quote-areas .column_attr{
     max-width: 1157px;
     margin: 0 auto;
 }
+#custom-media .icon-study{
+	display: inline-block;
+    width: 20%;
+    vertical-align: middle;
+	text-align:center;
+}
+
+#custom-media .info-study{
+	display: inline-block;
+    width: 75%;
+    vertical-align: middle;
+    padding-left: 20px;
+}
+
+#custom-media h2{
+	font-size: 32px;
+    margin-bottom: 0;
+}
+
+#custom-media p{
+	font-size: 28px;
+	line-height: normal;
+}
+
+#custom-media a{
+	font-size: 26px;
+	color: #fcab00 !important;
+}
+
+#custom-media .text-underline{
+	width: 145px;
+    left: 50px;
+    right: -50px;
+    margin: auto;
+    bottom: 5px;
+}
+
