@@ -470,6 +470,26 @@ p.testimonial-text-custom {
     h2#pageheading { font-size: 45px; line-height: 48px; }
 }
 @media screen and (max-width:767px){
+	
+div#slide-4-layer-8 {
+    background: none !important;
+}
+div#slide-4-layer-14 {
+    margin: 100px 3px !important;
+}
+div#sftext {
+    margin: -24px 0 0 -130px !important;
+}
+div#nytext {
+    margin:6px 0 0 -54px !important;
+}
+.tp-parallax-wrap {
+    width: 50% !important;
+}
+	.tp-parallax-wrap {
+    width: 50% !important;
+    top: 15px !important;
+}
 	.team-member-box .team_list .column {
     margin:0
 	}
@@ -1271,7 +1291,7 @@ span.shape-three{
         display: none;
     }
     .tp-parallax-wrap {
-        top: 60px !important;
+        top: 60px;
         left: 0 !important;
         right: 0 !important;
         margin: 0 auto;
