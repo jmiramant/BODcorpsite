@@ -309,9 +309,9 @@ a.link-button{
     transition:color 0.5s ease;
 }
 a.link-button:hover, a.link-button:active{
-    color: #fff !important;
+    /*color: #fff !important;*/
     text-decoration: none !important;
-    //border-bottom: 2px solid #fff;
+    /*border-bottom: 2px solid #fff;*/
 }
 #testimonial-section .mcb-wrap-inner span.text-to-be-underlined{
     position: relative;
@@ -403,6 +403,9 @@ p.testimonial-text-custom {
 }
 #service-section h3, .testimonials_list .blockquote blockquote, .testimonials_list h4, .testimonials_list .subtitle, #case-studies-section-1 h1{
     color: #0a3d5c;
+}
+a.button.arrow-down-click:hover:after{
+	background:none;
 }
 @media screen and (max-width:1199px){
 	.prcessinftxt h2 { font-size: 38px;  line-height: 44px; }
@@ -1410,7 +1413,7 @@ span.shape-three{
 
 
 @media only screen and (min-width:1240px) {
-    .section.full-width > .section_wrapper{
+    body:not(.contact) .section.full-width > .section_wrapper{
         max-width: 1440px !important;
     }
     #about-slider-section > .section_wrapper{
@@ -1897,4 +1900,15 @@ background-color: transparent;
 }
 button.owl-dot:after{
     background: transparent !important;
+}
+.case-study a.link-button span{
+    vertical-align: middle !important;
+}
+.contact .rev_slider > ul > li > .tp-parallax-wrap:nth-of-type(4) {
+    left: 16% !important;
+    top: 44% !important;
+}
+.contact .rev_slider > ul > li > .tp-parallax-wrap:nth-of-type(5) {
+    left: 63% !important;
+    top: 18% !important;
 }
