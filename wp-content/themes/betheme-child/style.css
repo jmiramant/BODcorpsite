@@ -1973,3 +1973,27 @@ button.owl-dot:after{
 .about-background-image{
     background-size: 100%;
 }
+.rev_slider_wrapper #verticalline, .rev_slider_wrapper #bottomline, .rev_slider_wrapper #slide-3-layer-8{
+    visibility: hidden !important;
+}
+#whysection{
+    background-position: 0 -19px !important;
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+}
+.essay, .essay:hover {
+    color: #fda22b;
+    text-decoration: none;
+}
+.member-list-section p{
+    font-size:33px;
+}
+@media screen and (min-width:760px)
+{
+    #nerdy-team .section_wrapper, #nerdy-team .container{
+        max-width: 1440px !important;
+    }
+}
+.page.page-id-37 .clearfix {
+    clear: none;
+}
