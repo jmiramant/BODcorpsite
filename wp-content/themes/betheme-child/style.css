@@ -11,9 +11,51 @@ Version:        1.6.1.1
 /* Theme customization starts here
 -------------------------------------------------------------- */
 #Footer .footer_copy{border:none !important}
-
+.member-list-section h2 {
+    color: rgb(253, 162, 43);
+    font-weight: 500;
+    margin: 50px 0;
+}
+.member-list-section p {
+    color: #fff;
+    font-size: 30px;
+    line-height: 1.3;
+}
+.team-member-box .team_list .column {
+    width: 100%;
+    text-align: center;
+}
+.team-member-box .team_list .column .image_frame{
+	border:none;
+}
+.team-member-box .desc_wrapper h4 {
+    margin-bottom: 3px;
+    font-size: 36px;
+    color: rgb(253, 162, 43);
+	line-height:1.4;
+}
+.bg-img-fix{
+background-attachment: fixed;
+}
+.team-member-box .subtitle{
+    color: #fff !important;
+    font-size: 24px;
+}
+.team-member-box hr {
+    display: none;
+}
+.team-member-box {
+    width: 23% !important;
+}
+.member-list-section .image_frame{
+	border:0;
+}
 .grecaptcha-badge {
     display: none;
+}
+.about-h4 {
+    width: 80%;
+    margin: auto;
 }
 /* .aos-animate[data-aos^="zoom"][data-aos^="zoom"] {
     opacity: 1 !important;
@@ -32,6 +74,9 @@ Version:        1.6.1.1
 [data-aos="zoom-out-up"] {
     transform: translate3d(0,100px,0) scale(1.2) !important;
 } */
+a.button.arrow-down-click:hover:after{
+    background:none;
+}
 .header-transparent #Top_bar .menu > li > a::after {
     background: #fda22b !important;
 }
@@ -309,9 +354,9 @@ a.link-button{
     transition:color 0.5s ease;
 }
 a.link-button:hover, a.link-button:active{
-    color: #fff !important;
+    /*color: #fff !important;*/
     text-decoration: none !important;
-    //border-bottom: 2px solid #fff;
+    /*border-bottom: 2px solid #fff;*/
 }
 #testimonial-section .mcb-wrap-inner span.text-to-be-underlined{
     position: relative;
@@ -425,12 +470,25 @@ p.testimonial-text-custom {
     h2#pageheading { font-size: 45px; line-height: 48px; }
 }
 @media screen and (max-width:767px){
+	.team-member-box .team_list .column {
+    margin:0
+	}
+	#slide-5-layer-1 {
+    font-size: 38px !important;
+    height: 55px;
+}
     .custm-top-text{
         font-size:32px;top:22%;
     }   
     .custm-h2-center{
         font-size:22px;line-height: 30px;
     }
+	.member-list-section h2 {
+    margin: 10px 0;
+}
+	.member-list-section p {
+    font-size: 20px;
+}
     .custm-h2-right{
         font-size:28px;
         width: 100% !important;
@@ -1410,7 +1468,7 @@ span.shape-three{
 
 
 @media only screen and (min-width:1240px) {
-    .section.full-width > .section_wrapper{
+    body:not(.contact) .section.full-width > .section_wrapper{
         max-width: 1440px !important;
     }
     #about-slider-section > .section_wrapper{
@@ -1768,6 +1826,9 @@ span.shape-three{
 	#leverage-tools .marquee { height: 60vh; }
 }
 @media (max-width: 767px){
+	.team-member-box {
+    width: 100% !important;
+}
 	.custm-undrline2 .text-underline{
     	margin: 0 auto;
     	bottom: 0;
@@ -1897,4 +1958,18 @@ background-color: transparent;
 }
 button.owl-dot:after{
     background: transparent !important;
+}
+.case-study a.link-button span{
+    vertical-align: middle !important;
+}
+.contact .rev_slider > ul > li > .tp-parallax-wrap:nth-of-type(4) {
+    left: 16% !important;
+    top: 44% !important;
+}
+.contact .rev_slider > ul > li > .tp-parallax-wrap:nth-of-type(5) {
+    left: 63% !important;
+    top: 18% !important;
+}
+.about-background-image{
+    background-size: 100%;
 }
