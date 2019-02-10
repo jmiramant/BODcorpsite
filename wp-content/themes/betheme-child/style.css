@@ -354,6 +354,9 @@ a.link-button{
     color: #fcab00 !important;
     transition:color 0.5s ease;
 }
+a.link-button .dashicons{
+    vertical-align:middle !important;
+}
 a.link-button:hover, a.link-button:active{
     /*color: #fff !important;*/
     text-decoration: none !important;
@@ -574,7 +577,6 @@ div#nytext {
     #leverage-tools > .section_wrapper > .wrap:last-of-type{ display: none !important; }
     #price-compare .custm-undrline .text-underline{ width: 186px !important; left: 46px; right: unset !important; }
     .expertise-box h3{ font-size: 26px !important; }
-    #price-compare .expertise-box h3 span.text-to-be-underlined span{ right: -91px !important; }
     .capabilities-hax .text-underline {
         width: 150px !important;
         right: -90px !important;
@@ -611,6 +613,65 @@ div#nytext {
     }
     .tss-wrapper .owl-theme .owl-nav .owl-next{
         right: -35px !important;
+    }
+    #price-compare .mcb-wrap-inner > .column:nth-of-type(4) .expertise-box h3 span.text-to-be-underlined span, #price-compare .expertise-box h3 span.text-to-be-underlined span{
+        left: unset !important;
+        right: -20px !important;
+    }
+    #Content #leverage-tools .custm-underlins .text-underline{
+        right: -103px !important;
+    }
+    .expertise-box{
+        padding: 20px 20px 50px 20px !important;
+    }
+    #topcase{
+        padding-top: 44px !important
+    }
+    #topcase .mcb-wrap-inner > .column:first-of-type{
+        display: none;
+    }
+    #approach-item-section > .section_wrapper > .wrap{
+        background-color: #f2f5f9;
+    }
+    .about-background-image{
+        background-size: cover;
+    }
+    #slide-5-layer-1{
+        margin-top: 45px !important;
+        line-height: 35px !important;
+    }
+    #slide-5-layer-1.bigborder::after {
+        width: 166px;
+        right: 10px;
+    }
+    #slide-3-layer-1{
+        font-size: 38px !important;
+        line-height: 37px !important;
+    }
+    .tp-parallax-wrap{
+        width: 80% !important;
+    }
+    #slide-3-layer-1.bigborder::after {
+        width: 240px !important;
+        bottom: -18px !important;
+        right: 35px !important;
+    }
+    div#slide-4-layer-14 {
+        margin: 145px 3px 0px !important;
+    }
+    .contact .tp-caption > br, .contact .tp-caption p > br{
+        display: block !important;
+    }
+    .contact #mfn-rev-slider .rev_slider > ul > li > .tp-parallax-wrap:nth-of-type(5) {
+        left: 57% !important;
+        top: 8% !important;
+    }
+    #slide-4-layer-1{
+        text-align: left !important;
+        font-size: 27px !important;
+    }
+    div#sftext{
+        margin: -43px 0 0 -171px !important;
     }
 }
 @media only screen and (min-width: 768px) {
@@ -2063,4 +2124,26 @@ case-study_nlp .business .wpb_wrapper h2 {
         bottom: 0;
         right: 0;
     }
+}
+.about .desc_wrapper .subtitle {
+    font-size: 27px !important;
+}
+.page.page-id-37 .clearfix {
+    clear: none;
+}
+.link-button .dashicons, .link-button .dashicons-before:before {
+height: 30px !important;
+}
+
+.owl-theme .owl-nav [class*=owl-]:hover {
+    background: #869791;
+    color: #FFF;
+    text-decoration: none;
+}
+.owl-theme .owl-nav [class*=owl-]:hover {
+    background: inherit !important;
+    color: inherit !important;
+}
+.owl-theme .owl-nav [class*=owl-]:after{
+    background: transparent !important;
 }
