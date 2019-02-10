@@ -101,6 +101,7 @@ a.button.arrow-down-click:hover:after{
 .link-button .dashicons, .link-button .dashicons-before:before {
     width: 40px !important;
     font-size: 32px !important;
+    height: 30px !important;
 }
 .testi-center-text{
     font-size: 22px; font-style: normal;margin: 50px 6%;
@@ -470,6 +471,26 @@ p.testimonial-text-custom {
     h2#pageheading { font-size: 45px; line-height: 48px; }
 }
 @media screen and (max-width:767px){
+	
+div#slide-4-layer-8 {
+    background: none !important;
+}
+div#slide-4-layer-14 {
+    margin: 100px 3px !important;
+}
+div#sftext {
+    margin: -24px 0 0 -130px !important;
+}
+div#nytext {
+    margin:6px 0 0 -54px !important;
+}
+.tp-parallax-wrap {
+    width: 50% !important;
+}
+	.tp-parallax-wrap {
+    width: 50% !important;
+    top: 15px !important;
+}
 	.team-member-box .team_list .column {
     margin:0
 	}
@@ -1271,7 +1292,7 @@ span.shape-three{
         display: none;
     }
     .tp-parallax-wrap {
-        top: 60px !important;
+        top: 60px;
         left: 0 !important;
         right: 0 !important;
         margin: 0 auto;
@@ -1972,4 +1993,28 @@ button.owl-dot:after{
 }
 .about-background-image{
     background-size: 100%;
+}
+.rev_slider_wrapper #verticalline, .rev_slider_wrapper #bottomline, .rev_slider_wrapper #slide-3-layer-8{
+    visibility: hidden !important;
+}
+#whysection{
+    background-position: 0 -19px !important;
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+}
+.essay, .essay:hover {
+    color: #fda22b;
+    text-decoration: none;
+}
+.member-list-section p{
+    font-size:33px;
+}
+@media screen and (min-width:760px)
+{
+    #nerdy-team .section_wrapper, #nerdy-team .container{
+        max-width: 1440px !important;
+    }
+}
+.page.page-id-37 .clearfix {
+    clear: none;
 }
