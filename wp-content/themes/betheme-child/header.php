@@ -7,7 +7,11 @@
  * @link http://muffingroup.com
  */
 try{
-    $page_slug = explode('/',parse_url(get_permalink())['path'])[1];
+    $parsed_url = explode('/',parse_url(get_permalink())['path']);
+    $page_slug = preg_replace('/\s+/', '_', $parsed_url[1]);
+    if( isset($parsed_url[2]) && !empty($parsed_url[2]) ){
+        $page_slug .= '_' . preg_replace('/\s+/', '_', $parsed_url[2]);
+    }
 }catch(Exception $e){
     $page_slug = '';
 }
