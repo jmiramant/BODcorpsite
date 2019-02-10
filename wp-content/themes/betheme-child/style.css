@@ -634,7 +634,8 @@ div#nytext {
         background-color: #f2f5f9;
     }
     .about-background-image{
-        background-size: cover;
+        background-size: cover !important;
+        padding-bottom: 0px !important;
     }
     #slide-5-layer-1{
         margin-top: 45px !important;
@@ -672,6 +673,9 @@ div#nytext {
     }
     div#sftext{
         margin: -43px 0 0 -171px !important;
+    }
+    #rev_slider_5_1 .tp-parallax-wrap{
+        top: 32px !important;
     }
 }
 @media only screen and (min-width: 768px) {
