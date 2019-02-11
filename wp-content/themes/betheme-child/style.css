@@ -454,46 +454,54 @@ p.testimonial-text-custom {
     color: #0a3d5c;
 }
 @media screen and (max-width:1199px){
+	.custm-undrline2 .text-underline{    width: 115px;}
 	.prcessinftxt h2 { font-size: 38px;  line-height: 44px; }
 	.fancyheading {  font-size: 36px; line-height: 40px;}
-	.themetxtbox { font-size: 22px !important; line-height: 36px !important; }
+	.themetxtbox, .resposive-custm p { font-size: 22px !important; line-height: 36px !important; }
 	.desc { font-size: 19px !important; line-height: 30px !important;}
-	h2#pageheading {font-size: 50px; line-height: 55px; }
-	.innerheading { font-size: 28px !important;line-height: 24px !important; }
+	h2#pageheading, .caseStudy-head h2 {font-size: 55px; line-height: 55px; }
+	.innerheading, .resposive-custm .text-to-be-underlined { font-size: 28px !important;line-height: 24px !important; }
 	
 	
 }
 @media screen and (max-width:991px){
 
-    .innerheading { font-size: 20px !important; line-height: 16px !important;}
+    .innerheading, .resposive-custm .text-to-be-underlined { font-size: 20px !important; line-height: 16px !important;}
     .prcessinftxt h2 { font-size: 28px; line-height: 35px;}
     .desc { font-size: 15px !important; line-height: 22px !important;}
-    .themetxtbox { font-size: 18px !important; line-height: 30px !important;}
+    .themetxtbox, .resposive-custm p { font-size: 18px !important; line-height: 30px !important;}
     .caseleftimg img { min-height: 620px !important;}
     body .caserightimg img { height: 380px !important;}
-    h2#pageheading { font-size: 45px; line-height: 48px; }
+    h2#pageheading, .caseStudy-head h2  { font-size: 45px; line-height: 48px; }
 }
 @media screen and (max-width:767px){
+	.custm-undrline2 .text-underline{
+    	right: 0px;
+    	bottom: 0px;
+	}
+	.caseStudy-head .wrap.mcb-wrap{
+		padding: 40px 0px 30px 0px !important;
+	}
 	
 div#slide-4-layer-8 {
     background: none !important;
 }
-div#slide-4-layer-14 {
+/* div#slide-4-layer-14 {
     margin: 100px 3px !important;
 }
 div#sftext {
     margin: -24px 0 0 -130px !important;
-}
-div#nytext {
+} */
+/* div#nytext {
     margin:6px 0 0 -54px !important;
-}
-.tp-parallax-wrap {
+} */
+/* .tp-parallax-wrap {
     width: 50% !important;
 }
 	.tp-parallax-wrap {
     width: 50% !important;
     top: 15px !important;
-}
+} */
 	.team-member-box .team_list .column {
     margin:0
 	}
@@ -539,7 +547,8 @@ div#nytext {
 
     body.page-id-252 #logo .logo-sticky{ display: none !important;}
     body.page-id-252 #Top_bar .logo #logo{ text-align: left;   margin: 10px 30px !important;}
-    h2#pageheading { font-size: 25px !important; line-height: 30px !important; }
+    h2#pageheading, .caseStudy-head h2 { font-size: 25px !important; line-height: 30px !important; color: #0d395d;
+    text-align: left; }
     #Topheading.vc_custom_1533634965275 { padding-bottom: 20px !important;  padding-top: 20px !important;}
     .innerheading { float: left !important;  position: relative;}
     #casebox .wpb_wrapper > div{ min-height: 0px !important;}
@@ -649,9 +658,9 @@ div#nytext {
         font-size: 38px !important;
         line-height: 37px !important;
     }
-    .tp-parallax-wrap{
+/*     .tp-parallax-wrap{
         width: 80% !important;
-    }
+    } */
     #slide-3-layer-1.bigborder::after {
         width: 240px !important;
         bottom: -18px !important;
@@ -679,6 +688,11 @@ div#nytext {
     }
 }
 @media only screen and (min-width: 768px) {
+	.caseStudy-head 
+	.contact .rev_slider > ul > li > .tp-parallax-wrap:nth-of-type(5) {
+    	left: 58% !important;
+    	top: 12% !important;
+	}
     #Wrapper, .with_aside .content_wrapper{
         max-width: 100% !important;
     }
@@ -1356,13 +1370,13 @@ span.shape-three{
     #verticalline {
         display: none;
     }
-    .tp-parallax-wrap {
+/*     .tp-parallax-wrap {
         top: 60px;
         left: 0 !important;
         right: 0 !important;
         margin: 0 auto;
         width: 80%;
-    }
+    } */
     #slide-7-layer-1.tp-caption.tp-resizeme {
         position: absolute;
         top: -30px;
@@ -1681,6 +1695,12 @@ span.shape-three{
 	display: none !important;
 }
 
+@media (max-width: 767px){
+	.page-id-37 #Content{
+		margin-top: 0px !important;
+	}
+}
+
 @media (max-width: 990px){
 	.datasources .column_attr, .table2-list .column_attr{
 		overflow-x: scroll;
@@ -1947,13 +1967,6 @@ span.shape-three{
 	.team-member-box {
     width: 100% !important;
 }
-	.custm-undrline2 .text-underline{
-    	margin: 0 auto;
-    	bottom: 0;
-    	position: static;
-    	display: block;
-    	clear: both;
-	}
 	#intro-banner-section, .banner-header { min-height: 55vh !important; height: 55vh !important; }
 	#approach-section .wrap.mcb-wrap.one.valign-top.clearfix { padding-top:0 !important; }
 	#cta-section .wrap.mcb-wrap.one.valign-top.clearfix {padding-top:0 !important;}
@@ -2182,4 +2195,12 @@ case-study_nlp .business .wpb_wrapper h2 {
 }
 .owl-theme .owl-nav [class*=owl-]:after{
     background: transparent !important;
+}
+@media screen and (max-width:767px){
+	.custm-undrline2 .text-underline{
+		width: 85px;
+    	right: 0px;
+    	left: 30px;
+    	bottom: 0px;
+	}
 }
