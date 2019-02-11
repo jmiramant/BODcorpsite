@@ -6,6 +6,15 @@
  * @author Muffin group
  * @link http://muffingroup.com
  */
+try{
+    $parsed_url = explode('/',parse_url(get_permalink())['path']);
+    $page_slug = preg_replace('/\s+/', '_', $parsed_url[1]);
+    if( isset($parsed_url[2]) && !empty($parsed_url[2]) ){
+        $page_slug .= '_' . preg_replace('/\s+/', '_', $parsed_url[2]);
+    }
+}catch(Exception $e){
+    $page_slug = '';
+}
 ?><!DOCTYPE html>
 <?php
 	if( $_GET && key_exists('mfn-rtl', $_GET) ):
@@ -52,18 +61,22 @@
 <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/custom.js"></script>
 
 <script>
-			jQuery(document).ready(function () {
-    AOS.init({
-        duration: 1200
+    jQuery(document).ready(function () {
+        AOS.init({
+            duration: 1200
+        });
     });
-});
-		</script>
+</script>
 
 <!-- wp_head() -->
 <?php wp_head(); ?>
+
+<?php if( !is_user_logged_in() ): ?>
+    <link rel='stylesheet' id='dashicons-css'  href='/wp-includes/css/dashicons.min.css' type='text/css' media='all' />
+<?php endif; ?>
 </head>
 <!-- body -->
-<body <?php body_class(); ?>>
+<body <?php body_class($page_slug); ?>>
 
 	<?php do_action( 'mfn_hook_top' ); ?>
 
