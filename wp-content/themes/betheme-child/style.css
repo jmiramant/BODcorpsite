@@ -618,7 +618,8 @@ div#sftext {
         padding: 0px !important;
     }
     .services .expertise-box a.link-button{
-        bottom: unset !important;
+        bottom: 20px !important;
+        margin-top: 20px;
     }
     #service-section .mcb-wrap-inner h1 .text-underline{
         left: 60px !important;
@@ -689,9 +690,31 @@ div#sftext {
     div#sftext{
         margin: -43px 0 0 -171px !important;
     }
-    #rev_slider_5_1 .tp-parallax-wrap{
-        top: 32px !important;
+    .about #rev_slider_5_1 .tp-parallax-wrap{
+        top: 0px !important;
+        left: 65px !important;
     }
+    #price-compare .mcb-column .expertise-box{
+        position: relative;
+    }
+    #top-sec{
+        background-size: 100% 100% !important;
+        background-position: left top !important;
+    }
+    #rev_slider_3_1 > ul > li .tp-parallax-wrap{
+        left: 19px !important;
+        top: 22px !important;
+    }
+    #rev_slider_3_1 > ul > li .tp-parallax-wrap .tp-caption{
+        font-size: 22px !important;
+    }
+    .leverage-tools-upper .column:last-of-type > .column_attr{
+        padding: 15px 0 35px !important;
+    }
+    .contact .rev_slider > ul > li .tp-parallax-wrap{
+        top: 5px !important;
+    }
+
 }
 @media only screen and (min-width: 768px) {
 	.caseStudy-head 
@@ -1697,10 +1720,6 @@ span.shape-three{
     }
 }
 
-#testimonial-section .owl-theme .owl-nav {
-	display: none !important;
-}
-
 @media (max-width: 767px){
 	.page-id-37 #Content{
 		margin-top: 0px !important;
@@ -2167,7 +2186,18 @@ case-study_nlp .business .wpb_wrapper h2 {
     right: 140px;
     background-size: 30px;
 }
+@media(max-width:1150px){
+	.custm-undrline2 .text-underline{
+		width: 75px;
+	}
+	.team-member-box .desc_wrapper h4 {
+    	font-size: 22px;
+	}
+}
 @media(max-width:1024px){
+	.team-member-box .desc_wrapper h4 {
+    	font-size: 20px;
+	}
     .case-study_nlp .business .wpb_wrapper h2:after {
         width: 32px;
         height: 26px;
@@ -2203,14 +2233,22 @@ case-study_nlp .business .wpb_wrapper h2 {
 .owl-theme .owl-nav [class*=owl-]:after{
     background: transparent !important;
 }
-@media screen and (max-width:767px){
-	.custm-undrline2 .text-underline {
-    width: 85px;
-    right: 0px;
-    left: 20px;
-    bottom: 0px;
-    border-bottom: 3px solid #fcab00;
+@media screen and (min-width:768px){
+    .largr-none{
+            display: none;
+    }
 }
+@media screen and (max-width:767px){
+    .mobl-none, #leverage-tools > .section_wrapper > .wrap:last-of-type{
+        display: none;
+    }
+    .custm-undrline2 .text-underline {
+        width: 85px;
+        right: 0px;
+        left: 20px;
+        bottom: 0px;
+        border-bottom: 3px solid #fcab00;
+    }
 }
 @media (max-width: 1440px){
 	.team-member-box .desc_wrapper h4{
@@ -2227,4 +2265,7 @@ case-study_nlp .business .wpb_wrapper h2 {
 	.about .desc_wrapper .subtitle {
     	font-size: 20px !important;
 	}
+}
+.contact .rev_slider > ul > li .tp-bgimg{
+    background-image: url('/wp-content/assets/images/desktop-mpping.jpg') !important;
 }
