@@ -474,11 +474,17 @@ p.testimonial-text-custom {
     body .caserightimg img { height: 380px !important;}
     h2#pageheading, .caseStudy-head h2  { font-size: 45px; line-height: 48px; }
 }
-@media screen and (max-width:767px){
-	.custm-undrline2 .text-underline{
-    	right: 0px;
-    	bottom: 0px;
+
+@media (max-width:767px){
+	.digit-underline .text-underline{
+		left: 0px !important;
+		width: 30px !important;
 	}
+	.resposive-custm table th, .resposive-custm table td{
+		font-size: 16px;
+	}
+}
+@media screen and (max-width:767px){
 	.caseStudy-head .wrap.mcb-wrap{
 		padding: 40px 0px 30px 0px !important;
 	}
@@ -1794,6 +1800,7 @@ span.shape-three{
 	#price-compare .one-third.column { width:100%; margin-left:0; margin-right:0; }
 	#price-compare .mcb-column .expertise-box { height:auto !important; }
 }
+
 @media (max-width: 1366px){
 	.team-member-box .desc_wrapper h4{
 		font-size: 32px;
@@ -2197,10 +2204,27 @@ case-study_nlp .business .wpb_wrapper h2 {
     background: transparent !important;
 }
 @media screen and (max-width:767px){
-	.custm-undrline2 .text-underline{
-		width: 85px;
-    	right: 0px;
-    	left: 30px;
-    	bottom: 0px;
+	.custm-undrline2 .text-underline {
+    width: 85px;
+    right: 0px;
+    left: 20px;
+    bottom: 0px;
+    border-bottom: 3px solid #fcab00;
+}
+}
+@media (max-width: 1440px){
+	.team-member-box .desc_wrapper h4{
+		font-size: 32px;
+	}
+	.about .desc_wrapper .subtitle{
+		font-size: 22px !important;
+	}
+}
+@media (max-width: 1280px){
+	.team-member-box .desc_wrapper h4{
+		font-size: 28px;
+	}
+	.about .desc_wrapper .subtitle {
+    	font-size: 20px !important;
 	}
 }
