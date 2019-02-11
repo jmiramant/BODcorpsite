@@ -2238,10 +2238,12 @@ case-study_nlp .business .wpb_wrapper h2 {
             display: none;
     }
 }
-@media screen and (max-width:767px){
+@media screen and (max-width:800px){
     .mobl-none, #leverage-tools > .section_wrapper > .wrap:last-of-type{
         display: none;
     }
+}
+@media screen and (max-width:767px){
     .custm-undrline2 .text-underline {
         width: 85px;
         right: 0px;
