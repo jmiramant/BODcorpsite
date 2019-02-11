@@ -618,7 +618,7 @@ div#sftext {
         padding: 0px !important;
     }
     .services .expertise-box a.link-button{
-        bottom: 20px !important;
+        bottom: 33px !important;
         margin-top: 20px;
     }
     #service-section .mcb-wrap-inner h1 .text-underline{
@@ -638,7 +638,7 @@ div#sftext {
         right: -103px !important;
     }
     .expertise-box{
-        padding: 20px 20px 50px 20px !important;
+        padding: 20px 20px 70px 20px !important;
     }
     #topcase{
         padding-top: 44px !important
@@ -2238,7 +2238,7 @@ case-study_nlp .business .wpb_wrapper h2 {
             display: none;
     }
 }
-@media screen and (max-width:800px){
+@media screen and (max-width:1000px){
     .mobl-none, #leverage-tools > .section_wrapper > .wrap:last-of-type{
         display: none;
     }
@@ -2270,4 +2270,9 @@ case-study_nlp .business .wpb_wrapper h2 {
 }
 .contact .myslider .rev_slider > ul > li .tp-bgimg{
     background-image: url('/wp-content/assets/images/desktop-mpping.jpg') !important;
+}
+@media (min-width: 1600px){
+    #top-sec{
+        background-position: right bottom !important;
+    }
 }
