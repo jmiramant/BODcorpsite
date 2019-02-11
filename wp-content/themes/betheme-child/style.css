@@ -117,7 +117,7 @@ a.button.arrow-down-click:hover:after{
     border-radius: 10px;
     box-shadow: 0px 0px 2px -1px #000;
     background-color: #fff;
-    min-height: 400px !important;
+    min-height: 420px !important;
     height:auto !important;
 }
 
@@ -555,9 +555,9 @@ div#nytext {
         padding: 0px;
         border-left: none;
     }
-    .column_attr.align_right, #Footer .contactarea, .column_attr.align_left, .feature_box_wrapper{
-        text-align: center;
-    }
+	.digit-underline .column_attr.align_center {
+    	text-align: left;
+	}
     #feature-section .feature_box .feature_box_wrapper .photo_wrapper {
         width: 100%;
     }
@@ -1282,21 +1282,21 @@ span.shape-three{
     .fullwidthbanner-container .fullwidthabanner {
         height:100% !important
     }
-    .fullwidthbanner-container {
-        height:220px !important;
-    }
+/*     .fullwidthbanner-container {
+        height:300px !important;
+    } */
     .service-box .column_attr p {
         min-height:auto
     }
-    .tp-loop-wrap, .tp-mask-wrap {
+/*     .tp-loop-wrap, .tp-mask-wrap {
         position: static !important
-    }
-    .tp-caption {
-        white-space: normal !important;
+    } */
+     .tp-caption {
+/*         white-space: normal !important; */
         font-size: 16px !important;
         line-height: 22px !important;
     }
-    .tp-caption > br, .tp-caption p > br {
+/*    .tp-caption > br, .tp-caption p > br {
         display: none;
     }
     .tp-caption {
@@ -1306,7 +1306,7 @@ span.shape-three{
         min-width: 100% !important;
         line-height: 17px !important;
         text-align: center !important;
-    }
+    } */
     .border-top-bottom {
         font-size: 18px;
         font-weight: 500;
@@ -1334,9 +1334,9 @@ span.shape-three{
     .border-left-center {
         font-size: 18px !important;
     }
-    .tp-caption {
+/*     .tp-caption {
         white-space: normal !important;
-    }
+    } */
     .service-box .column_attr {
         width:100%
     }
@@ -1371,9 +1371,9 @@ span.shape-three{
         left: 0;
         right: 0;
     }
-    .wrap.mcb-wrap.one.valign-top.clearfix {
+/*     .wrap.mcb-wrap.one.valign-top.clearfix {
         padding: 60px 0px 0px 0px !important;
-    }
+    } */
     .Animations-box {
         padding-bottom: 10px !important;
         margin-top: 0;
@@ -1406,12 +1406,12 @@ span.shape-three{
     .tp-shape {
         right: -100px;
     }
-    .tp-parallax-wrap {
+/*     .tp-parallax-wrap {
         top: 150px!important;
-    }
-    .fullwidthbanner-container {
+    } */
+/*     .fullwidthbanner-container {
         height: 270px!important;
-    }
+    } */
     .border-left-center {
         font-size: 33px!important;
     }
@@ -1677,6 +1677,33 @@ span.shape-three{
     }
 }
 
+#testimonial-section .owl-theme .owl-nav {
+	display: none !important;
+}
+
+@media (max-width: 990px){
+	.datasources .column_attr, .table2-list .column_attr{
+		overflow-x: scroll;
+		padding-left: 0px !important;
+	}
+	.however-text .column_attr{
+		padding-left: 0px !important;
+	}
+	#quote-areas {
+    	padding-top: 10px !important;
+    	padding-bottom: 50px !important;
+	}
+}
+
+@media (max-width: 500px){
+	.member-list-section p{
+		line-height: normal !important;
+	}
+	#service-section .column_attr h3 {
+    	font-size: 18px !important;
+	}
+}
+
 @media (max-width: 30em){
     table.responsive-table{
       box-shadow: none;  
@@ -1739,13 +1766,18 @@ span.shape-three{
 
 @media (max-width: 1023px){
 	/* Services */
-	#top-sec .wrap.mcb-wrap.one.valign-top.clearfix { padding-top:140px !important; }
+	/* 	#top-sec .wrap.mcb-wrap.one.valign-top.clearfix { padding-top:140px !important; } */
 	#top-sec h2 { font-size: 35px; line-height: 45px; }
 }
 @media (max-width: 991px){
 	/* Services */
 	#price-compare .one-third.column { width:100%; margin-left:0; margin-right:0; }
 	#price-compare .mcb-column .expertise-box { height:auto !important; }
+}
+@media (max-width: 1366px){
+	.team-member-box .desc_wrapper h4{
+		font-size: 32px;
+	}
 }
 @media (max-width: 1360px){
     .column_attr.align_right, #Footer .contactarea, .column_attr.align_left, .feature_box_wrapper{
@@ -2136,7 +2168,7 @@ case-study_nlp .business .wpb_wrapper h2 {
     clear: none;
 }
 .link-button .dashicons, .link-button .dashicons-before:before {
-height: 30px !important;
+	height: 30px !important;
 }
 
 .owl-theme .owl-nav [class*=owl-]:hover {
