@@ -711,7 +711,7 @@ div#sftext {
     .leverage-tools-upper .column:last-of-type > .column_attr{
         padding: 15px 0 35px !important;
     }
-    .contact .rev_slider > ul > li .tp-parallax-wrap{
+    .contact .myslider .rev_slider > ul > li .tp-parallax-wrap{
         top: 5px !important;
     }
 
@@ -2266,6 +2266,6 @@ case-study_nlp .business .wpb_wrapper h2 {
     	font-size: 20px !important;
 	}
 }
-.contact .rev_slider > ul > li .tp-bgimg{
+.contact .myslider .rev_slider > ul > li .tp-bgimg{
     background-image: url('/wp-content/assets/images/desktop-mpping.jpg') !important;
 }
