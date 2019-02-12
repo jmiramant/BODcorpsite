@@ -722,6 +722,9 @@ div#sftext {
     .contact .myslider .rev_slider > ul > li .tp-parallax-wrap{
         top: 5px !important;
     }
+    #whysection{
+        background-size: 200% 100% !important;
+    }
 
 }
 @media only screen and (min-width: 768px) {
@@ -822,7 +825,7 @@ canvas{ display: block; vertical-align: bottom; } /* ---- particles.js container
 .hide-desktop {
     display: none;
 }
-.tp-bgimg.defaultimg {
+#rev_slider_3_1 .tp-bgimg.defaultimg {
     background-attachment: fixed;
     height: auto !important;
 }
