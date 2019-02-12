@@ -56,6 +56,7 @@ background-attachment: fixed;
 .about-h4 {
     width: 80%;
     margin: auto;
+    margin-top: 0px !important;
 }
 /* .aos-animate[data-aos^="zoom"][data-aos^="zoom"] {
     opacity: 1 !important;
@@ -234,8 +235,12 @@ div#myborder.mainborder {
     width: 320px;
 }
 #whysection{ 
-    background-position: center bottom !important;
+    background-position: center !important;
     background-size: contain !important;
+}
+#whysection .column_attr{
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 .section_wrapper.mcb-section-inner .wrap.mcb-wrap.one.valign-top div#rev_slider_4_2_wrapper .tp-bgimg.defaultimg {
     background-color: #133d5c !important;
@@ -2138,7 +2143,6 @@ button.owl-dot:after{
     visibility: hidden !important;
 }
 #whysection{
-    background-position: 0 -19px !important;
     padding-top: 60px !important;
     padding-bottom: 60px !important;
 }
