@@ -827,10 +827,6 @@ canvas{ display: block; vertical-align: bottom; } /* ---- particles.js container
 .hide-desktop {
     display: none;
 }
-.about .fullwidthbanner-container .tp-bgimg.defaultimg {
-    background-attachment: fixed;
-    height: auto !important;
-}
 .service-box.second .column_attr {
     background-position: center -5px !important;
 }
