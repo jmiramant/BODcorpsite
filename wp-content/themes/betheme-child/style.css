@@ -2268,8 +2268,20 @@ case-study_nlp .business .wpb_wrapper h2 {
     }
 }
 @media (max-width: 1600px){
-	.nerdy-team-fix .section_wrapper, .nerdy-team-fix .container {
+	.nerdy-team-fix .section_wrapper, .nerdy-team-fix .container{
     	width: 85%;
+	}
+	#manydata-sec .section_wrapper, #manydata-sec .container, #testimonial-secnn .section_wrapper, #testimonial-secnn .container{
+		width: 85%;
+	}
+	#process-data .section_wrapper, #process-data .container{
+    	width: 92%;
+	}
+	#process-data{
+		background-position: 27% 110px;
+	}
+	#process-data p{
+		margin-bottom: 0px;
 	}
 	.team-member-box .desc_wrapper h4{
 		font-size: 32px;
@@ -2416,7 +2428,7 @@ case-study_nlp .business .wpb_wrapper h2 {
 }
 #process-data .process-img{
 	text-align: center;
-    padding: 20px 0px;
+    padding: 20px 0px 10px 0px;
 }
 #process-data .process-dec{
 	color: #182C47;
@@ -2432,8 +2444,8 @@ case-study_nlp .business .wpb_wrapper h2 {
 }
 #process-data ul li{
 	display: inline-block;
-    width: 23%;
-    margin-right: 1.5%;
+    width: 21%;
+    margin-right: 4.5%;
     vertical-align: top;
 }
 #process-data ul li:first-child{
@@ -2628,7 +2640,58 @@ case-study_nlp .business .wpb_wrapper h2 {
 	}
 }
 @media (max-width: 1440px){
+	#process-data ul li{
+		width: 23%;
+    	margin-right: 2%;
+	}
+	#process-data{
+		background-position: 28% 110px;
+	}
 	.nerdy-team-fix .desc_wrapper h4{
 		font-size: 28px;
+	}
+}
+@media (max-width: 1530px) and (max-width: 1540px){
+	#process-data{
+		background-size: 84%;
+	}
+}
+@media (max-width: 1366px){
+	#process-data{
+		background-position: 36% 110px;
+	}
+	#rev_slider_9_1 h1.tp-caption{
+		line-height: normal !important;
+	}
+	#process-data{
+		background-position: 27% 110px;
+	}
+}
+@media (max-width: 1024px){
+	#process-data .process-box{
+		margin: 0px;
+	}
+	#process-data{
+		background-size: 88%;
+	}
+}
+@media (max-width: 768px){
+	#rev_slider_9_1 h1.tp-caption{
+		font-size: 22px !important;
+	}	
+	#process-data ul li{
+		width: 44%;
+    	margin-right: 5%;
+	}
+	.section_wrapper, .container, .four.columns .widget-area{
+		padding-left: 0px !important;
+    	padding-right: 0px !important;
+	}
+}
+@media (max-width: 370px){
+	#rev_slider_9_1 h1.tp-caption{
+		font-size: 16px !important;
+    	top: -30px !important;
+    	line-height: 15px !important;
 	}
 }
