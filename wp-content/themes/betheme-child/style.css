@@ -432,7 +432,7 @@ p.testimonial-text-custom {
     text-align: left;
 }
 #Footer{
-    background-image: url(https://blueorange.digital/wp-content/uploads/2019/01/Bottom_Background.jpg) !important;
+    background-image: url(http://blueorange.digital/wp-content/uploads/2019/01/Bottom_Background.jpg) !important;
     background-repeat: no-repeat;
     background-position: left top;
     padding-bottom: 20px;
@@ -460,6 +460,9 @@ p.testimonial-text-custom {
 }
 #service-section h3, .testimonials_list .blockquote blockquote, .testimonials_list h4, .testimonials_list .subtitle, #case-studies-section-1 h1{
     color: #0a3d5c;
+}
+.fixxed-hdr h3{
+	padding: 0 !important;
 }
 @media screen and (max-width:1199px){
 	.custm-undrline2 .text-underline{    width: 115px;}
@@ -2262,6 +2265,9 @@ case-study_nlp .business .wpb_wrapper h2 {
     }
 }
 @media (max-width: 1440px){
+	.nerdy-team-fix .section_wrapper, .nerdy-team-fix .container {
+    	width: 85%;
+	}
 	.team-member-box .desc_wrapper h4{
 		font-size: 32px;
 	}
@@ -2321,6 +2327,7 @@ case-study_nlp .business .wpb_wrapper h2 {
 	text-align: left;
     font-size: 30px;
 	margin-bottom: -6px;
+	font-weight: 600;
 }
 .nerdy-team-fix .desc_wrapper p{
 	text-align: left;
@@ -2346,9 +2353,9 @@ case-study_nlp .business .wpb_wrapper h2 {
     font-size: 32px;
     line-height: 38px;
     font-weight: 600;
-	padding: 0px;
+    padding: 0px 40px;
+    color: #192C47;
 }
-
 .nerdy-team-fix h3{
 	padding: 30px 0px 80px 0px;
     font-size: 32px;
@@ -2356,12 +2363,10 @@ case-study_nlp .business .wpb_wrapper h2 {
     font-weight: 600;
 	margin: auto;
 }
-
 .nerdy-team-fix img.scale-with-grid, .nerdy-team-fix #Content img {
     max-width: 80%;
     height: auto;
 }
-
 #testimonial-secnn h3{
 	font-size: 47px;
     padding: 190px 0px;
@@ -2389,14 +2394,13 @@ case-study_nlp .business .wpb_wrapper h2 {
 #process-data p{
 	font-size: 26px;
 	line-height: 34px;
-	margin-bottom: 40px;
-    margin-top: 40px;
+	margin-bottom: 20px;
+    margin-top: 0px;
 }
 #process-data .process-box{
 	border: 1px solid #e2e2e2;
     padding: 20px;
 	background: white;
-	margin: 0px 20px;
 }
 #process-data .process-title{
 	color: #182C47;
@@ -2412,7 +2416,7 @@ case-study_nlp .business .wpb_wrapper h2 {
     letter-spacing: 0.7px;
 }
 #process-data .top-spacing, #process-data ul li:nth-child(even){
-	margin-top: 140px;
+	margin-top: 120px;
 }
 #process-data ul{
 	list-style: none;
@@ -2425,11 +2429,15 @@ case-study_nlp .business .wpb_wrapper h2 {
     margin-right: 1.5%;
     vertical-align: top;
 }
+#process-data ul li:first-child{
+	margin-top: 40px;
+}
 #process-data ul li:last-child{
+	margin-top: 180px;
 	margin-right: 0px;
 }
 #manydata-sec .feature_box_wrapper{
-	padding: 20px 130px;
+	padding: 20px 0px;
 }
 #process-data span.text-to-be-underlined{
 	font-size: 45px;
@@ -2464,6 +2472,14 @@ case-study_nlp .business .wpb_wrapper h2 {
     bottom: -15px;
 }
 
+#rev_slider_9_1 h1.tp-caption{
+	font-family: "Titillium Web", Arial, Tahoma, sans-serif !important;
+}
+
+.nomar-botm{
+	margin-bottom: 0px;
+}
+
 #studies-link a.link-button{
 	font-size: 36px;
     padding-top: 40px;
@@ -2474,20 +2490,137 @@ case-study_nlp .business .wpb_wrapper h2 {
 #process-data{
 	background: url(http://blueorange.local/wp-content/uploads/2019/02/Section6_dottedline.png);
     background-repeat: no-repeat;
-    background-position: 47% 110px;
+    background-position: 49% 110px;
+	padding-bottom: 30px !important;
 }
 
-@media (max-width: 1366px){
+@media (max-width: 1370px){
 	#nerdy-team .section_wrapper, #nerdy-team .container{
-		max-width: 90%;
+		width: 85%;
+	}
+	.nerdy-team-fix .mcb-wrap.one h3{
+		padding: 0px 0px !important;
+	}
+	
+}
+
+/* #process-data ul li{
+		width: 48%;
+	} */
+
+@media only screen and (max-width: 1024px){
+	#rev_slider_9_1_forcefullwidth .tp-caption{
+		font-size: 28px !important;
+		line-height: 36px !important;
+	}
+	#manydata-sec .photo_wrapper, #manydata-sec .desc_wrapper{
+		width: 100% !important;
+		padding-left: 0;
+		text-align: center;
+	}
+	.nerdy-team-fix .team-member-box{
+		width: 50% !important;
+		margin: 0px !important;
+		margin-bottom: 40px !important;
+	}
+	.nerdy-team-fix .team-member-box .team_list .column, .nerdy-team-fix .desc_wrapper h4, .nerdy-team-fix .desc_wrapper p{
+		text-align: center;
+	}
+	.nerdy-team-fix .mcb-wrap.one h3{
+		font-size: 24px;
+		line-height: 34px;
+	}
+	#testimonial-secnn .one-third.column {
+    	width: 100%;
+	}
+	#testimonial-secnn h3{
+		padding: 0px 0px;
+	}
+	#testimonial-secnn .two-third.column {
+    	width: 100%;
+	}
+	#manydata-sec{
+		padding-top: 40px;
+    	padding-bottom: 0px;
+	}
+	.nerdy-team-fix .one.column{
+		margin: 0;
 	}
 }
 
-@media only screen and (min-width: 1240px){
+@media only screen and (max-width:1240px){
 .section_wrapper, .container {
     width: 90% !important;
 }
 	#testimonial-secnn h3{
 		font-size: 45px;
+	}
+}
+
+#testimonial-secnn .owl-carousel button.owl-dot{
+	margin: auto;
+	margin: 5px 2px;
+}
+
+#testimonial-secnn .owl-carousel button.owl-dot span{
+	margin: 5px 2px;
+}
+
+@media only screen and (max-width: 767px){
+	#rev_slider_9_1_forcefullwidth .tp-caption{
+		text-align: center !important;
+    	font-size: 18px !important;
+    	line-height: 31px !important;
+	}
+	.default-par p{
+		font-size: 20px;
+	}
+	#manydata-sec h3{
+		font-size: 22px;
+	}
+	#manydata-sec p{
+		font-size: 18px;
+	}
+	.nerdy-team-fix .team-member-box{
+		width: 100% !important;
+	}
+	#testimonial-secnn h3{
+		text-align: center;
+	}
+	#process-data ul li{
+		min-width:100%;
+	}
+	.nerdy-team-fix .mcb-wrap.one h3{
+		font-weight: normal;
+	}
+	#process-data .top-spacing, #process-data ul li:nth-child(even) {
+    	margin-top: 0px;
+	}
+	#process-data ul li{
+		margin-bottom: 30px;
+	}
+}
+
+@media only screen and (max-width: 500x){
+	#rev_slider_9_1_forcefullwidth .tp-caption {
+    	text-align: center !important;
+    	font-size: 16px !important;
+    	line-height: 23px !important;
+    	top: -40px;
+	}
+	#rev_slider_9_1_wrapper{
+		height: 220px;
+	}
+	#testimonial-secnn h3{
+		font-size: 35px;
+	}
+	#manydata-sec{
+		padding-top: 40px;
+    	padding-bottom: 10px;
+	}
+}
+@media (max-width: 1440px){
+	.nerdy-team-fix .desc_wrapper h4{
+		font-size: 28px;
 	}
 }
