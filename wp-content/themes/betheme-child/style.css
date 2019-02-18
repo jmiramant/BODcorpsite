@@ -2970,6 +2970,10 @@ background-position: 56px 120px !important;
 	}
 }
 @media (max-width: 768px){
+	body.case-study #case-studies-section-1 p{
+		font-size: 20px;
+    	line-height: 27px;
+	}
 	#process-data .process-dec{
 		line-height: 26px !important;
 	}
