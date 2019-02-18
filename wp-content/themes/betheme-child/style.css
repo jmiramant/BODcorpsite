@@ -752,6 +752,12 @@ div#sftext {
 	body.services #price-compare .page-extended-heading{
 		line-height: normal;
 	}
+	body.home #approach-item-section{
+		background: transparent;
+	}
+	body.home #approach-item-section > .section_wrapper > .wrap{
+		background: transparent;
+	}
 	body.about #mfn-rev-slider{
 		min-height: 200px;
 	}
@@ -775,15 +781,23 @@ div#sftext {
 		margin-bottom: 0px !important;
 	}
 	body.about #studies-link{
-		background-image: url(http://blueorange.local/wp-content/uploads/2019/02/bg-about-2.jpg) !important;
+		background-image: url(/wp-content/uploads/2019/02/bg-about-2.jpg) !important;
     	background-size: cover;
     	background-repeat: repeat-y !important;
     	background-position: left center;
 	}
-	body.contact #wpcf7-f64-p37-o1 .column:nth-child(5){
-		text-align: center;
+	body.home #feature-section .mcb-wrap-inner .column:nth-child(4){
+		margin-top: 30px;
+    	margin-bottom: 30px;
 	}
-	body.contact #wpcf7-f64-p37-o1 .column:nth-child(5) input{
+	body.contact .wpcf7-form .column:nth-child(5){
+		text-align: center;
+		margin-bottom: 25px;
+	}
+	body.contact .wpcf7-form .column:nth-child(5) .ajax-loader{
+		display: none;
+	}
+	body.contact .wpcf7-form .column:nth-child(5) input{
 		float: none;
 	}
     .tss-grid-item.carousel-item.default-margin{
@@ -958,9 +972,6 @@ div#sftext {
     #whysection{
         background-image: none !important;
     }
-    .contact .myslider .rev_slider > ul > li .tp-bgimg{
-        background-size: 100% 100% !important;
-    }
 	#about-section-1 .mcb-wrap-inner .column{
 		margin-top:40px;
 	}
@@ -973,6 +984,9 @@ div#sftext {
 	}
 }
 @media only screen and (min-width: 768px) {
+	body.contact .full-width.myslider .section_wrapper.mcb-section-inner{
+		width: 100% !important;
+	}
 	.caseStudy-head 
 	.contact .rev_slider > ul > li > .tp-parallax-wrap:nth-of-type(5) {
     	left: 58% !important;
@@ -1807,6 +1821,10 @@ span.shape-three{
     margin: auto;
     bottom: 5px;
 }
+.contact .myslider .rev_slider > ul > li .tp-bgimg{
+    background-image: url('/wp-content/assets/images/desktop-mpping.jpg') !important;
+	background-size: auto !important;
+}
 .custm-undrline2 .text-underline {
     width: 135px;
     right: 0px;
@@ -2540,14 +2558,20 @@ case-study_nlp .business .wpb_wrapper h2 {
     	font-size: 20px !important;
 	}
 }
-.contact .myslider .rev_slider > ul > li .tp-bgimg{
-    background-image: url('/wp-content/assets/images/desktop-mpping.jpg') !important;
+body.contact .full-width.myslider .section_wrapper{
+	min-width: 100% !important
 }
 @media (min-width: 1600px){
     #top-sec{
         background-position: right bottom !important;
     }
 }
+@media (max-width: 1400px){
+	.contact .myslider .rev_slider > ul > li .tp-bgimg{
+		background-size: 100% !important;
+	}
+}
+
 .rev_slider li.tp-revslider-slidesli{
 	background-attachment: fixed;
 }
@@ -3000,7 +3024,7 @@ background-position: 56px 120px !important;
 		height: 200px !important;
 	}
 	.home  #intro-banner-section .column_attr{
-		font-size: 23px;
+		font-size: 34px;
 	}
 	.home  #intro-banner-section .column_attr br{
 		display: none;
@@ -3011,6 +3035,12 @@ background-position: 56px 120px !important;
 	#rev_slider_9_1 h1.tp-caption{
 		font-size: 16px !important;
 		line-height: 24px !important;
+	}
+}
+
+@media (max-width: 380px){
+	.home  #intro-banner-section .column_attr{
+		font-size: 20px;
 	}
 }
 
