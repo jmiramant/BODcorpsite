@@ -982,6 +982,12 @@ div#sftext {
 	#studies-link{
 		background-size: 158% 106%;
 	}
+	body.about #nerdy-team .column_attr h3{
+		margin-top: 0px !important;
+	}
+	.nerdy-team-fix .team-member-box:last-of-type{
+		margin-bottom: 20px !important;
+	}
 }
 @media only screen and (min-width: 768px) {
 	body.contact .full-width.myslider .section_wrapper.mcb-section-inner{
@@ -3025,7 +3031,7 @@ background-position: 56px 120px !important;
 
 @media (max-width: 500px){
 	#rev_slider_9_1_forcefullwidth #rev_slider_9_1_wrapper, #rev_slider_9_1_forcefullwidth #rev_slider_9_1_wrapper #rev_slider_9_1{
-		height: 200px !important;
+		height: 220px !important;
 	}
 	.home  #intro-banner-section .column_attr{
 		font-size: 34px;
@@ -3037,7 +3043,7 @@ background-position: 56px 120px !important;
 		margin-bottom: 6px;
 	}
 	#rev_slider_9_1 h1.tp-caption{
-		font-size: 16px !important;
+		font-size: 18px !important;
 		line-height: 24px !important;
 	}
 }
@@ -3076,7 +3082,7 @@ background-position: 56px 120px !important;
 }
 @media (max-width: 600px){
 	#rev_slider_9_1 h1.tp-caption{
-		font-size: 16px !important;
+		font-size: 18px !important;
     	line-height: normal !important;
 	}
 }
