@@ -303,9 +303,11 @@ function adjustHeights(){
     }
 }
 document.addEventListener('DOMContentLoaded',function(){
-    setTimeout(function(){
-        adjustHeights();
-    },2000);
+    if( $( window ).width() > 760 ){
+        setTimeout(function(){
+            adjustHeights();
+        },2000);
+    }
     
     $( window ).resize(function() {
         if( $( window ).width() > 760 ){
