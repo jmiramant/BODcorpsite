@@ -3086,3 +3086,23 @@ background-position: 56px 120px !important;
 .team-member-box .desc_wrapper .desc{
 	color: #192C47;
 }
+.vc_btn3.vc_btn3-color-warning.vc_btn3-style-modern {
+    color: #FFF;
+    border-color: #F90;
+    background-color: #F90;
+    display: inline-block;
+    margin-bottom: 0;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+    background: #ffa925 none repeat scroll 0 0 !important;
+    border: medium none !important;
+    border-radius: 15px !important;
+    box-shadow: 0 4px 5px #aaa !important;
+    font-size: 25px !important;
+    height: 60px;
+    line-height: 58px !important;
+    padding: 0 30px !important;
+text-decoration: none;
+}
