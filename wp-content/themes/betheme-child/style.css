@@ -3110,5 +3110,10 @@ background-position: 56px 120px !important;
     height: 60px;
     line-height: 58px !important;
     padding: 0 30px !important;
-text-decoration: none;
+    text-decoration: none;
+}
+@media(min-width:1200px) and (max-width:1300px){
+    .nerdy-team-fix .team .desc_wrapper .desc{
+            font-size: 22px !important;
+    }
 }
