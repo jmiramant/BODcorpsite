@@ -18,14 +18,11 @@ Version:        1.6.1.1
     margin: 30px auto 0px auto;
     float: none;
 }
-#testi-fix .owl-dots, #testi-fix .owl-nav{
+/*#testi-fix .owl-dots, #testi-fix .owl-nav{
 	display: none;
-}
+}*/
 .tss-wrapper .tss-carousel1 .item-content-wrapper .item-content{
 	box-sizing: border-box;
-}
-#testi-fix .owl-dots, #testi-fix .owl-nav{
-	display: none;
 }
 #Footer .footer_copy{border:none !important}
 .member-list-section h2 {
@@ -130,6 +127,7 @@ background-attachment: fixed;
 .camp-img .desc_wrapper p {
     font-size: 18px;
     line-height: 34px;
+    font-weight: 400;
 }
 .camp-forth-sec h2 {
     padding: 34px 0 34px 100px;
@@ -160,9 +158,10 @@ margin:0 !important
     margin: 50px 150px;
     font-size: 20px;
     line-height: 32px;
-    box-shadow: 0 0 10px -3px;
+    box-shadow: 0 0 16px -3px;
     border-radius: 15px;
-    padding: 80px 40px;
+    padding: 30px 40px;
+    margin-bottom:20px !important;
 }
 .camp-last-sec h2 {
     color: #fff;
@@ -176,8 +175,9 @@ margin:0 !important
     background: #374756;
     border: 20px solid #222E3C;
     margin: -120px 0 ;
-border-radius:15px;
-padding:0 50px 50px 50px;
+    border-radius:15px;
+    padding:0 50px 50px 50px;
+    box-shadow: 0px 11px 17px #00000052;
 }
 .camp-col-contact input, .camp-col-contact textarea, .camp-col-contact button{
     border-radius: 8px;
@@ -192,7 +192,7 @@ padding:0 50px 50px 50px;
     margin: -25px 0px;
 }
 .camp-last-sec {
-    margin: 100px 0 0 0;
+    margin: 150px 0 0 0;
 }
 
 
@@ -3154,6 +3154,9 @@ background-position: 56px 120px !important;
     font-weight: 200;
     border-radius: 10px !important;
 	margin-bottom: 60px !important;
+}
+#form-fiix .wpcf7 input[type="submit"]:hover {
+    background-color: #F90 !important;
 }
 .camp-last-sec .wpcf7-form label{
 	color: #fff;
