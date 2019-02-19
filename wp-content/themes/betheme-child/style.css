@@ -10,6 +10,23 @@ Version:        1.6.1.1
 
 /* Theme customization starts here
 -------------------------------------------------------------- */
+.talent-acquisition #Top_bar #menu #menu-main-menu li.hover a{
+	color: #0B3C5A !important;
+}
+.talent-acquisition #Top_bar .column.one .top_bar_left{
+	width: 92% !important;
+    margin: 30px auto 0px auto;
+    float: none;
+}
+#testi-fix .owl-dots, #testi-fix .owl-nav{
+	display: none;
+}
+.tss-wrapper .tss-carousel1 .item-content-wrapper .item-content{
+	box-sizing: border-box;
+}
+#testi-fix .owl-dots, #testi-fix .owl-nav{
+	display: none;
+}
 #Footer .footer_copy{border:none !important}
 .member-list-section h2 {
     color: rgb(253, 162, 43);
@@ -105,8 +122,8 @@ background-attachment: fixed;
 }
 .camp-img .desc_wrapper h3 {
     color: #1C3456;
-    FONT-SIZE: 28px;
-    line-height: 28px;
+    font-size: 28px;
+    line-height: 38px;
     margin: 30px 0;
     font-weight: 600;
 }
@@ -139,7 +156,7 @@ margin:0 !important
     font-size: 32px;
     margin: 20px;
 }
-.camp-fifth-sec p {
+.camp-fifth-sec .item-content{
     margin: 50px 150px;
     font-size: 20px;
     line-height: 32px;
@@ -2272,6 +2289,10 @@ span.shape-three{
 	#leverage-tools .marquee { height: 60vh; }
 }
 @media (max-width: 767px){
+	.talent-acquisition #Footer #custom_html-6 .column_column{
+		min-width: 100%;
+		text-align: center;
+	}
 	.team-member-box {
     width: 100% !important;
 }
@@ -2976,6 +2997,12 @@ background-position: 56px 120px !important;
 	}
 }
 @media (max-width: 768px){
+	#form-fiix h2, #footr-updat p{
+		text-align: center;
+	}
+	#form-fiix .camp-col-contact{
+		box-sizing: border-box;
+	}
 	body.case-study #case-studies-section-1 p{
 		font-size: 20px;
     	line-height: 27px;
@@ -3116,4 +3143,82 @@ background-position: 56px 120px !important;
     .nerdy-team-fix .team .desc_wrapper .desc{
             font-size: 22px !important;
     }
+}
+
+#form-fiix .wpcf7 input[type="submit"]{
+	background: transparent !important;
+    border: 1px solid #e4e4e4 !important;
+    padding: 8px 90px !important;
+    box-shadow: none !important;
+    font-size: 22px !important;
+    font-weight: 200;
+    border-radius: 10px !important;
+	margin-bottom: 60px !important;
+}
+#wpcf7-f64-p469-o1 label{
+	color: #fff;
+	font-weight: 500;
+    font-size: 22px;
+	margin-bottom: 10px;
+}
+#footr-updat p{
+	color: #fff;
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: 400;
+}
+#footr-updat{
+	background-position: 0px -1px !important;
+}
+.bg-fxxxx{
+	background-size: 80% !important;
+}
+#bg-fxxxxx{
+	background-position: 0px -2px !important;
+}
+#footr-updat .section_wrapper.mcb-section-inner{
+	text-align: center;
+    max-width: 84% !important;
+    margin: auto;
+}
+
+@media (max-width: 950px){
+	#form-fiix .one-second.column {
+    	width: 100% !important;
+		box-sizing: border-box !important;
+	}
+	#form-fiix .one-second.column {
+    	width: 100% !important;
+		box-sizing: border-box !important;
+	}
+}
+.talent-acquisition #Top_bar .menu > li:last-child{
+	    margin-left: 30px;
+}
+.the-bstt p{
+	font-size: 30px;
+    line-height: 38px;
+    text-align: center;
+}
+.fixxxd-font h2{
+	font-size: 46px !important;
+}
+.improvv-hax h3{
+	min-height: 80px;
+	margin-bottom: 0px !important;
+}
+#testi-fix .owl-item{
+	margin-top: 20px;
+}
+.talent-acquisition #Top_bar .menu > li > a span{
+	color: #1A2C45 !important;
+}
+@media (max-width: 768px){
+	.fixxxd-font h2{
+		font-size: 28px !important;
+	}
+	#footr-updat{
+		padding-top: 40px !important;
+    	padding-bottom: 40px !important;
+	}
 }
