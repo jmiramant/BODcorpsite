@@ -3199,7 +3199,7 @@ background-position: 56px 120px !important;
 	    margin-left: 30px;
 }
 .the-bstt p{
-	font-size: 30px;
+	font-size: 28px;
     line-height: 38px;
     text-align: center;
 }
@@ -3228,4 +3228,18 @@ background-position: 56px 120px !important;
 .camp-fifth-sec .tss-wrapper .tss-carousel1 .item-content-wrapper .item-content{
         margin-left: 4%;
     min-height: 420px;
+}
+div#Top_bar.sticky {
+    position: fixed;
+    background: #ffffffa6;
+}
+.sticky .logo, .sticky .menu_wrapper ul li:not(:last-of-type) {
+    display: none !important;
+}
+.sticky .menu_wrapper ul li.last a{
+	background-color: #F90;
+	border: 0px !important;
+}
+.talent-acquisition #Top_bar.sticky .menu > li > a span{
+	color: #fff !important;
 }
