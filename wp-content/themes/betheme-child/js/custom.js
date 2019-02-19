@@ -339,6 +339,15 @@ document.addEventListener('DOMContentLoaded',function(){
             $('#price-compare .mcb-column:nth-of-type(3) .expertise-box').addClass('hovered');
         }        
     );
+    
+    $(window).scroll(function() {    
+        var scroll = $(window).scrollTop();
+        if (scroll >= 130) {
+            $("#Top_bar").addClass("sticky");
+        } else {
+            $("#Top_bar").removeClass("sticky");
+        }
+    });
 });
 function equalHeights(container){
     var highestBox = 0;
