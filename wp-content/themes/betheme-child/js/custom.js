@@ -339,16 +339,62 @@ document.addEventListener('DOMContentLoaded',function(){
             $('#price-compare .mcb-column:nth-of-type(3) .expertise-box').addClass('hovered');
         }        
     );
+    
+    $(window).scroll(function() {    
+        var scroll = $(window).scrollTop();
+        if (scroll >= 130) {
+            if(isScrolledIntoView("#form-fiix") || isScrolledIntoView("#footr-updat")){
+                $(".talent-acquisition #Top_bar").removeClass("sticky");
+            }
+            else{
+                $(".talent-acquisition #Top_bar").addClass("sticky");
+            }
+            if($(window).scrollTop()+$(window).height() >= ($(document).height()-($('#form-fiix').height() + $('#footr-updat').height()))) {
+                $(".talent-acquisition #Top_bar").removeClass("sticky");
+            }
+        } else {
+            $(".talent-acquisition #Top_bar").removeClass("sticky");
+        }
+    });
+    
+    //$(".talent-acquisition #Top_bar .menu > li:last-of-type > a").attr("href","#form-fiix");
+    $(".talent-acquisition #Top_bar .menu > li:last-of-type > a, .talent-acquisition #Side_slide .menu > li:last-of-type > a").click(function(e) {
+        e.preventDefault();
+        if( $('#Side_slide').hasClass('enabled') ){
+            $('#Side_slide').css('right','-'+$('#Side_slide').data('width')+'px');
+            $('body').css('left','0px');
+            $('#body_overlay').css('display','none');
+            scroll_to = $("#form-fiix .camp-col-contact").offset().top-50;
+        }else{
+            scroll_to = $("#form-fiix").offset().top-140;
+        }
+        $('html, body').animate({
+            scrollTop: scroll_to
+        }, 2000);
+    });
+    
 });
+
+function isScrolledIntoView(elem){
+    var $elem = $(elem);
+    var $window = $(window);
+
+    var docViewTop = $window.scrollTop();
+    var docViewBottom = docViewTop + $window.height();
+
+    var elemTop = $elem.offset().top;
+    var elemBottom = elemTop + $elem.height();
+
+    return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+}
+
 function equalHeights(container){
     var highestBox = 0;
     $(container).each(function(){
-        console.log($(this).height());
         if($(this).height() > highestBox) {
             highestBox = $(this).height(); 
         }
     });
-    console.log('Highest:'+highestBox);
     $(container).attr("style","height: "+highestBox+"px !important;");
 }
 

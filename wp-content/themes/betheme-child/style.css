@@ -10,6 +10,27 @@ Version:        1.6.1.1
 
 /* Theme customization starts here
 -------------------------------------------------------------- */
+.talent-acquisition #Top_bar #menu #menu-main-menu li.hover a{
+	color: #0B3C5A !important;
+}
+.talent-acquisition #Top_bar .column.one .top_bar_left{
+	width: 92% !important;
+    margin: 30px auto 0px auto;
+    float: none;
+}
+.the-bstt h1{
+	color: #1a2c45!important;
+	font-size: 50px;
+    font-weight: 400;
+	line-height: 55px;
+	letter-spacing: 0px;
+}
+/*#testi-fix .owl-dots, #testi-fix .owl-nav{
+	display: none;
+}*/
+.tss-wrapper .tss-carousel1 .item-content-wrapper .item-content{
+	box-sizing: border-box;
+}
 #Footer .footer_copy{border:none !important}
 .member-list-section h2 {
     color: rgb(253, 162, 43);
@@ -82,7 +103,7 @@ background-attachment: fixed;
     line-height: 64px;
 }
 .camp-second-sec h2 {
-    font-size: 50px;
+    font-size: 35px;
     font-weight: 400;
 }
 .camp-second-sec p {
@@ -91,11 +112,11 @@ background-attachment: fixed;
     text-align: center;
 }
 .camp-third-sec h2 {
-    font-size: 36px;
+    font-size: 35px;
     text-align: center;
 }
 .camp-third-sec p {
-    font-size: 32px;
+    font-size: 30px;
     line-height: 42px;
     text-align: center;
     padding: 0 80px;
@@ -105,18 +126,27 @@ background-attachment: fixed;
 }
 .camp-img .desc_wrapper h3 {
     color: #1C3456;
-    FONT-SIZE: 28px;
-    line-height: 28px;
+    font-size: 27px;
+    line-height: 38px;
     margin: 30px 0;
     font-weight: 600;
 }
 .camp-img .desc_wrapper p {
-    font-size: 18px;
+    font-size: 17px;
     line-height: 34px;
+    font-weight: 400;
+}
+#form-fiix .camp-col-contact h2 img{
+	display: inline-block;
+    padding-bottom: 20px;
+    margin-top: 20px;
+}
+#form-fiix .camp-col-contact form input[type="text"], #form-fiix .camp-col-contact form input[type="email"], #form-fiix .camp-col-contact form textarea, #form-fiix .camp-col-contact form textarea::placeholder{
+	color: #7f7e7f !important;
 }
 .camp-forth-sec h2 {
     padding: 34px 0 34px 100px;
-    font-size: 32px;
+    font-size: 35px;
 }
 .camp-img{
 text-align:center;
@@ -136,16 +166,17 @@ margin:0 !important
     text-align: center;
 }
 .camp-fifth-sec h2 {
-    font-size: 32px;
+    font-size: 35px !important;
     margin: 20px;
 }
-.camp-fifth-sec p {
+.camp-fifth-sec .item-content{
     margin: 50px 150px;
     font-size: 20px;
     line-height: 32px;
-    box-shadow: 0 0 10px -3px;
+    box-shadow: 0 0 16px -3px;
     border-radius: 15px;
-    padding: 80px 40px;
+    padding: 30px 40px;
+    margin-bottom:20px !important;
 }
 .camp-last-sec h2 {
     color: #fff;
@@ -159,23 +190,24 @@ margin:0 !important
     background: #374756;
     border: 20px solid #222E3C;
     margin: -120px 0 ;
-border-radius:15px;
-padding:0 50px 50px 50px;
+    border-radius:15px;
+    padding:0 50px 50px 50px;
+    box-shadow: 0px 11px 17px #00000052;
 }
 .camp-col-contact input, .camp-col-contact textarea, .camp-col-contact button{
     border-radius: 8px;
 }
 .camp-col-contact h2 {
     margin: 0;
-    padding: 18px 0;
-    font-size: 40px;
+    padding: 40px 0 18px 0;
+    font-size: 35px;
     line-height: normal;
 }
 .camp-col-contact h2 img {
     margin: -25px 0px;
 }
 .camp-last-sec {
-    margin: 100px 0 0 0;
+    margin: 150px 0 0 0;
 }
 
 
@@ -193,6 +225,14 @@ a.button.arrow-down-click:hover:after{
 }
 .custm-h2-center{
     font-size:38px;color:#123d5c;line-height:46px;
+}
+.font-fixer h1{
+	font-weight: 400;
+    text-align: center;
+    padding: 150px 40px;
+    line-height: 70px;
+    font-size: 50px;
+	color: #fff!important;
 }
 .custm-h2-right {
     font-size: 45px;
@@ -644,7 +684,7 @@ element {
     padding: 20px;
 
 }.camp-last-sec h2 {
-    padding: 15px;
+    padding: 15px 0px;
     line-height: 36px;
     font-size: 28px;
 }
@@ -987,6 +1027,9 @@ div#sftext {
 	}
 	.nerdy-team-fix .team-member-box:last-of-type{
 		margin-bottom: 20px !important;
+	}
+	#form-fiix .camp-col-contact{
+		margin-top: 0px !important;
 	}
 }
 @media only screen and (min-width: 768px) {
@@ -2272,6 +2315,10 @@ span.shape-three{
 	#leverage-tools .marquee { height: 60vh; }
 }
 @media (max-width: 767px){
+	.talent-acquisition #Footer #custom_html-6 .column_column{
+		min-width: 100%;
+		text-align: center;
+	}
 	.team-member-box {
     width: 100% !important;
 }
@@ -2507,6 +2554,10 @@ case-study_nlp .business .wpb_wrapper h2 {
     color: #FFF;
     text-decoration: none;
 }
+#form-fiix .camp-col-contact form textarea{
+	font-size: 18px;
+    font-weight: 600;
+}
 .owl-theme .owl-nav [class*=owl-]:hover {
     background: inherit !important;
     color: inherit !important;
@@ -2515,8 +2566,24 @@ case-study_nlp .business .wpb_wrapper h2 {
     background: transparent !important;
 }
 @media screen and (min-width:768px){
+	div#Top_bar.sticky {
+    position: fixed;
+}
+.sticky .logo, .sticky .menu_wrapper ul li:not(:last-of-type) {
+    display: none !important;
+}
+.sticky .menu_wrapper ul li.last a{
+	background-color: #F90;
+	border: 0px !important;
+}
+.talent-acquisition #Top_bar.sticky .menu > li > a span{
+	color: #fff !important;
+}
+	#testi-fix .owl-carousel .owl-stage-outer{
+		overflow: visible !important;
+	}
     .largr-none{
-            display: none;
+        display: none;
     }
 }
 @media screen and (max-width:1000px){
@@ -2524,6 +2591,9 @@ case-study_nlp .business .wpb_wrapper h2 {
         display: none;
     }
 }
+
+
+
 @media screen and (max-width:767px){
     .custm-undrline2 .text-underline {
         width: 85px;
@@ -2968,6 +3038,9 @@ background-position: 56px 120px !important;
 	}
 }
 @media (max-width: 1024px){
+	.talent-acquisition .owl-theme .owl-dots, .talent-acquisition .owl-theme .owl-nav{
+		display: none !important
+	}
 	#process-data .process-box{
 		margin: 0px;
 	}
@@ -2976,6 +3049,72 @@ background-position: 56px 120px !important;
 	}
 }
 @media (max-width: 768px){
+	
+	.talent-acquisition div#Top_bar.sticky{
+		 position: static;
+	}
+	.the-bstt h1{
+		line-height: 40px;
+		font-size: 32px;
+	}
+	#testi-fix .item-content-wrapper .item-content{
+		width: 90%;
+    	padding: 10px 0px;
+    	margin: auto !important;
+    	min-height: 420px;
+	}
+	#testi-fix .owl-nav, #footr-updat p br{
+		display: none;
+	}
+	.improvv-hax h3{
+		min-height: auto !important;
+		padding-bottom: 10px !important;
+	}
+	.camp-img .photo_wrapper{
+		min-height: auto !important;
+	}
+	.camp-img .desc_wrapper p{
+		margin-bottom:60px;
+	}
+	.camp-col-contact{
+		padding: 15px 30px !important;
+	}
+	#Top_bar .logo{
+		margin: 0 !important;
+	}
+	#form-fiix .wpcf7 input[type="submit"]{
+		margin-bottom: 0px !important;
+	}
+	#the-bstt h2{
+		margin-top: 40px;
+	}
+	.font-fixer h1{
+    padding: 40px 20px;
+    line-height: 40px;
+		font-size: 30px;
+	}
+	.uppr-vid{
+		margin-top: 20px;
+	}
+	.the-bstt p {
+    	font-size: 21px !important;
+		line-height: 28px !important;
+	}
+	#footr-updat p{
+		font-size: 20px;
+	}
+	#form-fiix .wpcf7 input[type="submit"]{
+		padding: 10px 0px !important;
+    	width: 100%;
+    	margin: auto;
+	}
+	#form-fiix h2, #footr-updat p{
+		text-align: center;
+	}
+	#form-fiix .camp-col-contact{
+		box-sizing: border-box;
+		margin-top: 30px;
+	}
 	body.case-study #case-studies-section-1 p{
 		font-size: 20px;
     	line-height: 27px;
@@ -3116,4 +3255,138 @@ background-position: 56px 120px !important;
     .nerdy-team-fix .team .desc_wrapper .desc{
             font-size: 22px !important;
     }
+}
+
+#form-fiix .wpcf7 input[type="submit"]{
+	background: transparent !important;
+    border: 1px solid #e4e4e4 !important;
+    padding: 8px 90px !important;
+    box-shadow: none !important;
+    font-size: 22px !important;
+    font-weight: 200;
+    border-radius: 10px !important;
+	margin-bottom: 60px !important;
+}
+#form-fiix .wpcf7 input[type="submit"]:hover {
+    background-color: #F90 !important;
+}
+.camp-last-sec .wpcf7-form label{
+	color: #fff;
+	font-weight: 500;
+    font-size: 22px;
+	margin-bottom: 10px;
+}
+#footr-updat p{
+	color: #fff;
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: 400;
+}
+#footr-updat{
+	background-position: 0px -1px !important;
+}
+.bg-fxxxx{
+	background-size: 80% !important;
+}
+#bg-fxxxxx{
+	background-position: 0px -2px !important;
+}
+#footr-updat .section_wrapper.mcb-section-inner{
+	text-align: center;
+    max-width: 84% !important;
+    margin: auto;
+}
+
+@media (max-width: 950px){
+	#form-fiix .one-second.column {
+    	width: 100% !important;
+		box-sizing: border-box !important;
+	}
+	#form-fiix .one-second.column {
+    	width: 100% !important;
+		box-sizing: border-box !important;
+	}
+}
+.talent-acquisition #Top_bar .menu > li:last-child{
+	    margin-left: 30px;
+}
+.the-bstt p{
+	font-size: 28px;
+    line-height: 38px;
+    text-align: center;
+}
+.fixxxd-font h1{
+	font-size: 50px !important;
+    padding: 114px 0 0 100px;
+    font-weight: 400;
+    line-height: 64px;
+	color: #1a2c45 !important;
+	margin-top: 40px;
+}
+.improvv-hax h3{
+	min-height: 80px;
+	margin-bottom: 0px !important;
+}
+#testi-fix .owl-item{
+	margin-top: 20px;
+}
+.talent-acquisition #Top_bar .menu > li > a span{
+	color: #1A2C45 !important;
+}
+@media (min-width: 768px){
+	.the-bstt{
+		float: right;
+	}
+	.talent-acquisition #Top_bar .menu > li > a span{
+		padding: 0 12px !important;
+	}
+}
+@media (max-width: 768px){
+	#testi-fix .owl-item .testi-center-text{
+		height: 400px;
+    	overflow-x: auto;
+	}
+	.md-fxer{
+		margin-bottom: 20px !important;
+	}
+	#form-fiix{
+		margin: 40px 0 0 0 !important;
+	}
+	#testi-fix .item-content-wrapper .item-content{
+		margin-bottom: 20px !important;
+	}
+	.fixxxd-font h1{
+		font-size: 28px !important;
+		padding: 0px 0px;
+		line-height: normal;
+	}
+	.bg-fxxxx .mcb-wrap.one{
+		padding: 40px 0px 0px 0px;
+	}
+	#footr-updat{
+		padding-top: 40px !important;
+    	padding-bottom: 40px !important;
+	}
+}
+.camp-fifth-sec .tss-wrapper .tss-carousel1 .item-content-wrapper .item-content{
+        margin-left: 4%;
+    min-height: 420px;
+}
+.the-bstt p{
+	font-size: 30px;
+}
+
+@media (min-width:790px) and (max-width:880px){
+	.desc h3{
+		font-size: 20px !important;
+    	line-height: 28px !important;
+		min-height: 70px;
+	}
+	#footr-updat p{
+		font-size: 18px !important;
+	}
+}
+body:not(.talent-acquisition) #Top_bar.sticky{ display:none !important;}
+.talent-acquisition .story_box .photo_wrapper img{
+	opacity: 1 !important;
 }
