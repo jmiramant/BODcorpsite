@@ -359,7 +359,7 @@ document.addEventListener('DOMContentLoaded',function(){
     $(".talent-acquisition #Top_bar .menu > li:last-of-type > a").click(function(e) {
         e.preventDefault();
         $('html, body').animate({
-            scrollTop: $("#form-fiix").offset().top
+            scrollTop: $("#form-fiix").offset().top-140
         }, 2000);
     });
     
