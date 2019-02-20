@@ -356,10 +356,18 @@ document.addEventListener('DOMContentLoaded',function(){
     });
     
     //$(".talent-acquisition #Top_bar .menu > li:last-of-type > a").attr("href","#form-fiix");
-    $(".talent-acquisition #Top_bar .menu > li:last-of-type > a").click(function(e) {
+    $(".talent-acquisition #Top_bar .menu > li:last-of-type > a, .talent-acquisition #Side_slide .menu > li:last-of-type > a").click(function(e) {
         e.preventDefault();
+        if( $('#Side_slide').hasClass('enabled') ){
+            setTimeout(function(){
+                $('#Side_slide a.close').click();
+            },1000);
+            scroll_to = $("#form-fiix .camp-col-contact").offset().top;
+        }else{
+            scroll_to = $("#form-fiix").offset().top-140;
+        }
         $('html, body').animate({
-            scrollTop: $("#form-fiix").offset().top-140
+            scrollTop: scroll_to
         }, 2000);
     });
     
