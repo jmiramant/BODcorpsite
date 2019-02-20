@@ -359,10 +359,10 @@ document.addEventListener('DOMContentLoaded',function(){
     $(".talent-acquisition #Top_bar .menu > li:last-of-type > a, .talent-acquisition #Side_slide .menu > li:last-of-type > a").click(function(e) {
         e.preventDefault();
         if( $('#Side_slide').hasClass('enabled') ){
-            setTimeout(function(){
-                $('#Side_slide a.close').click();
-            },1000);
-            scroll_to = $("#form-fiix .camp-col-contact").offset().top;
+            $('#Side_slide').css('right','-'+$('#Side_slide').data('width')+'px');
+            $('body').css('left','0px');
+            $('#body_overlay').css('display','none');
+            scroll_to = $("#form-fiix .camp-col-contact").offset().top-50;
         }else{
             scroll_to = $("#form-fiix").offset().top-140;
         }
