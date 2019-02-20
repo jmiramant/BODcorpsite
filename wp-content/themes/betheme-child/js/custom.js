@@ -343,12 +343,14 @@ document.addEventListener('DOMContentLoaded',function(){
     $(window).scroll(function() {    
         var scroll = $(window).scrollTop();
         if (scroll >= 130) {
-            //$(".talent-acquisition #Top_bar").addClass("sticky");
             if(isScrolledIntoView("#form-fiix") || isScrolledIntoView("#footr-updat")){
                 $(".talent-acquisition #Top_bar").removeClass("sticky");
             }
             else{
                 $(".talent-acquisition #Top_bar").addClass("sticky");
+            }
+            if($(window).scrollTop()+$(window).height() >= ($(document).height()-($('#form-fiix').height() + $('#footr-updat').height()))) {
+                $(".talent-acquisition #Top_bar").removeClass("sticky");
             }
         } else {
             $(".talent-acquisition #Top_bar").removeClass("sticky");
