@@ -339,16 +339,52 @@ document.addEventListener('DOMContentLoaded',function(){
             $('#price-compare .mcb-column:nth-of-type(3) .expertise-box').addClass('hovered');
         }        
     );
+    
+    $(window).scroll(function() {    
+        var scroll = $(window).scrollTop();
+        if (scroll >= 130) {
+            //$(".talent-acquisition #Top_bar").addClass("sticky");
+            if(isScrolledIntoView("#form-fiix") || isScrolledIntoView("#footr-updat")){
+                $(".talent-acquisition #Top_bar").removeClass("sticky");
+            }
+            else{
+                $(".talent-acquisition #Top_bar").addClass("sticky");
+            }
+        } else {
+            $(".talent-acquisition #Top_bar").removeClass("sticky");
+        }
+    });
+    
+    //$(".talent-acquisition #Top_bar .menu > li:last-of-type > a").attr("href","#form-fiix");
+    $(".talent-acquisition #Top_bar .menu > li:last-of-type > a").click(function(e) {
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop: $("#form-fiix").offset().top-140
+        }, 2000);
+    });
+    
 });
+
+function isScrolledIntoView(elem){
+    var $elem = $(elem);
+    var $window = $(window);
+
+    var docViewTop = $window.scrollTop();
+    var docViewBottom = docViewTop + $window.height();
+
+    var elemTop = $elem.offset().top;
+    var elemBottom = elemTop + $elem.height();
+
+    return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+}
+
 function equalHeights(container){
     var highestBox = 0;
     $(container).each(function(){
-        console.log($(this).height());
         if($(this).height() > highestBox) {
             highestBox = $(this).height(); 
         }
     });
-    console.log('Highest:'+highestBox);
     $(container).attr("style","height: "+highestBox+"px !important;");
 }
 
