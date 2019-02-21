@@ -86,4 +86,4 @@ function landing_page_widgets_init() {
     ) );
     }
  
-//add_action( 'widgets_init', 'landing_page_widgets_init' );
+add_action( 'widgets_init', 'landing_page_widgets_init' );
