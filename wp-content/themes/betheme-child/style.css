@@ -10,10 +10,10 @@ Version:        1.6.1.1
 
 /* Theme customization starts here
 -------------------------------------------------------------- */
-.talent-acquisition #Top_bar #menu #menu-main-menu li.hover a{
+.landing-page-template #Top_bar #menu #menu-main-menu li.hover a{
 	color: #0B3C5A !important;
 }
-.talent-acquisition #Top_bar .column.one .top_bar_left{
+.landing-page-template #Top_bar .column.one .top_bar_left{
 	width: 92% !important;
     margin: 30px auto 0px auto;
     float: none;
@@ -2315,7 +2315,7 @@ span.shape-three{
 	#leverage-tools .marquee { height: 60vh; }
 }
 @media (max-width: 767px){
-	.talent-acquisition #Footer #custom_html-6 .column_column{
+	.landing-page-template #Footer #custom_html-6 .column_column{
 		min-width: 100%;
 		text-align: center;
 	}
@@ -2576,7 +2576,7 @@ case-study_nlp .business .wpb_wrapper h2 {
 	background-color: #F90;
 	border: 0px !important;
 }
-.talent-acquisition #Top_bar.sticky .menu > li > a span{
+.landing-page-template #Top_bar.sticky .menu > li > a span{
 	color: #fff !important;
 }
 	#testi-fix .owl-carousel .owl-stage-outer{
@@ -3038,7 +3038,7 @@ background-position: 56px 120px !important;
 	}
 }
 @media (max-width: 1024px){
-	.talent-acquisition .owl-theme .owl-dots, .talent-acquisition .owl-theme .owl-nav{
+	.landing-page-template .owl-theme .owl-dots, .landing-page-template .owl-theme .owl-nav{
 		display: none !important
 	}
 	#process-data .process-box{
@@ -3050,7 +3050,7 @@ background-position: 56px 120px !important;
 }
 @media (max-width: 768px){
 	
-	.talent-acquisition div#Top_bar.sticky{
+	.landing-page-template div#Top_bar.sticky{
 		 position: static;
 	}
 	.the-bstt h1{
@@ -3307,7 +3307,7 @@ background-position: 56px 120px !important;
 		box-sizing: border-box !important;
 	}
 }
-.talent-acquisition #Top_bar .menu > li:last-child{
+.landing-page-template #Top_bar .menu > li:last-child{
 	    margin-left: 30px;
 }
 .the-bstt p{
@@ -3330,14 +3330,14 @@ background-position: 56px 120px !important;
 #testi-fix .owl-item{
 	margin-top: 20px;
 }
-.talent-acquisition #Top_bar .menu > li > a span{
+.landing-page-template #Top_bar .menu > li > a span{
 	color: #1A2C45 !important;
 }
 @media (min-width: 768px){
 	.the-bstt{
 		float: right;
 	}
-	.talent-acquisition #Top_bar .menu > li > a span{
+	.landing-page-template #Top_bar .menu > li > a span{
 		padding: 0 12px !important;
 	}
 }
@@ -3386,7 +3386,7 @@ background-position: 56px 120px !important;
 		font-size: 18px !important;
 	}
 }
-body:not(.talent-acquisition) #Top_bar.sticky{ display:none !important;}
-.talent-acquisition .story_box .photo_wrapper img{
+body:not(.landing-page-template) #Top_bar.sticky{ display:none !important;}
+.landing-page-template .story_box .photo_wrapper img{
 	opacity: 1 !important;
 }
