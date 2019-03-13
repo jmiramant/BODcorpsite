@@ -1131,6 +1131,16 @@ div#sftext {
         line-height: 31px !important;
         font-size: 22px !important;
     }
+    #testi-fix .item-content-wrapper .item-content{
+        width: 99% !important;
+    }
+    #testi-fix .owl-item .testi-center-text{
+        height: 460px !important;
+        font-size: 15px !important;
+    }
+    .page-template-template-talent-acquisition-php .testi-bottom-text{
+        min-height: 66px;
+    }
 }
 @media only screen and (min-width: 768px) {
 	#Footer #custom_html-6 .logo-mobile{
