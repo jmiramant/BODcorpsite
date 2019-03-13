@@ -422,4 +422,9 @@ jQuery(document).ready(function() {
   });
   
   jQuery('.camp-col-contact textarea').removeAttr('placeholder');
+  
+  jQuery('.submit-contact-form').click(function(){
+    jQuery('form.wpcf7-form').submit();
+    return false;
+  });
 });
