@@ -59,3 +59,31 @@ function webp_upload_mimes( $existing_mimes ) {
     return $existing_mimes;
 }
 add_filter( 'mime_types', 'webp_upload_mimes' );
+
+/**
+ * Register Widget Sidebar.
+ */
+function landing_page_widgets_init() {
+ 
+    register_sidebar( array(
+        'name' => __( 'Lnading Page Footer 1', 'wpb' ),
+        'id' => 'landing-page-footer-1',
+        'description' => __( 'Talent Acquisition Footer 1 page template', 'wpb' ),
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget' => '</aside>',
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>',
+    ) );
+ 
+    register_sidebar( array(
+        'name' => __( 'Lnading Page Footer 2', 'wpb' ),
+        'id' => 'landing-page-footer-2',
+        'description' => __( 'Talent Acquisition Footer 2 page template', 'wpb' ),
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget' => '</aside>',
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>',
+    ) );
+    }
+ 
+add_action( 'widgets_init', 'landing_page_widgets_init' );
