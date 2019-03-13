@@ -60,7 +60,7 @@
     * To check if page will use a blue header or white 
     */
     $header_theme = 'white_theme';
-    if( get_post_meta($post->ID, 'blue-logo-menus', true) == '1' ){
+    if( get_post_meta($post->ID, 'blue-logo-menus', true) == '1' || (isset($_GET['blue-logo-menus']) && $_GET['blue-logo-menus']) ){
         $header_theme = 'blue_theme';
     }
 ?>

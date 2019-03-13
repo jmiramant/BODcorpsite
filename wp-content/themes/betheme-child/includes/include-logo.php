@@ -125,7 +125,7 @@ echo '<div class="logo'. $logo_class .'">';
 		$width 	= false;
 	}
 	
-        if( get_post_meta($post->ID, 'blue-logo-menus', true) == 1 ){
+        if( get_post_meta($post->ID, 'blue-logo-menus', true) == 1 || (isset($_GET['blue-logo-menus']) && $_GET['blue-logo-menus']) ){
             $logo['default']['main'] = $logo['default']['sticky'];
             $logo['retina']['main'] = $logo['retina']['sticky'];
         }

@@ -344,21 +344,20 @@ document.addEventListener('DOMContentLoaded',function(){
         var scroll = $(window).scrollTop();
         if (scroll >= 130) {
             if(isScrolledIntoView("#form-fiix") || isScrolledIntoView("#footr-updat")){
-                $(".talent-acquisition #Top_bar").removeClass("sticky");
+                $(".landing-page-template #Top_bar").removeClass("sticky");
             }
             else{
-                $(".talent-acquisition #Top_bar").addClass("sticky");
+                $(".landing-page-template #Top_bar").addClass("sticky");
             }
             if($(window).scrollTop()+$(window).height() >= ($(document).height()-($('#form-fiix').height() + $('#footr-updat').height()))) {
-                $(".talent-acquisition #Top_bar").removeClass("sticky");
+                $(".landing-page-template #Top_bar").removeClass("sticky");
             }
         } else {
-            $(".talent-acquisition #Top_bar").removeClass("sticky");
+            $(".landing-page-template #Top_bar").removeClass("sticky");
         }
     });
     
-    //$(".talent-acquisition #Top_bar .menu > li:last-of-type > a").attr("href","#form-fiix");
-    $(".talent-acquisition #Top_bar .menu > li:last-of-type > a, .talent-acquisition #Side_slide .menu > li:last-of-type > a").click(function(e) {
+    $(".landing-page-template #Top_bar .menu > li:last-of-type > a, .landing-page-template #Side_slide .menu > li:last-of-type > a").click(function(e) {
         e.preventDefault();
         if( $('#Side_slide').hasClass('enabled') ){
             $('#Side_slide').css('right','-'+$('#Side_slide').data('width')+'px');
@@ -420,5 +419,12 @@ jQuery(document).ready(function() {
     jQuery(".boxed-exper2").addClass("hover-hax");
   }).on('mouseleave',function(){
     jQuery(".boxed-exper2").removeClass("hover-hax");
+  });
+  
+  jQuery('.camp-col-contact textarea').removeAttr('placeholder');
+  
+  jQuery('.submit-contact-form').click(function(){
+    jQuery('form.wpcf7-form').submit();
+    return false;
   });
 });
