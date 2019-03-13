@@ -3960,3 +3960,10 @@ body.home .owl-theme .owl-nav {
     color: #fcab00;
 }
 .mobile-display{ display: none; }
+.blog-page-template .bloge-f-img img{
+    height: 112px;
+    max-height: 112px;
+}
+.detals-blogie-img img{
+    min-height: 112px;
+}
