@@ -62,6 +62,9 @@ try{
         AOS.init({
             duration: 1200
         });
+        if( $('nav#menu #menu-main-menu li:last span').html() == 'Blog' ){
+        	$('nav#menu #menu-main-menu li:last').remove();
+        }
     });
 </script>
 <!-- wp_head() -->
@@ -70,9 +73,6 @@ try{
 <style type="text/css">
     #Wrapper{
         min-height: 130px;
-    }
-    h2, h2 a, h2 a:hover, .landing-page-template .camp-img .desc_wrapper h3, .landing-page-template .camp-forth-sec h2, .landing-page-template .camp-third-sec h2, .landing-page-template .camp-second-sec h2, .landing-page-template .camp-top-sec h2, .landing-page-template p{
-        color: #1A2C45 !important;
     }
     #form-fiix h2, #footr-updat p{
         color: #fff !important;

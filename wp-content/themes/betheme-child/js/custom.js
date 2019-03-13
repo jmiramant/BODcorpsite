@@ -420,4 +420,6 @@ jQuery(document).ready(function() {
   }).on('mouseleave',function(){
     jQuery(".boxed-exper2").removeClass("hover-hax");
   });
+  
+  jQuery('.camp-col-contact textarea').removeAttr('placeholder');
 });
