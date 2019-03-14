@@ -298,7 +298,7 @@ a.button.arrow-down-click:hover:after{
     border-radius: 10px;
     box-shadow: 0px 0px 2px -1px #000;
     background-color: #fff;
-    min-height: 360px !important;
+    min-height: 260px !important;
     height:auto !important;
 }
 
@@ -3770,7 +3770,7 @@ body.contact .rev_slider li.tp-revslider-slidesli{
 	background: white !important;
 }
 #case-studies-section-2 {
-    padding: 220px 0 120px !important;
+    padding: 189px 0 80px !important
 }
 #case-studies-section-2 h1{
 	color: #192C47;
