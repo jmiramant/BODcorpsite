@@ -1143,7 +1143,7 @@ div#sftext {
         font-size: 22px !important;
     }
     #testi-fix .item-content-wrapper .item-content{
-        width: 99% !important;
+        width: 82% !important;
     }
     #testi-fix .owl-item .testi-center-text{
         height: 460px !important;
@@ -3902,6 +3902,9 @@ body.home .owl-theme .owl-nav {
 	}
 }
 @media (max-width: 767px){
+	#Footer .column_attr.align_center {
+    	text-align: center !important;
+	}
 	.page-template-template-talent-acquisition .testi-center-text{
 		display: block;
 	}
@@ -3945,6 +3948,23 @@ body.home .owl-theme .owl-nav {
 	}
 }
 @media (max-width:580px){
+	#Footer .column_attr.align_center {
+    	text-align: center !important;
+	}
+	#custm-contacts .new-setups .column_attr{
+		margin-bottom: 30px;
+	}
+	#form-fiix .wpcf7 input[type="submit"]{
+		padding: 8px 00px !important;
+		margin-bottom: 0px !important;
+	}
+	#form-fiix .camp-col-contact{
+		padding: 0 20px 50px 20px !important;
+	}
+	.camp-last-sec .wpcf7-form label{
+		margin-bottom: 0px;
+    	line-height: 35px;
+	}
 	.fixo-20 {
     	font-size: 16px;
     	line-height: 30px;
