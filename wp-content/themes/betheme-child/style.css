@@ -149,7 +149,8 @@ background-attachment: fixed;
 #form-fiix .camp-col-contact form input[type="text"], #form-fiix .camp-col-contact form input[type="email"], #form-fiix .camp-col-contact form textarea, #form-fiix .camp-col-contact form textarea::placeholder{
 	color: #7f7e7f !important;
 	padding: 8px 12px;
-	height: 58px;
+	height: 38px;
+	font-size: 15px;
 }
 .camp-forth-sec h2 {
     padding: 34px 0 34px 100px;
@@ -336,9 +337,12 @@ a.button.arrow-down-click:hover:after{
     max-width: 120%;
     height: auto;
     position: relative;
-    top: 80px;
+    top: 40px;
     right: 60px;
     float: right;
+}
+.hax-poo-img{
+	margin-bottom: 0px;
 }
 a.buttonround:visited{ color: #fff !important}
 div#myborder {
@@ -555,8 +559,15 @@ a.link-button{
 	line-height: 56px;
 	font-size: 30px;
 }
+.fixo-20{
+	font-size: 25px;
+}
 #feature-section a.link-button{
-	font-size: 30px;
+	font-size: 25px;
+}
+#feature-section a.link-button .dashicons{
+	font-size: 24px !important;
+    margin-top: 2px;
 }
 a.link-button .dashicons{
     vertical-align:middle !important;
@@ -2286,6 +2297,9 @@ span.shape-three{
 }
 
 @media (max-width: 1366px){
+	#form-fiix .camp-col-contact{
+		margin-left: 0;
+	}
 	.team-member-box .desc_wrapper h4{
 		font-size: 32px;
 	}
@@ -2707,9 +2721,9 @@ case-study_nlp .business .wpb_wrapper h2 {
     text-decoration: none;
 }
 #form-fiix .camp-col-contact form textarea{
-	font-size: 18px;
+	font-size: 15px;
     font-weight: 600;
-	min-height: 135px;
+	min-height: 96px;
 }
 .owl-theme .owl-nav [class*=owl-]:hover {
     background: inherit !important;
@@ -3736,6 +3750,9 @@ body:not(.landing-page-template) #Top_bar.sticky{ display:none !important;}
 .test-icon-fix .image_wrapper img{
 	max-width: 33px !important;
 }
+.link-button2{
+	margin-bottom: 0px;
+}
 .the-bstt p{
 	color: #192C47;
 }
@@ -3744,7 +3761,7 @@ body:not(.landing-page-template) #Top_bar.sticky{ display:none !important;}
 }
 .fontt-35 .column_attr23 .column_attr{
 	font-size: 35px;
-	line-height: 56px;
+	line-height: 50px;
 }
 .featured-threebox .feature_box .photo_wrapper img{
 	max-width: 90%;
@@ -3753,7 +3770,7 @@ body.contact .rev_slider li.tp-revslider-slidesli{
 	background: white !important;
 }
 #case-studies-section-2 {
-    padding: 300px 0 120px !important;
+    padding: 220px 0 120px !important;
 }
 #case-studies-section-2 h1{
 	color: #192C47;
@@ -3869,9 +3886,9 @@ body.home .owl-theme .owl-nav {
 	display: none;
 }
 #form-fiix .camp-col-contact{
-	width: 580px !important;
+	width: 601px !important;
     box-sizing: border-box !important;
-    padding: 0 40px 50px 40px !important;
+    padding: 0 50px 50px 50px !important;
 }
 @media (min-width: 767px){
 	body.contact #Top_bar #logo .logo-main.scale-with-grid {
