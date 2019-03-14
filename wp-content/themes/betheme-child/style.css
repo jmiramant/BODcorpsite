@@ -3945,6 +3945,10 @@ body.home .owl-theme .owl-nav {
 	}
 }
 @media (max-width:580px){
+	.fixo-20 {
+    	font-size: 16px;
+    	line-height: 30px;
+	}
 	#form-fiix .camp-col-contact{
 		width: 100% !important;
 	}
