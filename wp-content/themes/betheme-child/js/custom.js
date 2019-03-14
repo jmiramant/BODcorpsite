@@ -381,7 +381,11 @@ function isScrolledIntoView(elem){
     var docViewTop = $window.scrollTop();
     var docViewBottom = docViewTop + $window.height();
 
-    var elemTop = $elem.offset().top;
+    try{
+        var elemTop = $elem.offset().top;
+    }catch(e){
+        var elemTop = elemTop;
+    }
     var elemBottom = elemTop + $elem.height();
 
     return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
