@@ -671,7 +671,7 @@ p.testimonial-text-custom {
     background-image: url(http://blueorange.digital/wp-content/uploads/2019/01/Bottom_Background.jpg) !important;
     background-repeat: no-repeat;
     background-position: left top;
-    padding-bottom: 20px;
+    padding-bottom: 18px;
 }
 #testimonial-section .blockquote{
     text-align: center;
@@ -1772,6 +1772,11 @@ span.shape-three{
 @media(min-width:991px) and (max-width:1200px){
     .service-box .column_attr {
         width:100%;
+    }
+}
+@media(min-width:1240px) and (max-width:1300px){
+    #custm-tabbed .section_wrapper{
+        width: 1150px !important;
     }
 }
 @media(max-width:1023px){
@@ -3777,7 +3782,7 @@ body.contact .rev_slider li.tp-revslider-slidesli{
     padding: 189px 0 120px !important
 }
 #custm-tabbed .section_wrapper{
-	box-shadow: 3px 0px 6px #dadada;
+	box-shadow: 0px 0px 6px #dadada;
 	box-sizing: border-box;
 }
 #case-studies-section-2 h1{
@@ -3866,8 +3871,8 @@ body.home .owl-theme .owl-nav {
     margin-top: -20px;
 }
 #Footer #custom_html-6 .logo-mobile{
-	width: 110px;
-    margin-top: 40px;
+    width: 110px;
+    margin-top: 12px;
 }
 #Top_bar #logo img{
 	max-width: 90px;
@@ -4036,7 +4041,7 @@ body.project-scoping #Content{
 }
 #custm-tabbed .ui-tabs-panel ul#tabs li a {
     color: #192C47;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 600;
     font-style: italic;
     background: #4F81BD;
@@ -4057,7 +4062,7 @@ body.project-scoping #Content{
 	color: #192C47;
     line-height: 30px;
     font-weight: 600;
-    font-style: italic;
+    /*font-style: italic;*/
 }
 #custm-tabbed .ui-tabs-panel .tabbox p{
 	padding: 0px;
@@ -4336,4 +4341,24 @@ body.project-scoping #Content{
     	font-size: 24px !important;
     	line-height: 29px;
 	}
+}
+#Footer .widgets_wrapper .widget{
+    padding: 0px !important;
+}
+@media screen and (min-width:768px)
+{
+    #Footer .footer_copy {
+        padding-top: 34px !important;
+    }
+}
+@media(min-width:768px) and (max-width:1000px){
+    #custm-tabbed{
+        margin-top: -120px;
+    }
+    #custm-tabbed .ui-tabs-panel .tabbox ul{
+        margin-left: 22px;
+    }
+    #custm-tabbed .ui-tabs-panel ul#tabs li a{
+        display: inline;
+    }
 }
