@@ -4362,6 +4362,3 @@ body.project-scoping #Content{
         display: inline;
     }
 }
-body > div:nth-last-child(2) {
-    display:none;
-}
