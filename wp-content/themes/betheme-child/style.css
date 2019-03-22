@@ -4362,3 +4362,6 @@ body.project-scoping #Content{
         display: inline;
     }
 }
+div#bitnami-banner + div{
+    display:none;
+}
