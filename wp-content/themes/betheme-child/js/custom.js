@@ -432,3 +432,61 @@ jQuery(document).ready(function() {
     return false;
   });
 });
+
+jQuery(document).ready(function() {    
+
+jQuery('#tabs li a:not(:first)').addClass('inactive');
+jQuery('.tabbox').hide();
+jQuery('.tabbox:first').show();
+    
+jQuery('#tabs li a').click(function(){
+    var t = jQuery(this).attr('id');
+  if($(this).hasClass('inactive')){ //this is the start of our condition
+    jQuery('#tabs li a').addClass('inactive');           
+    jQuery(this).removeClass('inactive');
+    jQuery('.tabbox').hide();
+    jQuery('#'+ t + 'C').fadeIn('slow');
+ }
+});
+
+});
+ jQuery( window ).load(function() {
+ jQuery('#ui-id-2tr, #ui-id-3tr ,#ui-id-4tr').hide();
+});
+
+ jQuery(document).on("click",".ui-state-default a ",function() {
+      var id =jQuery(this).attr('id') + 'tr';
+ 	 jQuery('.stepp').hide();
+	 jQuery("#"+id).show();
+     });
+
+ jQuery(document).on("click","#ui-id-1tr",function() {
+	 jQuery("#ui-id-2").click();
+	  jQuery("#ui-id-1tr").hide();
+	  jQuery("#ui-id-2tr").show();
+     });
+
+ jQuery(document).on("click","#ui-id-2tr",function() {
+	
+	 jQuery("#ui-id-3").click();
+	  jQuery("#ui-id-2tr").hide();
+	  jQuery("#ui-id-3tr").show();
+     });
+
+ jQuery(document).on("click","#ui-id-3tr",function() {
+	 jQuery("#ui-id-4").click();
+	  jQuery("#ui-id-3tr").hide();
+	  jQuery("#ui-id-4tr").show();
+     });
+
+ jQuery(document).on("click","#ui-id-4tr",function() {
+	 jQuery("#ui-id-5").click();
+	   jQuery("#ui-id-4tr").hide();
+	  //jQuery("#ui-id-4tr").show();
+     });
+
+jQuery(document).on("click",".stepp",function() {
+    jQuery('html, body').animate({
+        scrollTop: jQuery("#custm-tabbed").offset().top
+    }, 400);
+});
