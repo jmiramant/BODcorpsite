@@ -291,14 +291,18 @@ $(function () {
     }    
 });
 
+var check_p = 0;
 function adjustHeights(){
     if( $('#approach-item-section .icon_box').length > 0 ){
+        check_p = 0;
         equalHeights('#approach-item-section .icon_box');
     }
     if( $('.top-skew .mcb-column .column_attr').length > 0 ){
+        check_p = 1;
         equalHeights('.top-skew .mcb-column .column_attr');
     }
     if( $('#price-compare .mcb-wrap-inner .column.one-third > .column_attr .expertise-box').length > 0 ){
+        check_p = 0;
         equalHeights('#price-compare .mcb-wrap-inner .column.one-third > .column_attr .expertise-box');
     }
 }
@@ -313,6 +317,7 @@ document.addEventListener('DOMContentLoaded',function(){
         if( $( window ).width() > 760 ){
             setTimeout(function(){
                 adjustHeights();
+                console.log('resize');
             },1000);
         }
     });
@@ -393,11 +398,23 @@ function isScrolledIntoView(elem){
 
 function equalHeights(container){
     var highestBox = 0;
+    var max_p = 0;
     $(container).each(function(){
         if($(this).height() > highestBox) {
             highestBox = $(this).height(); 
         }
+        if( check_p == 1 ){
+            if( $('.top-skew .mcb-column .column_attr > p').height() > max_p ){
+                max_p = $('.top-skew .mcb-column .column_attr > p').height();
+            }
+        }
     });
+    console.log(max_p + ' > '+ highestBox);
+    if( check_p == 1 ){
+        if( max_p > highestBox ){
+            highestBox = max_p;
+        }
+    }
     $(container).attr("style","height: "+highestBox+"px !important;");
 }
 
@@ -431,6 +448,27 @@ jQuery(document).ready(function() {
     jQuery('form.wpcf7-form').submit();
     return false;
   });
+  
+  if( jQuery('body').hasClass('services') ){
+  	var submenu = jQuery('#menu-main-menu > li.menu-item > ul.sub-menu');
+  	var count = 1;
+  	var left_div = '<div class="lft-sub-mnu">';
+  	var right_div = '<div class="rit-sub-mnu">';
+  	submenu.find('li').each(function(){
+  		if( count <= 4 ){
+  			left_div += $(this)[0].outerHTML;
+  		}else{
+  			right_div += $(this)[0].outerHTML;
+  		}
+  		count++;
+  	});
+  	left_div += '</div>';
+  	right_div += '</div>';
+  	
+  	submenu.html(left_div + right_div);
+  }else{
+  	jQuery('#menu-main-menu > li.menu-item > ul.sub-menu').remove();
+  }
 });
 
 jQuery(document).ready(function() {    
