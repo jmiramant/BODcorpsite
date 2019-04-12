@@ -4844,3 +4844,8 @@ div.lft-sub-mnu > li:first-of-type a, div.rit-sub-mnu > li:first-of-type a {
     width: 140px !important;
 }
 }
+@media(min-width:1200px) and (max-width:1280px){
+    .services .service-box .column_attr p strong{
+        font-size: 18px !important;
+    }
+}
