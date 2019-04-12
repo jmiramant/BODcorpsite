@@ -2428,7 +2428,7 @@ span.shape-three{
     box-shadow: 0px 18px 11px 0px #2e2e2e99;
 }
 .top-skew .mcb-column .column_attr > p{
-    padding: 30px 20px 20px 40px !important;
+    padding: 30px 20px !important;
 }
 
 #price-compare .custm-undrline .text-underline {
@@ -2631,7 +2631,7 @@ background-color: transparent;
 	line-height: 40px;
 }
 #case-studies-section-1{
-    padding: 210px 0 60px !important;
+    padding: 160px 0 60px !important;
 }
 #case-studies-section-1 p{
     font-size: 24px;
@@ -3981,9 +3981,10 @@ body.home .owl-theme .owl-nav {
 .brand-orange {
     color: #fcab00;
 }
-.mobile-display{
+.mobile-display, .tablet-mobile-display{
 	display: none;
 }
+
 .blog-page-template .bloge-f-img img{
     height: 112px !important;
     max-height: 112px;
@@ -4178,6 +4179,13 @@ body.project-scoping #Content{
 }
 
 /* Reactor Page CSS */
+@media (min-width:1367px){
+	.updated-leverage .section_wrapper.mcb-section-inner{
+		max-width: 82% !important;
+		min-width: 82% !important
+	}
+}
+
 
 .services nav#menu li a{
 	color: #0a3d5c!important;
@@ -4391,17 +4399,24 @@ body.project-scoping #Content{
 	}
 }
 @media (max-width: 991px){
+	#expertise-custom{
+		padding-top: 41px !important;
+		padding-bottom: 20px !important;
+	}
 	.updated-leverage #case-studies-section-1 {
     	padding: 40px 0 60px !important;
 	}
 	.reactor-head h2{
 		font-size: 25px;
 	}
+	.header-linedd .column_attr.align_center{
+		padding: 40px 0px 0px 0px !important;
+	}
 	.reactor-head h2 br{
 		display: none;
 	}
 	#expertise-custom h2{
-		font-size: 30px;
+		font-size: 35px;
 	}
 	#case-studies-section-5 p{
 		padding: 0px 0px !important;
@@ -4455,10 +4470,6 @@ body.project-scoping #Content{
 	body.contact #Top_bar .menu>li>a {
     	color: #0a3d5c!important;
 	}
-}
-.updated-leverage .section_wrapper.mcb-section-inner{
-	max-width: 82% !important;
-	min-width: 82% !important
 }
 @media (max-width: 767px){
 	#expertise-custom ul li p br{
@@ -4715,6 +4726,9 @@ body.project-scoping #Content{
 	.lft-sub-mnu, .rit-sub-mnu{
 		min-width: 100%;
 	}
+    .tablet-mobile-display{
+        display: block !important;
+    }
 }
 @media(min-width:768px) and (max-width:1000px){
     #custm-tabbed{
@@ -4747,7 +4761,7 @@ div#bitnami-banner + div{
 	}
 }
 
-#menu-item-880 a, #menu-item-884 a{
+div.lft-sub-mnu > li:first-of-type a, div.rit-sub-mnu > li:first-of-type a {
 	font-weight: 400;
 }
 
@@ -4770,7 +4784,7 @@ div#bitnami-banner + div{
     	min-height: 193px !important;
 	}
 	#custom-cape{
-		margin-bottom: 80px;
+		margin-bottom: 57px;
 	}
 	.updated-leverage ul li{
 		font-size: 16px;
@@ -4815,7 +4829,7 @@ div#bitnami-banner + div{
 		min-height: 240px;
 	}
 }
-.sub-menu .lft-sub-mnu li#menu-item-880 a:hover, .sub-menu .rit-sub-mnu li#menu-item-884 a:hover{
+.sub-menu .lft-sub-mnu > li:first-of-type a:hover, .sub-menu .rit-sub-mnu  > li:first-of-type a:hover {
 	background: transparent !important;
 	cursor: default !important;
 }
@@ -4823,4 +4837,10 @@ div#bitnami-banner + div{
     position: absolute;
     bottom: 10px;
     left: 0px;
+}
+@media screen and (max-width: 414px){
+.services #Content #leverage-tools .custm-underlins .text-underline {
+    right: -189px !important;
+    width: 140px !important;
+}
 }
