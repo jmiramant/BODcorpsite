@@ -1238,9 +1238,6 @@ div#sftext {
     #price-compare .page-extended-heading > .column_attr{
         margin-bottom: 30px;
     }
-    .desktop-display{
-        display: none !important;
-    }
 }
 @media only screen and (min-width: 1100px){
 	.nerdy-team-fix .desc_wrapper h4{
@@ -3399,6 +3396,9 @@ background-position: 56px 120px !important;
 		top: -40px;
     	font-size: 18px !important;
 	}
+    .desktop-display{
+        display: none !important;
+    }
 }
 
 @media (max-width: 1700px){
@@ -4945,9 +4945,10 @@ div.lft-sub-mnu > li:first-of-type a, div.rit-sub-mnu > li:first-of-type a {
 }
 
 #driven-solution .data-driven-img{
-	text-align: center;
+	text-align: center !important;
     margin-bottom: 10px;
     margin-top: 30px;
+    text-indent: 0 !important;
 }
 
 #driven-solution .data-driven-img img{
