@@ -4880,7 +4880,7 @@ div.lft-sub-mnu > li:first-of-type a, div.rit-sub-mnu > li:first-of-type a {
 }
 }
 
-.our-expertise-vc-fit #Content{
+.services_venture-capital-and-private-equity #Content{
 	padding-top: 0px !important;
 }
 
@@ -4888,13 +4888,13 @@ div.lft-sub-mnu > li:first-of-type a, div.rit-sub-mnu > li:first-of-type a {
 	padding: 260px 0 90px !important;
 }
 
-.our-expertise-vc-fit .vc-fit-page h1, .our-expertise-vc-fit-2 .vc-fit-page h1, .our-expertise-vc-fit-3 .vc-fit-page h1{
+.services_venture-capital-and-private-equity .vc-fit-page h1, .services_recruiting-talent-analytics .vc-fit-page h1, .services_ecommerce .vc-fit-page h1{
 	font-size: 40px;
     line-height: 42px;
     color: #fff;
 }
 
-.our-expertise-vc-fit .vc-fit-page h2, .our-expertise-vc-fit-2 .vc-fit-page h2, .our-expertise-vc-fit-3 .vc-fit-page h2{
+.services_venture-capital-and-private-equity .vc-fit-page h2, .services_recruiting-talent-analytics .vc-fit-page h2, .services_ecommerce .vc-fit-page h2{
 	font-size: 25px;
     line-height: 42px;
     font-weight: 400;
@@ -4902,7 +4902,7 @@ div.lft-sub-mnu > li:first-of-type a, div.rit-sub-mnu > li:first-of-type a {
     margin-top: 30px;
 }
 
-.our-expertise-vc-fit-3 #Content{
+.services_ecommerce #Content{
 	padding-top: 0px;
 }
 
@@ -5175,7 +5175,7 @@ div.lft-sub-mnu > li:first-of-type a, div.rit-sub-mnu > li:first-of-type a {
 	#unified-company .one.column .column_attr.align_left {
     	margin-left: 0px;
 	}
-	.our-expertise-vc-fit .vc-fit-page h2 br, .our-expertise-vc-fit-2 .vc-fit-page h2 br, #machine-learningg h4 br{
+	.services_venture-capital-and-private-equity .vc-fit-page h2 br, .services_recruiting-talent-analytics .vc-fit-page h2 br, #machine-learningg h4 br{
 		display: none;
 	}
 	#unified-company .insight-pop-1 img, #unified-company .insight-pop-2 img, #unified-company .insight-pop-3 img{
@@ -5285,7 +5285,7 @@ div.lft-sub-mnu > li:first-of-type a, div.rit-sub-mnu > li:first-of-type a {
 	#case-studies-section-4 {
     	padding: 70px 0 50px !important;
 	}
-	.our-expertise-vc-fit .vc-fit-page h1, .our-expertise-vc-fit-2 .vc-fit-page h1{
+	.services_venture-capital-and-private-equity .vc-fit-page h1, .services_recruiting-talent-analytics .vc-fit-page h1{
 		line-height: normal;
 	}
 	.insight-pop-1:after, .insight-pop-2:before, .insight-pop-2:after{
@@ -5393,11 +5393,11 @@ div.lft-sub-mnu > li:first-of-type a, div.rit-sub-mnu > li:first-of-type a {
 }
 
 
-.our-expertise-vc-fit-2 #Content{
+.services_recruiting-talent-analytics #Content{
 	padding-top: 0px;
 }
 
-.our-expertise-vc-fit-2 .rit-deci-ul .data-driven-img, .our-expertise-vc-fit-3 .rit-deci-ul .data-driven-img{
+.services_recruiting-talent-analytics .rit-deci-ul .data-driven-img, .services_ecommerce .rit-deci-ul .data-driven-img{
 	text-indent: 28%;
 	text-align: left !important;
 }
@@ -5667,10 +5667,10 @@ div.lft-sub-mnu > li:first-of-type a, div.rit-sub-mnu > li:first-of-type a {
 	.cntr-cntr{
 		display: none;
 	}
-	.our-expertise-vc-fit-2 #unified-company-2 .one.column{
+	.services_recruiting-talent-analytics #unified-company-2 .one.column{
 		margin-bottom: 0px;
 	}
-	.our-expertise-vc-fit-2 #unified-company-2 .recycled-main-pos{
+	.services_recruiting-talent-analytics #unified-company-2 .recycled-main-pos{
 		width: 600px;
 		margin: auto;
 		display: block;
@@ -5707,37 +5707,37 @@ div.lft-sub-mnu > li:first-of-type a, div.rit-sub-mnu > li:first-of-type a {
 	#unified-company-2 .lfft-boox{
 		margin-bottom: 0px;
 	}
-	.our-expertise-vc-fit-3 .arrow-lake-sid-blow{
+	.services_ecommerce .arrow-lake-sid-blow{
 		display: none;
 	}
-	.our-expertise-vc-fit-2 .recycled-main-pos .recycled-sec .lft-sec-pos2{
+	.services_recruiting-talent-analytics .recycled-main-pos .recycled-sec .lft-sec-pos2{
 		right: -24px;
 	}
 	.recycled-main-pos h5{
 		margin-bottom: 30px;
 		margin-top: 30px;
 	}
-	.our-expertise-vc-fit-2 .recycled-main-pos .recycled-sec .lft-sec-pos3{
+	.services_recruiting-talent-analytics .recycled-main-pos .recycled-sec .lft-sec-pos3{
 		right: -94px;
 	}
-	.our-expertise-vc-fit-2 .recycled-main-pos .recycled-sec .lft-sec-pos{
+	.services_recruiting-talent-analytics .recycled-main-pos .recycled-sec .lft-sec-pos{
 		left: -68px;
 	}
-	.our-expertise-vc-fit-2 .rit-deci-ul .data-driven-img, .our-expertise-vc-fit-3 .rit-deci-ul .data-driven-img{
+	.services_recruiting-talent-analytics .rit-deci-ul .data-driven-img, .services_ecommerce .rit-deci-ul .data-driven-img{
 		text-indent: unset;
     	text-align: center !important;
 	}
 }
 
 @media only screen and (max-width:660px){
-	.our-expertise-vc-fit-2 #unified-company-2 .recycled-main-pos img{
+	.services_recruiting-talent-analytics #unified-company-2 .recycled-main-pos img{
 		 display: none;
 	}	
-	.our-expertise-vc-fit-2 .recycled-main-pos .recycled-sec .recycled-sec-pos, .our-expertise-vc-fit-2 .recycled-main-pos .recycled-sec .recycled-sec-pos li{
+	.services_recruiting-talent-analytics .recycled-main-pos .recycled-sec .recycled-sec-pos, .services_recruiting-talent-analytics .recycled-main-pos .recycled-sec .recycled-sec-pos li{
 		position: static !important;
 		text-align: center
 	}
-	.our-expertise-vc-fit-2 .recycled-main-pos .recycled-sec .lft-sec-pos2{
+	.services_recruiting-talent-analytics .recycled-main-pos .recycled-sec .lft-sec-pos2{
 		margin: 30px 0px;
 	}
 }
@@ -5748,5 +5748,10 @@ div.lft-sub-mnu > li:first-of-type a, div.rit-sub-mnu > li:first-of-type a {
 @media(min-width:1200px) and (max-width:1280px){
     .services .service-box .column_attr p strong{
         font-size: 18px !important;
+    }
+}
+@media only screen and (max-width: 1300px){
+    .ecommerce-center-empty-div{
+        display: none;
     }
 }
