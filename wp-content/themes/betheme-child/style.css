@@ -1166,6 +1166,14 @@ div#sftext {
     .sub-menu .rit-sub-mnu, .sub-menu .lft-sub-mnu{
         float: none !important;
     }
+    .recycled-main-pos .recycled-sec ul li{
+        font-size: 18px !important;
+        line-height: 22px !important;
+    }
+    .recycled-main-pos .recycled-sec h6{
+        font-size: 20px !important;
+        line-height: 26px !important;
+    }
 }
 @media only screen and (min-width: 768px) {
 	#Footer #custom_html-6 .logo-mobile{
@@ -5384,9 +5392,6 @@ div.lft-sub-mnu > li:first-of-type a, div.rit-sub-mnu > li:first-of-type a {
 	}
 }
 
-.machine-learning-right{
-	margin-top: 9px;
-}
 
 .our-expertise-vc-fit-2 #Content{
 	padding-top: 0px;
