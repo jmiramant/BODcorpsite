@@ -141,7 +141,7 @@ $(function () {
                             });
 
                         },
-                        // when scrolling the page change the position of each row	
+                        // when scrolling the page change the position of each row  
                         'scroll.Scrolling': function (event) {
 
                             // set a timeout to avoid that the 
@@ -200,8 +200,8 @@ $(function () {
 
                                 $rowL.css({left: '-14%'});
                                 $rowR.css({right: '-55%'});
-								
-								$rowL.css({width: '60%'});
+                                
+                                $rowL.css({width: '60%'});
                                 $rowR.css({width: '60%'});
 
                             }
@@ -260,8 +260,8 @@ $(function () {
 
                                 $rowL.css({left: -val + '-14%'});
                                 $rowR.css({right: -val + '-55%'});
-								
-								$rowL.css({width: '100%'});
+                                
+                                $rowL.css({width: '100%'});
                                 $rowR.css({width: '100%'});
 
                             }
@@ -449,26 +449,26 @@ jQuery(document).ready(function() {
     return false;
   });
   
-  if( jQuery('body').hasClass('services') ){
-  	var submenu = jQuery('#menu-main-menu > li.menu-item > ul.sub-menu');
-  	var count = 1;
-  	var left_div = '<div class="lft-sub-mnu">';
-  	var right_div = '<div class="rit-sub-mnu">';
-  	submenu.find('li').each(function(){
-  		if( count <= 4 ){
-  			left_div += $(this)[0].outerHTML;
-  		}else{
-  			right_div += $(this)[0].outerHTML;
-  		}
-  		count++;
-  	});
-  	left_div += '</div>';
-  	right_div += '</div>';
-  	
-  	submenu.html(left_div + right_div);
-  }else{
-  	jQuery('#menu-main-menu > li.menu-item > ul.sub-menu').remove();
-  }
+  //if( jQuery('body').hasClass('services') ){
+    var submenu = jQuery('#menu-main-menu > li.menu-item > ul.sub-menu');
+    var count = 1;
+    var left_div = '<div class="lft-sub-mnu">';
+    var right_div = '<div class="rit-sub-mnu">';
+    submenu.find('li').each(function(){
+        if( count <= 4 ){
+            left_div += $(this)[0].outerHTML;
+        }else{
+            right_div += $(this)[0].outerHTML;
+        }
+        count++;
+    });
+    left_div += '</div>';
+    right_div += '</div>';
+    
+    submenu.html(left_div + right_div);
+  //}else{
+    //jQuery('#menu-main-menu > li.menu-item > ul.sub-menu').remove();
+  //}
 });
 
 jQuery(document).ready(function() {    
@@ -494,33 +494,33 @@ jQuery('#tabs li a').click(function(){
 
  jQuery(document).on("click",".ui-state-default a ",function() {
       var id =jQuery(this).attr('id') + 'tr';
- 	 jQuery('.stepp').hide();
-	 jQuery("#"+id).show();
+     jQuery('.stepp').hide();
+     jQuery("#"+id).show();
      });
 
  jQuery(document).on("click","#ui-id-1tr",function() {
-	 jQuery("#ui-id-2").click();
-	  jQuery("#ui-id-1tr").hide();
-	  jQuery("#ui-id-2tr").show();
+     jQuery("#ui-id-2").click();
+      jQuery("#ui-id-1tr").hide();
+      jQuery("#ui-id-2tr").show();
      });
 
  jQuery(document).on("click","#ui-id-2tr",function() {
-	
-	 jQuery("#ui-id-3").click();
-	  jQuery("#ui-id-2tr").hide();
-	  jQuery("#ui-id-3tr").show();
+    
+     jQuery("#ui-id-3").click();
+      jQuery("#ui-id-2tr").hide();
+      jQuery("#ui-id-3tr").show();
      });
 
  jQuery(document).on("click","#ui-id-3tr",function() {
-	 jQuery("#ui-id-4").click();
-	  jQuery("#ui-id-3tr").hide();
-	  jQuery("#ui-id-4tr").show();
+     jQuery("#ui-id-4").click();
+      jQuery("#ui-id-3tr").hide();
+      jQuery("#ui-id-4tr").show();
      });
 
  jQuery(document).on("click","#ui-id-4tr",function() {
-	 jQuery("#ui-id-5").click();
-	   jQuery("#ui-id-4tr").hide();
-	  //jQuery("#ui-id-4tr").show();
+     jQuery("#ui-id-5").click();
+       jQuery("#ui-id-4tr").hide();
+      //jQuery("#ui-id-4tr").show();
      });
 
 jQuery(document).on("click",".stepp",function() {
