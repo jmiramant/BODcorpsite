@@ -1143,8 +1143,8 @@ div#sftext {
     #form-fiix .camp-col-contact{
             margin-top: 0px !important;
     }
-    .desktop-tablet-display{ display: none !important; }
-    .mobile-display{ display: block !important; }
+/*     .desktop-tablet-display{ display: none !important; }
+    .mobile-display{ display: block !important; } */
     #Footer .column_attr a{
         display: block;
         text-align: center;
@@ -5424,9 +5424,8 @@ div.lft-sub-mnu > li:first-of-type a, div.rit-sub-mnu > li:first-of-type a {
 }
 
 .cntr-cntr {
-    text-align: left;
+    text-align: center;
     margin: 140px 0px;
-    text-indent: 20px;
 }
 
 #unified-company-2 .lake-divi-block img {
@@ -5467,7 +5466,7 @@ div.lft-sub-mnu > li:first-of-type a, div.rit-sub-mnu > li:first-of-type a {
 
 .arrow-lake-sid{
 	display: block;
-    margin: 40px auto 30px auto;
+    margin: 20px auto 30px auto;
 }
 
 .lft-lake-sec{
@@ -5637,6 +5636,51 @@ div.lft-sub-mnu > li:first-of-type a, div.rit-sub-mnu > li:first-of-type a {
     margin: auto;
 }
 
+#modrn-anaylic .one.column, #modrn-anaylic p{
+	margin-bottom: 0px;
+}
+
+#modrn-anaylic p{
+	font-size: 24px;
+    line-height: 40px;
+}
+
+ul.benif-data-ul{
+	padding: 0px 70px !important;
+	margin-top: 36px !important;
+}
+
+ul.benif-data-ul .lfft-benif{
+	float: left;
+    width: 25%;
+    color: #fff;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+ul.benif-data-ul li{
+	display: inline-block;
+    width: 100%;
+	margin-bottom: 25px !important;
+}
+
+ul.benif-data-ul li:last-child{
+	margin-bottom: 0px !important;
+}
+
+ul.benif-data-ul .riit-benif{
+	float: right;
+    width: 75%;
+    color: #fff;
+    font-size: 20px;
+}
+
+.benifts-custom h2{
+	height: 580px !important;
+    padding: 242px 0px !important;
+    margin-top: 0px !important;
+}
+
 @media (min-width: 961px) and (max-width: 1240px){
 	.recycled-main-pos .recycled-sec, .lft-lake-sec{
 		transform: scale(0.8);
@@ -5658,15 +5702,28 @@ div.lft-sub-mnu > li:first-of-type a, div.rit-sub-mnu > li:first-of-type a {
 	}
 }
 
+@media (min-width:961px){
+	.mobil-on-img{
+		display: none;
+	}
+}
+
 @media (max-width:960px){
-	#unified-company-2 .recycled-main-pos, #unified-company-2 .one-third.column{
+	#unified-company-2 .recycled-main-pos, #unified-company-2 .one-third.column, #unified-company-2 .one-sixth.column{
 		width: 100%;
+	}
+	#unified-company-2 .cntr-cntr .scale-with-grid{
+		display: none;
+	}
+	.mobil-on-img{
+		display: block !important;
+		margin: auto !important
 	}
 	.lft-lake-sec{
 		width: 310px;
 	}
 	.cntr-cntr{
-		display: none;
+		margin: 0px 0px;
 	}
 	.services_recruiting-talent-analytics #unified-company-2 .one.column{
 		margin-bottom: 0px;
@@ -5680,25 +5737,31 @@ div.lft-sub-mnu > li:first-of-type a, div.rit-sub-mnu > li:first-of-type a {
 	}
 }
 
-@media only screen and (min-width:768px){
+@media (min-width:768px){
 	.data-lake-saprate{
 		min-height: 620px;
 	}
-	.mobile-onty-img{
+	.mobile-onty-img, .mobile-onty-img2{
 		display: none;
 	}
 }
 
-@media only screen and (max-width:767px){
+@media (max-width:767px){
 	.avarage-tools-upper h2{
 		line-height: normal;
 		margin-bottom: 70px;
+	}
+	.extra-2space{
+		margin: 20px 0px 20px 0px !important;
 	}
 	.machine-learning-right .dixeed-img{
 		margin-top: 60px;
 	}
 	#unified-company-2 p br{
 		display: none;
+	}
+	.mobile-onty-img2{
+		margin-bottom: -40px;
 	}
 	.mobile-onty-img{
 		display: inline-block;
