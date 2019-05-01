@@ -1143,8 +1143,8 @@ div#sftext {
     #form-fiix .camp-col-contact{
             margin-top: 0px !important;
     }
-    .desktop-tablet-display{ display: none !important; }
-    .mobile-display{ display: block !important; }
+/*     .desktop-tablet-display{ display: none !important; }
+    .mobile-display{ display: block !important; } */
     #Footer .column_attr a{
         display: block;
         text-align: center;
@@ -5752,7 +5752,7 @@ ul.benif-data-ul .riit-benif{
 		margin-bottom: 70px;
 	}
 	.extra-2space{
-		margin: 20px 0px;
+		margin: 20px 0px 20px 0px !important;
 	}
 	.machine-learning-right .dixeed-img{
 		margin-top: 60px;
