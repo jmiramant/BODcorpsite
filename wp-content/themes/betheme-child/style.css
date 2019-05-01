@@ -5430,6 +5430,7 @@ div.lft-sub-mnu > li:first-of-type a, div.rit-sub-mnu > li:first-of-type a {
 
 .lft-lake-sec .arrow-lake-sid-blow{
 	margin: 0px auto 20px auto;
+    max-height: 70px;
 }
 
 .cntr-cntr {
@@ -5764,10 +5765,6 @@ ul.benif-data-ul .riit-benif{
 	list-style-position: outside !important;
 }
 
-body.data-infrastructure #Footer{
-	background-size: 154%;
-}
-
 @media (min-width: 961px) and (max-width: 1240px){
 	.recycled-main-pos .recycled-sec, .lft-lake-sec{
 		transform: scale(0.8);
@@ -5850,6 +5847,9 @@ body.data-infrastructure #Footer{
 	}
 	body.services_ecommerce .mobile-onty-img2{
 		display: none
+	}
+	.fluidd-box-learning h3{
+		margin-bottom: 30px;
 	}
 	body.services_ecommerce .mobile-onty-img2.extra-2space{
 		display: block !important
