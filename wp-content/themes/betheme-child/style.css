@@ -743,23 +743,31 @@ background-position:center !important;
 }
 
 @media (max-width:767px){
+	#Side_slide #menu ul li ul{
+		display: inline-block !important;
+	}
+	#modrn-anaylic{
+		padding-bottom: 70px !important;	
+	}
 	.camp-top-sec h2 {
-    padding: 20px 0;
-    line-height: 38px;
-}
+    	padding: 20px 0;
+    	line-height: 38px;
+	}
 	.camp-second-sec h2, .camp-third-sec h2{
-    font-size: 30px;
-}
+    	font-size: 30px;
+	}
 	.camp-third-sec p {
-    font-size: 21px;
-    line-height: 30px;
-    padding: 0;
-}.camp-forth-sec h2 {
-    padding: 34px 0 34px 0px;
-    font-size: 30px;
-}.camp-img .story_box {
-    padding: 0 !important;
-}
+		font-size: 21px;
+		line-height: 30px;
+		padding: 0;
+	}
+	.camp-forth-sec h2 {
+    	padding: 34px 0 34px 0px;
+    	font-size: 30px;
+	}
+	.camp-img .story_box {
+    	padding: 0 !important;
+	}
 	
 element {
 
@@ -4242,8 +4250,8 @@ body.project-scoping #Content{
 }
 
 body.services_machine-learning .benifts-custom h2{
-	height: 980px !important;
-    padding: 442px 0px !important;
+	height: 790px !important;
+    padding: 352px 0px !important;
 }
 
 .reactor-head h2{
@@ -5748,8 +5756,8 @@ ul.benif-data-ul .riit-benif{
 }
 
 body.services_integration-and-app-development .benifts-custom h2{
-	height: 840px !important;
-	padding: 375px 0px !important;
+	height: 620px !important;
+    padding: 265px 0px !important;
 }
 
 .fluidd-box-learning{
@@ -5940,13 +5948,14 @@ body.services_integration-and-app-development .benifts-custom h2{
 	#modrn-anaylic p br{
 		display: none;
 	}
-	.benifts-custom h2 {
+	.benifts-custom h2, body.services_integration-and-app-development .benifts-custom h2, body.services_machine-learning .benifts-custom h2{
     	height: auto !important;
     	padding: 0px !important;
 	}
 	#expertise-custom ul{
 		padding: 0px !important;
 		margin-bottom: 40px;
+		margin-top: 20px !important;
 	}
 	.hexagon-selfies h3{
 		font-size: 28px;
