@@ -6109,7 +6109,7 @@ body.services_integration-and-app-development .benifts-custom h2, body.services_
     body.services_data-infrastructure .benifts-custom h2{
         height: 745px !important;
     }
-    body.services_data-science .benifts-custom h2{
+    html body.services_data-science #expertise-custom.benifts-custom h2{
         height: 930px !important;
     }
     body.services_integration-and-app-development .benifts-custom h2{
@@ -6125,5 +6125,15 @@ body.services_integration-and-app-development .benifts-custom h2, body.services_
 @media(min-width:955px) and (max-width:1240px){
     body.services_integration-and-app-development .benifts-custom h2{
         height: 675px !important;
+    }
+}
+@media (min-width: 1500px){
+    body.contact{
+        height: 100%;
+    }
+    .contact footer#Footer{
+        position: absolute;
+        width: 100%;
+        bottom: 0px;
     }
 }
