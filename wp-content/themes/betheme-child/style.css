@@ -1183,6 +1183,9 @@ div#sftext {
         font-size: 20px !important;
         line-height: 26px !important;
     }
+    .reactor-head a.link-button{
+        padding-left: 10px;
+    }
 }
 @media only screen and (min-width: 768px) {
 	#Footer #custom_html-6 .logo-mobile{
@@ -3198,12 +3201,15 @@ background-position: 56px 120px !important;
 }
 
 @media only screen and (max-width:1240px){
-.section_wrapper, .container {
-    width: 90% !important;
-}
+    .section_wrapper, .container {
+        width: 90% !important;
+    }
 	#testimonial-secnn h3{
 		font-size: 45px;
 	}
+    body.services_integration-and-app-development .benifts-custom h2{
+        height: 680px !important;
+    }
 }
 
 #testimonial-secnn .owl-carousel button.owl-dot{
@@ -4251,7 +4257,7 @@ body.project-scoping #Content{
 }
 
 body.services_machine-learning .benifts-custom h2{
-	height: 790px !important;
+	/*height: 790px !important;*/
     padding: 352px 0px !important;
 }
 
@@ -5772,13 +5778,13 @@ ul.benif-data-ul .riit-benif{
 }
 
 .benifts-custom h2{
-	height: 580px !important;
-    padding: 242px 0px !important;
+	height: 510px !important;
+    padding: 200px 0px !important;
     margin-top: 0px !important;
 }
 
-body.services_integration-and-app-development .benifts-custom h2{
-	height: 620px !important;
+body.services_integration-and-app-development .benifts-custom h2, body.services_data-science .benifts-custom h2{
+	height: 560px !important;
     padding: 265px 0px !important;
 }
 
@@ -5910,6 +5916,9 @@ body.services_integration-and-app-development .benifts-custom h2{
 		float: none;
 		margin-bottom: 40px;
 	}
+    body.services_integration-and-app-development .benifts-custom h2{
+        height: 740px !important;
+    }
 }
 
 @media (min-width:768px){
