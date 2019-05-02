@@ -4255,11 +4255,16 @@ body.services_machine-learning .benifts-custom h2{
 }
 
 .reactor-head h2{
-	font-size: 40px;
-    line-height: 88px;
+	font-size: 35px;
+    line-height: 42px;
     font-weight: 400;
     margin-bottom: 0;
     color: #192C47;
+}
+
+body.services_data-infrastructure .reactor-head h2, body.services_machine-learning .reactor-head h2, body.services_data-science .reactor-head h2, body.services_integration-and-app-development .reactor-head h2{
+	font-size: 40px;
+    line-height: 88px;
 }
 
 .reactor-head a.link-button{
