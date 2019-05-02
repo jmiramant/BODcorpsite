@@ -4232,6 +4232,11 @@ body.project-scoping #Content{
     display: block !important;
 }
 
+#expertise-custom a.link-button{
+	font-size: 25px;
+    line-height: 56px;
+}
+
 #case-studies-section-7{
 	padding: 220px 0 50px !important;
 }
@@ -4277,7 +4282,7 @@ body.services_machine-learning .benifts-custom h2{
 }
 
 .business-solutn img{
-	margin-top: 30px;
+	margin-top: 35px;
 }
 
 .business-solutn h3{
