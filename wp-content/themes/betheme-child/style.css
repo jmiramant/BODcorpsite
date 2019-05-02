@@ -4222,29 +4222,50 @@ body.project-scoping #Content{
 }
 
 
-.sub-menu li a, body.services #Top_bar .menu>li>a, body.data-infrastructure #Top_bar .menu>li>a{
+.sub-menu li a, body.services #Top_bar .menu>li>a, body.services_data-infrastructure #Top_bar .menu>li>a, body.services_machine-learning #Top_bar .menu>li>a, body.services_data-science #Top_bar .menu>li>a, body.services_integration-and-app-development #Top_bar .menu>li>a{
 	color: #0a3d5c!important;
 }
-.services .logo #logo .logo-main.scale-with-grid, body.data-infrastructure .logo #logo .logo-main.scale-with-grid{
+.services .logo #logo .logo-main.scale-with-grid, body.services_data-infrastructure .logo #logo .logo-main.scale-with-grid, body.services_machine-learning .logo #logo .logo-main.scale-with-grid, body.services_data-science .logo #logo .logo-main.scale-with-grid, body.services_integration-and-app-development .logo #logo .logo-main.scale-with-grid{
 	display: none;
 }
-.services #logo .logo-sticky.scale-with-grid, body.data-infrastructure #logo .logo-sticky.scale-with-grid{
+.services #logo .logo-sticky.scale-with-grid, body.services_data-infrastructure #logo .logo-sticky.scale-with-grid, body.services_machine-learning #logo .logo-sticky.scale-with-grid, body.services_data-science #logo .logo-sticky.scale-with-grid, body.services_integration-and-app-development #logo .logo-sticky.scale-with-grid{
     display: block !important;
+}
+
+#expertise-custom a.link-button{
+	font-size: 25px;
+    line-height: 56px;
 }
 
 #case-studies-section-7{
 	padding: 220px 0 50px !important;
 }
 
+body.services_machine-learning .benifts-custom h2{
+	height: 980px !important;
+    padding: 442px 0px !important;
+}
+
 .reactor-head h2{
-	font-size: 35px;
-    line-height: 42px;
+	font-size: 40px;
+    line-height: 88px;
     font-weight: 400;
+    margin-bottom: 0;
+    color: #192C47;
+}
+
+.reactor-head a.link-button{
+	font-size: 25px;
+    line-height: 56px;
+}
+
+.reactor-head a.link-button span{
+	font-size: 26px !important;
 }
 
 #expertise-custom h2{
 	color: #fff;
-    font-weight: 400;
+    font-weight: 600;
     font-size: 40px;
     line-height: 88px;
     margin: auto;
@@ -4254,6 +4275,28 @@ body.project-scoping #Content{
     padding: 142px 0px;
     box-sizing: border-box;
     margin-top: 40px;
+}
+
+.business-solutn{
+	margin-top: 50px;
+}
+
+.business-solutn img{
+	margin-top: 35px;
+}
+
+.business-solutn h3{
+	font-size: 30px;
+    line-height: 88px;
+    margin-bottom: 0;
+    font-weight: 600;
+}
+
+.business-solutn p{
+	font-size: 25px;
+    line-height: 36px;
+    color: #fff;
+	margin-bottom: 0px;
 }
 
 #custom-cape .mcb-wrap-inner span.text-to-be-underlined {
@@ -4273,10 +4316,6 @@ body.project-scoping #Content{
     right: -18px;
     margin: auto;
     bottom: 0px;
-}
-
-#expertise-custom .section_wrapper{
-	
 }
 
 #expertise-custom ul{
@@ -4452,6 +4491,7 @@ body.project-scoping #Content{
 	}
 	.reactor-head h2{
 		font-size: 25px;
+		line-height: normal;
 	}
 	.header-linedd .column_attr.align_center{
 		padding: 40px 0px 0px 0px !important;
@@ -4516,6 +4556,9 @@ body.project-scoping #Content{
 	}
 }
 @media (max-width: 767px){
+	.business-solutn p{
+		margin-bottom: 20px;
+	}
 	#expertise-custom ul li p br{
 		display: none !important;
 	}
@@ -4554,6 +4597,16 @@ body.project-scoping #Content{
     	height: auto;
     	padding: 0px 0px;
     	margin-top: 0px;
+	}
+	#expertise-custom h2 span.text-to-be-underlined{
+		position: relative;
+	}
+	#expertise-custom h2 span.text-underline{
+		width: 115px;
+		right: auto;
+		bottom: 5px;
+		display: inline-block;
+		left: 22px;
 	}
 	#custm-tabbed .ui-tabs .ui-tabs-nav li a{
 		font-size: 20px !important;
@@ -5651,8 +5704,9 @@ div.lft-sub-mnu > li:first-of-type a, div.rit-sub-mnu > li:first-of-type a {
 }
 
 #modrn-anaylic p{
-	font-size: 24px;
-    line-height: 40px;
+	font-size: 25px;
+    line-height: 42px;
+	color: #192C47;
 }
 
 ul.benif-data-ul{
@@ -5666,6 +5720,7 @@ ul.benif-data-ul .lfft-benif{
     color: #fff;
     font-weight: 600;
     font-size: 20px;
+    line-height: 29px;
 }
 
 ul.benif-data-ul li{
@@ -5683,12 +5738,18 @@ ul.benif-data-ul .riit-benif{
     width: 75%;
     color: #fff;
     font-size: 20px;
+    line-height: 32px;
 }
 
 .benifts-custom h2{
 	height: 580px !important;
     padding: 242px 0px !important;
     margin-top: 0px !important;
+}
+
+body.services_integration-and-app-development .benifts-custom h2{
+	height: 840px !important;
+	padding: 375px 0px !important;
 }
 
 .fluidd-box-learning{
@@ -5750,7 +5811,7 @@ ul.benif-data-ul .riit-benif{
 }
 
 .hexagon-selfies{
-	padding: 60px 0px 40px 0px;
+	padding: 30px 0px 40px 0px;
 }
 
 .hexagon-selfies h3{
@@ -5834,10 +5895,6 @@ ul.benif-data-ul .riit-benif{
 	}
 }
 
-#expertise-custom .text-underline.tablet-mobile-display{
-	display: none !important;
-}
-
 @media (max-width:767px){
 	.lft-lake-sec{
 		margin-top: 30px;
@@ -5854,11 +5911,28 @@ ul.benif-data-ul .riit-benif{
 	body.services_ecommerce .mobile-onty-img2.extra-2space{
 		display: block !important
 	}
-	body.data-infrastructure #Top_bar #logo img.logo-sticky{
+	body.services_data-infrastructure #Top_bar #logo img.logo-sticky, body.services_machine-learning #Top_bar #logo img.logo-sticky, body.services_data-science #Top_bar #logo img.logo-sticky, body.services_integration-and-app-development #Top_bar #logo img.logo-sticky{
 		display: none !important;
 	}
 	ul.benif-data-ul .lfft-benif{
-		font-size: 24px;
+		text-align: center;
+	}
+	.business-solutn img {
+    	margin-top: 0px;
+	}
+	.business-solutn h3{
+		text-align: center;
+		position: relative;
+		margin-top: 30px;
+	}
+	.business-solutn h3:after{
+		content: "";
+		width: 120px;
+		left: 56%;
+		bottom: 23px;
+		position: absolute !important;
+		display: inline-block;
+		border-bottom: 2px solid #fcab00;
 	}
 	#case-studies-section-7 {
     	padding: 40px 0 50px !important;
