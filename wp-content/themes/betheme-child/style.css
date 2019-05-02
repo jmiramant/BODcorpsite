@@ -3414,6 +3414,12 @@ background-position: 56px 120px !important;
     .desktop-display{
         display: none !important;
     }
+    body.services_data-infrastructure .benifts-custom h2{
+        height: 790px !important;
+    }
+    ul.benif-data-ul{
+        padding: 0px 10px !important;
+    }
 }
 
 @media (max-width: 1700px){
@@ -4017,6 +4023,9 @@ body.home .owl-theme .owl-nav {
 		width: 77%;
 		margin-left: 8%;
 	}
+    body.services_machine-learning .benifts-custom h2{
+        height: 870px !important;   
+    }
 }
 
 .disn-non{
@@ -4973,6 +4982,10 @@ div.lft-sub-mnu > li:first-of-type a, div.rit-sub-mnu > li:first-of-type a {
     img.scale-with-grid, #Content img{
         max-width: 90%;
     }
+    body.services_data-science .benifts-custom h2{
+        height: unset !important;
+        padding: unset !important;
+    }
 }
 
 .services_venture-capital-and-private-equity #Content{
@@ -5919,6 +5932,9 @@ body.services_integration-and-app-development .benifts-custom h2, body.services_
     body.services_integration-and-app-development .benifts-custom h2{
         height: 740px !important;
     }
+    body.services_machine-learning .benifts-custom h2{
+        height: 1210px !important;
+    }
 }
 
 @media (min-width:768px){
@@ -6078,6 +6094,11 @@ body.services_integration-and-app-development .benifts-custom h2, body.services_
 }
 @media only screen and (max-width: 1300px){
     .ecommerce-center-empty-div{
+        display: none;
+    }
+}
+@media(min-width:760px) and (max-width:1240px){
+    #modrn-anaylic .column_attr p br{
         display: none;
     }
 }
