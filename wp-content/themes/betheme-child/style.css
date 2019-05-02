@@ -3414,11 +3414,12 @@ background-position: 56px 120px !important;
     .desktop-display{
         display: none !important;
     }
-    body.services_data-infrastructure .benifts-custom h2{
-        height: 790px !important;
-    }
     ul.benif-data-ul{
         padding: 0px 10px !important;
+    }
+    html body .benifts-custom h2{
+        height: unset !important;
+        padding: unset !important;
     }
 }
 
@@ -4583,6 +4584,9 @@ body.services_data-infrastructure .reactor-head h2, body.services_machine-learni
 	body.contact #Top_bar .menu>li>a {
     	color: #0a3d5c!important;
 	}
+    #expertise-custom span.text-to-be-underlined .text-underline{
+        display: none !important;
+    }
 }
 @media (max-width: 767px){
 	.business-solutn p{
@@ -4981,10 +4985,6 @@ div.lft-sub-mnu > li:first-of-type a, div.rit-sub-mnu > li:first-of-type a {
     }
     img.scale-with-grid, #Content img{
         max-width: 90%;
-    }
-    body.services_data-science .benifts-custom h2{
-        height: unset !important;
-        padding: unset !important;
     }
 }
 
@@ -5935,6 +5935,9 @@ body.services_integration-and-app-development .benifts-custom h2, body.services_
     body.services_machine-learning .benifts-custom h2{
         height: 1210px !important;
     }
+    #expertise-custom ul.benif-data-ul{
+        padding: 0 40px !important;
+    }
 }
 
 @media (min-width:768px){
@@ -6100,5 +6103,19 @@ body.services_integration-and-app-development .benifts-custom h2, body.services_
 @media(min-width:760px) and (max-width:1240px){
     #modrn-anaylic .column_attr p br{
         display: none;
+    }
+}
+@media(min-width:768px) and (max-width:950px){
+    body.services_data-infrastructure .benifts-custom h2{
+        height: 790px !important;
+    }
+    body.services_data-science .benifts-custom h2, body.services_integration-and-app-development .benifts-custom h2{
+        height: 870px !important;
+    }
+    body.services_machine-learning .benifts-custom h2 {
+        height: 1060px !important;
+    }
+    ul.benif-data-ul .riit-benif{
+        width: 70% !important;
     }
 }
