@@ -4513,7 +4513,7 @@ body.services_data-infrastructure .reactor-head h2, body.services_machine-learni
 		display: none;
 	}
 	#expertise-custom h2{
-		font-size: 35px;
+		font-size: 30px;
 	}
 	#case-studies-section-5 p{
 		padding: 0px 0px !important;
@@ -4615,9 +4615,9 @@ body.services_data-infrastructure .reactor-head h2, body.services_machine-learni
 		position: relative;
 	}
 	#expertise-custom h2 span.text-underline{
-		width: 115px;
+		width: 92px;
 		right: auto;
-		bottom: 5px;
+		bottom: 3px;
 		display: inline-block;
 		left: 22px;
 	}
@@ -5329,6 +5329,9 @@ div.lft-sub-mnu > li:first-of-type a, div.rit-sub-mnu > li:first-of-type a {
 }
 
 @media (max-width: 767px){
+	body.services_data-infrastructure .reactor-head h2, body.services_machine-learning .reactor-head h2, body.services_data-science .reactor-head h2, body.services_integration-and-app-development .reactor-head h2{
+		line-height: 46px;
+	}
 	#unified-company .insight-pop-1 img{
 		margin: auto;
 		width: 23%;
@@ -5724,7 +5727,7 @@ div.lft-sub-mnu > li:first-of-type a, div.rit-sub-mnu > li:first-of-type a {
 
 ul.benif-data-ul{
 	padding: 0px 70px !important;
-	margin-top: 36px !important;
+	margin-top: 0px !important;
 }
 
 ul.benif-data-ul .lfft-benif{
