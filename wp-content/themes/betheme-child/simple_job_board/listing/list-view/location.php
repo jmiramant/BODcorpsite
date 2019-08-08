@@ -17,7 +17,9 @@ ob_start();
 
 <!-- Start Job's Location
 ================================================== -->
-<div class="col-md-2 col-sm-3 col-xs-12">
+
+<div class="col-md-6 jobTitleRight">
+<div class="titleRightUnit jobLocation">
     <?php if ($job_location = sjb_get_the_job_location()) {
         ?>
         <div class="job-location"><i class="fa fa-map-marker"></i><?php sjb_the_job_location(); ?></div>
