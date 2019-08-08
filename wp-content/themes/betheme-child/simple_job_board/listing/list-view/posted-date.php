@@ -17,11 +17,12 @@ ob_start();
 
 <!-- Start Job Posted Date
 ================================================== -->
-<div class="col-md-2 col-sm-3 col-xs-12">
+<div class="titleRightUnit jobDate">
     <?php if ($job_posting_time = sjb_get_the_job_posting_time()) {
         ?>
         <div class="job-date"><i class="fa fa-calendar-check-o"></i><?php printf(__('Posted %s ago', 'simple-job-board'), sjb_get_the_job_posting_time() ); ?></div>
     <?php } ?>
+</div>
 </div>
 <!-- ==================================================
 End Job Posted Date -->

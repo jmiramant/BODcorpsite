@@ -103,7 +103,7 @@ do_action('sjb_job_application_before');
                             . ''
                             . '<div class="col-md-12">'
                             . '<div class="form-group">'
-                            . '<input type="text" name="' . $name . '" class="form-control ' . $required_class . '" id="' . $id . '" ' . $is_required . ' placeholder="First Name" >'
+                            . '<input type="text" name="' . $name . '" class="form-control ' . $required_class . '" id="' . $id . '" ' . $is_required . ' placeholder="' . $label . ' " >'
                             . '</div>'
                             . '</div>'
                             . '<div class="clearfix"></div>';
@@ -125,7 +125,7 @@ do_action('sjb_job_application_before');
                             . ''
                             . '<div class="col-md-12">'
                             . '<div class="form-group">'
-                            . '<input type="email" name="' . $name . '" class="form-control sjb-email-address ' . $required_class . '" id="' . $id . '" ' . $is_required . ' placeholder="Email" ><span class="sjb-invalid-email validity-note">' . esc_html__('A valid email address is required.', 'simple-job-board') . '</span>'
+                            . '<input type="email" name="' . $name . '" class="form-control sjb-email-address ' . $required_class . '" id="' . $id . '" ' . $is_required . ' placeholder="' . $label . ' " ><span class="sjb-invalid-email validity-note">' . esc_html__('A valid email address is required.', 'simple-job-board') . '</span>'
                             . '</div>'
                             . '</div>'
                             . '<div class="clearfix"></div>';
@@ -136,7 +136,7 @@ do_action('sjb_job_application_before');
                             . ''
                             . '<div class="col-md-12">'
                             . '<div class="form-group">'
-                            . '<input type="tel" name="' . $name . '" class="form-control sjb-phone-number sjb-numbers-only ' . $required_class . '" id="' . $id . '" ' . $is_required . '  placeholder="Phone"><span class="sjb-invalid-phone validity-note" id="' . $id . '-invalid-phone">' . esc_html__('A valid phone number is required.', 'simple-job-board') . ' </span>'
+                            . '<input type="tel" name="' . $name . '" class="form-control sjb-phone-number sjb-numbers-only ' . $required_class . '" id="' . $id . '" ' . $is_required . '  placeholder="' . $label . ' " ><span class="sjb-invalid-phone validity-note" id="' . $id . '-invalid-phone">' . esc_html__('A valid phone number is required.', 'simple-job-board') . ' </span>'
                             . '</div>'
                             . '</div>'
                             . '<div class="clearfix"></div>';
@@ -147,7 +147,7 @@ do_action('sjb_job_application_before');
                             . ''
                             . '<div class="col-md-12">'
                             . '<div class="form-group">'
-                            . '<input type="text" name="' . $name . '" class="form-control sjb-datepicker ' . $required_class . '" id="' . $id . '" ' . $is_required . ' maxlength="10" placeholder="dd/mm/yyyy">'
+                            . '<input type="text" name="' . $name . '" class="form-control sjb-datepicker ' . $required_class . '" id="' . $id . '" ' . $is_required . ' maxlength="10" placeholder="' . $label . ' " >'
                             . '</div>'
                             . '</div>'
                             . '<div class="clearfix"></div>';
@@ -347,7 +347,7 @@ do_action('sjb_job_application_before');
 </form>
 </div>
 
-<div class="jobLastBtn"><a href="/careers" class="link-button">Back to Job Board <span class="dashicons dashicons-arrow-right-alt"></span></a></div>
+<div class="jobLastBtn"><a href="/jobs" class="link-button">Back to Job Board <span class="dashicons dashicons-arrow-right-alt"></span></a></div>
 
 
 <div class="clearfix"></div>
