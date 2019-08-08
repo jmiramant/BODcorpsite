@@ -12,7 +12,7 @@
  */
 ob_start();
 ?>
-<div class="col-md-8 col-sm-6 col-xs-12">
+<div class="col-md-6 col-sm-6 col-xs-12">
     <div class="job-info">
         <h4>
             <a href="<?php the_permalink(); ?>">
