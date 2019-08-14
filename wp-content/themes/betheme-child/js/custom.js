@@ -455,7 +455,7 @@ jQuery(document).ready(function() {
     var left_div = '<div class="lft-sub-mnu">';
     var right_div = '<div class="rit-sub-mnu">';
     submenu.find('li').each(function(){
-        if( count <= 4 ){
+        if( count <= 5 ){
             left_div += $(this)[0].outerHTML;
         }else{
             right_div += $(this)[0].outerHTML;
