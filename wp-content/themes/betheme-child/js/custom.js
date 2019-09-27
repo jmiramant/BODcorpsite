@@ -451,16 +451,49 @@ jQuery(document).ready(function() {
   
   //if( jQuery('body').hasClass('services') ){
     var submenu = jQuery('#menu-main-menu > li.menu-item > ul.sub-menu');
-    var count = 1;
+    submenu.find('li a span').each(function(){
+        var title_string,title1,title2;
+        title_string = $(this).html();  
+        var title1 = title_string.includes("Title1"); 
+        var title2 = title_string.includes("Title2"); 
+        if(title1 == true){
+            $(this).parent().parent().addClass('Title1');
+            
+            title_string = title_string.replace("Title1"," ");
+            $(this).html(title_string);
+        }
+        if(title2 == true){
+            $(this).parent().parent().addClass('Title2');
+            title_string = title_string.replace("Title2"," ");
+            $(this).html(title_string);
+        }
+    });
+    // var count = 1;
     var left_div = '<div class="lft-sub-mnu">';
     var right_div = '<div class="rit-sub-mnu">';
+    var title1exist = 0;
+    var title2exist = 0;
     submenu.find('li').each(function(){
-        if( count <= 5 ){
-            left_div += $(this)[0].outerHTML;
-        }else{
-            right_div += $(this)[0].outerHTML;
+        if($(this).hasClass("Title1")){
+            title1exist = 1;
+            title2exist = 0
+        } else if($(this).hasClass("Title2")){
+            title1exist = 0;
+            title2exist = 1
         }
-        count++;
+        if(title1exist == 1){
+            left_div += $(this)[0].outerHTML;
+        } else if(title2exist == 1){
+            right_div += $(this)[0].outerHTML;
+        } else {
+            left_div += $(this)[0].outerHTML;
+        }
+        // if( count <= 5 ){
+        //     left_div += $(this)[0].outerHTML;
+        // }else{
+        //     right_div += $(this)[0].outerHTML;
+        // }
+        //count++;
     });
     left_div += '</div>';
     right_div += '</div>';
