@@ -2536,6 +2536,7 @@ span.wpcf7-not-valid-tip {
 @media (max-width:959px) {
 .landingForm { padding-left:30px; padding-right:30px; }
 .landingBrands .one-sixth.column { width: 30.333%; }
+.ladingCaption .column_attr { padding-top: 0; }
 }
 @media (max-width:767px) {
 .subNavgton { display:none; }
