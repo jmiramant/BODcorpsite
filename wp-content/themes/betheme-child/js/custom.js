@@ -16,6 +16,8 @@ jQuery(document).ready(function ($) {
         $('#slide-5-layer-1').addClass('bigborder');
         $('#slide-3-layer-1').addClass('bigborder');
     }, 2000);
+	
+	
 });
 
 $(function () {
@@ -561,3 +563,48 @@ jQuery(document).on("click",".stepp",function() {
         scrollTop: jQuery("#custm-tabbed").offset().top
     }, 400);
 });
+
+
+
+
+jQuery(document).ready(function() { 
+	jQuery("#get-touch").submit(function (e) {
+		e.preventDefault();
+		var name = $('#name').val();
+		var company = $('#company').val();
+		var email = $('#email').val();
+		var phone = $('#phone').val();
+		var textarea = $('#textarea1').val(); console.log(location.href);
+		$.ajax({
+		  type: "POST", 
+		  url: frontend_ajax_object.ajaxurl + '?action=listing_companions_ajax',
+		  dataType: "json", // Add datatype
+		  data: {name: name,company: company,email: email,phone: phone,textarea: textarea },
+		  success: function(response) {
+			  if(response.status == 'success'){
+                console.log("mail sent");
+			  }else if(response.status == 'failure'){
+				console.log("mail not sent");
+			  }
+         }
+		})
+	});
+	
+	
+	jQuery('input').focus(function(){
+	  jQuery(this).parents('.form-group').addClass('focused');
+	});
+
+	jQuery('input').blur(function(){
+	  var inputValue = jQuery(this).val();
+	  if ( inputValue == "" ) {
+		jQuery(this).removeClass('filled');
+		jQuery(this).parents('.form-group').removeClass('focused');  
+	  } else {
+		jQuery(this).addClass('filled');
+	  }
+	}) 
+});
+
+
+ 

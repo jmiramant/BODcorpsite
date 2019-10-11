@@ -34,6 +34,16 @@ function mfnch_enqueue_styles() {
 	// Enqueue the child stylesheet
 	wp_dequeue_style( 'style' );
 	wp_enqueue_style( 'style', get_stylesheet_directory_uri() .'/style.css' );
+	/*if( is_page( array( 'landing' ) ) ){
+		wp_enqueue_script( 'script-name', 'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js', array(), '', false );
+		wp_enqueue_style( 'script-name-css', 'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css', array(), '', false );
+	}
+	wp_enqueue_script( 'frontend-ajax', JS_DIR_URI . 'frontend-ajax.js', array('jquery'), null, true );
+	wp_localize_script( 'frontend-ajax', 'frontend_ajax_object',
+        array( 
+            'ajaxurl' => admin_url( 'admin-ajax.php' ),
+        )
+    );*/
 
 }
 
@@ -98,3 +108,49 @@ if (class_exists('autoptimizeCache')) {
        header("Refresh:0"); # Refresh the page so that autoptimize can create new cache files and it does breaks the page after clearall.
     }
 }
+
+function new_excerpt_more( $more ) {
+    return '';
+}
+add_filter('excerpt_more', 'new_excerpt_more');
+
+
+function footer_content( $atts, $content = "" ) {
+    return get_footer();
+}
+add_shortcode( 'footer', 'footer_content' );
+
+//
+//function my_scripts() {
+//if( is_page( array( 'landing' ) ) ){
+//wp_enqueue_script( 'script-name', 'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js', array(), '1.0.0', false );
+//}
+//}
+//add_action( 'wp_enqueue_scripts', 'my_scripts' );
+
+/*
+add_action( 'wp_ajax_listing_companions_ajax', 'listing_companions_ajax' );
+add_action( 'wp_ajax_nopriv_listing_companions_ajax', 'listing_companions_ajax' );
+
+function listing_companions_ajax() {
+	if((isset($_POST['name']))&&(isset($_POST['email'])&&$_POST['email']!="")){
+		//print_r($_POST);
+		$to = 'maan.6050@gmail.com';
+		$subject = 'Form Submitted Successfully!';
+		$message = '<html><head><title>Call me back</title></head><body><p><b>Name:</b> '.$_POST['name'].'</p><p><b>Phone:</b> '.$_POST['phone'].'</p>                      
+				</body></html>';
+		$headers  = "Content-type: text/html; charset=utf-8 \r\n";
+		$headers .= "From: Site <balwindermony@gmail.com>\r\n";	
+		if(wp_mail($to, $subject, $message, $headers)){
+			print_r($_POST);
+		}
+		echo "test";
+		//echo json_encode(array('status' => 'success'));
+	}else{
+		//echo json_encode(array('status' => 'failure'));
+	}
+	//echo json_decode($_POST);
+	
+	//echo json_decode();
+ //echo json_encode(array('name'=>'rrrrrr'));
+}*/
