@@ -2515,7 +2515,7 @@ span.wpcf7-not-valid-tip {
 .btnOrange { font-size:16px; border-radius:12px !important; width:196px; }
 .btnOrange .button_label { padding: 8px 0 !important; width:100%; }
 /* Landing Thank you page */
-.landingThanksHeader { height: 400px; }
+.landingThanksHeader { height: 400px; margin-bottom: 0 !important; }
 .landingThanksHeader .column_attr { padding-top: 100px; }
 .landingThanksFeature { padding-top: 50px !important; }
 .landingThanksFeature .landingVideo h2 { margin-bottom: 15px; margin-top: 40px; }
