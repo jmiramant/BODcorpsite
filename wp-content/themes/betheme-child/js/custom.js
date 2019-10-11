@@ -16,6 +16,8 @@ jQuery(document).ready(function ($) {
         $('#slide-5-layer-1').addClass('bigborder');
         $('#slide-3-layer-1').addClass('bigborder');
     }, 2000);
+	
+	
 });
 
 $(function () {
@@ -451,16 +453,49 @@ jQuery(document).ready(function() {
   
   //if( jQuery('body').hasClass('services') ){
     var submenu = jQuery('#menu-main-menu > li.menu-item > ul.sub-menu');
-    var count = 1;
+    submenu.find('li a span').each(function(){
+        var title_string,title1,title2;
+        title_string = $(this).html();  
+        var title1 = title_string.includes("Title1"); 
+        var title2 = title_string.includes("Title2"); 
+        if(title1 == true){
+            $(this).parent().parent().addClass('Title1');
+            
+            title_string = title_string.replace("Title1"," ");
+            $(this).html(title_string);
+        }
+        if(title2 == true){
+            $(this).parent().parent().addClass('Title2');
+            title_string = title_string.replace("Title2"," ");
+            $(this).html(title_string);
+        }
+    });
+    // var count = 1;
     var left_div = '<div class="lft-sub-mnu">';
     var right_div = '<div class="rit-sub-mnu">';
+    var title1exist = 0;
+    var title2exist = 0;
     submenu.find('li').each(function(){
-        if( count <= 5 ){
-            left_div += $(this)[0].outerHTML;
-        }else{
-            right_div += $(this)[0].outerHTML;
+        if($(this).hasClass("Title1")){
+            title1exist = 1;
+            title2exist = 0
+        } else if($(this).hasClass("Title2")){
+            title1exist = 0;
+            title2exist = 1
         }
-        count++;
+        if(title1exist == 1){
+            left_div += $(this)[0].outerHTML;
+        } else if(title2exist == 1){
+            right_div += $(this)[0].outerHTML;
+        } else {
+            left_div += $(this)[0].outerHTML;
+        }
+        // if( count <= 5 ){
+        //     left_div += $(this)[0].outerHTML;
+        // }else{
+        //     right_div += $(this)[0].outerHTML;
+        // }
+        //count++;
     });
     left_div += '</div>';
     right_div += '</div>';
@@ -528,3 +563,48 @@ jQuery(document).on("click",".stepp",function() {
         scrollTop: jQuery("#custm-tabbed").offset().top
     }, 400);
 });
+
+
+
+
+jQuery(document).ready(function() { 
+	jQuery("#get-touch").submit(function (e) {
+		e.preventDefault();
+		var name = $('#name').val();
+		var company = $('#company').val();
+		var email = $('#email').val();
+		var phone = $('#phone').val();
+		var textarea = $('#textarea1').val(); console.log(location.href);
+		$.ajax({
+		  type: "POST", 
+		  url: frontend_ajax_object.ajaxurl + '?action=listing_companions_ajax',
+		  dataType: "json", // Add datatype
+		  data: {name: name,company: company,email: email,phone: phone,textarea: textarea },
+		  success: function(response) {
+			  if(response.status == 'success'){
+                console.log("mail sent");
+			  }else if(response.status == 'failure'){
+				console.log("mail not sent");
+			  }
+         }
+		})
+	});
+	
+	
+	jQuery('input').focus(function(){
+	  jQuery(this).parents('.form-group').addClass('focused');
+	});
+
+	jQuery('input').blur(function(){
+	  var inputValue = jQuery(this).val();
+	  if ( inputValue == "" ) {
+		jQuery(this).removeClass('filled');
+		jQuery(this).parents('.form-group').removeClass('focused');  
+	  } else {
+		jQuery(this).addClass('filled');
+	  }
+	}) 
+});
+
+
+ 

@@ -689,6 +689,7 @@ body.mobile-side-slide { padding: 0px; }
     }*/
 }
 #Top_bar.blue_theme .menu > li.current-menu-item > a, #Top_bar.blue_theme .menu > li > a, #Top_bar.blue_theme .menu > li.current-menu-item > a:hover, #Top_bar.blue_theme .menu > li > a:hover { color: #0B3C5A; }
+#Top_bar.blue_theme.sticky .menu > li > a { display:none !important; }
 .marquee { width: 100%; height: 500px; overflow: hidden; box-sizing: border-box; position: relative; margin: -65px auto 20px; }
 .marquee--inner { display: block; width: 200%; margin: 70px 0; position: absolute; animation: marquee 20s linear infinite; }
 .marquee--inner:hover { animation-play-state: paused; }
@@ -1077,6 +1078,8 @@ html body .benifts-custom h2, html body.services_data-science .benifts-custom h2
 }
 @media (max-width: 768px) {
 #testi-fix .owl-item .testi-center-text { height: 400px; overflow-x: auto; display: flex; align-items: center; }
+.camp-fifth-sec .section_wrapper { width:100% !important; }
+#testi-fix.camp-fifth-sec .item-content-wrapper .item-content { width:90% !important; }
 .camp-fifth-sec h2 { margin-top: 20px !important; }
 .md-fxer { margin-bottom: 20px !important; }
 #form-fiix { margin: 40px 0 0 0 !important; }
@@ -1829,9 +1832,12 @@ transform:scale(1);
 .contactForm .column_attr { width: 80%; margin: 80px auto 0 auto; background-color: #fff; padding: 40px 100px; box-sizing: border-box; border-radius: 10px; }
 .contactForm .column_attr .wpcf7-form-control { background-color: #fff; }
 .contactForm .link-button { float: right; font-size: 21px; }
-.contactSec .contactForm .wpcf7 .formSubmitBtn { position: relative; margin-top: 30px; float: right; }
-.contactSec .contactForm .wpcf7 .formSubmitBtn .wpcf7-submit { background-color: transparent; font-size: 21px; font-weight: 400; color: #FDA22B !important; padding: 0 10px 0 0; }
-.contactSec .contactForm .wpcf7 .formSubmitBtn:after { content: ' \f344'; position: absolute; right: -16px; top: 5px; left: 123px; margin: 0 auto; text-align: center; color: #fda22b; font-size: 32px; opacity: 1; width: auto; height: auto; background: none; box-shadow: none; text-shadow: none; font-family: dashicons; }
+.contactForm .column_attr .formSubmitBtn { margin-top: 30px; }
+.formSubmitBtn { position: relative; float: right; padding-right: 35px; }
+.formSubmitBtn .wpcf7-submit { padding-right: 0; }
+.formSubmitBtn .ajax-loader { float: left; margin: 8px 5px 0 4px !important; }
+.formSubmitBtn .wpcf7-submit { background-color: transparent; font-size: 21px; font-weight: 400; color: #FDA22B !important; padding: 0 10px 0 0; }
+.formSubmitBtn:after { content: ' \f344'; position: absolute; right: 0; top: 5px; margin: 0 auto; text-align: center; color: #fda22b; font-size: 32px; opacity: 1; width: auto; height: auto; background: none; box-shadow: none; text-shadow: none; font-family: dashicons; overflow: hidden; transition: all ease-in-out 0.5s; }
 .contactFormTitle { text-align: center; margin: 0 0 20px 0; color: #0a3d5c; font-size: 30px; }
 /**/
 .joinTeamSec { height: 390px; background-position: center top -110px !important; }
@@ -2293,7 +2299,7 @@ color: #9A9A9A;
 .job_listing_bottom_text, .job_listing_bottom_text a.bottom_text_anchor { font-size: 16px; line-height: 25px; }
 }
 /* ------- /////////////////  -----------*/
-/* ////////// Generic Vertical page ////////*/
+/* ////////// Credit Unions page ////////*/
 /* ------- /////////////////  -----------*/
 .genericVerticalHeroCaption { padding: 60px 0 50px !important; }
 .genericVerticalHeroCaption h1 { font-size:40px; color:#192C47; margin-bottom: 30px; }
@@ -2356,6 +2362,8 @@ color: #9A9A9A;
 /*.page-id-1106 #Footer { background-image: url(/wp-content/uploads/2019/08/generic-vertical-Bottom-Background@2x.jpg) !important; background-position:center bottom; background-size: 100% auto; }*/
 
 @media (max-width: 1500px) {
+	.genericVerticalSec2 h2 { font-size: 35px; margin-bottom: 30px; line-height: 1.4;}
+	/**/
 	.genericVerticalSec3 .mcb-wrap { box-sizing: border-box; padding-left: 40px; padding-right: 10px; }
 	/**/
 	.genericVerticalSec4-head .column { padding-left:50px; padding-right:50px; }
@@ -2376,10 +2384,15 @@ color: #9A9A9A;
 	.genericVerticalHeroCaption p br { display:none; }
 }
 @media (max-width: 991px) {
+	.genericVerticalHeroCaption h1 { font-size: 32px; }
+	.genericVerticalHeroCaption p { font-size: 20px; }
+	/**/
 	.genericVerticalSec2 .section_wrapper, .genericVerticalSec2 .container { width:100% !important; }
 	.genericVerticalSec2 .column { width: 100%; padding-left: 60px; padding-right: 60px; }
+	.genericVerticalSec2 h2 { font-size: 32px; margin-bottom: 30px; line-height: 1.4;}
 	.genericVerticalSec2 .genericVerticalSec2-left { background-image:url(/wp-content/uploads/2019/08/YourMethods_Background-left.jpg); background-position:center center; background-repeat:no-repeat; background-size:cover; }
 	.genericVerticalSec2 .genericVerticalSec2-right { background-image:url(/wp-content/uploads/2019/08/YourMethods_Background-right.jpg); background-position:center center; background-repeat:no-repeat; background-size:cover; }
+	.genericVerticalSec2 ul { font-size: 20px; }
 	/**/
 	.genericVerticalSec3 .one-second.column, .genericVerticalSec3 .one-fourth.column, .genericVerticalSec3 .four.columns { width: 98%; margin-left:1%; margin-right:1%; }
 	.insgtGraph1-desk { display:none; }
@@ -2391,27 +2404,189 @@ color: #9A9A9A;
 	.insgtGraph3:before  { transform: rotate(90deg);  -webkit-transform: rotate(90deg);  -moz-transform: rotate(90deg);  -ms-transform: rotate(90deg); -o-transform: rotate(90deg); left: 50%; top: 10px; margin-left:-25px; }
 	.insgtGraph3 img { width: 100%; }
 	/**/
+	.genericVerticalSec4 { padding: 60px 0 20px 0 !important; }
 	.genericVerticalSec4-head .column { padding-left: 0; padding-right: 0; }
 	.genericVerticalSec4-logos { display:none; }
+	.genericVerticalSec4-head h2 { font-size: 32px; }
 }
 @media (max-width: 767px) {
-	.genericVerticalHeroCaption p { line-height: 1.5; font-size:20px; }
+	.genericVerticalHeroCaption h1 { font-size: 30px; }
+	.genericVerticalHeroCaption p { line-height: 1.5; font-size:18px; }
 	/**/
 	.genericVerticalSec2 .section_wrapper, .genericVerticalSec2 .container { max-width: 100% !important; }
 	.genericVerticalSec2 .column { padding:50px 25px; }
-	.genericVerticalSec2 h2 { font-size: 35px; margin-bottom: 30px; line-height: 1.4;}
-	.genericVerticalSec2 ul { font-size: 20px; }
+	.genericVerticalSec2 h2 { font-size: 30px; }
+	.genericVerticalSec2 ul { font-size: 18px; }
 	/**/
 	
 	.genericVerticalSec3 { padding-top: 50px !important; }
 	.genericVerticalSec3 img { max-width: 100% !important; }
-	.genericVerticalSec3-head p { font-size: 20px; line-height: 1.3;}
+	.genericVerticalSec3-head h2 { font-size: 22px; }
+	.genericVerticalSec3-head p { font-size: 18px; line-height: 1.3;}
 	.genericVerticalSec3-head { margin-bottom: 30px !important; }
-	
-	
+	.insgtGraph1 h3, .insgtGraph2 h3, .insgtGraph3 h3 { font-size: 22px; }
+	.insgtGraph2 ul li { font-size: 18px; }
 	/**/
 	.genericVerticalSec4-head .column { width: 100%; margin-bottom:40px !important; }
-	.genericVerticalSec4-head h2 { font-size: 32px; margin-bottom: 20px; }
-	.genericVerticalSec4-head .column h4 { line-height: 1.4; }
+	.genericVerticalSec4-head h2 { font-size: 30px; line-height: 1.2; margin-bottom: 20px; }
+	.genericVerticalSec4-head .column h4 { line-height: 1.4; font-size: 18px; }
 	
 }
+@media (max-width: 479px) {
+	.genericVerticalHeroCaption { padding: 40px 0 30px !important; }
+	.genericVerticalHeroCaption h1 { font-size: 28px; }
+	.genericVerticalHeroCaption p { font-size: 16px; }
+	/**/
+	.genericVerticalSec2 h2 { font-size: 25px; }
+	.genericVerticalSec2 ul { font-size: 16px; }
+	/**/
+	.genericVerticalSec3-head h2 { font-size: 20px; }
+	.genericVerticalSec3-head p { font-size: 16px; }
+	.insgtGraph1 h3, .insgtGraph2 h3, .insgtGraph3 h3 { font-size: 20px; }
+	.insgtGraph2 ul li { font-size: 16px; }
+	/**/
+	.genericVerticalSec4 { padding: 40px 0 10px 0 !important; }
+	.genericVerticalSec4-head h2 { font-size: 25px; }
+	.genericVerticalSec4-head .column h4 { font-size: 16px; }
+}
+/* ------- /////////////////  -----------*/
+/* ////////// Landing page ////////*/
+/* ------- /////////////////  -----------*/
+.landingHeader { padding-top: 145px !important; height: 425px; background-position: center bottom !important; margin-bottom: 120px !important; }
+.ladingCaption .column_attr { padding-top: 60px; padding-left:20px; }
+.ladingCaption .column_attr h1 { font-size:36px; color: #FDA22B; font-weight:600; line-height:1.25; margin-bottom: 17px; margin-top: 0; }
+.ladingCaption .column_attr h2 { font-size:30px; color: #ffffff; font-weight:300; line-height:1.25; margin-bottom: 25px; margin-top: 0; }
+.ladingCaption .column_attr p { font-size:20px; color: #ffffff; }
+/**/
+.landingForm { background-color:#fff; padding:20px 70px; border-top:3px solid #FDA22B; box-shadow: 0px 8px 10px #1F1E1E29; width: 522px; max-width: 100%; float: right; margin-bottom: -100px; box-sizing: border-box; }
+.landingForm .contact-form-heading { margin-bottom: 15px !important; font-size: 20px !important;}
+.landingForm .wpcf7-form-control { background:none; margin-bottom: 0px !important; font-size:16px; padding:6px 0 !important; border-bottom: 1px solid #D5D3D3 !important; }
+.landingForm .form-group {
+    margin-bottom: 20px;
+}
+body:not(.cf7p-message) .landingForm .wpcf7-not-valid-tip{
+	position: inherit !important;
+	left: 0 !important;
+	top: 0 !important;
+	width: inherit !important;
+	height: inherit !important;
+	padding: inherit !important;
+	background: none !important;
+	overflow: inherit;
+	text-indent: inherit !important;
+	border: none !important;
+}
+span.wpcf7-not-valid-tip {
+    font-size: 12px;
+    text-align: left;
+}
+.landingForm .wpcf7-form-control:hover, .landingForm .wpcf7-form-control:focus { background:none; }
+.landingForm .wpcf7-form-control::-webkit-input-placeholder { color: #D5D3D3; }
+.landingForm .wpcf7-form-control:-ms-input-placeholder { color: #D5D3D3; }
+.landingForm .wpcf7-form-control::placeholder { color: #D5D3D3; }
+.landingForm .wpcf7-submit { border-bottom: none !important; }
+/**/
+.landingForm .input-field { margin-top: 0 !important; margin-bottom: 20px !important;}
+.landingForm .input-field label { font-size:16px; font-weight:normal; color: #D5D3D3!important; }
+.landingForm .input-field label.active { color: #D5D3D3!important; }
+.landingForm .input-field input { height: 42px !important; border-bottom: 1px solid #D5D3D3 !important; margin-bottom: 0 !important; }
+.landingForm .input-field input:focus { background:none !important; border-bottom: 1px solid #FDA22B !important; box-shadow: none !important; }
+.landingForm .input-field textarea { min-height: 42px !important; height: 42px !important; border-bottom: 1px solid #D5D3D3 !important; margin-bottom: 20px !important; overflow: auto !important; }
+.landingForm .input-field textarea:focus { background:none !important; border-bottom: 1px solid #FDA22B !important; box-shadow: none !important; }
+.landingForm .formSubmitBtn { margin-bottom: 40px !important; transition: all ease-in-out 0.5s; }
+.landingForm .formSubmitBtn:hover { padding-right: 0; }
+.landingForm .formSubmitBtn:after { width:35px; }
+.landingForm .formSubmitBtn:hover:after { width:0; opacity:0; }
+.landingForm .formSubmitBtn input { background:none !important; padding: 0 !important; margin: 0 !important; color: #FDA22B !important; }
+/**/
+.landingFeature { padding-top: 0 !important; padding-bottom: 30px !important; }
+.landingVideo h2 { color: #192C47; font-size:34px; line-height:1.25; margin-top: 60px; margin-bottom: 30px; }
+.landingVideo h3 { color: #0a3d5c; font-size:28px; line-height:1.25; margin-top: 0; }
+
+.landingFetrItem { margin-top: 40px !important; }
+.landingFetrItem .feature_box .feature_box_wrapper { text-align:center; padding: 20px 35px; }
+.landingFetrItem .feature_box .feature_box_wrapper .photo_wrapper, .landingFetrItem .feature_box .feature_box_wrapper .desc_wrapper { width: 100%; padding-left:0; }
+.landingFetrItem .feature_box .feature_box_wrapper .photo_wrapper { height: 105px; margin-bottom: 35px; }
+.landingFetrItem .feature_box .feature_box_wrapper .photo_wrapper img { width: 104px; }
+.landingFetrItem .feature_box .feature_box_wrapper .desc_wrapper h4 { color:#192C47; font-size:28px; line-height:1.25; font-weight: 600; margin-top: 0; }
+.landingFetrItem .feature_box .feature_box_wrapper .desc_wrapper .desc { color:#192C47; font-size:20px; line-height:1.8; }
+
+.landingBrands h2 { font-size:25px; color: #192C47; margin-top: 0; margin-bottom: 0; }
+.btnOrange { font-size:16px; border-radius:12px !important; width:196px; }
+.btnOrange .button_label { padding: 8px 0 !important; width:100%; }
+/* Landing Thank you page */
+.landingThanksHeader { height: 400px; }
+.landingThanksHeader .column_attr { padding-top: 100px; }
+.landingThanksFeature { padding-top: 50px !important; }
+.landingThanksFeature .landingVideo h2 { margin-bottom: 15px; margin-top: 40px; }
+.landingThanksFeature .landingVideo h3 { margin-bottom: 0; }
+
+@media (min-width:1500px) {
+.landingHeader .section_wrapper, .landingFeature .section_wrapper, .landingBrands .section_wrapper { max-width: 1440px; }
+}
+@media (max-width:1366px) {
+	
+}
+@media (max-width:1239px) {
+.ladingCaption .column_attr {padding-left: 0;}
+.ladingCaption .column_attr h1 br, .ladingCaption .column_attr h2 br { display:none; }
+.landingVideo h2 br { display:none; }
+
+}
+@media (max-width:959px) {
+.landingForm { padding-left:30px; padding-right:30px; }
+.landingBrands .one-sixth.column { width: 30.333%; }
+}
+@media (max-width:767px) {
+.subNavgton { display:none; }
+.landingHeader { padding-top: 15px !important; }
+.ladingCaption .column_attr { text-align: center; }
+.landingBrands .one-sixth.column { width: 50% !important; clear: none; height: 140px !important; }
+/**/
+.landingThanksHeader { height: 280px !important; }
+.landingThanksFeature .landingVideo h3 br { display:none; }
+}
+@media (max-width:479px) {
+.ladingCaption .column_attr { padding-top: 30px; padding-bottom: 10px; }
+.ladingCaption .column_attr h1 { font-size: 30px; }
+.ladingCaption .column_attr h2 { font-size: 26px; }
+.ladingCaption .column_attr p { font-size: 18px; }
+.landingVideo h2 { font-size: 30px; margin-top: 0; }
+.landingVideo h3 { font-size: 24px; }
+.landingFetrItem .feature_box .feature_box_wrapper .desc_wrapper h4 { font-size: 24px; }
+.landingBrands  { padding-top: 40px !important; }
+.landingBrands .one-sixth.column { height: 120px !important; }
+.landingFetrItem .column_button { margin-top: 30px !important; }
+}
+
+/*******/
+
+
+.form-group {
+  position: relative;
+}
+
+.form-label {
+  position: absolute;
+  left: 0;
+  top: 5px;
+  font-weight: normal;
+  font-size:16px;
+  color: #D5D3D3;
+  z-index: 10;
+  transition: transform 150ms ease-out, font-size 150ms ease-out;
+}
+
+.focused .form-label {
+  transform: translateY(-100%);
+  font-size:14px;
+}
+.filled .form-label {
+  transform: translateY(-100%);
+  font-size:14px;
+}
+.controlWrap .wpcf7-form-control:focus { box-shadow: 0 2px 0 0 #FDA22B; background:none !important; }
+.controlWrap .wpcf7-form-control.wpcf7-not-valid { box-shadow: 0 2px 0 0 red; }
+
+
+
