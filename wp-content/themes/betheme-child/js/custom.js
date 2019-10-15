@@ -591,11 +591,11 @@ jQuery(document).ready(function() {
 	});
 	
 	
-	jQuery('input').focus(function(){
+	jQuery('input, textarea').focus(function(){
 	  jQuery(this).parents('.form-group').addClass('focused');
 	});
 
-	jQuery('input').blur(function(){
+	jQuery('input, textarea').blur(function(){
 	  var inputValue = jQuery(this).val();
 	  if ( inputValue == "" ) {
 		jQuery(this).removeClass('filled');
