@@ -1147,10 +1147,10 @@ body.contact .rev_slider li.tp-revslider-slidesli { background: white !important
 #custm-tabbed .section_wrapper { box-shadow: 0px 0px 6px #dadada; box-sizing: border-box; }
 #case-studies-section-2 h1 { color: #192C47; font-size: 35px; line-height: 42px; font-weight: 400; }
 #custm-contacts textarea { margin-bottom: 0 !important; }
-#custm-contacts textarea:focus, #custm-contacts input[type="text"]:focus, #custm-contacts input[type="email"]:focus { background: transparent !important; }
+#custm-contacts textarea:focus, #custm-contacts input[type="text"]:focus, #custm-contacts input[type="email"]:focus, #custm-contacts input[type="tel"]:focus { background: transparent !important; }
 #custm-contacts a.link-button { font-size: 20px; line-height: 56px; float: right; position: relative; top: -10px; right: -60px; }
-.new-setups input[type="text"], .new-setups input[type="email"], .new-setups textarea { padding-left: 0px !important; font-size: 15px !important; background: transparent; line-height: 20px !important; border-bottom: 1px solid rgb(213, 211, 211) !important; padding: 8px 12px !important; }
-.new-setups input[type="text"]::placeholder, .new-setups input[type="email"]::placeholder, .new-setups textarea::placeholder {
+.new-setups input[type="text"], .new-setups input[type="email"], .new-setups input[type="tel"], .new-setups textarea { padding-left: 0px !important; font-size: 15px !important; background: transparent; line-height: 20px !important; border-bottom: 1px solid rgb(213, 211, 211) !important; padding: 8px 0 !important; }
+.new-setups input[type="text"]::placeholder, .new-setups input[type="email"]::placeholder, .new-setups input[type="tel"]::placeholder, .new-setups textarea::placeholder {
  color: #D5D3D3 !important;
 }
 .lft-ui-sec ul { list-style: none; margin: auto; padding: unset; }
@@ -2493,11 +2493,16 @@ span.wpcf7-not-valid-tip {
 .landingForm .input-field input:focus { background:none !important; border-bottom: 1px solid #FDA22B !important; box-shadow: none !important; }
 .landingForm .input-field textarea { min-height: 42px !important; height: 42px !important; border-bottom: 1px solid #D5D3D3 !important; margin-bottom: 20px !important; overflow: auto !important; }
 .landingForm .input-field textarea:focus { background:none !important; border-bottom: 1px solid #FDA22B !important; box-shadow: none !important; }
-.landingForm .formSubmitBtn { margin-bottom: 40px !important; transition: all ease-in-out 0.5s; }
+/*.landingForm .formSubmitBtn { margin-bottom: 40px !important; transition: all ease-in-out 0.5s; }
 .landingForm .formSubmitBtn:hover { padding-right: 0; }
 .landingForm .formSubmitBtn:after { width:35px; }
 .landingForm .formSubmitBtn:hover:after { width:0; opacity:0; }
-.landingForm .formSubmitBtn input { background:none !important; padding: 0 !important; margin: 0 !important; color: #FDA22B !important; }
+.landingForm .formSubmitBtn input { background:none !important; padding: 0 !important; margin: 0 !important; color: #FDA22B !important; }*/
+/**/
+.controlBtnWrap .formSubmitBtn { margin-bottom: 40px !important; transition: all ease-in-out 0.5s; }
+.controlBtnWrap .formSubmitBtn:hover { padding-right: 0; }
+.controlBtnWrap .formSubmitBtn:after { width:35px; }
+.controlBtnWrap .formSubmitBtn:hover:after { width:0; opacity:0; }
 /**/
 .landingFeature { padding-top: 0 !important; padding-bottom: 30px !important; }
 .landingVideo h2 { color: #192C47; font-size:34px; line-height:1.25; margin-top: 60px; margin-bottom: 30px; }
@@ -2577,7 +2582,7 @@ span.wpcf7-not-valid-tip {
   z-index: 10;
   transition: transform 150ms ease-out, font-size 150ms ease-out;
 }
-
+.form-group input[type="tel"], #custm-contacts .form-group textarea.wpcf7-form-control { margin-bottom: 20px !important; }
 .focused .form-label {
   transform: translateY(-100%);
   font-size:14px;
