@@ -2461,7 +2461,7 @@ color: #9A9A9A;
 .landingForm { background-color:#fff; padding:20px 70px; border-top:3px solid #FDA22B; box-shadow: 0px 8px 10px #1F1E1E29; width: 522px; max-width: 100%; float: right; margin-bottom: -100px; box-sizing: border-box; }
 .landingForm .contact-form-heading { margin-bottom: 15px !important; font-size: 20px !important;}
 .landingForm .wpcf7-form-control { background:none; margin-bottom: 0px !important; font-size:16px; padding:6px 0 !important; border-bottom: 1px solid #D5D3D3 !important; }
-.landingForm .form-group {
+.controlWrap.form-group {
     margin-bottom: 20px;
 }
 body:not(.cf7p-message) .landingForm .wpcf7-not-valid-tip{
@@ -2480,19 +2480,23 @@ span.wpcf7-not-valid-tip {
     font-size: 12px;
     text-align: left;
 }
-.landingForm .wpcf7-form-control:hover, .landingForm .wpcf7-form-control:focus { background:none; }
-.landingForm .wpcf7-form-control::-webkit-input-placeholder { color: #D5D3D3; }
-.landingForm .wpcf7-form-control:-ms-input-placeholder { color: #D5D3D3; }
-.landingForm .wpcf7-form-control::placeholder { color: #D5D3D3; }
-.landingForm .wpcf7-submit { border-bottom: none !important; }
+.controlWrap .wpcf7-form-control { margin-bottom:0 !important; padding: 8px 0 !important; border-bottom: 1px solid rgb(213, 211, 211) !important; line-height: 20px !important; }
+.controlWrap textarea.wpcf7-form-control { padding-bottom: 0 !important; padding-top: 0 !important; }
+.controlWrap .wpcf7-form-control:focus { border-bottom: 1px solid #FDA22B !important; }
+.controlWrap .wpcf7-form-control:hover, .controlWrap .wpcf7-form-control:focus { background:none; }
+.controlWrap .wpcf7-submit, .controlWrap .wpcf7-submit:focus, .controlBtnWrap .wpcf7-submit, .controlBtnWrap .wpcf7-submit:focus { border-bottom: none !important; }
+.controlWrap .wpcf7-form-control::-webkit-input-placeholder { color: #D5D3D3; }
+.controlWrap .wpcf7-form-control:-ms-input-placeholder { color: #D5D3D3; }
+.controlWrap .wpcf7-form-control::placeholder { color: #D5D3D3; }
+
 /**/
-.landingForm .input-field { margin-top: 0 !important; margin-bottom: 20px !important;}
-.landingForm .input-field label { font-size:16px; font-weight:normal; color: #D5D3D3!important; }
-.landingForm .input-field label.active { color: #D5D3D3!important; }
-.landingForm .input-field input { height: 42px !important; border-bottom: 1px solid #D5D3D3 !important; margin-bottom: 0 !important; }
-.landingForm .input-field input:focus { background:none !important; border-bottom: 1px solid #FDA22B !important; box-shadow: none !important; }
-.landingForm .input-field textarea { min-height: 42px !important; height: 42px !important; border-bottom: 1px solid #D5D3D3 !important; margin-bottom: 20px !important; overflow: auto !important; }
-.landingForm .input-field textarea:focus { background:none !important; border-bottom: 1px solid #FDA22B !important; box-shadow: none !important; }
+.controlWrap .input-field { margin-top: 0 !important; margin-bottom: 20px !important;}
+.controlWrap .input-field label { font-size:16px; font-weight:normal; color: #D5D3D3!important; }
+.controlWrap .input-field label.active { color: #D5D3D3!important; }
+.controlWrap .input-field input { height: 42px !important; border-bottom: 1px solid #D5D3D3 !important; margin-bottom: 0 !important; }
+.controlWrap .input-field input:focus { background:none !important; border-bottom: 1px solid #FDA22B !important; box-shadow: none !important; }
+.controlWrap .input-field textarea { min-height: 42px !important; height: 42px !important; border-bottom: 1px solid #D5D3D3 !important; margin-bottom: 20px !important; overflow: auto !important; }
+.controlWrap .input-field textarea:focus { background:none !important; border-bottom: 1px solid #FDA22B !important; box-shadow: none !important; }
 /*.landingForm .formSubmitBtn { margin-bottom: 40px !important; transition: all ease-in-out 0.5s; }
 .landingForm .formSubmitBtn:hover { padding-right: 0; }
 .landingForm .formSubmitBtn:after { width:35px; }
@@ -2500,6 +2504,7 @@ span.wpcf7-not-valid-tip {
 .landingForm .formSubmitBtn input { background:none !important; padding: 0 !important; margin: 0 !important; color: #FDA22B !important; }*/
 /**/
 .controlBtnWrap .formSubmitBtn { margin-bottom: 40px !important; transition: all ease-in-out 0.5s; }
+.controlBtnWrap .formSubmitBtn input { padding-right: 0 !important; }
 .controlBtnWrap .formSubmitBtn:hover { padding-right: 0; }
 .controlBtnWrap .formSubmitBtn:after { width:35px; }
 .controlBtnWrap .formSubmitBtn:hover:after { width:0; opacity:0; }
@@ -2582,7 +2587,7 @@ span.wpcf7-not-valid-tip {
   z-index: 10;
   transition: transform 150ms ease-out, font-size 150ms ease-out;
 }
-.form-group input[type="tel"], #custm-contacts .form-group textarea.wpcf7-form-control { margin-bottom: 20px !important; }
+.form-group input[type="tel"], #custm-contacts .form-group textarea.wpcf7-form-control { /*margin-bottom: 0 !important;*/ }
 .focused .form-label {
   transform: translateY(-100%);
   font-size:14px;
