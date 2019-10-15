@@ -604,6 +604,10 @@ jQuery(document).ready(function() {
 		jQuery(this).addClass('filled');
 	  }
 	}) 
+	//
+	jQuery('.resiText').on('keyup input', function() { 
+	jQuery(this).css('height', 'auto').css('height', this.scrollHeight + (this.offsetHeight - this.clientHeight));
+	});
 });
 
 
