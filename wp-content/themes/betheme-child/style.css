@@ -2481,7 +2481,7 @@ span.wpcf7-not-valid-tip {
     text-align: left;
 }
 .controlWrap .wpcf7-form-control { margin-bottom:0 !important; padding: 8px 0 !important; border-bottom: 1px solid rgb(213, 211, 211) !important; line-height: 20px !important; }
-.controlWrap textarea.wpcf7-form-control { padding-bottom: 0 !important; padding-top: 0 !important; }
+.controlWrap textarea.wpcf7-form-control { padding-bottom: 0 !important; padding-top: 0 !important; min-height: 40px; }
 .controlWrap .wpcf7-form-control:focus { border-bottom: 1px solid #FDA22B !important; }
 .controlWrap .wpcf7-form-control:hover, .controlWrap .wpcf7-form-control:focus { background:none; }
 .controlWrap .wpcf7-submit, .controlWrap .wpcf7-submit:focus, .controlBtnWrap .wpcf7-submit, .controlBtnWrap .wpcf7-submit:focus { border-bottom: none !important; }
