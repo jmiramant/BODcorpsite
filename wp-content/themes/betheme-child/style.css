@@ -1147,10 +1147,10 @@ body.contact .rev_slider li.tp-revslider-slidesli { background: white !important
 #custm-tabbed .section_wrapper { box-shadow: 0px 0px 6px #dadada; box-sizing: border-box; }
 #case-studies-section-2 h1 { color: #192C47; font-size: 35px; line-height: 42px; font-weight: 400; }
 #custm-contacts textarea { margin-bottom: 0 !important; }
-#custm-contacts textarea:focus, #custm-contacts input[type="text"]:focus, #custm-contacts input[type="email"]:focus { background: transparent !important; }
+#custm-contacts textarea:focus, #custm-contacts input[type="text"]:focus, #custm-contacts input[type="email"]:focus, #custm-contacts input[type="tel"]:focus { background: transparent !important; }
 #custm-contacts a.link-button { font-size: 20px; line-height: 56px; float: right; position: relative; top: -10px; right: -60px; }
-.new-setups input[type="text"], .new-setups input[type="email"], .new-setups textarea { padding-left: 0px !important; font-size: 15px !important; background: transparent; line-height: 20px !important; border-bottom: 1px solid rgb(213, 211, 211) !important; padding: 8px 12px !important; }
-.new-setups input[type="text"]::placeholder, .new-setups input[type="email"]::placeholder, .new-setups textarea::placeholder {
+.new-setups input[type="text"], .new-setups input[type="email"], .new-setups input[type="tel"], .new-setups textarea { padding-left: 0px !important; font-size: 15px !important; background: transparent; line-height: 20px !important; border-bottom: 1px solid rgb(213, 211, 211) !important; padding: 8px 0 !important; }
+.new-setups input[type="text"]::placeholder, .new-setups input[type="email"]::placeholder, .new-setups input[type="tel"]::placeholder, .new-setups textarea::placeholder {
  color: #D5D3D3 !important;
 }
 .lft-ui-sec ul { list-style: none; margin: auto; padding: unset; }
@@ -2461,7 +2461,7 @@ color: #9A9A9A;
 .landingForm { background-color:#fff; padding:20px 70px; border-top:3px solid #FDA22B; box-shadow: 0px 8px 10px #1F1E1E29; width: 522px; max-width: 100%; float: right; margin-bottom: -100px; box-sizing: border-box; }
 .landingForm .contact-form-heading { margin-bottom: 15px !important; font-size: 20px !important;}
 .landingForm .wpcf7-form-control { background:none; margin-bottom: 0px !important; font-size:16px; padding:6px 0 !important; border-bottom: 1px solid #D5D3D3 !important; }
-.landingForm .form-group {
+.controlWrap.form-group {
     margin-bottom: 20px;
 }
 body:not(.cf7p-message) .landingForm .wpcf7-not-valid-tip{
@@ -2480,24 +2480,34 @@ span.wpcf7-not-valid-tip {
     font-size: 12px;
     text-align: left;
 }
-.landingForm .wpcf7-form-control:hover, .landingForm .wpcf7-form-control:focus { background:none; }
-.landingForm .wpcf7-form-control::-webkit-input-placeholder { color: #D5D3D3; }
-.landingForm .wpcf7-form-control:-ms-input-placeholder { color: #D5D3D3; }
-.landingForm .wpcf7-form-control::placeholder { color: #D5D3D3; }
-.landingForm .wpcf7-submit { border-bottom: none !important; }
+.controlWrap .wpcf7-form-control { margin-bottom:0 !important; padding: 8px 0 !important; border-bottom: 1px solid rgb(213, 211, 211) !important; line-height: 20px !important; }
+.controlWrap textarea.wpcf7-form-control { padding-bottom: 0 !important; padding-top: 0 !important; min-height: 40px; }
+.controlWrap .wpcf7-form-control:focus { border-bottom: 1px solid #FDA22B !important; }
+.controlWrap .wpcf7-form-control:hover, .controlWrap .wpcf7-form-control:focus { background:none; }
+.controlWrap .wpcf7-submit, .controlWrap .wpcf7-submit:focus, .controlBtnWrap .wpcf7-submit, .controlBtnWrap .wpcf7-submit:focus { border-bottom: none !important; }
+.controlWrap .wpcf7-form-control::-webkit-input-placeholder { color: #D5D3D3; }
+.controlWrap .wpcf7-form-control:-ms-input-placeholder { color: #D5D3D3; }
+.controlWrap .wpcf7-form-control::placeholder { color: #D5D3D3; }
+
 /**/
-.landingForm .input-field { margin-top: 0 !important; margin-bottom: 20px !important;}
-.landingForm .input-field label { font-size:16px; font-weight:normal; color: #D5D3D3!important; }
-.landingForm .input-field label.active { color: #D5D3D3!important; }
-.landingForm .input-field input { height: 42px !important; border-bottom: 1px solid #D5D3D3 !important; margin-bottom: 0 !important; }
-.landingForm .input-field input:focus { background:none !important; border-bottom: 1px solid #FDA22B !important; box-shadow: none !important; }
-.landingForm .input-field textarea { min-height: 42px !important; height: 42px !important; border-bottom: 1px solid #D5D3D3 !important; margin-bottom: 20px !important; overflow: auto !important; }
-.landingForm .input-field textarea:focus { background:none !important; border-bottom: 1px solid #FDA22B !important; box-shadow: none !important; }
-.landingForm .formSubmitBtn { margin-bottom: 40px !important; transition: all ease-in-out 0.5s; }
+.controlWrap .input-field { margin-top: 0 !important; margin-bottom: 20px !important;}
+.controlWrap .input-field label { font-size:16px; font-weight:normal; color: #D5D3D3!important; }
+.controlWrap .input-field label.active { color: #D5D3D3!important; }
+.controlWrap .input-field input { height: 42px !important; border-bottom: 1px solid #D5D3D3 !important; margin-bottom: 0 !important; }
+.controlWrap .input-field input:focus { background:none !important; border-bottom: 1px solid #FDA22B !important; box-shadow: none !important; }
+.controlWrap .input-field textarea { min-height: 42px !important; height: 42px !important; border-bottom: 1px solid #D5D3D3 !important; margin-bottom: 20px !important; overflow: auto !important; }
+.controlWrap .input-field textarea:focus { background:none !important; border-bottom: 1px solid #FDA22B !important; box-shadow: none !important; }
+/*.landingForm .formSubmitBtn { margin-bottom: 40px !important; transition: all ease-in-out 0.5s; }
 .landingForm .formSubmitBtn:hover { padding-right: 0; }
 .landingForm .formSubmitBtn:after { width:35px; }
 .landingForm .formSubmitBtn:hover:after { width:0; opacity:0; }
-.landingForm .formSubmitBtn input { background:none !important; padding: 0 !important; margin: 0 !important; color: #FDA22B !important; }
+.landingForm .formSubmitBtn input { background:none !important; padding: 0 !important; margin: 0 !important; color: #FDA22B !important; }*/
+/**/
+.controlBtnWrap .formSubmitBtn { margin-bottom: 40px !important; transition: all ease-in-out 0.5s; }
+.controlBtnWrap .formSubmitBtn input { padding-right: 0 !important; }
+.controlBtnWrap .formSubmitBtn:hover { padding-right: 0; }
+.controlBtnWrap .formSubmitBtn:after { width:35px; }
+.controlBtnWrap .formSubmitBtn:hover:after { width:0; opacity:0; }
 /**/
 .landingFeature { padding-top: 0 !important; padding-bottom: 30px !important; }
 .landingVideo h2 { color: #192C47; font-size:34px; line-height:1.25; margin-top: 60px; margin-bottom: 30px; }
@@ -2577,7 +2587,7 @@ span.wpcf7-not-valid-tip {
   z-index: 10;
   transition: transform 150ms ease-out, font-size 150ms ease-out;
 }
-
+.form-group input[type="tel"], #custm-contacts .form-group textarea.wpcf7-form-control { /*margin-bottom: 0 !important;*/ }
 .focused .form-label {
   transform: translateY(-100%);
   font-size:14px;

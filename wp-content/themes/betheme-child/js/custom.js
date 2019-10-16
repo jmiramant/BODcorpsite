@@ -591,11 +591,11 @@ jQuery(document).ready(function() {
 	});
 	
 	
-	jQuery('input').focus(function(){
+	jQuery('input, textarea').focus(function(){
 	  jQuery(this).parents('.form-group').addClass('focused');
 	});
 
-	jQuery('input').blur(function(){
+	jQuery('input, textarea').blur(function(){
 	  var inputValue = jQuery(this).val();
 	  if ( inputValue == "" ) {
 		jQuery(this).removeClass('filled');
@@ -604,6 +604,10 @@ jQuery(document).ready(function() {
 		jQuery(this).addClass('filled');
 	  }
 	}) 
+	//
+	jQuery('.resiText').on('keyup input', function() { 
+	jQuery(this).css('height', 'auto').css('height', this.scrollHeight + (this.offsetHeight - this.clientHeight));
+	});
 });
 
 
