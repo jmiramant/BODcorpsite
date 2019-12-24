@@ -150,6 +150,11 @@ $site_url = get_site_url();
 			foreach ($child_categories as $child_category) {
 				$exclude_ids[] = $child_category->term_id;
 			}
+			if($site_url == 'http://18.232.244.255'){
+				$terms = '26';
+			}elseif ($site_url == 'http://34.226.240.9') {
+				$terms = '11';
+			}
 				$args = array(
 					'post_type'=> 'post',
 					'orderby'    => 'date',
@@ -161,11 +166,12 @@ $site_url = get_site_url();
 			            [
 			                'taxonomy' => 'category',
 			                'field'    => 'term_id',
-			                'terms'    => '26',
+			                'terms'    => $terms,
 			            ],
 			        ],
 					);
 					$result = new WP_Query( $args );
+			}
 			?>
 		<div class="blog-left">
 			<?php
