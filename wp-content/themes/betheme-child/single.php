@@ -40,14 +40,14 @@ $site_url = get_site_url();
 					}
 				?>
 				<?php
-					foreach ($name as $key => $value) { ?>
-						<a href="" class="category">
+					//foreach ($name as $key => $value) { ?>
+						<!-- <a href="" class="category"> -->
 					<?php
-						echo $value;
+						//echo $value;
 					?>
-						</a>
+						<!-- </a> -->
 				<?php
-					}
+					//}
 				?>
 				<!-- <a href="" class="category"> -->
 				<?php
