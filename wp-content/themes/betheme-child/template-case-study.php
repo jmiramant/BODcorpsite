@@ -4,6 +4,7 @@
 get_header();
 $page = get_page_by_title('Case Studies');
 $url = wp_get_attachment_url( get_post_thumbnail_id($page->ID) );
+$site_url = get_site_url();
 ?>
 
 <section class="blog-banner" style="background-image: url('<?php echo $url;  ?>'); background-size: cover;
@@ -155,6 +156,11 @@ $url = wp_get_attachment_url( get_post_thumbnail_id($page->ID) );
 			foreach ($child_categories as $child_category) {
 				$exclude_ids[] = $child_category->term_id;
 			}
+			if($site_url == 'http://18.232.244.255'){
+				$terms = '22';
+			}elseif ($site_url == 'http://34.226.240.9') {
+				$terms = '12';
+			}
 				$args = array(
 					'post_type'=> 'post',
 					'orderby'    => 'date',
@@ -166,7 +172,7 @@ $url = wp_get_attachment_url( get_post_thumbnail_id($page->ID) );
 			            [
 			                'taxonomy' => 'category',
 			                'field'    => 'term_id',
-			                'terms'    => '22',
+			                'terms'    => $terms,
 			            ],
 			        ],
 					);
@@ -185,11 +191,20 @@ $url = wp_get_attachment_url( get_post_thumbnail_id($page->ID) );
 				
 						<?php 
 							$category_detail = get_the_category($recent["ID"]);
-							foreach($category_detail as $cd){
-									$slug = $cd->slug;
-									if($cd->category_parent == 50){
-										$name = $cd->name;
-									}
+							if($site_url == 'http://18.232.244.255'){
+								foreach($category_detail as $cd){
+										$slug = $cd->slug;
+										if($cd->category_parent == 50){
+											$name = $cd->name;
+										}
+								}
+							}elseif ($site_url == 'http://34.226.240.9') {
+								foreach($category_detail as $cd){
+										$slug = $cd->slug;
+										if($cd->category_parent == 14){
+											$name = $cd->name;
+										}
+								}
 							}
 							if($name){
 						?>
@@ -222,7 +237,11 @@ $url = wp_get_attachment_url( get_post_thumbnail_id($page->ID) );
 	<!-- <div id="helloWorld" style="height: 2px;clear: both;padding-bottom: 70px;"></div> -->
 	<div class="detail-recent-post Case clearfix">
 				<?php
+				if($site_url == 'http://18.232.244.255'){
 					$args = array( 'post_type'=> 'post','numberposts' => '3','post_status' => 'publish','tax_query' => [ [ 'taxonomy' => 'category','field'    => 'term_id','terms'    => '26', ] ], );
+				}elseif ($site_url == 'http://34.226.240.9') {
+					$args = array( 'post_type'=> 'post','numberposts' => '3','post_status' => 'publish','tax_query' => [ [ 'taxonomy' => 'category','field'    => 'term_id','terms'    => '11', ] ], );
+				}
 					$recent_posts = wp_get_recent_posts($args);
 				?>
 				<div class="main-title"> <h3> Recent Blogs </h3> </div>
@@ -240,8 +259,14 @@ $url = wp_get_attachment_url( get_post_thumbnail_id($page->ID) );
 							$category_detail = get_the_category($recent["ID"]);
 							foreach($category_detail as $cd){
 									$slug = $cd->slug;
-									if($cd->category_parent == 48){
-										$rec_cat_name = $cd->name;
+									if($site_url == 'http://18.232.244.255'){
+										if($cd->category_parent == 48){
+											$rec_cat_name = $cd->name;
+										}
+									}elseif ($site_url == 'http://34.226.240.9'){
+										if($cd->category_parent == 13){
+											$rec_cat_name = $cd->name;
+										}
 									}
 							}
 							if($rec_cat_name){
