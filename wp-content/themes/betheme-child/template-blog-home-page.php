@@ -171,7 +171,7 @@ $site_url = get_site_url();
 			        ],
 					);
 					$result = new WP_Query( $args );
-			}
+			
 			?>
 		<div class="blog-left">
 			<?php
