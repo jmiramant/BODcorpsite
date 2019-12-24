@@ -4,6 +4,7 @@
 get_header();
 $page = get_page_by_title('Blue Orange Blog');  
 $url = wp_get_attachment_url( get_post_thumbnail_id($page->ID) );
+$site_url = get_site_url();
 ?>
 
 <section class="blog-banner" style="background-image: url('<?php echo $url;  ?>'); background-size: cover;
@@ -177,8 +178,6 @@ $url = wp_get_attachment_url( get_post_thumbnail_id($page->ID) );
 				<a class="postImg" style="background-image: url(<?php echo isset($url) ? $url : '';  ?>); " href="<?php the_permalink();  ?>"></a>
 					<div class="article-content">
 						<?php 
-							$site_url = get_site_url();
-
 							$category_detail = get_the_category($recent["ID"]);
 							if($site_url == 'http://18.232.244.255'){
 								foreach($category_detail as $cd){
