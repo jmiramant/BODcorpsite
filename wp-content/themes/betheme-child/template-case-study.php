@@ -190,7 +190,7 @@ $site_url = get_site_url();
 					<div class="article-content">
 				
 						<?php 
-							$category_detail = get_the_category($recent["ID"]);
+							$category_detail = get_the_category();
 							if($site_url == 'http://18.232.244.255'){
 								foreach($category_detail as $cd){
 										$slug = $cd->slug;
