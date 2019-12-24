@@ -608,7 +608,140 @@ jQuery(document).ready(function() {
 	jQuery('.resiText').on('keyup input', function() { 
 	jQuery(this).css('height', 'auto').css('height', this.scrollHeight + (this.offsetHeight - this.clientHeight));
 	});
+	//Sidebar Affix
+
+	
+	// $(function() {
+	// 	var top = $('.blog-right').offset().top - parseFloat($('.blog-right').css('marginTop').replace(/auto/, 0));
+	// 	var footTop = $('#helloWorld').offset().top - parseFloat($('#helloWorld').css('marginTop').replace(/auto/, 0));
+
+	// 	var maxY = footTop - $('.blog-right').outerHeight();
+
+	// 	$(window).scroll(function(evt) {
+	// 		var y = $(this).scrollTop();
+	// 		if (y > top) {
+				
+	// //Quand scroll, ajoute une classe ".fixed" et supprime le Css existant 
+	// 			if (y < maxY) {
+	// 				$('.blog-right').addClass('fixed').removeAttr('style');
+	// 			} else {
+					
+	// //Quand la sidebar arrive au Footer, supprime la classe "fixed" précèdement ajouté
+	// 				$('.blog-right').removeClass('fixed').css({
+	// 					position: 'absolute',
+	// 					top: (maxY - top) + 'px'
+	// 				});
+	// 			}
+	// 		} else {
+	// 			$('.blog-right').removeClass('fixed');
+	// 		}
+	// 	});
+	// });
 });
 
 
- 
+ $( document ).ready(function() {
+    $('.filter-button').on('click', function(){
+        $(".filter-button").removeClass("current");
+        var thisTab = this;
+        $(thisTab).addClass('current');
+    });
+    // $('share_btn').click(function(){
+    //     $("#dialogue").dialogue();
+    // });
+    $(".heateorSssSharing.heateorSssMoreBackground").click(function(e){
+        //setTimeout(function(){
+            $("#heateor_sss_sharing_more_providers #heateor_sss_sharing_more_content .all-services ul").append( '<li class="insta-icon"><a href="https://www.instagram.com/" rel="nofollow noopener" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i>Instagram</a></li>' );    
+        //}, 1000)
+        
+    });
+
+    
+});
+
+function get_category_post(cat_id){
+
+    var post_limit = 3;
+
+    $.ajax({ // you can also use $.post here
+        url :  misha_loadmore_params.ajaxurl,
+        data : {action:'getcategorypost', cat_id: cat_id, post_limit: post_limit},
+        type : 'POST',
+        success : function( data ){
+            if( data ) { 
+                $(".filter-item-list.clearfix").html(data);
+
+            } else {
+                alert('error');
+            }
+        }
+    });
+
+}
+
+
+//On clicking checkbox of blog home page template
+$(document).ready(function() { 
+    $('#all-categories .br').click(function(){
+        // if($('[name="Services"]').click()){
+        //     var data_value = $(".br").data("category");
+        //     console.log(data_value);
+
+        // } 
+        // declaring an array
+            var choices = [];
+            //$('.blog-left').empty();
+
+            $('.br:checkbox:checked').each(function() {
+                if($(this).attr('data-category') == 'Services'){
+                    var ids = $('[name="Services"]').map(function() {
+                    return $(this).attr('id');
+                    });
+                    console.log(ids);
+                    $.each(ids, function( index, value ) {
+                        choices.push({
+                            id: $('.sub-cats').attr(value), 
+                            parent_id: $('.sub-cats').attr('parent-id')
+                        });
+                    });
+                }else if($(this).attr('data-category') == 'Industries'){
+                    var ids = $('[name="Industries"]').map(function() {
+                    return $(this).attr('id');
+                    });
+                    console.log(ids);
+                    $.each(ids, function( index, value ) {
+                        choices.push({
+                            id: $('.sub-cats').attr(value), 
+                            parent_id: $('.sub-cats').attr('parent-id')
+                        });
+                    });
+                }else{ console.log('else');
+                    choices.push({
+                        id: $(this).attr('id'), 
+                        parent_id: $(this).attr('parent-id')
+                    });
+                }
+                    
+            });
+
+            $.ajax({
+                url: misha_loadmore_params.ajaxurl,
+                type :'POST',
+                data : {
+                    'action' : 'call_posts', // the php name function
+                    'choices' : choices,
+                },
+                success: function (result) {
+                    $('.blog-left').html(result);
+                    // just for test - success (you can remove it later)
+                    //console.log(result);
+                    //console.log(choices);
+                },
+                error: function(err){
+                    // just for test - error (you can remove it later)
+                    console.log(err);
+                    console.log(choices);
+                }
+            });    
+    });
+});
