@@ -177,12 +177,23 @@ $url = wp_get_attachment_url( get_post_thumbnail_id($page->ID) );
 				<a class="postImg" style="background-image: url(<?php echo isset($url) ? $url : '';  ?>); " href="<?php the_permalink();  ?>"></a>
 					<div class="article-content">
 						<?php 
+							$site_url = get_site_url();
+
 							$category_detail = get_the_category($recent["ID"]);
-							foreach($category_detail as $cd){
-									$slug = $cd->slug;
-									if($cd->category_parent == 48){
-										$name = $cd->name;
-									}
+							if($site_url == 'http://18.232.244.255'){
+								foreach($category_detail as $cd){
+										$slug = $cd->slug;
+										if($cd->category_parent == 48){
+											$name = $cd->name;
+										}
+								}
+							}elseif ($site_url == 'http://34.226.240.9') {
+								foreach($category_detail as $cd){
+										$slug = $cd->slug;
+										if($cd->category_parent == 13){
+											$name = $cd->name;
+										}
+								}
 							}
 							if($name){
 						?>	
@@ -215,7 +226,12 @@ $url = wp_get_attachment_url( get_post_thumbnail_id($page->ID) );
 	<!-- <div id="helloWorld" style="height: 2px;clear: both;padding-bottom: 70px;"></div> -->
 	<div class="detail-recent-post Case clearfix">
 				<?php
-					$args = array( 'post_type'=> 'post','numberposts' => '3','post_status' => 'publish','tax_query' => [ [ 'taxonomy' => 'category','field'    => 'term_id','terms'    => '22', ] ], );
+					if($site_url == 'http://18.232.244.255'){
+						$args = array( 'post_type'=> 'post','numberposts' => '3','post_status' => 'publish','tax_query' => [ [ 'taxonomy' => 'category','field'    => 'term_id','terms'    => '22', ] ], );
+					}elseif ($site_url == 'http://34.226.240.9') {
+						$args = array( 'post_type'=> 'post','numberposts' => '3','post_status' => 'publish','tax_query' => [ [ 'taxonomy' => 'category','field'    => 'term_id','terms'    => '12', ] ], );
+					}
+					
 					$recent_posts = wp_get_recent_posts($args);
 				?>
 				<div class="main-title"> <h3> Case Studies </h3> </div>
@@ -233,8 +249,14 @@ $url = wp_get_attachment_url( get_post_thumbnail_id($page->ID) );
 							$category_detail = get_the_category($recent["ID"]);
 							foreach($category_detail as $cd){
 									$slug = $cd->slug;
-									if($cd->category_parent == 50){
-										$rec_cat_name = $cd->name;
+									if($site_url == 'http://18.232.244.255'){
+										if($cd->category_parent == 50){
+											$rec_cat_name = $cd->name;
+										}
+									}elseif ($site_url == 'http://34.226.240.9') {
+										if($cd->category_parent == 14){
+											$rec_cat_name = $cd->name;
+										}
 									}
 							}
 							if($rec_cat_name){
