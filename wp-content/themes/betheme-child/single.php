@@ -8,6 +8,7 @@
  */
 $_GET['blue-logo-menus'] = 1;
 get_header();
+$site_url = get_site_url();
 ?>
 <!-----------------html start --------------->
 
@@ -17,14 +18,25 @@ get_header();
 				<?php
 					$categories = get_the_category();
 					foreach( $categories as $category){
-						if($category->category_parent == 48 || $category->category_parent == 50 )
-						{ ?>
-						<a href="" class="category">
-						<?php
-							echo $name = $category->name;
-						} ?>
-						</a>
-						<?php
+						if($site_url == 'http://18.232.244.255'){
+							if($category->category_parent == 48 || $category->category_parent == 50 )
+							{ ?>
+							<a href="" class="category">
+							<?php
+								echo $name = $category->name;
+							} ?>
+							</a>
+							<?php
+						}elseif ($site_url == 'http://34.226.240.9') {
+							if($category->category_parent == 13 || $category->category_parent == 14 )
+							{ ?>
+							<a href="" class="category">
+							<?php
+								echo $name = $category->name;
+							} ?>
+							</a>
+							<?php
+						}
 					}
 				?>
 				<?php
@@ -216,8 +228,18 @@ get_header();
 								$category_detail = get_the_category($recent["ID"]);
 								foreach($category_detail as $cd){
 									$slug = $cd->slug;
-									if($cd->category_parent == 48){
-										$rec_cat_name = $cd->name;
+									if($site_url == 'http://18.232.244.255'){
+										if($cd->category_parent == 48){
+											$rec_cat_name = $cd->name;
+										}elseif($cd->category_parent == 50){
+											$rec_cat_name = $cd->name;
+										}
+									}elseif ($site_url == 'http://34.226.240.9'){
+										if($cd->category_parent == 13){
+											$rec_cat_name = $cd->name;
+										}elseif($cd->category_parent == 14){
+											$rec_cat_name = $cd->name;
+										}
 									}
 							}
 							if($rec_cat_name){
