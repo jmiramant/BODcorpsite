@@ -2979,12 +2979,12 @@ div#loadMore a:hover{
 .casestudy-body .tab-content{display: none;	background: #ededed;padding: 15px;}
 .casestudy-body .tab-content.current{display: inherit;}
 		/*-----tab close-----*/
-.page-id-239 .banner-sec {height: 385px;position: relative;}
-.page-id-239 .banner-title { position: absolute;left: 0;right: 0; text-align:center;top: 50%;transform: translateY(10%); padding:0 15px;}
-.page-id-239 .banner-title  h2{	color:#fff;font-size:38px;	font-weight: 400;}
-.page-id-239 #Top_bar .menu>li>a {  color: #ffffff!important;}
-.page-id-239 #Top_bar #logo .logo-sticky.scale-with-grid { display: none !important;}
-.page-id-239 #Top_bar #logo .logo-main.scale-with-grid { display: block !important;}
+.case-study .banner-sec {height: 385px;position: relative;}
+.case-study .banner-title { position: absolute;left: 0;right: 0; text-align:center;top: 50%;transform: translateY(10%); padding:0 15px;}
+.case-study .banner-title  h2{	color:#fff;font-size:38px;	font-weight: 400;}
+.case-study #Top_bar .menu>li>a {  color: #ffffff!important;}
+.case-study #Top_bar #logo .logo-sticky.scale-with-grid { display: none !important;}
+.case-study #Top_bar #logo .logo-main.scale-with-grid { display: block !important;}
 /*********/
 .casestudy-body  .casestudy-title { text-align: center; padding: 0 15px 15px; }
 .casestudy-body  .casestudy-title h5 { font-size: 25px; line-height: 1.5; color:#21436e; }
@@ -3030,6 +3030,9 @@ a:hover {  cursor: pointer;}
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     -webkit-transform: scale(1.014);
     transform: scale(1.014);
+}
+.case-study #Top_bar .menu_wrapper ul li a {
+color: #fff !important;
 }
 
 /*======================================================================*/
@@ -3088,7 +3091,7 @@ a:hover {  cursor: pointer;}
 	.main-blog-page .tag-space-left span {font-size: 12px; padding: 2px 20px; margin: 0 10px 10px 0;}
 	.main-blog-page .author span.date {padding-left: 5px;}
 	.main-blog-page .author span { font-size: 13px; padding: 5px 5px;}
-	.page-id-239 .banner-sec { height: 284px;}
+	.case-study .banner-sec { height: 284px;}
 	.casestudy-body .filter-item h3 span { font-size: 16px;}
 	.casestudy-body .filter-item  h4 {font-size: 14px;}
 	.article-content {  height: 170px;}
@@ -3116,7 +3119,7 @@ a:hover {  cursor: pointer;}
 .casestudy-body .filter-item .filter-item-overlap{bottom: -60px;}
 	.casestudy-body .filter-button { font-size: 14px; padding: 6px 10px;}
 	.otherRight span { margin: 0 5px 15px 0; padding: 5px 8px;  font-size: 14px;}
-    .page-id-239 .banner-title h2 { font-size: 35px;}
+    .case-study .banner-title h2 { font-size: 35px;}
 
     .main-blog-page .main-article{    width: 50%;}
 }
@@ -3146,7 +3149,7 @@ a:hover {  cursor: pointer;}
 	.main-blog-page .tag-space-left span { padding: 2px 7px;}
 	section.main-blog-page.post-blog-page .tag-space-left{width: 100%;}
 	section.main-blog-page.post-blog-page .tag-space-right {  float: none; width: 100%; padding-top: 20px;}
-	.page-id-239 #Top_bar #logo img.logo-mobile { display: none;}
+	.case-study #Top_bar #logo img.logo-mobile { display: none;}
 	.casestudy-body .casestudy-title p br{display:none;}
 	.casestudy-body .filter-button { font-size: 16px; margin-bottom: 10px; padding: 5px 18px;}
 	.casestudy-body .filter-button-list { margin-bottom: 20px;}
@@ -3184,7 +3187,7 @@ a:hover {  cursor: pointer;}
 @media only screen and (max-width:639px)
 {
 	.detail-recent-post {width: 100%;}
-.page-id-239 .banner-title{	top: 36%;}
+.case-study .banner-title{	top: 36%;}
 .casestudy-body .casestudy-title p { font-size: 16px;}
 .casestudy-body .casestudy-title h5 { font-size: 18px;}
 	.main-blog-page .main-article{ width: 100%;padding:0px;}
@@ -3196,7 +3199,7 @@ a:hover {  cursor: pointer;}
 	section.main-blog-page.post-blog-page {  width: 100%;  overflow: hidden;  box-sizing: border-box;}
 	.detail-recent-post .detail-recent-box {  width: 100%;}
 	/*section.main-blog-page.post-blog-page .postImg {  height: 200px;}*/
-	.page-id-239 .banner-sec {	height: 215px;}
+	.case-study .banner-sec {	height: 215px;}
 	section.main-blog-page.post-blog-page .tag-space-right ul li i {  width: 25px !important;    height: 25px !important;}
 	.backToList a {    padding: 6px 20px;}
 	.main-blog-page .post-img {    width: 16%;}

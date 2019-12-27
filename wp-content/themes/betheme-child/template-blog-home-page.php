@@ -26,16 +26,18 @@ $site_url = get_site_url();
 			<?php
 			$blog_cats = get_categories();
 			$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+			$term_ids = [];
 			foreach($blog_cats as $blog_cat){
 					wp_reset_query();
-					if($blog_cat->parent != 0){
+						$term_ids[] = $blog_cat->term_id;
+			}
 						$blog_args = array('post_type' => 'post',
 							'paged' => $paged,
 					        'tax_query' => array(
 					            array(
 					                'taxonomy' => 'category',
-					                'field' => 'slug',
-					                'terms' => $blog_cat->slug,
+					                'field' => 'term_id',
+					                'terms' => $term_ids,
 					            ),
 					        ),
 					     );
@@ -50,14 +52,17 @@ $site_url = get_site_url();
 				<a class="postImg" style="background-image: url(<?php echo isset($url) ? $url : '';  ?>); " href="<?php the_permalink();  ?>"></a>
 					<div class="article-content">
 						<?php
-							if($blog_cat->name){
+							$blog_terms = get_the_category();
+							foreach($blog_terms as $blog_term){
+								if($blog_term->category_parent != 0){
 						?>	
 						<p class="category">
 						<?php
-							echo $blog_cat->name;
+							echo $blog_term->name;
 						?>	
 						</p>
 						<?php
+								}
 							}
 						?>	
 						<a href="<?php the_permalink();  ?>"><h3><?php the_title();  ?></h3>
@@ -71,11 +76,6 @@ $site_url = get_site_url();
 			<?php
 						endwhile;
 					endif; ?>
-
-			<?php		
-				}
-			}
-			?>
 		<nav class="pagination">
 	        <?php pagination_bar( $loop ); ?>
 	    </nav>
