@@ -223,6 +223,24 @@ function assign_parent_terms($post_id, $post){
     }
 }
 
+add_action('save_post', 'assign_parent_terms_for_CPT_casestudy', 10, 2);
+
+function assign_parent_terms_for_CPT_casestudy($post_id, $post){
+
+    if($post->post_type != 'casestudy')
+        return $post_id;
+
+    // get all assigned terms   
+    $terms = wp_get_post_terms($post_id, 'casestudy_category' );
+    foreach($terms as $term){
+        while($term->parent != 0 && !has_term( $term->parent, 'casestudy_category', $post )){
+            // move upward until we get to 0 level terms
+            wp_set_post_terms($post_id, array($term->parent), 'casestudy_category', true);
+            $term = get_term($term->parent, 'casestudy_category');
+        }
+    }
+}
+
 function misha_loadmore_ajax_handler(){
  
     // prepare our arguments for the query
@@ -266,95 +284,69 @@ function misha_loadmore_ajax_handler(){
     die; // here we exit the script and even no wp_reset_query() required!
 }
 add_action('wp_ajax_loadmore', 'misha_loadmore_ajax_handler'); // wp_ajax_{action}
-add_action('wp_ajax_nopriv_loadmore', 'misha_loadmore_ajax_handler'); // wp_ajax_nopriv_{action}
- 
-function getcategorypost(){
+add_action('wp_ajax_nopriv_loadmore', 'misha_loadmore_ajax_handler'); // wp_ajax_nopriv_{action}    
 
-    $args = array (
-                    //'cat' => $category->cat_ID,
-                    'order'   => 'ASC',
-                    'posts_per_page'   => $_POST['post_limit'],
-                    'category__in' => array($_POST['cat_id']),
-                  );
-    //$args['paged'] = $_POST['page'] + 1; // we need next page to be loaded
-    $args['post_status'] = 'publish';
+//CPT for CASE Study
+// Our custom post type function
+function create_caseStudy_posttype() {
  
-    // it is always better to use WP_Query but not here
-    query_posts( $args );
- 
-    if( have_posts() ) :
- 
-        // run the loop
-        while( have_posts() ): the_post(); 
-            $category_detail=get_the_category($post->ID);
-            foreach($category_detail as $cd){
-                    $slug = $cd->slug;
-                    $name = $cd->name;
-            }
-            ?>
-           <div class="filter-item filter <?php echo $slug; ?>" id="lod">
-                        <a href="<?php the_permalink();  ?>"><img src="http://fakeimg.pl/365x365/" class="filter-image">
-                        <div class="filter-item-overlap"><h3><span><?php the_title(); ?></span></h3><h4><?php echo $name; ?></h4></div></a>
-                    </div>  
-                <?php
+    register_post_type( 'casestudy',
+    // CPT Options
+        array(
+            'labels' => array(
+                'name' => __( 'Casestudy' ),
+                'singular_name' => __( 'Casestudy' )
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'rewrite' => array('slug' => 'casestudy'),
+            'supports' => array( 'title','editor','author','thumbnail' ),
+            'taxonomies' => array('casestudy_category','casestudy_tag'),
 
-        endwhile;
- 
-    endif;
-    die;
+        )
+    );
+    // create a new taxonomy 
+    register_taxonomy(
+        'casestudy_category',
+        'casestudy',
+        array(
+            'label' => __( 'Casestudy Categories' ),
+            'rewrite' => array( 'slug' => 'casestudy_categories' ),
+            'hierarchical' => true,
+            'capabilities' => array(
+                'edit_terms' => 'manage_categories'
+            ),
+            'show_admin_column' => true
+        )
+    );
 
+        $labels = array(
+            'name' => _x( 'Casestudy Tags', 'taxonomy general name' ),
+            'singular_name' => _x( 'Casestudy Tag', 'taxonomy singular name' ),
+            'search_items' =>  __( 'Search Tags' ),
+            'popular_items' => __( 'Popular Tags' ),
+            'all_items' => __( 'All Tags' ),
+            'parent_item' => null,
+            'parent_item_colon' => null,
+            'edit_item' => __( 'Edit Tag' ), 
+            'update_item' => __( 'Update Tag' ),
+            'add_new_item' => __( 'Add New Tag' ),
+            'new_item_name' => __( 'New Tag Name' ),
+            'separate_items_with_commas' => __( 'Separate tags with commas' ),
+            'add_or_remove_items' => __( 'Add or remove tags' ),
+            'choose_from_most_used' => __( 'Choose from the most used tags' ),
+            'menu_name' => __( 'Casestudy Tags' ),
+          );
+
+   register_taxonomy('casestudy_tag','casestudy',array(
+    'hierarchical' => false,
+    'labels' => $labels,
+    'show_ui' => true,
+    'update_count_callback' => '_update_post_term_count',
+    'query_var' => true,
+    'rewrite' => array( 'slug' => 'casestudy_tags' ),
+    'show_admin_column' => true
+  ));     
 }
-  
-add_action('wp_ajax_getcategorypost', 'getcategorypost'); // wp_ajax_nopriv_{action}   
-add_action('wp_ajax_nopriv_getcategorypost', 'getcategorypost'); 
-
-//On clicking checkbox of blog home page template
-function call_posts(){
-            $choices = $_POST['choices'];
-            foreach($choices as $Key=>$Value){
-                $args = array( 'cat' => $Value['id'], 'post_type' => 'post', 'post_status' => 'publish' );
-                $query = new WP_Query($args);
-            
-            if( $query->have_posts() ) :
-                while( $query->have_posts() ): $query->the_post();
-                $url = wp_get_attachment_url( get_post_thumbnail_id() ); 
-            ?>
-                    <div class="main-article">
-                        <div class="article-inner">
-                        <?php if( !empty($url) ): ?>
-                        <a class="postImg" style="background-image: url(<?php echo $url;  ?>); " href="<?php the_permalink();  ?>"></a>
-                        <?php endif;  ?>
-                        <div class="article-content">
-                            <a href="" class="category">
-                            <?php 
-                                $categories = get_the_category();
-                                $name = [];
-                                foreach( $categories as $category){
-                                    if($category->category_parent != 0 )
-                                    {
-                                        $name[] = $category->name;
-                                    }
-                                } 
-                                echo implode(',',$name); 
-                            ?>
-                            </a>
-                            <a href="<?php the_permalink();  ?>"><h3><?php the_title();  ?></h3>
-                            <p><?php 
-                                echo limit_words(get_the_excerpt(), '20').' ...';  
-                                ?></p></a>
-                            <hr class="border-bottom"> </hr>
-                        </div>
-                        </div>
-                    </div>
-            <?php        
-            //      get_template_part('content');
-             endwhile;
-                wp_reset_query();
-            else :
-                wp_send_json($query->posts);
-            endif;
-        }
-            die();
-}
-add_action('wp_ajax_call_posts', 'call_posts'); // wp_ajax_nopriv_{action}   
-add_action('wp_ajax_nopriv_call_posts', 'call_posts');     
+// Hooking up our function to theme setup
+add_action( 'init', 'create_caseStudy_posttype' );
