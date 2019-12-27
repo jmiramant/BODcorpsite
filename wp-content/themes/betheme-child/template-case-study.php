@@ -24,16 +24,18 @@ $site_url = get_site_url();
 			<?php 
 			$case_terms = get_terms('casestudy_category');
 			$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+			$term_ids = [];
 			foreach($case_terms as $case_term){
 				wp_reset_query();
-				if($case_term->parent != 0){ 
+					 $term_ids[] = $case_term->term_id;
+			}
 					$case_args = array('post_type' => 'casestudy',
 						'paged' => $paged,
 				        'tax_query' => array(
 				            array(
 				                'taxonomy' => 'casestudy_category',
-				                'field' => 'slug',
-				                'terms' => $case_term->slug,
+				                'field' => 'term_id',
+				                'terms' => $term_ids,
 				            ),
 				        ),
 				     );
@@ -47,7 +49,9 @@ $site_url = get_site_url();
 					<a class="postImg" style="background-image: url(<?php echo isset($url) ? $url : '';  ?>); " href="<?php the_permalink();  ?>"></a>
 					<div class="article-content">
 						<?php 
-							if($case_term->name){
+							$case_terms = get_the_terms( $post->ID , 'casestudy_category' );
+							foreach($case_terms as $case_term){
+								if($case_term->parent != 0){
 							?>
 							<p class="category">
 							<?php
@@ -55,6 +59,7 @@ $site_url = get_site_url();
 							?>	
 							</p>
 							<?php
+								}
 							}
 						?>	
 						<a href="<?php the_permalink();  ?>"><h3><?php the_title();  ?></h3>
@@ -68,11 +73,7 @@ $site_url = get_site_url();
 			<?php
 					endwhile; 
 				endif;
-			?>
-			
-			<?php	}
-			}
-		?><nav class="pagination">
+			?><nav class="pagination">
 			        <?php pagination_bar( $loop ); ?>
 			</nav>
 		</div> 
