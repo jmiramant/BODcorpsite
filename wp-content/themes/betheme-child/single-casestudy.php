@@ -18,15 +18,17 @@ $site_url = get_site_url();
 				<?php
 					$term = get_queried_object();
 					$categories = get_the_terms($term->ID,'casestudy_category');
-					foreach( $categories as $category){
-							if($category->parent != 0)
-							{ ?>
-							<a href="" class="category">
-							<?php
-								echo $name = $category->name;
-							} ?>
-							</a>
-							<?php
+					if($categories){
+						foreach( $categories as $category){
+								if($category->parent != 0)
+								{ ?>
+								<a href="" class="category">
+								<?php
+									echo $name = $category->name;
+								} ?>
+								</a>
+								<?php
+						}
 					}
 				?>
 				<?php
@@ -83,15 +85,17 @@ $site_url = get_site_url();
 				// 	  'hide_empty' => true
 				// ));
 				$tags = get_the_terms( $term->ID, 'casestudy_tag');
-				foreach ($tags as $tag) {
-				?>
-				<?php /*<a href="<?php echo esc_url( get_tag_link( $tag->term_id ) ); ?>"><span class="colSpan3" style="width:20%;"> <?php echo $tag->name;  ?> </span></a> */ ?>
-				<span class="colSpan3" style="width:20%;">
-				<?php
-					echo $tag->name;
-				?>
-				</span>
-				<?php
+				if($tags){
+					foreach ($tags as $tag) {
+					?>
+					<?php /*<a href="<?php echo esc_url( get_tag_link( $tag->term_id ) ); ?>"><span class="colSpan3" style="width:20%;"> <?php echo $tag->name;  ?> </span></a> */ ?>
+					<span class="colSpan3" style="width:20%;">
+					<?php
+						echo $tag->name;
+					?>
+					</span>
+					<?php
+					}
 				}
 				?>
 			</div>
