@@ -300,6 +300,7 @@ function create_caseStudy_posttype() {
             'public' => true,
             'has_archive' => true,
             'rewrite' => array('slug' => 'casestudy'),
+            'show_in_rest' => true,
             'supports' => array( 'title','editor','author','thumbnail' ),
             'taxonomies' => array('casestudy_category','casestudy_tag'),
 
