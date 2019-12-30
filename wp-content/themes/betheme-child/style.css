@@ -2857,8 +2857,11 @@ section.main-blog-page.post-blog-page .tag-space-right ul li {display: block;}
 .detail-recent-post { width:60%; display: block; clear: both; float: none; margin: 0 auto; box-sizing: border-box;}
 .detail-recent-box-inner:hover{box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); -webkit-transform: scale(1.014); transform: scale(1.014);}
 .detail-recent-post.Case {    padding: 40px 0;}
+.recent-row { display: flex; flex-wrap: wrap; }
+.recent-row .detail-recent-box-inner { background-color: #fff; height: 100%; }
+.recent-row .detail-recent-box { float: none; }
 .detail-recent-post .detail-recent-box {
-    margin-bottom: 40px;float: left; width: 33.3333%; box-sizing: border-box; position: relative; border-radius: 3px; padding-right: 15px; padding-left: 15px;}
+    margin-bottom: 40px; float: left; width: 33.3333%; box-sizing: border-box; position: relative; border-radius: 3px; padding-right: 15px; padding-left: 15px;}
 .detail-recent-post .detail-recent-box img { width: 100%;height: auto; border-radius: 13px 13px 0 0;}
 .detail-recent-post .detail-recent-box figure {min-height: 150px; max-height: 150px; height: 100%;  overflow: hidden;}
 .detail-recent-box-inner {
@@ -3034,6 +3037,13 @@ a:hover {  cursor: pointer;}
 .case-study #Top_bar .menu_wrapper ul li a {
 color: #fff !important;
 }
+
+.post-blog .blogie-quote {
+    font-size: 20px;
+    line-height: 38px;
+}
+
+
 
 /*======================================================================*/
 /*======================================================================*/
