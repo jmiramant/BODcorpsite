@@ -69,7 +69,7 @@ sudo git pull</pre></code>
         Resolve conflicts if any, otherwise code on dev server will be deployed successfully. Now, Import any data in the admin panel like changes to pages or any other data.
     </li>
 </ul></p>
- 7. Once staging is verified, It is good to go on "Production" branch and hence on Production server. It will be marked as a Release on Github.
+10. Once staging is verified, It is good to go on "Production" branch and hence on Production server. It will be marked as a Release on Github.
 Production server deployment process:<br/>
 <p><ul>
     <li>Merge <i><b>Staging</i></b> branch into <b><i>Production</i></b> branch:<br/>
@@ -79,10 +79,12 @@ sudo git pull</pre></code>
         Resolve conflicts if any, otherwise code on dev server will be deployed successfully. Now, Import any data in the admin panel like changes to pages or any other data.
     </li>
 </ul></p>
- 8. No direct code changes should be made to any server, If any issue needs to be fixed on priority bases, it has to be through Hotfix branch.
- 
+11. No direct code changes should be made to any server, If any issue needs to be fixed on priority bases, it has to be through Hotfix branch.
+<br/><br/>
+<p><b></i>
 #Appropriate Comments should be added to code edits explaining the purpose of Code snippet/coditions.
-
+<br/>
 #All the Database changes should be placed inside "/_database" folder to keep track of DB changes. Read readme file inside "/_database" folder.
-
+<br/>
 #All the webpages should be placed inside "/_webpages" folder as .html files to keep track of the changes and maintain proper history. Read readme file inside "/_webpages" folder.
+</i></b></p>
