@@ -6,6 +6,11 @@ $page = get_page_by_title('Case Studies');
 $url = wp_get_attachment_url( get_post_thumbnail_id($page->ID) );
 $site_url = get_site_url();
 ?>
+<style type="text/css">
+	blockquote { margin-top: 60px !important; background: none !important; }
+	blockquote:after { top: -45px !important; }
+	h1, h1 a, h1 a:hover, .text-logo #logo { color: inherit !important; }
+</style>
 <section class="blog-banner" style="background-image: url('<?php echo $url;  ?>'); background-size: cover;
     background-position: center bottom;
     background-repeat: no-repeat;">
@@ -81,6 +86,7 @@ $site_url = get_site_url();
 	<!-- <div id="helloWorld" style="height: 2px;clear: both;padding-bottom: 70px;"></div> -->
 	<div class="detail-recent-post Case clearfix">
 				<div class="main-title"> <h3> Recent Blogs </h3> </div>
+				<div class="recent-row">
 				<?php
 					$args = array( 'post_type'=> 'post','numberposts' => '3','post_status' => 'publish' );
 					$recent_posts = wp_get_recent_posts($args);
@@ -89,6 +95,7 @@ $site_url = get_site_url();
 						$categories = get_the_category( $recent["ID"] );
 						$img_url = wp_get_attachment_url( get_post_thumbnail_id($recent["ID"]) );
 				?>
+
 				<div class="detail-recent-box">
 				<div class="detail-recent-box-inner">
 					<a class="postImg" style="background-image: url(<?php echo isset($img_url) ? $img_url : '';  ?>);" href="<?php echo $post_url;  ?>"></a>		
@@ -118,6 +125,7 @@ $site_url = get_site_url();
 				</div>
 				</div>
 				<?php }  ?>
+			</div>
 	</div>
 	<div class="otherService clearfix">
 	       <div class="container">
@@ -125,7 +133,7 @@ $site_url = get_site_url();
 				<div class="otherLeft">
 					<h6> Other Services </h6>
 					<h3> Looking for something else? </h3>
-					<p> Wondring how we can tailor our expertise to help your company unlock your data? Tell us about your project.</p>
+					<p> Wondering how we can tailor our expertise to help your company unlock your data? Tell us about your project.</p>
 					
 				</div>
 				<div class="otherRight">
