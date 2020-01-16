@@ -85,6 +85,7 @@ $site_url = get_site_url();
 	<!-- <div id="helloWorld" style="height: 2px;clear: both;padding-bottom: 70px;"></div> -->
 	<div class="detail-recent-post Case clearfix">
 		<div class="main-title"> <h3> Case Studies </h3> </div>
+		<div class="recent-row">
 				<?php
 				$args = array( 'post_type'=> 'casestudy','numberposts' => '3','post_status' => 'publish' );	
 				$recent_posts = wp_get_recent_posts($args);
@@ -121,6 +122,7 @@ $site_url = get_site_url();
 				</div>
 				</div>
 				<?php }  ?>
+			</div>
 	</div>
 	<div class="otherService clearfix">
 	       <div class="container">
@@ -128,7 +130,7 @@ $site_url = get_site_url();
 				<div class="otherLeft">
 					<h6> Other Services </h6>
 					<h3> Looking for something else? </h3>
-					<p> Wondring how we can tailor our expertise to help your company unlock your data? Tell us about your project.</p>
+					<p> Wondering how we can tailor our expertise to help your company unlock your data? Tell us about your project.</p>
 					
 				</div>
 				<div class="otherRight">
