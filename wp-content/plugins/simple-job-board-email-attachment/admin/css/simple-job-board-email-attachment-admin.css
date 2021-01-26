@@ -1,0 +1,19 @@
+#settings-email_notifications .sjb-form-group:first-child{
+    height: auto;
+}
+#settings-email_notifications .sjb-content-email-notify{
+    width: 800px;
+    overflow: hidden;
+}
+#settings-email_notifications .sjb-form-group .input-caption{
+    width: 400px;
+    float: left;
+}
+#settings-email_notifications .sjb-form-group input[type="text"]{
+    width: 400px;
+}
+#settings-email_notifications .sjb-form-group input-caption input[type="text"] + span{
+    width: 400px;
+    float: right;
+    display: block;
+}

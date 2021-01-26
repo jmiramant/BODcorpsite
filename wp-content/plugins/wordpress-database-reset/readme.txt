@@ -1,48 +1,77 @@
-=== WordPress Database Reset ===
-
-Contributors: mousesports
-Tags: wordpress, database, reset, restore, setup, developer, theme, default, secure
-License: GPL2
+=== WP Database Reset ===
+Contributors: WebFactory, wpreset, underconstructionpage, googlemapswidget
+Tags: database, reset, restore, database reset, wp reset, developer, development
 Requires at least: 4.2
-Tested up to: 4.3.1
-Stable tag: 3.0.2
+Requires PHP: 5.2
+Tested up to: 5.3
+Stable tag: 3.1
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A plugin that allows you to skip the 5 minute installation and reset WordPress's database back to its original state.
+Skip reinstalling WP to reset it & reset the WordPress database back to its original state with 1-click.
 
 == Description ==
 
-**Overview**
+The WordPress Database Reset plugin allows you to **reset the database** (all tables or the ones you choose) back to its default settings without having to go through the WordPress 5 minute installation or having to modify any files.
 
-The WordPress Database Reset plugin allows you to reset the database back to its default settings without having to go through the WordPress 5 minute installation.
+> Need more reset tools? To individually reset plugins, themes, transients or media? Or perhaps database snapshots so you can restore your WP site with one click if you made a mistake? Then check out our free sister plugin - <a href="https://wordpress.org/plugins/wp-reset/">WP Reset</a>.
 
 **Features**
 
-* Extremely fast one click process to reset the WordPress database
+* Extremely fast one click process to reset the WordPress database tables
 * Choose to reset the entire database or specific database tables
 * Secure and super simple to use
+* Safe - it's not possible to accidentally click reset
 * Prefer the command line? Reset the database in one command
 * Excellent for theme and plugin developers who need to clean the database of any unnecessary content
 
 **Command Line**
 
-Once activated, you can use the WordPress Database Reset plugin with [WordPress CLI](http://wp-cli.org/).
-Full documentation for the commands can be found on [the code repository](https://github.com/chrisberthe/wordpress-database-reset#command-line)
+Once activated, you can use the WordPress Database Reset plugin with [WordPress CLI](http://wp-cli.org/). List of WP-CLI commands:
 
-**Support Forum**
+Reset all tables:
+
+`wp reset database`
+
+Specify a list of tables to reset:
+
+`wp reset database --tables='users, posts, comments, options'`
+
+The current theme and plugins will be reactivated by default. You can disable them like so:
+
+`wp reset database --no-reactivate`
+
+List table names:
+
+`wp reset list`
+
+
+**Support**
 
 Create a new post in the [WordPress Database Reset support forum](https://wordpress.org/support/plugin/wordpress-database-reset).
 
 **Want to help out?**
 
-* Provide new language translations - [read this tutorial](http://weblogtoolscollection.com/archives/2007/08/27/localizing-a-wordpress-plugin-using-poedit/) or use the [online PO Editor](https://poeditor.com/).
-* Help develop the plugin by forking [the code repository](https://github.com/chrisberthe/wordpress-database-reset) on GitHub.
+* Provide new <a href="https://translate.wordpress.org/projects/wp-plugins/wordpress-database-reset">language translations</a>
 * Want to help others that might be having issues? [Answer questions on the support forum](https://wordpress.org/support/plugin/wordpress-database-reset).
-* If you love this plugin and would like to make a donation: 1. You're awesome and 2. You can find the donate button on the plugin page.
+* Rate the plugin - <a href="https://wordpress.org/support/plugin/wordpress-database-reset/reviews/#new-post">rate it</a>
+
+
+WP Database Reset was originally developed in October 2011 by <a href="https://github.com/chrisberthe">Chris Berthe</a>. Please do not send him any support questions. If you need assistance the <a href="https://wordpress.org/support/plugin/wordpress-database-reset/">official forum</a> is the best and fastest way to get it. 
+
 
 == Screenshots ==
-1. The WordPress Database Reset plugin page
+1. The WP Database Reset plugin page
 
 == Changelog ==
+
+= 3.1 =
+* 2019/08/13
+* WebFactory took over development
+* minor improvements in GUI and messaging
+* fixed a nasty bug related to admin user ID not being 1
+* 70k installations; 665,500 downloads
+
 = 3.0.2 =
 * Fix for plugin page not showing up in tools menu (on some hosting providers)
 * Update how session tokens were being restored
@@ -103,7 +132,7 @@ Create a new post in the [WordPress Database Reset support forum](https://wordpr
 
 = 1.4 =
 * Made quite a few changes to the translation files
-* Renamed french translation file for plugin format, not theme format
+* Renamed French translation file for plugin format, not theme format
 * Optimized (until potential version 2.0)
 
 = 1.3 =
@@ -119,3 +148,4 @@ Create a new post in the [WordPress Database Reset support forum](https://wordpr
 
 = 1.0 =
 * First version
+* 2011-10-04

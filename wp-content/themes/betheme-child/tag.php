@@ -82,7 +82,7 @@ $url = wp_get_attachment_url( get_post_thumbnail_id($page->ID) );
 				<div class="category-inner">
 			
 			<ul>
-				<li><a href="/blue-orange-blog/" class="all"><span class="span-left">All</span></a></li>
+				<li><a href="/blog/" class="all"><span class="span-left">All</span></a></li>
 				<?php 
 					$term = get_queried_object();
 					foreach ($categories as $category) {

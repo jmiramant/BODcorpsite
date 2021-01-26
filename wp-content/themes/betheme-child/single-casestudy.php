@@ -50,7 +50,7 @@ $site_url = get_site_url();
 				 <div class="author">
 
 					<!-- <img src="http://18.232.244.255/wp-content/uploads/2019/12/user-1.jpg" alt="author"> -->
-					
+
 					<?php
 							$author_image_url = get_field('author_image');
 							if($author_image_url){
@@ -58,12 +58,12 @@ $site_url = get_site_url();
 						<img src="<?php echo $author_image_url['url']; ?>" alt="author">
 						<?php
 							}else{ ?>
-						<img src="/wp-content/uploads/2019/12/user-1.jpg" alt="author">		
+						<img src="/wp-content/uploads/2019/12/user-1.jpg" alt="author">
 						<?php	}
 						?>
 					<span><?php echo the_author_meta( 'display_name' , $post->post_author ); ?></span>
 					<span class="date"><?php echo get_the_date(); ?></span>
-				</div>  
+				</div>
 				<?php
 					$url = wp_get_attachment_url( get_post_thumbnail_id() );
 				?>
@@ -108,7 +108,7 @@ $site_url = get_site_url();
 <div class="blog-post-bottom-section">
 	<a href="<?php home_url();  ?>/contact" >
 	<div class="post-bottom-left">
-		<img class="logo-sticky scale-with-grid" src="http://18.232.244.255/wp-content/uploads/2018/07/logo-colored.png" data-retina="http://18.232.244.255/wp-content/uploads/2018/07/logo-colored.png" data-height="810" alt="logo-colored" pagespeed_url_hash="2313240229">
+		<img class="logo-sticky scale-with-grid" src="https://blueorange.digital/wp-content/uploads/2018/07/logo-colored.png" data-retina="https://blueorange.digital/wp-content/uploads/2018/07/logo-colored.png" data-height="810" alt="logo-colored" pagespeed_url_hash="2313240229">
 	</div>
 
 	<div class="post-bottom-right">
@@ -120,7 +120,7 @@ $site_url = get_site_url();
 
 
 </section>
-	
+
 <div class="detail-recent-post clearfix">
 	<hr class="bordr">
 				<?php
@@ -132,11 +132,11 @@ $site_url = get_site_url();
 					foreach( $recent_posts as $recent ){
 							$post_url = get_permalink($recent["ID"]);
 							$categories = get_the_category( $recent["ID"] );
-							$img_url = wp_get_attachment_url( get_post_thumbnail_id($recent["ID"]) );	
+							$img_url = wp_get_attachment_url( get_post_thumbnail_id($recent["ID"]) );
 				?>
 				<div class="detail-recent-box">
 				<div class="detail-recent-box-inner">
-					<a class="postImg" style="background-image: url(<?php echo isset($img_url) ? $img_url : '';  ?>);" href="<?php echo $post_url;  ?>"></a>		
+					<a class="postImg" style="background-image: url(<?php echo isset($img_url) ? $img_url : '';  ?>);" href="<?php echo $post_url;  ?>"></a>
 						<div class="article-content detail-card-content">
 							<?php
 								$category_detail = get_the_category($recent["ID"]);
@@ -150,7 +150,7 @@ $site_url = get_site_url();
 							<p class="category">
 								<?php
 								echo $rec_cat_name;
-								?>	
+								?>
 							</p>
 							<?php
 							}
