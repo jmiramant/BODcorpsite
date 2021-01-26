@@ -1,0 +1,125 @@
+<?php /* Template Name: Case Study Template */ ?>
+
+<?php
+get_header();  
+?>
+
+<section class="casestudy clearfix">
+	<div class="banner-sec" style="background-image: url(/wp-content/uploads/2019/12/banner.png);background-repeat: no-repeat;   background-position: center bottom; background-size: cover;">
+		<div class="banner-title">
+			<h2> Full Stack Case Study </h2>
+		</div>
+	</div>
+
+	<div class="casestudy-body">
+		<div class="container">
+			<div class="casestudy-title">
+				<h5>A solution without integration is no solution.Period.</h5>
+				<p>See our full stack data science in action. Until you've <br>experienced deep integration, you haven't felt the difference <br>of the Blue Orange way.</p>
+			</div>
+
+			<div class="casestudy-item-list">
+		        <div class="filter-button-list">
+		        	<?php 
+					$categories = get_categories( array(
+						'post_type'=> 'post',
+					    'orderby' => 'name',
+					    'order'   => 'ASC',
+					    'post_status' => 'publish',
+					    'parent' => 22
+					) );
+					?>
+					<button class="filter-button current" onclick="get_category_post(22)" data-catid="22">All</button>
+					<?php
+					foreach ($categories as $category) {
+					?>
+		            <button class="filter-button" onclick="get_category_post(<?php echo $category->cat_ID; ?>)" data-catid="<?php echo $category->cat_ID; ?>"><?php echo $category->name; ?></button>
+		            <?php
+		            }
+		            ?>
+		        </div>
+
+		          <div class="filter-item-list clearfix" id="btn-wrap">
+		        	<?php
+					//foreach ($categories as $category) {
+						$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+						$post_args = array (
+					        //'cat' => $category->cat_ID,
+					        'posts_per_page'   => '3',
+					        'post_status' => 'publish',
+					        'paged'          => $paged,
+					        'order'   => 'ASC',
+					        'category__in' => array(22),
+					    );
+					    $query = new WP_Query( $post_args );
+					     while ( $query->have_posts() ) {
+					     	$query->the_post();
+					     	$url = wp_get_attachment_url( get_post_thumbnail_id() );
+					     	$category_detail=get_the_category($post->ID);
+							foreach($category_detail as $cd){
+									$slug = $cd->slug;
+									$name = $cd->name;
+							}
+							//print_r($query);
+					?>
+		            <div class="filter-item filter <?php echo $slug; ?>" id="lod">
+		                <a href="<?php the_permalink();  ?>"><img src="<?php echo $url;  ?>" class="filter-image">
+		                <div class="filter-item-overlap"><h3><span><?php the_title(); ?></span></h3><h4><?php echo $name; ?></h4></div></a>
+		            </div>
+		           <?php
+		           		}
+					//}
+		           ?>
+		        </div> 
+		       
+		    </div>
+		    <div id="loadMore">
+		    	<?php
+				if (  $query->max_num_pages > 1 ){
+		    	?>
+		      <a id="misha_loadmore" href="#">Load More</a>
+		      <?php
+		      	}
+		      ?>
+		    </div>		    
+		</div>
+		<div class="otherService">
+	       <div class="container">
+	       	<div class="other-inner-service">
+				<div class="otherLeft">
+					<h6> Other Services </h6>
+					<h3> Looking for something else? </h3>
+					<p> Wondring how we can tailor our expertise to help your company unlock your data? Tell us about your project.</p>
+					<div class="contactButton"> <a href="/contact/"> Contact Us </a> </div>
+				</div>
+				<div class="otherRight">
+					<span> Anomaly Detection </span> <span> chatbots</span> <span> classification & labeling</span> <span>customer life time value </span> <span> deal comparison</span><span>Dynamic pricing </span> <span> NLP</span> <span>Prediction </span> <span> Compliance</span> <span>Trend analysis </span> <span> fraud and risk detection</span> <span>recomenders </span> <span class="seeMore"> see more <i>&#8594;</i> </span> 
+				</div>
+			</div>
+		</div>
+	  </div>
+	</div>
+</section>
+
+
+	
+
+
+<script>
+// 	$(document).ready(function(){
+	
+// 	$('ul.tabs li').click(function(){
+// 		var tab_id = $(this).attr('data-tab');
+
+// 		$('ul.tabs li').removeClass('current');
+// 		$('.tab-content').removeClass('current');
+
+// 		$(this).addClass('current');
+// 		$("#"+tab_id).addClass('current');
+// 	})
+
+// })
+</script>
+<?php
+get_footer();
+?>

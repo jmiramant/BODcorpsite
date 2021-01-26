@@ -49,7 +49,7 @@ $site_url = get_site_url();
 				 <div class="author">
 
 					<!-- <img src="http://18.232.244.255/wp-content/uploads/2019/12/user-1.jpg" alt="author"> -->
-					
+
 					<?php
 							$author_image_url = get_field('author_image');
 							if($author_image_url){
@@ -57,12 +57,12 @@ $site_url = get_site_url();
 						<img src="<?php echo $author_image_url['url']; ?>" alt="author">
 						<?php
 							}else{ ?>
-						<img src="/wp-content/uploads/2019/12/user-1.jpg" alt="author">		
+						<img src="/wp-content/uploads/2019/12/user-1.jpg" alt="author">
 						<?php	}
 						?>
 					<span><?php echo the_author_meta( 'display_name' , $post->post_author ); ?></span>
 					<span class="date"><?php echo get_the_date(); ?></span>
-				</div>  
+				</div>
 				<?php
 					$url = wp_get_attachment_url( get_post_thumbnail_id() );
 				?>
@@ -75,7 +75,7 @@ $site_url = get_site_url();
 				</div>
 
 			</div>
-					<div class=backToList><a href="/blue-orange-blog/">Back To List</a></div>
+					<div class=backToList><a href="/blog/">Back To List</a></div>
 			<hr class="bordr">
 
 			<div class="tag-space-left">
@@ -91,7 +91,7 @@ $site_url = get_site_url();
 					?>
 					</span>
 					<?php
-					}	
+					}
 				}
 				?>
 			</div>
@@ -104,7 +104,7 @@ $site_url = get_site_url();
 <div class="blog-post-bottom-section">
 	<a href="<?php home_url();  ?>/contact" >
 	<div class="post-bottom-left">
-		<img class="logo-sticky scale-with-grid" src="http://18.232.244.255/wp-content/uploads/2018/07/logo-colored.png" data-retina="http://18.232.244.255/wp-content/uploads/2018/07/logo-colored.png" data-height="810" alt="logo-colored" pagespeed_url_hash="2313240229">
+		<img class="logo-sticky scale-with-grid" src="/wp-content/uploads/2018/07/logo-colored.png" data-retina="/wp-content/uploads/2018/07/logo-colored.png" data-height="810" alt="logo-colored" pagespeed_url_hash="2313240229">
 	</div>
 
 	<div class="post-bottom-right">
@@ -116,7 +116,7 @@ $site_url = get_site_url();
 
 
 </section>
-	
+
 <div class="detail-recent-post clearfix">
 	<hr class="bordr">
 				<?php
@@ -128,11 +128,11 @@ $site_url = get_site_url();
 					foreach( $recent_posts as $recent ){
 							$post_url = get_permalink($recent["ID"]);
 							$categories = get_the_category( $recent["ID"] );
-							$img_url = wp_get_attachment_url( get_post_thumbnail_id($recent["ID"]) );	
+							$img_url = wp_get_attachment_url( get_post_thumbnail_id($recent["ID"]) );
 				?>
 				<div class="detail-recent-box">
 				<div class="detail-recent-box-inner">
-					<a class="postImg" style="background-image: url(<?php echo isset($img_url) ? $img_url : '';  ?>);" href="<?php echo $post_url;  ?>"></a>		
+					<a class="postImg" style="background-image: url(<?php echo isset($img_url) ? $img_url : '';  ?>);" href="<?php echo $post_url;  ?>"></a>
 						<div class="article-content detail-card-content">
 							<?php
 								$category_detail = get_the_category($recent["ID"]);
@@ -140,14 +140,14 @@ $site_url = get_site_url();
 										if($cd->parent != 0){
 											$rec_cat_name = $cd->name;
 										}
-									
+
 							}
 							if($rec_cat_name){
 							?>
 							<p class="category">
 								<?php
 								echo $rec_cat_name;
-								?>	
+								?>
 							</p>
 							<?php
 							}
@@ -158,10 +158,40 @@ $site_url = get_site_url();
 				</div>
 				</div>
 				<?php }  ?>
+				<div class="column mcb-column one column_button"><div class="button_align align_center"><a class="button btnOrange button_size_2 button_js" href="/blog/" target="_blank"><span class="button_label">All Blogs</span></a></div></div>
 </div>
 
+<div class="section mcb-section  equal-height-wrap   bg-cover" style="padding-top:0px; padding-bottom:0px; background-color:; background-image:url(/wp-content/uploads/2019/01/CTA-background.jpg); background-repeat:no-repeat; background-position:center; background-attachment:; background-size:; -webkit-background-size:">
+	<div class="section_wrapper mcb-section-inner">
+		<div class="wrap mcb-wrap one services-subscriber-form-section valign-middle clearfix" style="height: 183px;">
+			<div class="mcb-wrap-inner">
+				<div class="column mcb-column one-second column_column title-block">
+					<div class="column_attr clearfix" style="color:#fff">Subscribe to the Blue Orange Blog</div>
+				</div>
+				<div class="column mcb-column one-second column_column form-block">
+					<div class="column_attr clearfix">
+						<?php echo do_shortcode("[contact-form-7 id='4553' title='Subscriber form']"); ?>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="otherService clearfix">
+	<div class="container">
+		<div class="other-inner-service">
+			<div class="otherLeft">
+				<h6> Other Services </h6>
+				<h3> Looking for something else? </h3>
+				<p> Wondering how we can tailor our expertise to help your company unlock your data? Tell us about your project.</p>
 
-
+			</div>
+			<div class="otherRight">
+				<div class="contactButton"> <a href="/contact/"> Contact Us </a> </div>
+			</div>
+		</div>
+	</div>
+</div>
 <?php get_footer();
 
 // Omit Closing PHP Tags

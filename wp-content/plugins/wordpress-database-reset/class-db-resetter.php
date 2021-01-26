@@ -13,13 +13,18 @@ if ( ! class_exists( 'DB_Resetter' ) ) :
     private $reactivate;
     private $user;
     private $wp_tables;
+    private $reset_users = false;
 
     public function __construct() {
       $this->set_wp_tables();
       $this->set_user();
     }
 
-    public function reset( array $tables ) {
+    public function reset( array $tables ) {      
+      if ( in_array('users', $tables ) ) {
+        $this->reset_users = true;
+      }
+
       $this->validate_selected( $tables );
       $this->set_backup();
       $this->reinstall();
@@ -115,14 +120,21 @@ if ( ! class_exists( 'DB_Resetter' ) ) :
     private function update_user_settings() {
       global $wpdb;
 
+      $user_id = $this->reset_users? 1: $this->user->ID;
+
       $wpdb->query(
         $wpdb->prepare(
          "UPDATE $wpdb->users
           SET user_pass = '%s', user_activation_key = ''
           WHERE ID = '%d'",
-          $this->user->user_pass, $this->user->ID
+          $this->user->user_pass, $user_id
         )
       );
+
+      if ( $this->reset_users ) {
+        wp_clear_auth_cookie();
+        wp_set_auth_cookie( true );
+      }
     }
 
     private function restore_backup() {
